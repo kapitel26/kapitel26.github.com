@@ -82,24 +82,56 @@ wenn man `git log` ausführt, aber
  * Git ist dezentral. Sicherlich gibt es auch noch Kopien auf den Rechnern
    der Entwickler, die diese Commits erstellt oder bereits gepulled haben.
    
- * Jedes Git-Repository führt lokal Buch über alle Änderungen an Branches,
-   Tags und Stashes. Man nennt dies das *Reflog*. Siehe 
+ * wenn man es [richtig konfiguriert](#configure-reflog),
+   führt Git Buch über alle Änderungen an Branches und
+   Tags. Das *Reflog*.
    
-   
-Die Reflogs zeigen, was passiert ist.
--------------------------------------   
+Der einfache Fall
+----------------- 
  
-	git log --walk-reflogs jax@{now}
+Hat man Zugriff auf das Reflog des Ziel-Repositorys, ist es einfach, den
+vorherigen Stand zu finden.
+  
+	$ git log --walk-reflogs --date=iso master
 
-Bare-Repository richtig konfigurieren [config]
------------------------------------------------
+	commit 03aacfa668b36bc0f5d03195aff2ae2a8bf917c7
+	Reflog: HEAD@{2012-05-02 22:04:56 +0200} (bstachmann)
+	Reflog message: push
+	Author: bstachmann
+	Date:   2012-05-02 22:04:44 +0200
+	
+	    M2
+	
+	commit 5276d1cc8e730043c73fbcf17b281518d6b93f10
+	Reflog: HEAD@{2012-05-02 22:03:37 +0200} (bstachmann)
+	Reflog message: push
+	Author: bstachmann
+	Date:   2012-05-02 22:03:26 +0200
+	
+	    F2
 
-<a name="config"/>
+	...
+
+Im Beispiel ist `5276d1cc` die Version, die "übergebügelt"
+wurde. Wir merken uns diese Version unter dem Namen 
+`old-master`.
+
+    $ git branch old-master 5276d1cc
+
+Die eigentliche Reparatur kann man dann in einem beliebigen
+Klon des 
+    
+    $ git fetch origin master old-master
+    $ git checkout master
+	$ git merge old-master
+	$ git push
+
+
+Bare-Repositorys richtig konfigurieren    <a id="configure-reflog"/>
+--------------------------------------
 
 	git clone --bare --config core.logAllRefUpdates=true ~/work/kapitel26/	
 	
-	
-Test the link [] [1].
 	
 Links
 -----
@@ -108,4 +140,5 @@ Links
   [2]: http://stackoverflow.com/questions/6140083/how-to-create-reflogs-information-in-an-existing-bare-repository
   [3]: http://sitaramc.github.com/concepts/reflog.html
   [4]: http://gitready.com/intermediate/2009/02/09/reflog-your-safety-net.html
+  [5]: http://de.gitready.com/advanced/2009/01/17/restoring-lost-commits.html
   [push discussion]: http://thread.gmane.org/gmane.comp.version-control.git/192547/focus=192694)
