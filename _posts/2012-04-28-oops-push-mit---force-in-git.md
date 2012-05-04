@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Oops: Push mit Force in Git"
-description: ""
+description: "push --force"
 category: Git
 tags: [force, push, oops]
 ---
