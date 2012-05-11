@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Oops: Push mit Force in Git"
+title: "Unglücke mit <tt>push --force</tt> in Git"
 description: "push --force"
-category: Git
-tags: [force, push, oops]
+category:
+tags: [force, push, Trouble Shooting]
 ---
 {% include JB/setup %}
 
@@ -16,16 +16,18 @@ Für all jene, die Seite 79 vielleicht nicht mit der vollen Aufmerksamkeit
 gelesen haben, gibt's hier ein paar Tipps kann was man tun kann, wenn 
 man sich "verpushed" hat.
 
-Versehentlich "mit Force gepushed"
-----------------------------------
+Ein Push mit *Force*
+--------------------
 
 Wie viele andere Befehle auch hat der `push`-Befehl in Git eine Option `-f` 
-bzw. `--force`:
+bzw. `--force`.
+Und wie bei vielen anderen Befehlen auch, ist es meist keine gute
+Idee, diese Option auch zu nutzen. 
 
 	$ push -f               # Hoppla, das war nicht gewollt!
 
-Und wie bei vielen anderen Befehlen auch, ist es nur selten 
-gut, diese Option zu nutzen. Ein Beispiel:
+Was genau ist passiert?
+-----------------------
 
  * **Vorher** 
    <pre>
@@ -82,60 +84,71 @@ wenn man `git log` ausführt, aber
  * Git ist dezentral. Sicherlich gibt es auch noch Kopien auf den Rechnern
    der Entwickler, die diese Commits erstellt oder bereits gepulled haben.
    
- * wenn man es [richtig konfiguriert](#configure-reflog),
+ * wenn man es [richtig konfiguriert](/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten),
    führt Git Buch über alle Änderungen an Branches und
    Tags. Das *Reflog*.
    
-Der einfache Fall
------------------ 
+Lösung 1: Merge von Alt und Neu
+------------------------------- 
+
+Die Meldung nach dem `push --force` verrät, was übergebügelt wurde.
+
+	$ git push -f                      # Hoppla, das war nicht gewollt!
+	
+	Counting objects: 4, done.
+	Delta compression using up to 2 threads.
+	Compressing objects: 100% (2/2), done.
+	Writing objects: 100% (3/3), 284 bytes, done.
+	Total 3 (delta 1), reused 0 (delta 0)
+	Unpacking objects: 100% (3/3), done.
+	To /Users/stachi/tmp/blubber/kapitel26.git/
+	 + 2450384...24ffa63 master -> master (forced update)
+
+Falls man nicht bereits dort ist, wechselt man jetzt auf den betroffenen Branch.
+
+	$ git checkout master
+
+Im Beispiel ist das Commit `2450384` betroffen. Wir versuchen, die
+Änderungen zusammenzuführen:
+
+	$ git merge 2450384
+	
+Jetzt kann folgendes passieren:
+
+ * Git führt den Merge durch. Dann ist *alles gut*.
+	
+ * Es gibt einen Merge-Konflikt. Dann müssen sie den Konflikt, ganz normal,
+   manuell bereinigen. Und dann ist auch *alles gut*.
+	  
+ * Git meldet
+	
+	Already up-to-date.
+	  
+   Dann ist auch *alles gut*, weil auf diesem Branch gar keine Commits
+   abgeschnitten wurden.
+	  
+ * Git meldet
+
+	fatal: '2450384' does not point to a commit
+	
+   In diesem Fall ist das 
+   
  
-Hat man Zugriff auf das Reflog des Ziel-Repositorys, ist es einfach, den
-vorherigen Stand zu finden.
-  
-	$ git log --walk-reflogs --date=iso master
-
-	commit 03aacfa668b36bc0f5d03195aff2ae2a8bf917c7
-	Reflog: HEAD@{2012-05-02 22:04:56 +0200} (bstachmann)
-	Reflog message: push
-	Author: bstachmann
-	Date:   2012-05-02 22:04:44 +0200
-	
-	    M2
-	
-	commit 5276d1cc8e730043c73fbcf17b281518d6b93f10
-	Reflog: HEAD@{2012-05-02 22:03:37 +0200} (bstachmann)
-	Reflog message: push
-	Author: bstachmann
-	Date:   2012-05-02 22:03:26 +0200
-	
-	    F2
-
-	...
-
-Im Beispiel ist `5276d1cc` die Version, die "übergebügelt"
-wurde. Wir merken uns diese Version unter dem Namen 
-`old-master`.
-
-    $ git branch old-master 5276d1cc
-
-Die eigentliche Reparatur kann man dann in einem beliebigen
-Klon des 
-    
-    $ git fetch origin master old-master
-    $ git checkout master
-	$ git merge old-master
-	$ git push
+Lösung 2: Ersetze Alt durch Neu
+------------------------------- 
+   
+Brach ohne Merge zurücksetzen
 
 
-Bare-Repositorys richtig konfigurieren    <a id="configure-reflog"/>
---------------------------------------
 
-	git clone --bare --config core.logAllRefUpdates=true ~/work/kapitel26/	
-	
-	
+
+
 Links
 -----
 
+ * [How do i view a git repos receive history][1]
+ * wurstbrot
+  
   [1]: http://stackoverflow.com/questions/3876206/how-do-i-view-a-git-repos-recieve-history "asfd"
   [2]: http://stackoverflow.com/questions/6140083/how-to-create-reflogs-information-in-an-existing-bare-repository
   [3]: http://sitaramc.github.com/concepts/reflog.html
