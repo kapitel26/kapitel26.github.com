@@ -7,8 +7,8 @@ tags: [force, push, Trouble Shooting]
 ---
 {% include JB/setup %}
 
-Aufgrund eines "Vorfalls" in einem befreundeten Projekt wurde ich
-neulich gefragt, ob wir in unserem Buch denn auch vor "`push` mit `-f`" 
+Aufgrund eines "Vorfalls" in einem befreundeten Projekt wurde ich gefragt, 
+ob wir in unserem Buch denn auch vor "`push` mit `-f`" 
 warnen. Für einen kurzen Augenblick stieg der Puls: Hatten wir das tatsächlich 
 übersehen? Ein kurzer Blick in Inhaltsverzeichnis beruhigte mein Gewissen. 
 Auf Seite 79 (ganz unten) wird ordnungsgemäß vor `-f` gewarnt.
@@ -91,7 +91,7 @@ wenn man `git log` ausführt, aber
 Lösung 1: Merge von Alt und Neu
 ------------------------------- 
 
-Die Meldung nach dem `push --force` verrät, was übergebügelt wurde.
+Die Meldung nach dem `push --force` zeigt mir, was ich übergebügelt habe.
 
 	$ git push -f                      # Hoppla, das war nicht gewollt!
 	
@@ -104,8 +104,14 @@ Die Meldung nach dem `push --force` verrät, was übergebügelt wurde.
 	To /Users/stachi/tmp/blubber/kapitel26.git/
 	 + 2450384...24ffa63 master -> master (forced update)
 
-Falls man nicht bereits dort ist, wechselt man jetzt auf den betroffenen Branch.
+Jetzt weiß ich also, das `master` vorher auf `2450384` gezeigt hat.
+Das Problem ist nur, dass dieses Commit wahrscheinlich noch gar nicht
+in meinem lokalen Repository vorhanden ist. Mit einem `fetch` (oder
+`pull`) kann ich es nicht holen, weil kein Branch mehr darauf zeigt.
+Deshalb
 
+	$ git clone ich@woauchimmer.de:repo
+	$ cd repo
 	$ git checkout master
 
 Im Beispiel ist das Commit `2450384` betroffen. Wir versuchen, die
