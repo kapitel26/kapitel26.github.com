@@ -52,21 +52,6 @@ erhalten, bei dem Änderungen aus `F1` oder `F2`
 als *eigene Änderungen* angezeigt werden, obwohl
 sie von jemand anderem implementiert wurden.
 
-Oft sind mehrere Branches betroffen
------------------------------------
-
-Das Default-Verhalten, wenn man ein `push` ohne weitere Parameter
-ausführt, ist wie folgt. Git führt ein "Matching" durch,
-es führt das `push` für jeden lokalen Branch aus, 
-dem ein gleich benannter Branch im entfernten Repository gegenüber steht.
-Es können also viele Branches betroffen sein.
-
-Wer das doof findet kann zweierlei tun: 
-
- 1. `git config push.default upstream`
- 2. Sich an der [Diskussion][push discussion]
-    über das künftige Default-Verhalten von `push` beteiligen.
-
 Trotz allem: *Don't Panic!* 
 ---------------------------
 
@@ -76,14 +61,17 @@ Zwar sind einige Commits im Hauptrepository nicht mehr sichtbar,
 wenn man `git log` ausführt, aber
 
  * sie sind aber sehr wahrscheinlich immer noch im da 
-   und bleiben es auch, bis Git das nächste *Garbage Collect* durchführt.
+   und bleiben es auch, mindestens bis Git das nächste 
+   *Garbage Collect* durchführt.
    
- * Git ist dezentral. Sicherlich gibt es auch noch Kopien auf den Rechnern
-   der Entwickler, die diese Commits erstellt oder bereits gepulled haben.
+ * Git ist dezentral. Sehr wahrscheinlich gibt es Kopien der Commits 
+   auf den Rechnern der Entwickler, die diese Commits erstellt oder 
+   bereits gepulled haben.
    
- * wenn man es [richtig konfiguriert](/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten),
-   führt Git Buch über alle Änderungen an Branches und
-   Tags. Das *Reflog*.
+ * wenn das Repository
+   [richtig konfiguriert ist](/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten),
+   führt Git Buch über alle Änderungen an Branches und Tags (genannt *Reflog*),
+   so dass Verlorenes leicht wieder finden kann.
    
 Lösung 1: Merge von Alt und Neu
 ------------------------------- 
@@ -143,6 +131,20 @@ Lösung 2: Ersetze Alt durch Neu
 Brach ohne Merge zurücksetzen
 
 
+Achtung: Es können viel Branches betroffen sein
+-----------------------------------------------
+
+Das Default-Verhalten, wenn man ein `push` ohne weitere Parameter
+ausführt, ist wie folgt. Git führt ein "Matching" durch,
+es führt das `push` für jeden lokalen Branch aus, 
+dem ein gleich benannter Branch im entfernten Repository gegenüber steht.
+Es können also viele Branches betroffen sein.
+
+Wer das doof findet kann zweierlei tun: 
+
+ 1. `git config push.default upstream`
+ 2. Sich an der [Diskussion][push discussion]
+    über das künftige Default-Verhalten von `push` beteiligen.
 
 
 
