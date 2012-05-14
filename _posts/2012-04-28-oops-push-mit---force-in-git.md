@@ -7,7 +7,7 @@ tags: [force, push, Trouble Shooting]
 ---
 {% include JB/setup %}
 
-Aufgrund eines "Vorfalls" in einem befreundeten Projekt wurde ich gefragt, 
+Nach einem "Vorfall" in einem befreundeten Projekt wurde ich gefragt, 
 ob wir in unserem Buch denn auch vor "`push` mit `-f`" 
 warnen. Für einen kurzen Augenblick stieg der Puls: Hatten wir das tatsächlich 
 übersehen? Ein kurzer Blick in Inhaltsverzeichnis beruhigte mein Gewissen. 
@@ -16,27 +16,24 @@ Für all jene, die Seite 79 vielleicht nicht mit der vollen Aufmerksamkeit
 gelesen haben, gibt's hier ein paar Tipps kann was man tun kann, wenn 
 man sich "verpushed" hat.
 
-Ein Push mit *Force*
---------------------
+Nach dem `push --f`: Was genau ist passiert?
+-----------------------------
 
 Wie viele andere Befehle auch hat der `push`-Befehl in Git eine Option `-f` 
-bzw. `--force`.
-Und wie bei vielen anderen Befehlen auch, ist es meist keine gute
-Idee, diese Option auch zu nutzen. 
+bzw. `--force`. Es ist selten  gute Idee, diese zu nutzen. 
 
-	$ push -f               # Hoppla, das war nicht gewollt!
-
-Was genau ist passiert?
------------------------
-
- * **Vorher** 
+ * Vorher 
    <pre>
    --O---A---F1---F2  origin/master
           \
            M1---M2  master   
    </pre>
+   
+ * Push!
+ 
+   <pre>$ push -f               # Hoppla, das war nicht gewollt!</pre>
 
- * **Nach dem `push -f`** 
+ * Nachher 
    <pre>
    --O---A---F1---F2  "Abgeschnitten!"
           \
