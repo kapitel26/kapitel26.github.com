@@ -106,9 +106,3 @@ Klon des
    * Das Reflog von Client-Repositorys
    * Branches und Tags
 
-  TODO
-
-Wiederbeleben abgestorbender Zweige
------------------------------------
-
-Das Problem ist, das man die 

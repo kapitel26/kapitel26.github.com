@@ -7,14 +7,15 @@ tags: [force, push, Trouble Shooting]
 ---
 {% include JB/setup %}
 
-Nach einem "Vorfall" in einem befreundeten Projekt wurde ich gefragt, 
-ob wir in unserem Buch denn auch vor "`push` mit `-f`" 
-warnen. Für einen kurzen Augenblick stieg der Puls: Hatten wir das tatsächlich 
-übersehen? Ein kurzer Blick in Inhaltsverzeichnis beruhigte mein Gewissen. 
+Nach einem "*Vorfall*" in einem befreundeten Projekt wurde ich gefragt, 
+ob wir in unserem Buch denn auch vor "`push` mit `-f`" warnen. 
+Für einen kurzen Augenblick stieg der Puls: 
+Hatten wir das tatsächlich übersehen? 
+Ein kurzer Blick in Inhaltsverzeichnis beruhigte mein Gewissen. 
 Auf Seite 79 (ganz unten) wird ordnungsgemäß vor `-f` gewarnt.
 Für all jene, die Seite 79 vielleicht nicht mit der vollen Aufmerksamkeit
-gelesen haben, gibt's hier ein paar Tipps kann was man tun kann, wenn 
-man sich "verpushed" hat.
+gelesen haben, gibt's hier ein paar Tipps, was man tun kann, falls 
+man sich mal "*verpushed*" .
 
 Nach dem `push --f`: Was genau ist passiert?
 -----------------------------
@@ -73,8 +74,8 @@ wenn man `git log` ausführt, aber
    führt Git Buch über alle Änderungen an Branches und Tags (genannt *Reflog*),
    so dass Verlorenes leicht wieder finden kann.
    
-Lösung 1: Merge von Alt und Neu
-------------------------------- 
+Herausfinden welcher Zweig abgeschnitten wurde
+----------------------------------------------
 
 Die Meldung nach dem `push --force` zeigt mir, was ich übergebügelt habe.
 
@@ -89,7 +90,11 @@ Die Meldung nach dem `push --force` zeigt mir, was ich übergebügelt habe.
 	To /Users/stachi/tmp/blubber/kapitel26.git/
 	 + 2450384...24ffa63 master -> master (forced update)
 
-Jetzt weiß ich also, das `master` vorher auf `2450384` gezeigt hat.
+Jetzt weiß ich also, dass `master` vorher auf `2450384` gezeigt hat.
+
+Commits holen
+-------------
+
 Das Problem ist nur, dass dieses Commit wahrscheinlich noch gar nicht
 in meinem lokalen Repository vorhanden ist. Mit einem `fetch` (oder
 `pull`) kann ich es nicht holen, weil kein Branch mehr darauf zeigt.
@@ -97,30 +102,44 @@ Deshalb
 
 	$ git clone ich@woauchimmer.de:repo
 	$ cd repo
-	$ git checkout master
+
+Falls **mehrere Branches** betroffen sind, muss man die folgenden Schritte 
+mehrfach durchführen.
+
+Lösung 1: Änderungen zusammenführen
+-----------------------------------
 
 Im Beispiel ist das Commit `2450384` betroffen. Wir versuchen, die
 Änderungen zusammenzuführen:
 
+	$ git checkout master
 	$ git merge 2450384
 	
-Jetzt kann folgendes passieren:
+Falls Git dabei `Already up-to-date.` meldet, hat man Glück gehabt, 
+und muss es bleibt nichts weiter zu tun. 
+Anderenfalls muss den Konflikt ganz normal lösen. 
+Pech hat man, wenn Git 
+`fatal: '2450384' does not point to a commit` meldet, dann muss man 
+sich auf die Suche nach einem Repository begeben, in dem das Commit 
+noch vorhanden ist. Nach dem Merge kann man die Änderungen hochladen.
 
- * Git führt den Merge durch. Dann ist *alles gut*.
+	$ git push
 	
- * Es gibt einen Merge-Konflikt. Dann müssen sie den Konflikt, ganz normal,
-   manuell bereinigen. Und dann ist auch *alles gut*.
-	  
- * Git meldet
-	
-	Already up-to-date.
-	  
-   Dann ist auch *alles gut*, weil auf diesem Branch gar keine Commits
-   abgeschnitten wurden.
-	  
- * Git meldet
+Lösung 2: Vorigen Stand wieder herstellen
+-----------------------------------------
 
-	fatal: '2450384' does not point to a commit
+Falls die neuen Änderungen (bis `24ffa63`) verworfen werden sollen,
+kann man auch den vorigen Stand wieder herstellen.
+
+	$ git reset --hard 2450384
+	$ git push --force
+		
+Aber **Achtung!** Wenn andere Entwickler in der Zwischenzeit Änderungen
+hochgeladen haben, dann `goto 1`
+
+
+
+	
 	
    In diesem Fall ist das 
    
