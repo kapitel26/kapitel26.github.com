@@ -106,3 +106,8 @@ Klon des
    * Das Reflog von Client-Repositorys
    * Branches und Tags
 
+  [1]: http://stackoverflow.com/questions/3876206/how-do-i-view-a-git-repos-recieve-history "asfd"
+  [2]: http://stackoverflow.com/questions/6140083/how-to-create-reflogs-information-in-an-existing-bare-repository
+  [3]: http://sitaramc.github.com/concepts/reflog.html
+  [4]: http://gitready.com/intermediate/2009/02/09/reflog-your-safety-net.html
+  [5]: http://de.gitready.com/advanced/2009/01/17/restoring-lost-commits.html
