@@ -11,7 +11,7 @@ Nach einem "*Vorfall*" in einem befreundeten Projekt wurde ich gefragt,
 ob wir in unserem Buch denn auch vor "`push` mit `-f`" warnen.
 Für einen kurzen Augenblick stieg der Puls:
 Hatten wir das tatsächlich übersehen?
-Ein kurzer Blick in Inhaltsverzeichnis beruhigte mein Gewissen.
+Ein kurzer Blick ins Inhaltsverzeichnis beruhigte mein Gewissen.
 Auf Seite 79 (ganz unten) wird ordnungsgemäß vor `-f` gewarnt.
 Für all jene, die Seite 79 vielleicht nicht mit der vollen Aufmerksamkeit
 gelesen haben, gibt's hier ein paar Tipps, was man tun kann, falls 
@@ -124,20 +124,32 @@ Pech hat man, wenn Git
 sich auf die Suche nach einem Repository begeben, in dem das Commit
 noch vorhanden ist. Nach dem Merge kann man die Änderungen hochladen.
 
-$ git push
+$ git push origin master
 
-Lösung 2: Vorigen Stand wieder herstellen
------------------------------------------
+Lösung 2: Den vorigen Stand wiederherstellen
+--------------------------------------------
 
 Falls die neuen Änderungen (bis `24ffa63`) verworfen werden sollen,
 kann man auch den vorigen Stand wieder herstellen.
 
   $ git reset --hard 2450384
-  $ git push --force
+  $ git push --force origin master
 
 Aber **Achtung!** `--force hat seine Tücken ;-)
-Wenn andere Entwickler in der Zwischenzeit Änderungen
-hochgeladen haben, dann `goto 1`
+Wenn ein andere Entwickler in der Zwischenzeit Änderungen
+auf diesem Branch hochgeladen haben, dann `goto 1`.
+Man erkennt das, wenn die Push-Meldung zeigt, dass ein
+anderes Commit ersetzt wurde, als das was man ersetzen wollte.
+
+Lösung 3: Nochmal überbügeln
+----------------------------
+
+Falls ein anderer Entwickler kurz vor dem Unglück "gepulled"
+hat, kann man dessen Stand nutzen:
+
+  $ git push --force
+
+Aber **Vorsicht!**: Das kann auch vom Regen in die Traufe führen.
 
 Achtung: Es können viel Branches betroffen sein
 -----------------------------------------------
