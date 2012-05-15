@@ -113,8 +113,8 @@ Lösung 1: Änderungen zusammenführen
 Im Beispiel ist das Commit `2450384` betroffen. Wir versuchen, die
 Änderungen zusammenzuführen:
 
-  $ git checkout master
-  $ git merge 2450384
+	$ git checkout master
+	$ git merge 2450384
 
 Falls Git dabei `Already up-to-date.` meldet, hat man Glück gehabt,
 und muss es bleibt nichts weiter zu tun.
@@ -124,7 +124,7 @@ Pech hat man, wenn Git
 sich auf die Suche nach einem Repository begeben, in dem das Commit
 noch vorhanden ist. Nach dem Merge kann man die Änderungen hochladen.
 
-$ git push origin master
+	$ git push origin master
 
 Lösung 2: Den vorigen Stand wiederherstellen
 --------------------------------------------
@@ -132,10 +132,10 @@ Lösung 2: Den vorigen Stand wiederherstellen
 Falls die neuen Änderungen (bis `24ffa63`) verworfen werden sollen,
 kann man auch den vorigen Stand wieder herstellen.
 
-  $ git reset --hard 2450384
-  $ git push --force origin master
+	$ git reset --hard 2450384
+	$ git push --force origin master
 
-Aber **Achtung!** `--force hat seine Tücken ;-)
+Aber **Achtung!** `--force` hat seine Tücken ;-)
 Wenn ein andere Entwickler in der Zwischenzeit Änderungen
 auf diesem Branch hochgeladen haben, dann `goto 1`.
 Man erkennt das, wenn die Push-Meldung zeigt, dass ein
@@ -147,7 +147,7 @@ Lösung 3: Nochmal überbügeln
 Falls ein anderer Entwickler kurz vor dem Unglück "gepulled"
 hat, kann man dessen Stand nutzen:
 
-  $ git push --force
+	$ git push --force
 
 Aber **Vorsicht!**: Das kann auch vom Regen in die Traufe führen.
 
