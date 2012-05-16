@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Reparaturen nach <tt>push --force</tt> ohne Zugriff auf das Reflog"
-description: "-"
+title: "Abgeschnittene Commits zurückholen"
+description: "Über Reparaturen nach versehentlich abgeschnittenen Commits (Dangling Commits)"
 category: 
-tags: []
+tags: [dangling commits, reflog]
 ---
 {% include JB/setup %}
 
