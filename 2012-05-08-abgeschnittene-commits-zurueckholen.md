@@ -14,11 +14,29 @@ z. B. durch ein vermurkstes `git rebase` oder
 durch [ein voreiliges `git push -f`](/2012/04/28/push-mit-force-in-git).
 Was ich an Git liebe, ist das es fast immer Möglichkeiten bietet,
 den Kopf wieder aus der Schlinge zu ziehen.
+
+Dangling Commits
+----------------
+
+Operationen, die Branch-Zeiger verändern, wie etwa `git reset`, `git branch -d`,
+`git commmit --amend` oder `git rebase` können Commits im lokalen 
+Repository abschneiden. `git push -f` kann Commits in entfernten Repositorys 
+abschneiden.
+  
   <pre>
-  --O---A---F1---F2  "Abgeschnitten!"
+      D1---D2  "Abgeschnitten!"
+     / 
+  --O---A---M1---M2  master  
          \
-          M1---M2  master, origin/master   
+          F1---F2  feature-a 
   </pre>
+  
+Im obigen Beispiel gibt es zwei Branches `master` und `feature-a`
+mit den Historien `O--A--M1--M2`und `O--A--F1--F2`. 
+Die Commits `D1` und `D2` sind in keiner Branch-Historie mehr
+enthalten. Man nennt sie *Dangling Commits* oder allgemeiner
+*Loose Objects*.
+
 
 Es gibt mehrere Möglichkeiten, solche Commits wieder zu finden:
 
