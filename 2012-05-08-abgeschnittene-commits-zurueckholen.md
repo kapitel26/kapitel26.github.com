@@ -7,42 +7,13 @@ tags: [dangling commits, reflog]
 ---
 {% include JB/setup %}
 
-Leider gibt es Situationen, in denen man
-[reparieren möchte](/2012/04/28/oops-push-mit---force-in-git),
-aber [ein Reflog fehlt](/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten)
-oder nicht erreichbar ist.
-
-Erstmal sichern
----------------
-
-Falls man direkten Zugriff auf den Server mit dem  Ziel-Repositorys 
-des verunglückten `push` hat, sollte man das Repo sichern. 
-So verhindert man, dass die abgeschnittenen Commits durch
-ein `git gc` (oder ähnliches) doch noch gelöscht werden.
-Am besten sichert man mit `cp`und nicht mit `git clone`
-(weil `clone` abgeschnittene Commits nicht kopiert).
-
-Rohe Gewalt oder Mutter der Porzellankiste
-------------------------------------------
-
-Falls ein Entwickler kurz vor dem unseeligen `push` ein `pull` ausgeführt hat,
-kann man überlegen, ob man mit einem beherzten `push --force` einen
-"besseren" Stand in das Repository bring, damit andere Entwickler erstmal 
-weiter arbeiten können.
-
-Sicherer ist, die anderen Entwickler aufzufordern, kein `push` durch-
-zuführen, bis das Repo aufgeräumt ist. Ggf. kann man das gemeinsame
-Repository sperren (bei einer ssh-basierten Einrichtung, genügt dazu
-ein einfaches `mv` an einen Ort).
-
-Wiederfinden abgeschnittener Commits
-------------------------------------
-
-Durch das `push --force` sind Commits abschnitten worden (*Dangling Commits*)
-im Beispiel `F1` und `F2`.
-Sie liegen zwar noch im Repository, aber es gibt keinen Branch mehr, in
-dessen Historie diese Commits enthalten sind.
-
+Git gibt dem Entwickler viele Freiheiten. Die Freiheit
+Fehler zu machen, gehört auch dazu.
+Nicht selten habe ich diese Freiheit in Anspruch genommen, 
+z. B. durch ein vermurkstes `git rebase` oder 
+durch [ein voreiliges `git push -f`](/2012/04/28/push-mit-force-in-git).
+Was ich an Git liebe, ist das es fast immer Möglichkeiten bietet,
+den Kopf wieder aus der Schlinge zu ziehen.
   <pre>
   --O---A---F1---F2  "Abgeschnitten!"
          \
