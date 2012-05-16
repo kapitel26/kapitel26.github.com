@@ -37,6 +37,17 @@ Die Commits `D1` und `D2` sind in keiner Branch-Historie mehr
 enthalten. Man nennt sie *Dangling Commits* oder allgemeiner
 *Loose Objects*.
 
+Garbage Collection
+------------------
+
+Gelegentlich (bei bestimmten Kommandos oder manuell durch `git gc`)
+räumt Git solche Commits ab, um Speicher zu sparen und damit das Repository
+nicht unnötig langsam wird. Aber: **Keine Angst!** In der Default-Konfiguration 
+werden *Loose Objects* frühestens nach 2 Wochen abgeräumt 
+(Konfiguration `gc.pruneExpire`). Commits, die im Reflog (siehe unten) stehen, 
+werden sogar noch länger gehalten (Konfigurationen `gc.reflogExpire` und 
+`gc.reflogExpireUnreachable`).
+
 
 Es gibt mehrere Möglichkeiten, solche Commits wieder zu finden:
 
