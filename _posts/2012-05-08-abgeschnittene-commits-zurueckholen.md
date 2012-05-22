@@ -34,7 +34,7 @@ abschneiden.
 Im obigen Beispiel gibt es zwei Branches `master` und `feature-a`
 mit den Historien `O--A--M1--M2`und `O--A--F1--F2`. 
 Die Commits `D1` und `D2` sind in keiner Branch-Historie mehr
-enthalten. Man nennt sie *Dangling Commits* oder allgemeiner
+enthalten. Man nennt sie *Dangling Commits* oder etwas allgemeiner
 *Loose Objects*.
 
 Garbage Collection
@@ -48,15 +48,52 @@ werden *Loose Objects* frühestens nach 2 Wochen abgeräumt
 werden sogar noch länger gehalten (Konfigurationen `gc.reflogExpire` und 
 `gc.reflogExpireUnreachable`).
 
+Commits wiederfinden
+--------------------
 
-Es gibt mehrere Möglichkeiten, solche Commits wieder zu finden:
+Es ist genau wie bei Rumpelstilzchen: Kennt man den Namen, hat man
+die Macht. In Git ist es der Commit-Hash, den man kennen muss.
+Um an den Commit-Hash abgeschnittener Commits zu kommen, kann man
+verschiedenes tun:
 
- * das Reflog
+ * **Konsole**: Oft reicht es, in der Konsole nach oben zu scrollen.
+   Viele Git Befehle schreiben Commit-Hashes auf die Console, wenn neue
+   Commits entstehen. Tipp: Keine Konsolenfenster schließen, bis
+   Sie ihr Problem gelöst haben.
+   
+ * **Reflog**: Git führt Buch über alle Änderungen an Branches und Tags und 
+   speichert diese normalerweise für 90 Tage.
+  
+ * **`git fsck`**: Mit diesem Kommando kann man gezielt nach abgeschnittenen
+   Commits suchen. 
+ 
+ * **Andere Repositorys**: Git ist dezentral. Ein Commit das lokal
+   gelöscht wurde, kann in den Klonen anderer Entwickler durchaus noch
+   vorhanden sein.
 
-Hat man Zugriff auf das Reflog des Ziel-Repositorys, ist es leicht, den
-vorherigen Stand zu finden, und das Problem zu beheben.
-[Ohne Zugriff auf auf das Reflog](/2012/05/08/reparaturen-nach-push--force-ohne-zugriff-auf-das-reflog),
-ist es schwerer.
+Commits wiederherstellen
+------------------------
+
+Sobald man Hash des verlorenen Commits kennt, ist es einfach.
+Wenn man die Änderungen wieder haben möchste:
+
+	$ git merge 1234567
+	
+Oder man merkt es sich erstmal, um später darauf zugreifen zu können.	
+	
+	$ git checkout -b my-lost-changes 1234567
+	
+Manchmal möchte man einen Branch auf einen alten Stand zurücksetzen.
+	
+	$ git checkout my-branch
+	$ git reset --hard 12334567
+
+Das Reflog
+----------
+
+In `.git/logs/` protokolliert Git alle Branch-Änderungen.
+Man kann sich die Protokolldort direkt ansehen, wenn man möchte.
+Einfacher geht es mit der `--walk-reflogs`-Option
   
 	$ git log --walk-reflogs --date=iso master
 
@@ -76,38 +113,26 @@ ist es schwerer.
 	
 	    F2
 
-	...
 
-Im Beispiel ist `5276d1cc` die Version, die "übergebügelt"
-wurde. Wir merken uns diese Version unter dem Namen 
-`old-master`.
-
-    $ git branch old-master 5276d1cc
-
-Die eigentliche Reparatur kann man dann in einem beliebigen
-Klon des 
-    
-    $ git fetch origin master old-master
-    $ git checkout master
-	$ git merge old-master
-	$ git push
-
-
+FSCK
+----
  
- * git fsck
+Neben vielen anderen tollen Dingen kann der `git fsck`-Befehl auch 
+abgeschnittene Commits wiederfinden:
  
     <pre>
 	$ git fsck --lost-found
 	dangling commit 24503845dfa44353e5ebd64dc75183823538e85f
 	dangling commit fdb36f69a12d16bf345d29c69057115ed19ac96a
     </pre>
- 
- * Informationen aus Client-Repositorys
-   * Das Reflog von Client-Repositorys
-   * Branches und Tags
+    
+Externe Links
+-------------
 
-  [1]: http://stackoverflow.com/questions/3876206/how-do-i-view-a-git-repos-recieve-history "asfd"
-  [2]: http://stackoverflow.com/questions/6140083/how-to-create-reflogs-information-in-an-existing-bare-repository
-  [3]: http://sitaramc.github.com/concepts/reflog.html
-  [4]: http://gitready.com/intermediate/2009/02/09/reflog-your-safety-net.html
-  [5]: http://de.gitready.com/advanced/2009/01/17/restoring-lost-commits.html
+ * [Nick Quaranto über das Reflog][1]
+ * [Noch mehr über das Reflog von Sitaram Chamarty][2]
+ * [Und noch mal Nick Quaranto über das Wiederherstellen von Commits][3]
+ 
+  [1]: http://gitready.com/intermediate/2009/02/09/reflog-your-safety-net.html
+  [2]: http://sitaramc.github.com/concepts/reflog.html
+  [3]: http://de.gitready.com/advanced/2009/01/17/restoring-lost-commits.html
