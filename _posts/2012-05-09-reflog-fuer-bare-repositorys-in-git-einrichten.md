@@ -101,11 +101,10 @@ Einträge im Reflog, die zur aktuellen Historie gehören, werden für mindestens
 90 Tage gehalten. Die Commits selber sind ohnedies geschützt, da Git nie
 einen Vorfahren des aktuellen Standes eines Branches löschen würde.
 
-
-
 Links
 -----
 
+* [Zu diesem Thema: Chris Johnsen auf Stackoverflow][1]
+
   [1]: http://stackoverflow.com/questions/3876206/how-do-i-view-a-git-repos-recieve-history
-  [2]: http://stackoverflow.com/questions/6140083/how-to-create-reflogs-information-in-an-existing-bare-repository
 
