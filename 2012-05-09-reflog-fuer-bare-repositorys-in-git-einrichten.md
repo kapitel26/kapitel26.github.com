@@ -1,55 +1,110 @@
 ---
 layout: post
-title: "Reflog für Bare Repositorys in Git einrichten"
+title: "Reflog für Bare-Repositorys in Git"
 description: ""
 category: 
 tags: []
 ---
+
 {% include JB/setup %}
 
-Bare-Repositorys richtig konfigurieren    <a id="configure-reflog"/>
---------------------------------------
+Das *Reflog* ist dein Freund
+----------------------------
+
+Im Reflog wird jede einzelne Änderung an Branches (und auch ein paar
+anderen Dingen) aufgezeichnet. Was auch immer schiefgegangen ist,
+z. B. ein [unglückliches `push`][/2012/04/28/push-mit-force-in-git]:
+Fast immer lässt es sich mit [Hilfe des Reflogs der vorige Stand wiederherstellen.][/2012/05/08/abgeschnittene-commits-zurueckholen]
+
+Achtung: Bare-Repositorys haben oft kein Reflog!
+-------------------------------------------------
+
+Für normale Repository mit Workspace ist das Reflog in der Regel
+aktiv. Für sogenannte *Bare Repositorys*, die zum Austausch zwischen
+Entwicklern genutzt werden, ist Reflog per Default nicht aktiv.
+Am besten schalten Sie es gleich ein:
+
+	git config core.logAllRefUpdates true
+
+Oder gleich als Default für die gesamte Installation.
+
+	git config --system core.logAllRefUpdates true
+
+Man kann es auch schon gleich beim Klonen aktivieren:
 
 	git clone --bare --config core.logAllRefUpdates=true ~/work/kapitel26/	
 
-Außerdem
---------
- 
-git config --system receive.denyNonFastForwards true
+Schutz vor Manipulation der Historie
+------------------------------------
 
-Sonstiges
----------
+Git ermöglicht es, die Historie zu manipulieren. Vielleicht habe ich mich
+beim Entwickeln verrannt und möchte die letzten beiden Commits verwerfen 
+(`reset --hard head^^`), oder ich möchte die versehentlich hinzugefügte
+Datei mit den Klartextpasswörtern wieder loswerden. Kein Problem mit Git.
+Ersteres erledigt ein `reset --hard head^^` erreichen, letzteres
+ermöglicht der `filter-branch`-Befehl.
 
-core.logAllRefUpdates
-           Enable the reflog. Updates to a ref <ref> is logged to the file "$GIT_DIR/logs/<ref>", by appending the new and old SHA1,
-           the date/time and the reason of the update, but only when the file exists. If this configuration variable is set to true,
-           missing "$GIT_DIR/logs/<ref>" file is automatically created for branch heads (i.e. under refs/heads/), remote refs (i.e.
-           under refs/remotes/), note refs (i.e. under refs/notes/), and the symbolic ref HEAD.
+Manchmal möchte man aber genau das nicht. Manchmal möchte man
+(oder muss man), die "offizielle" Historie aller Änderungen in einem
+zentralen Repository dokumentieren. Man kann ein solches Repository 
+durch `denyNonFastForward` schützen. Git akzeptiert neue Commits
+dann nur, wenn sie Nachfahren der vorigen Commits sind. Dann kann nichts
+verloren gehen (schützt auch vor `push -f`).
 
-           This information can be used to determine what commit was the tip of a branch "2 days ago".
+	git config receive.denyNonFastForwards true
+	
+Wer hat Angst vor dem Garbage Collector?
+----------------------------------------
 
-           This value is true by default in a repository that has a working directory associated with it, and false by default in a
-           bare repository.
+Git arbeitet mit einem Garbage-Collector, der *nicht mehr benötigte* Objekte 
+abräumt. Einerseits kann man ihn direkt mit `git gc` aufrufen,
+andererseits wird er bei manchen Befehlen implizit mit ausgeführt.
+Das hat bei mir immer ein ungutes Gefühl hinterlassen.
+Was löscht Git dabei eigentlich? Mache ich mit einem
+`git gc` alles kapput?
 
+Die Hilfe (`git help gc`) beginnt mit: 
+"Runs a number of housekeeping tasks ...". Hmmm, nicht sehr hilfreich.
+Es folgt die Git-typische längliche Auflistung von Optionen und Konfigurationen.
+Doch dann, fast ganz unten, steht der beruhigende Satz:
 
-       gc.pruneexpire
-           When git gc is run, it will call prune --expire 2.weeks.ago. Override the grace period with this config variable. The value
-           "now" may be used to disable this grace period and always prune unreachable objects immediately.
-           
-           -> ist default
+>	git gc tries very hard to be safe about the garbage it collects.
 
-       gc.reflogexpire, gc.<pattern>.reflogexpire
+Und es folgt eine detaillierte Auflistung von Dingen, die Git
+nicht löscht. Dazu gehört natürlich alles, was von den aktuellen Branches 
+und Tags referenziert wird. Vor allem gehört aber auch alles (!) dazu, was 
+im Reflog referenziert wird, so dass man Fehler, die man beispielsweise
+mit `reset`, `amend`, `rebase` oder `branch -d` gemacht hat, mit Hilfe des 
+Reflogs leicht wieder korrigieren kann. `filter-branch` speichert die 
+Original-Commits in `refs/original`. Auch diese werden nicht abgeräumt.
 
-           git reflog expire removes reflog entries older than this time; defaults to 90 days. With "<pattern>" (e.g. "refs/stash") in
-           the middle the setting applies only to the refs that match the <pattern>.
+Nun stellt sich natürlich die Frage: Was räumt Git denn überhaupt ab? Und wann?
 
-       gc.reflogexpireunreachable, gc.<ref>.reflogexpireunreachable
+Git wäre nicht Git, wenn das nicht konfigurierbare wäre. Und tatsächlich:
+Es gibt eine Reihe von Konfigurationsparametern dafür.
+
+	git config gc.pruneexpire 2.weeks.ago
+
+Selbst wenn Objekte gar nicht mehr referenziert werden, räumt Git sie
+frühestens nach zwei Wochen (Default) ab. Schon mal ganz beruhigend.
+
+	git config gc.reflogexpireunreachable 30.days
+
+Übriggebliebene Objekte, die einmal *Tip* eines Branches waren und  
+mittels `git commit --amend`, `git rebase` o. Ä. ersetzt wurden, 
+
+Jene Einträgt
+
+	
+	gc.reflogexpire
+
+Hiermit wird eingestellt, wie lange Einträge im Reflog gehalten werden.
+Der Default ist immerhin 90 Tage. Mindestens so lange werden auch 
+die referenzierten Commits gehalten.
+
 
            git reflog expire removes reflog entries older than this time and are not reachable from the current tip; defaults to 30
            days. With "<pattern>" (e.g. "refs/stash") in the middle, the setting applies only to the refs that match the <pattern>.
-
-
-
 
 
 Links
@@ -57,3 +112,4 @@ Links
 
   [1]: http://stackoverflow.com/questions/3876206/how-do-i-view-a-git-repos-recieve-history
   [2]: http://stackoverflow.com/questions/6140083/how-to-create-reflogs-information-in-an-existing-bare-repository
+
