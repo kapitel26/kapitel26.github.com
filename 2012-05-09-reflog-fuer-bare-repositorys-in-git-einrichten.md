@@ -15,9 +15,10 @@ Im Reflog wird jede einzelne Änderung an Branches (und auch ein paar
 anderen Dingen) aufgezeichnet. Was auch immer schiefgegangen ist,
 z. B. ein [unglückliches `push`][/2012/04/28/push-mit-force-in-git]:
 Fast immer lässt es sich mit [Hilfe des Reflogs der vorige Stand wiederherstellen.][/2012/05/08/abgeschnittene-commits-zurueckholen]
+Es ist also gut, ein Reflog zu haben, aber:
 
 Achtung: Bare-Repositorys haben oft kein Reflog!
--------------------------------------------------
+------------------------------------------------
 
 Für normale Repository mit Workspace ist das Reflog in der Regel
 aktiv. Für sogenannte *Bare Repositorys*, die zum Austausch zwischen
@@ -83,28 +84,23 @@ Nun stellt sich natürlich die Frage: Was räumt Git denn überhaupt ab? Und wan
 Git wäre nicht Git, wenn das nicht konfigurierbare wäre. Und tatsächlich:
 Es gibt eine Reihe von Konfigurationsparametern dafür.
 
-	git config gc.pruneexpire 2.weeks.ago
+	git config gc.pruneexpire 2.weeks.ago              #entspricht default
 
 Selbst wenn Objekte gar nicht mehr referenziert werden, räumt Git sie
-frühestens nach zwei Wochen (Default) ab. Schon mal ganz beruhigend.
+frühestens nach zwei Wochen ab. Schon mal ganz beruhigend.
 
-	git config gc.reflogexpireunreachable 30.days
+	git config gc.reflogexpireunreachable 30.days.ago  #entspricht default
 
-Übriggebliebene Objekte, die einmal *Tip* eines Branches waren und  
-mittels `git commit --amend`, `git rebase` o. Ä. ersetzt wurden, 
-
-Jene Einträgt
-
+Die Einträge im Reflog für Commits, die durch `git commit --amend`, `git rebase` 
+oder ähnliches werden frühestens nach 30 Tagen entfernt. Mindestens so lange
+sind auch die dazu gehörenden Commits geschützt. 
 	
-	gc.reflogexpire
+	git config gc.reflogexpire 90.day.ago
 
-Hiermit wird eingestellt, wie lange Einträge im Reflog gehalten werden.
-Der Default ist immerhin 90 Tage. Mindestens so lange werden auch 
-die referenzierten Commits gehalten.
+Einträge im Reflog, die zur aktuellen Historie gehören, werden für mindestens
+90 Tage gehalten. Die Commits selber sind ohnedies geschützt, da Git nie
+einen Vorfahren des aktuellen Standes eines Branches löschen würde.
 
-
-           git reflog expire removes reflog entries older than this time and are not reachable from the current tip; defaults to 30
-           days. With "<pattern>" (e.g. "refs/stash") in the middle, the setting applies only to the refs that match the <pattern>.
 
 
 Links
