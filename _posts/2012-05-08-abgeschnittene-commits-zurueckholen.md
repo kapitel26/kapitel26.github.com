@@ -1,62 +1,99 @@
 ---
 layout: post
-title: "Reparaturen nach <tt>push --force</tt> ohne Zugriff auf das Reflog"
-description: "-"
+title: "Abgeschnittene Commits zurückholen"
+description: "Über Reparaturen nach versehentlich abgeschnittenen Commits (Dangling Commits)"
 category: 
-tags: []
+tags: [dangling commits, reflog]
 ---
 {% include JB/setup %}
 
-Leider gibt es Situationen, in denen man
-[reparieren möchte](/2012/04/28/oops-push-mit---force-in-git),
-aber [ein Reflog fehlt](/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten)
-oder nicht erreichbar ist.
+Git gibt dem Entwickler viele Freiheiten. Die Freiheit
+Fehler zu machen, gehört auch dazu.
+Nicht selten habe ich diese Freiheit in Anspruch genommen, 
+z. B. durch ein vermurkstes `git rebase` oder 
+durch [ein voreiliges `git push -f`](/2012/04/28/push-mit-force-in-git).
+Was ich an Git liebe, ist das es fast immer Möglichkeiten bietet,
+den Kopf wieder aus der Schlinge zu ziehen.
 
-Erstmal sichern
----------------
+Dangling Commits
+----------------
 
-Falls man direkten Zugriff auf den Server mit dem  Ziel-Repositorys 
-des verunglückten `push` hat, sollte man das Repo sichern. 
-So verhindert man, dass die abgeschnittenen Commits durch
-ein `git gc` (oder ähnliches) doch noch gelöscht werden.
-Am besten sichert man mit `cp`und nicht mit `git clone`
-(weil `clone` abgeschnittene Commits nicht kopiert).
-
-Rohe Gewalt oder Mutter der Porzellankiste
-------------------------------------------
-
-Falls ein Entwickler kurz vor dem unseeligen `push` ein `pull` ausgeführt hat,
-kann man überlegen, ob man mit einem beherzten `push --force` einen
-"besseren" Stand in das Repository bring, damit andere Entwickler erstmal 
-weiter arbeiten können.
-
-Sicherer ist, die anderen Entwickler aufzufordern, kein `push` durch-
-zuführen, bis das Repo aufgeräumt ist. Ggf. kann man das gemeinsame
-Repository sperren (bei einer ssh-basierten Einrichtung, genügt dazu
-ein einfaches `mv` an einen Ort).
-
-Wiederfinden abgeschnittener Commits
-------------------------------------
-
-Durch das `push --force` sind Commits abschnitten worden (*Dangling Commits*)
-im Beispiel `F1` und `F2`.
-Sie liegen zwar noch im Repository, aber es gibt keinen Branch mehr, in
-dessen Historie diese Commits enthalten sind.
-
+Operationen, die Branch-Zeiger verändern, wie etwa `git reset`, `git branch -d`,
+`git commmit --amend` oder `git rebase` können Commits im lokalen 
+Repository abschneiden. `git push -f` kann Commits in entfernten Repositorys 
+abschneiden.
+  
   <pre>
-  --O---A---F1---F2  "Abgeschnitten!"
+      D1---D2  "Abgeschnitten!"
+     / 
+  --O---A---M1---M2  master  
          \
-          M1---M2  master, origin/master   
+          F1---F2  feature-a 
   </pre>
+  
+Im obigen Beispiel gibt es zwei Branches `master` und `feature-a`
+mit den Historien `O--A--M1--M2`und `O--A--F1--F2`. 
+Die Commits `D1` und `D2` sind in keiner Branch-Historie mehr
+enthalten. Man nennt sie *Dangling Commits* oder etwas allgemeiner
+*Loose Objects*.
 
-Es gibt mehrere Möglichkeiten, solche Commits wieder zu finden:
+Garbage Collection
+------------------
 
- * das Reflog
+Gelegentlich (bei bestimmten Kommandos oder manuell durch `git gc`)
+räumt Git solche Commits ab, um Speicher zu sparen und damit das Repository
+nicht unnötig langsam wird. Aber: **Keine Angst!** In der Default-Konfiguration 
+werden *Loose Objects* frühestens nach 2 Wochen abgeräumt 
+(Konfiguration `gc.pruneExpire`). Commits, die im Reflog (siehe unten) stehen, 
+werden sogar noch länger gehalten (Konfigurationen `gc.reflogExpire` und 
+`gc.reflogExpireUnreachable`).
 
-Hat man Zugriff auf das Reflog des Ziel-Repositorys, ist es leicht, den
-vorherigen Stand zu finden, und das Problem zu beheben.
-[Ohne Zugriff auf auf das Reflog](/2012/05/08/reparaturen-nach-push--force-ohne-zugriff-auf-das-reflog),
-ist es schwerer.
+Commits wiederfinden
+--------------------
+
+Es ist genau wie bei Rumpelstilzchen: Kennt man den Namen, hat man
+die Macht. In Git ist es der Commit-Hash, den man kennen muss.
+Um an den Commit-Hash abgeschnittener Commits zu kommen, kann man
+verschiedenes tun:
+
+ * **Konsole**: Oft reicht es, in der Konsole nach oben zu scrollen.
+   Viele Git Befehle schreiben Commit-Hashes auf die Console, wenn neue
+   Commits entstehen. Tipp: Keine Konsolenfenster schließen, bis
+   Sie ihr Problem gelöst haben.
+   
+ * **Reflog**: Git führt Buch über alle Änderungen an Branches und Tags und 
+   speichert diese normalerweise für 90 Tage.
+  
+ * **`git fsck`**: Mit diesem Kommando kann man gezielt nach abgeschnittenen
+   Commits suchen. 
+ 
+ * **Andere Repositorys**: Git ist dezentral. Ein Commit das lokal
+   gelöscht wurde, kann in den Klonen anderer Entwickler durchaus noch
+   vorhanden sein.
+
+Commits wiederherstellen
+------------------------
+
+Sobald man Hash des verlorenen Commits kennt, ist es einfach.
+Wenn man die Änderungen wieder haben möchste:
+
+	$ git merge 1234567
+	
+Oder man merkt es sich erstmal, um später darauf zugreifen zu können.	
+	
+	$ git checkout -b my-lost-changes 1234567
+	
+Manchmal möchte man einen Branch auf einen alten Stand zurücksetzen.
+	
+	$ git checkout my-branch
+	$ git reset --hard 12334567
+
+Das Reflog
+----------
+
+In `.git/logs/` protokolliert Git alle Branch-Änderungen.
+Man kann sich die Protokolldort direkt ansehen, wenn man möchte.
+Einfacher geht es mit der `--walk-reflogs`-Option
   
 	$ git log --walk-reflogs --date=iso master
 
@@ -76,38 +113,26 @@ ist es schwerer.
 	
 	    F2
 
-	...
 
-Im Beispiel ist `5276d1cc` die Version, die "übergebügelt"
-wurde. Wir merken uns diese Version unter dem Namen 
-`old-master`.
-
-    $ git branch old-master 5276d1cc
-
-Die eigentliche Reparatur kann man dann in einem beliebigen
-Klon des 
-    
-    $ git fetch origin master old-master
-    $ git checkout master
-	$ git merge old-master
-	$ git push
-
-
+FSCK
+----
  
- * git fsck
+Neben vielen anderen tollen Dingen kann der `git fsck`-Befehl auch 
+abgeschnittene Commits wiederfinden:
  
     <pre>
 	$ git fsck --lost-found
 	dangling commit 24503845dfa44353e5ebd64dc75183823538e85f
 	dangling commit fdb36f69a12d16bf345d29c69057115ed19ac96a
     </pre>
- 
- * Informationen aus Client-Repositorys
-   * Das Reflog von Client-Repositorys
-   * Branches und Tags
+    
+Externe Links
+-------------
 
-  [1]: http://stackoverflow.com/questions/3876206/how-do-i-view-a-git-repos-recieve-history "asfd"
-  [2]: http://stackoverflow.com/questions/6140083/how-to-create-reflogs-information-in-an-existing-bare-repository
-  [3]: http://sitaramc.github.com/concepts/reflog.html
-  [4]: http://gitready.com/intermediate/2009/02/09/reflog-your-safety-net.html
-  [5]: http://de.gitready.com/advanced/2009/01/17/restoring-lost-commits.html
+ * [Nick Quaranto über das Reflog][1]
+ * [Noch mehr über das Reflog von Sitaram Chamarty][2]
+ * [Und noch mal Nick Quaranto über das Wiederherstellen von Commits][3]
+ 
+  [1]: http://gitready.com/intermediate/2009/02/09/reflog-your-safety-net.html
+  [2]: http://sitaramc.github.com/concepts/reflog.html
+  [3]: http://de.gitready.com/advanced/2009/01/17/restoring-lost-commits.html
