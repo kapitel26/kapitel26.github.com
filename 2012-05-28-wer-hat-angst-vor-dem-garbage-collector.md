@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Wer hat Angst vor dem Garbage Collector"
+title: "Wer hat Angst vor dem Garbage Collector?"
 description: ""
 category: 
-tags: []
+tags: [git, Garbage Collector]
 ---
 
 {% include JB/setup %}
