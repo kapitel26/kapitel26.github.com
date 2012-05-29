@@ -2,7 +2,7 @@
 layout: post
 title: "Abgeschnittene Commits zurückholen"
 description: "Über Reparaturen nach versehentlich abgeschnittenen Commits (Dangling Commits)"
-category: 
+category: Git
 tags: [dangling commits, reflog]
 ---
 {% include JB/setup %}

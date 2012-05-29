@@ -2,7 +2,7 @@
 layout: post
 title: "Reflog für Bare-Repositorys in Git"
 description: ""
-category: 
+category: Git 
 tags: []
 ---
 
