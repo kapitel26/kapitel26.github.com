@@ -29,12 +29,17 @@
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }} {% if site.tagline %} <br/><smaller>{{ site.tagline }}</smaller>{% endif %}</a>
-          <ul class="nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-          </ul>
+          <a class="brand" href="{{ HOME_PATH }}">
+            {{ site.title }} 
+          	{% if site.tagline %} <p/><div class="mysitesubtitle"> {{ site.tagline }}</div> {% endif %}
+          </a>
+          <div class="span12">
+	          <ul class="nav">
+	            {% assign pages_list = site.pages %}
+	            {% assign group = 'navigation' %}
+	            {% include JB/pages_list %}
+	          </ul>
+	        </div>
         </div>
       </div>
     </div>
