@@ -2,7 +2,7 @@
 layout: post
 title: "Wer hat Angst vor dem Garbage Collector?"
 description: ""
-category: 
+category: Git
 tags: [git, Garbage Collector]
 ---
 

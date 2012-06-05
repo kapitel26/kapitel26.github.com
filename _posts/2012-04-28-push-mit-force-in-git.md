@@ -2,7 +2,7 @@
 layout: post
 title: "Unglücke mit <tt>push --force</tt> in Git"
 description: "push --force"
-category:
+category: Git
 tags: [force, push, Trouble Shooting]
 ---
 {% include JB/setup %}
