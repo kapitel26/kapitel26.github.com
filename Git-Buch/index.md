@@ -3,9 +3,42 @@ layout: page
 title: "Git-Buch"
 description: ""
 group: navigation
-author: bst
 ---
 {% include JB/setup %}
+
+<div class="row">
+  <div class="span3" align="right">
+  	René Preißel<br/>
+  	Bjørn Stachmann<p/>
+  	
+  	<h2>Git</h2>
+  	
+		<h4>Dezentrale Versionsverwaltung im Team - Grundlagen und Workflows</h4>
+		&nbsp;<br/>
+		dpunkt.verlag
+  </div>
+  <div class="span3" align="center">
+  	<a href="http://www.dpunkt.de/buecher/3545.html">
+		  <img src="buch-cover.jpg" alt="Git-Buch Cover"/>
+		</a>
+  </div>
+  <div class="span3" align="left">
+    <h4>Kaufen</h4>
+		&nbsp;<br/>
+		<a href="http://www.dpunkt.de/buecher/3545.html">
+  		beim <strong>dpunkt</strong>.verlag<br/>
+  	</a>
+		&nbsp;<br/>
+		<a href="http://www.dpunkt.de/buecher/4073/git.html">
+  		als E-Book beim <strong>dpunkt</strong>.verlag<br/>
+  	</a>
+		&nbsp;<br/>
+		<a href="http://www.amazon.de/gp/product/3898648001">
+  		bei <strong>Amazon</strong> kaufen<br/>
+  	</a>
+  	
+ </div>
+</div>
 
 Was ist das Besondere an eurem Buch?
 ------------------------------------
@@ -55,8 +88,9 @@ Nur René und Bjørn nicht. Wir wollten auch mal sagen können:
 Links
 -----
 
+ * [Unser **Git-Buch** beim **dpunkt**-Verlag][git-buch-dpunkt]
  * [Unser Git-Artikel aus dem JavaMagazin][git-artikel]
 
+[git-buch-dpunkt]: http://www.dpunkt.de/buecher/3545.html
 [git-artikel]: http://it-republik.de/jaxenter/artikel/Wird-Git-Subversion-beerben-3244.html
-
 
