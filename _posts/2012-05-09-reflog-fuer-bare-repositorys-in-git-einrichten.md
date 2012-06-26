@@ -4,6 +4,7 @@ title: "Reflog für Bare-Repositorys in Git"
 description: ""
 category: Git 
 tags: []
+author: bst
 ---
 
 {% include JB/setup %}

@@ -4,6 +4,7 @@ title: "Abgeschnittene Commits zurückholen"
 description: "Über Reparaturen nach versehentlich abgeschnittenen Commits (Dangling Commits)"
 category: Git
 tags: [dangling commits, reflog]
+author: bst
 ---
 {% include JB/setup %}
 
