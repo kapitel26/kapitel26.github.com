@@ -4,13 +4,10 @@ title: "Wer hat Angst vor dem Garbage Collector?"
 description: ""
 category: Git
 tags: [git, Garbage Collector]
+author: bst
 ---
 
 {% include JB/setup %}
-
-	
-Wer hat Angst vor dem Garbage Collector?
-----------------------------------------
 
 Git arbeitet mit einem Garbage-Collector, der *nicht mehr benötigte* Objekte 
 abräumt. Einerseits kann man ihn direkt mit `git gc` aufrufen,

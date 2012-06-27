@@ -4,6 +4,7 @@ title: "Unglücke mit <tt>push --force</tt> in Git"
 description: "push --force"
 category: Git
 tags: [force, push, Trouble Shooting]
+author: bst
 ---
 {% include JB/setup %}
 
