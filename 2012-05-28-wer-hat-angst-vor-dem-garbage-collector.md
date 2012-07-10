@@ -24,21 +24,22 @@ Doch dann, fast ganz unten, steht der beruhigende Satz:
 >	git gc tries very hard to be safe about the garbage it collects.
 
 Und es folgt eine detaillierte Auflistung von Dingen, die Git
-nicht löscht. Dazu gehört natürlich alles, was von den aktuellen Branches 
-und Tags referenziert wird. Vor allem gehört aber auch alles (!) dazu, was 
-im Reflog referenziert wird, so dass man Fehler, die man beispielsweise
+nicht löscht. Dazu gehört alles, was von den aktuellen Branches 
+und Tags referenziert wird. Vor allem gehört aber auch alles (!) dazu, 
+was im Reflog referenziert wird.
+Man kann Fehler, die man beispielsweise
 mit `reset`, `amend`, `rebase` oder `branch -d` gemacht hat, mit Hilfe des 
-Reflogs leicht wieder korrigieren kann. `filter-branch` speichert die 
+Reflogs also leicht wieder korrigieren. `filter-branch` speichert die 
 Original-Commits in `refs/original`. Auch diese werden nicht abgeräumt.
 
 Nun stellt sich natürlich die Frage: Was räumt Git denn überhaupt ab? Und wann?
 
-Git wäre nicht Git, wenn das nicht konfigurierbare wäre. Und tatsächlich:
+Git wäre nicht Git, wenn das nicht konfigurierbare wäre.
 Es gibt eine Reihe von Konfigurationsparametern dafür.
 
 	git config gc.pruneexpire 2.weeks.ago              #entspricht default
 
-Selbst wenn Objekte gar nicht mehr referenziert werden, räumt Git sie
+Selbst wenn Objekte nirgends mehr referenziert werden, räumt Git sie
 frühestens nach zwei Wochen ab. Schon mal ganz beruhigend.
 
 	git config gc.reflogexpireunreachable 30.days.ago  #entspricht default

@@ -9,10 +9,10 @@ author: bst
 {% include JB/setup %}
 
 Git gibt dem Entwickler viele Freiheiten. Die Freiheit
-Fehler zu machen, gehört auch dazu.
-Nicht selten habe ich diese Freiheit in Anspruch genommen, 
-z. B. durch ein vermurkstes `git rebase` oder 
-durch [ein voreiliges `git push -f`](/2012/04/28/push-mit-force-in-git).
+Fehler zu machen, gehört dazu.
+Ich nehme sie oft in Anspruch, 
+z. B. mit einem vermurksten `git rebase` oder 
+[einem voreiligen `git push -f`](/2012/04/28/push-mit-force-in-git).
 Was ich an Git liebe, ist das es fast immer Möglichkeiten bietet,
 den Kopf wieder aus der Schlinge zu ziehen.
 
