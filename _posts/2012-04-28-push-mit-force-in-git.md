@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Unglücke mit <tt>push --force</tt> in Git"
+title: "Unglücke mit push --force in Git"
 description: "push --force"
 category: Git
 tags: [force, push, Trouble Shooting]
@@ -9,7 +9,7 @@ author: bst
 {% include JB/setup %}
 
 Nach einem "*Vorfall*" in einem befreundeten Projekt wurde ich gefragt,
-ob wir in unserem Buch denn auch vor "`push` mit `-f`" warnen.
+ob wir in unserem [Buch](/Git-Buch) denn auch vor "`push` mit `-f`" warnen.
 Für einen kurzen Augenblick stieg der Puls:
 Hatten wir das tatsächlich übersehen?
 Ein kurzer Blick ins Inhaltsverzeichnis beruhigte mein Gewissen.
@@ -22,7 +22,7 @@ Nach dem `push --f`: Was genau ist passiert?
 --------------------------------------------
 
 Wie viele andere Befehle auch hat der `push`-Befehl in Git eine Option `-f` 
-bzw. `--force`. Es ist selten  gute Idee, diese zu nutzen. 
+bzw. `--force`. Es ist nur selten eine gute Idee, diese zu nutzen. 
 
  * **Vorher**
    <pre>
@@ -43,8 +43,8 @@ bzw. `--force`. Es ist selten  gute Idee, diese zu nutzen.
    </pre>
 
 Etwas unerfreuliches ist passiert:
-Features, die in den Commits und `F1` und `F2`
-implementiert wurden, sind plötzlich verschwunden.
+Alles, was in den Commits und `F1` und `F2`
+implementiert wurde, ist plötzlich verschwunden.
 Auf Überraschungen dürfen sich jetzt jene Entwickler gefasst machen,
 die diese Features gebaut haben. Mit etwas Pech dürfen sie beim nächsten
 `pull` Commits mergen, die sie schon längst abgeliefert haben.
@@ -57,21 +57,22 @@ obwohl sie von jemand anderem implementiert wurden.
 Trotz allem: *Don't Panic!*
 ---------------------------
 
-Git wird mit Handtuch ausgeliefert. 
+Git wird **mit Handtuch** ausgeliefert. 
 Es ist unwahrscheinlich, dass wirklich etwas verloren gegangen ist.
 Zwar sind einige Commits im Hauptrepository nicht mehr sichtbar,
 wenn man `git log` ausführt, aber
 
  * sie sind sehr wahrscheinlich immer noch im da 
-   und bleiben es auch, mindestens bis Git das nächste 
-   *Garbage Collect* durchführt.
+   und bleiben es erstmal auch. Der Garbage-Collector 
+   gewährt normalerweise eine Frist von mindestens 
+   [zwei Wochen,](/Git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector/) 
+   bevor er abräumt.
    
- * Git ist dezentral. Sehr wahrscheinlich gibt es Kopien der Commits
-   auf den Rechnern der Entwickler, die diese Commits erstellt oder
-   bereits gepulled haben.
+ * Git ist dezentral. Wahrscheinlich haben auch andere Entwickler
+   Kopien der Commits auf ihren Rechnern.
    
  * wenn das Repository
-   [richtig konfiguriert ist](/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten),
+   [richtig konfiguriert ist](/Git/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten/),
    führt Git Buch über alle Änderungen an Branches und Tags (genannt *Reflog*),
    so dass man Verlorenes leicht wieder finden kann.
    
@@ -98,9 +99,9 @@ Commits holen
 -------------
 
 Das Problem ist nur, dass genau dieses Commit `2450384` in meinem lokalen
-Repository vorhanden ist. Mit einem `fetch` (oder `pull`) 
+Repository nicht vorhanden ist. Mit einem `fetch` (oder `pull`) 
 kann ich es nicht holen, weil kein Branch mehr darauf zeigt.
-Deshalb klone ich:
+Deshalb klone ich das ganze Repository:
 
 	$ git clone ich@woauchimmer.de:repo
 	$ cd repo
@@ -137,6 +138,7 @@ kann man auch den vorigen Stand wieder herstellen.
 	$ git push --force origin master
 
 Aber **Achtung!** `--force` hat seine Tücken ;-)
+
 Wenn ein andere Entwickler in der Zwischenzeit Änderungen
 auf diesem Branch hochgeladen haben, dann `goto 1`.
 Man erkennt das, wenn die Push-Meldung zeigt, dass ein

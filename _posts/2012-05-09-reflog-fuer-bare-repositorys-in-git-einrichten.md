@@ -12,16 +12,17 @@ author: bst
 Das *Reflog* ist dein Freund
 ----------------------------
 
-Im Reflog wird jede einzelne Änderung an Branches (und auch ein paar
-anderen Dingen) aufgezeichnet. Was auch immer schiefgegangen ist,
+Im Reflog wird jede einzelne Änderung an Branches aufgezeichnet
+(und auch ein paar weitere Dinge). Was auch immer schiefgegangen ist,
 z. B. ein [unglückliches `push`][/2012/04/28/push-mit-force-in-git]:
-Fast immer lässt es sich mit [Hilfe des Reflogs der vorige Stand wiederherstellen.][/2012/05/08/abgeschnittene-commits-zurueckholen]
+Fast immer lässt es sich mit 
+[Hilfe des Reflogs der vorige Stand wiederherstellen.][/2012/05/08/abgeschnittene-commits-zurueckholen]
 Es ist also gut, ein Reflog zu haben, aber:
 
-Achtung: Bare-Repositorys haben oft kein Reflog!
-------------------------------------------------
+Bare-Repositorys führen oft kein Reflog!
+------------------_---------------------
 
-Für normale Repository mit Workspace ist das Reflog in der Regel
+Für gewöhnliche Repositorys mit Workspace ist das Reflog in der Regel
 aktiv. Für sogenannte *Bare Repositorys*, die zum Austausch zwischen
 Entwicklern genutzt werden, ist Reflog per Default nicht aktiv.
 Am besten schalten Sie es gleich ein:
@@ -41,13 +42,13 @@ Schutz vor Manipulation der Historie
 
 Git ermöglicht es, die Historie zu manipulieren. Vielleicht habe ich mich
 beim Entwickeln verrannt und möchte die letzten beiden Commits verwerfen 
-(`reset --hard head^^`), oder ich möchte die versehentlich hinzugefügte
+(`reset --hard head^^`), oder ich möchte eine versehentlich hinzugefügte
 Datei mit den Klartextpasswörtern wieder loswerden. Kein Problem mit Git.
 Ersteres erledigt ein `reset --hard head^^` erreichen, letzteres
 ermöglicht der `filter-branch`-Befehl.
 
 Manchmal möchte man aber genau das nicht. Manchmal möchte man
-(oder muss man), die "offizielle" Historie aller Änderungen in einem
+(oder muss man) die "offizielle" Historie aller Änderungen in einem
 zentralen Repository dokumentieren. Man kann ein solches Repository 
 durch `denyNonFastForward` schützen. Git akzeptiert neue Commits
 dann nur, wenn sie Nachfahren der vorigen Commits sind. Dann kann nichts

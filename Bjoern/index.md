@@ -12,7 +12,7 @@ author: bst
 ich bin **Bjørn Stachmann**, komme aus Flensburg, und mache
 Software. Angefangen hat das ungefähr so:
 
-	3583 BYTES FREE
+	3584 BYTES FREE
 	READY.
 		
 	10 PRINT "Moin!"
@@ -25,7 +25,7 @@ ein Vorgänger des bekannteren *C64*) und Software mach ich immer noch.
 Mal als Programmierer, mal als Softwarearchitekt, mal als Berater, 
 mal als Trainer und heute als Product Owner für ein Scrum-Team
 der [etracker GmbH](http://www.etracker.de). Vieles hat sich verändert:
-Statt überschauberen 3583 Byte arbeiten wir heute mit Server-Clustern,
+Statt überschauberen 3584 Byte arbeiten wir heute mit Server-Clustern,
 die über Hunderte von Gigabytes an Hauptspeicher verfügen (8 Größenordnungen
 Unterschied!).
 Aus 8 Bits wurden 64, natürlich Multicore.
