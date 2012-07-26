@@ -16,7 +16,7 @@ Das **Sechsundzwanzigste Kapitel** steht also für all die Dinge,
 Wir hoffen, dass für Euch (Ihr anonyme Masse da draußen im Internet), 
 etwas Interessantes dabei ist:
 
-**[René](/René)**  & **[Bjørn](/Bjoern)** 
+**[René](/Rene)**  & **[Bjørn](/Bjoern)** 
 
 Liste aller Beiträge
 --------------------
