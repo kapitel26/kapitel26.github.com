@@ -12,4 +12,7 @@ Verantwortlich für diese Website
 > Erich-Kästner-Weg 1  
 > 22941 Bargteheide  
 
+Per **Email** erreichen sich mich beim Provider `yahoo.de`
+unter dem Benutzernamen `bstachmann`.
+
 {% include JB/setup %}
