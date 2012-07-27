@@ -20,7 +20,7 @@ Fast immer lässt es sich mit
 Es ist also gut, ein Reflog zu haben, aber:
 
 Bare-Repositorys führen oft kein Reflog!
-------------------_---------------------
+----------------------------------------
 
 Für gewöhnliche Repositorys mit Workspace ist das Reflog in der Regel
 aktiv. Für sogenannte *Bare Repositorys*, die zum Austausch zwischen
