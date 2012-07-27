@@ -14,9 +14,9 @@ Das *Reflog* ist dein Freund
 
 Im Reflog wird jede einzelne Änderung an Branches aufgezeichnet
 (und auch ein paar weitere Dinge). Was auch immer schiefgegangen ist,
-z. B. ein [unglückliches `push`][/2012/04/28/push-mit-force-in-git]:
+z. B. ein [unglückliches `push`](../../../../2012/04/28/push-mit-force-in-git):
 Fast immer lässt es sich mit 
-[Hilfe des Reflogs der vorige Stand wiederherstellen.][/2012/05/08/abgeschnittene-commits-zurueckholen]
+[Hilfe des Reflogs der vorige Stand wiederherstellen.](../../../../2012/05/08/abgeschnittene-commits-zurueckholen)
 Es ist also gut, ein Reflog zu haben, aber:
 
 Bare-Repositorys führen oft kein Reflog!

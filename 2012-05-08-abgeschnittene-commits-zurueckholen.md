@@ -12,7 +12,7 @@ Git gibt dem Entwickler viele Freiheiten. Die Freiheit
 Fehler zu machen, gehört dazu.
 Ich nehme sie oft in Anspruch, 
 z. B. mit einem vermurksten `git rebase` oder 
-[einem voreiligen `git push -f`](/2012/04/28/push-mit-force-in-git).
+[einem voreiligen `git push -f`](../../../../2012/04/28/push-mit-force-in-git).
 Was ich an Git liebe, ist das es fast immer Möglichkeiten bietet,
 den Kopf wieder aus der Schlinge zu ziehen.
 
