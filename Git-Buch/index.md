@@ -18,7 +18,7 @@ group: navigation
 		dpunkt.verlag
   </div>
   <div class="span3" align="center">
-  	<a href="http://www.dpunkt.de/buecher/3545.html">
+  	<a href="https://www.etracker.de/ccr?et=zP8a2JahxlSYm82zlOj+EDSTW184jk7ZAlL9xo89yeU=&etcc_cmp=dpunkt+-+Git-Buch&etcc_med=STC_CC_ATTR_VALUE_CAMPAIGN&etcc_grp=Git-buch&etcc_ctv=Buchcover&etcc_url=http%3A%2F%2Fwww.dpunkt.de%2Fbuecher%2F3545.html">
 		  <img src="buch-cover.jpg" alt="Git-Buch Cover"/>
 		</a>
   </div>
