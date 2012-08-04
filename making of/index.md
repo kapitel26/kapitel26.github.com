@@ -7,9 +7,9 @@ author: bst
 ---
 {% include JB/setup %}
 
-Diese Blog ist entstanden, weil wir Lust haben, über Git und 
-andere schön technische Themen in der Informatik zu schreiben. 
-Hätte wir eine Zielgruppenanalyse gemacht 
+Dieser Blog ist entstanden, weil wir Lust hatten, über Git und 
+andere schöne technische Themen in der Informatik zu schreiben. 
+Hätten wir eine Zielgruppenanalyse gemacht 
 (was wir natürlich nicht gemacht haben), wäre vermutlich so etwas
 herausgekommen wie: *Nerds*, *Geeks* und *Hacker*. Diese Zielgruppe
 ist normalerweise nicht in der Lage Inhalte "einfach so" zu konsumieren, 
