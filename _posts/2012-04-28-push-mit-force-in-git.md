@@ -8,6 +8,10 @@ author: bst
 ---
 {% include JB/setup %}
 
+ * [Die Kontrahenden (Teil 0)](/Git/2012/08/07/git-vs-mercurial)
+ * [Branches (Teil 1)](/Git/2012/08/25/git-vs-mercurial-teil-1-branches)
+
+
 Nach einem "*Vorfall*" in einem befreundeten Projekt wurde ich gefragt,
 ob wir in unserem [Buch](/Git-Buch) denn auch vor "`push` mit `-f`" warnen.
 Für einen kurzen Augenblick stieg der Puls:
