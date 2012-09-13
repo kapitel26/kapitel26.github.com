@@ -343,10 +343,10 @@ tl;dr
 
 Ich hab' sie alle beide lieb.
 
-Ich mag das Branching-Modell von Git, weil
-------------------------------------------
+Ich mag das Branching-Modell von Git,
+-------------------------------------
 
-es den "Integreation Manager Workflow" so gut unterstützt.
+weil es den "Integreation Manager Workflow" so gut unterstützt.
 Git (und Github) machen es **leicht** und
 komfortabel **zu Open-Source-Projekten beizutragen**.
 
@@ -360,8 +360,8 @@ Rebasing, Filter-Branch, ...) möchte.
 Das muss man zwar nicht täglich, aber wenn es nötig ist, 
 dann unterstützt einen Git dabei sehr..
 
-Branching im Mercurial mag ich, weil
--------------------------------
+Branching im Mercurial mag ich auch
+-----------------------------------
 
 Am **"Named Branches"** Modell mag ich, dass es so **schön
 einfach** ist. Man kann es in wenigen Minuten erklären, und
