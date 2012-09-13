@@ -9,6 +9,8 @@ author: bst
 ---
 {% include JB/setup %}
 
+{% include git-vs-hg.md %}
+
 Weil es so wichtig fange ich mal mit den Branching-Modellen an.
 Ohne Branches könnte eine dezentrale Versionsverwaltung
 schließlich gar nicht funktionieren. 

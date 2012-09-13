@@ -9,6 +9,8 @@ author: bst
 ---
 {% include JB/setup %}
 
+{% include git-vs-hg.md %}
+
 Jede Epoche stellt die Menschheit vor große Alternativen:
 
  * Paradies: Apfel **essen** oder **nicht essen**?
