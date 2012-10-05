@@ -9,6 +9,7 @@ group: navigation
 Git vs. Mercurial (Serie)
 -------------------------
 
+ * [Kommandozeile (Teil 2)](/Git/2012/09/19/git-vs-mercurial---kommandozeile)
  * [Branches (Teil 1)](/Git/2012/08/25/git-vs-mercurial-teil-1-branches)
  * [Die Kontrahenten (Teil 0)](/Git/2012/08/07/git-vs-mercurial)
 
