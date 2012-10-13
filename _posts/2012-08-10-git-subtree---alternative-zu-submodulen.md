@@ -3,7 +3,7 @@ layout: post
 title: "git-subtree - Eine Alternative zu Submodulen"
 description: "Mit dem subtree-Befehl andere Repositories einbinden"
 category: Git
-tags: []
+tags: [git-subtree]
 author: rp
 # just to fix a highlightin problem]()
 ---

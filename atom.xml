@@ -1,28 +1,27 @@
 ---
 layout: nil
-title : Atom Feed
 ---
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
- 
- <title>{{ site.title }}</title>
- <link href="{{ site.production_url }}/atom.xml" rel="self"/>
- <link href="{{ site.production_url }}"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>{{ site.production_url }}</id>
- <author>
-   <name>{{ site.author.name }}</name>
-   <email>{{ site.author.email }}</email>
- </author>
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>functionn.com</title>
+    <link>http://functionn.github.com/</link>
+    <atom:link href="http://kapitel26.github.com/atom.xml" rel="self" type="application/rss+xml" />
+    <description>stuff from functionn.github.com</description>
+    <language>en-us</language>
+    <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+    <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
 
- {% for post in site.posts %}
- <entry>
-   <title>{{ post.title }}</title>
-   <link href="{{ site.production_url }}{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>{{ site.production_url }}{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
- </entry>
- {% endfor %}
- 
-</feed>
+    {% for post in site.posts %}
+    <item>
+      <title>{{ post.title }}</title>
+      <link>http://functionn.github.com{{ post.url }}</link>
+      <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+      <author>functionn.github@functionn.github.com (Functionn)</author>
+      <guid>http://functionn.github.com{{ post.id }}</guid>
+      <description>{{ post.content | xml_escape }}</description>
+    </item>
+    {% endfor %}
+
+  </channel> 
+</rss>
