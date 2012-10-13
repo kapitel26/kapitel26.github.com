@@ -4,7 +4,7 @@ title: "No-Fast-Forward als Default"
 description: "Fast-Forward deaktivieren"
 category: Git
 author: rp
-tags: [--no-ff,--ff,--ff-only,merge]
+tags: [Git, --no-ff, --ff, --ff-only, merge]
 ---
 {% include JB/setup %}
 
