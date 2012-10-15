@@ -41,7 +41,7 @@ Fast-Forward-Merges trotzdem erzwingen
 --------------------------------------
 Über die Option `--ff-only`kann man normalerweise Erzwingen, dass ein Merge als Fast-Forward-Merge 
 durchgeführt wird. Falls es Änderungen in beiden Branches gibt, wird der Merge scheitern.
-Allerdings ist die Kombination von `merge.ff=false`und `--no-ff`verboten:
+Allerdings ist die Kombination von `merge.ff=false`und `--ff-only`verboten:
 
 	$ git merge --ff-only  f/feature-a
 	fatal: You cannot combine --no-ff with --ff-only.
