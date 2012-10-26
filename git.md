@@ -3,6 +3,7 @@ layout: page
 title : Git
 header : Aktuelles zu Git
 group: navigation
+weight: 4
 ---
 {% include JB/setup %}
 

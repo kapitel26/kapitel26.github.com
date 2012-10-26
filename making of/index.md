@@ -4,6 +4,7 @@ title: "\"making of\""
 description: ""
 group: navigation
 author: bst
+weight: 7
 ---
 {% include JB/setup %}
 

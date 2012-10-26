@@ -3,6 +3,7 @@ layout: page
 title: "Workshops"
 description: ""
 group: navigation
+weight: 5
 ---
 {% include JB/setup %}
 

@@ -38,7 +38,19 @@
 	          <ul class="nav">
 	            {% assign pages_list = site.pages %}
 	            {% assign group = 'navigation' %}
-	            {% include JB/pages_list %}
+		    {% for weight in (1..10) %}
+                      {% for node in pages_list %}
+                        {% if node.title != null and node.weight != null and node.weight == weight  %}
+                          {% if group == null or group == node.group %}
+                          	{% if page.url == node.url %}
+                          	<li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
+                          	{% else %}
+                          	<li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
+                          	{% endif %}
+                          {% endif %}
+                        {% endif %}
+                      {% endfor %}
+		    {% endfor %}
 	            <li><a href="/atom.xml"><img src="/feed-icon.png" alt="RSS Feed"/></a></li>
 	          </ul>
 	        </div>
