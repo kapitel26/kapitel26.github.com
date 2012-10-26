@@ -9,8 +9,7 @@ weight: 5
 
 Der Umstieg auf eine neue Versionsverwaltung sollte ein gut geplanter Schritt sein.
 Es wird oft unterschätzt, von wie vielen Personen diese benutzt wird und das sie das 
-Rückgrad der gesamten Softwareherstellung darstellt.
-
+Rückgrat der gesamten Softwareherstellung darstellt.
 
 Insbesondere der Einstieg in Git wird häufig als mühsam beschrieben.
 Erst sieht noch alles genauso wie in anderen Versionssystemen aus. 
@@ -26,5 +25,6 @@ Wir wollen Sie gerne dabei unterstützen.
 * Ihre bisherige Infrastruktur muss auf Git umgestellt, vorhandene Repositories migriert und die beteiligten Systeme angepasst werden.
 
 Falls Sie Interessa an Unterstützung haben, melden Sie sich unter [git@etosquare.de](mailto:git@etosquare.de).
+Falls Sie Interesse an Unterstützung haben, melden Sie sich unter [git@etosquare.de](mailto:git@etosquare.de).
 
 Öffentliche Trainings finden auch bei der Firma [oose.](http://www.oose.de/training/git-ganz-einfach/) statt.
