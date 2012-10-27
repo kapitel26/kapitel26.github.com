@@ -24,7 +24,6 @@ Wir wollen Sie gerne dabei unterstützen.
 * Ihre Entwickler, Tester, Analysten, etc. müssen mit den Grundbegriffen und Konzepten von Git vertraut gemacht werden.
 * Ihre bisherige Infrastruktur muss auf Git umgestellt, vorhandene Repositories migriert und die beteiligten Systeme angepasst werden.
 
-Falls Sie Interessa an Unterstützung haben, melden Sie sich unter [git@etosquare.de](mailto:git@etosquare.de).
 Falls Sie Interesse an Unterstützung haben, melden Sie sich unter [git@etosquare.de](mailto:git@etosquare.de).
 
 Öffentliche Trainings finden auch bei der Firma [oose.](http://www.oose.de/training/git-ganz-einfach/) statt.
