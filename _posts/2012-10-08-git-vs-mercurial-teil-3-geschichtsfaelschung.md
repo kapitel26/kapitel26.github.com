@@ -82,7 +82,7 @@ Ursprünglich war Mercurial nicht dafür konzipiert, dass Historien verändert w
 
 Die Wunderwaffe von Mercurial ist die MqExtension. Sie ermöglicht es, eine Folge von Commits in eine Queue von Patches umzuwandeln. Mit dieser Queue kann man dann allerlei wundersame Dinge tun. Das ganze ist sehr mächtig, aber schwer zu verstehen und nicht gerade übersichtlich. Ich habe mich jedenfalls nicht so recht damit anfreunden können. 
 
-Bei einigen der Plugins ist es schon eine Weile her (so ca. Mercurial 1.7), dass ich sie zum letzten Mal verwendet habe. Damals waren sie noch nicht ganz gut durchdacht, flexibel und zuverlässig, wie ihre Gegenstücke in Git. In aktuelleren Versionen (>= 2.3) ist mit Sicherheit noch einiges verbessert worden. 
+Bei einigen der Plugins ist es schon eine Weile her (so ca. Mercurial 1.7), dass ich sie zum letzten Mal verwendet habe. Damals waren sie noch nicht ausgereift. Inzwischen sind sie recht brauchbar, wenn auch noch nicht ganz so ausgefeilt wie die entsprechenden Git-Kommandos. 
 
 Ein interessantes Feature bietet Mercurial seit Version 2.1: Phases. Mercurial merkt sich, ob man es schon mit anderen geteilt hat (z. B. durch ein Push). Mercurial schützt Commits, die bereits veröffentlicht wurden, vor versehentlicher Manipulation.
 
@@ -105,6 +105,9 @@ Lokale Änderungen auf Commits, die noch nicht gepushed wurden, stellen natürli
 
 Beispiel: Die Commits `C'` und `D'` wurden durch ein `rebase` neu erstellt. Die Version `D` wurde ausgeliefert und in Produktion genommen.
 
+               1.0
+                |
+                V
     A---B---C---D
          \
           C'---D'
@@ -117,10 +120,25 @@ Sowohl für Git als auch für Mercurial gilt:
  * Der Hash von `D` passt also nur auf genau diesen Softwarestand mit der
    Historie aus `A`, `B` und `C`.
 
+ * Das Tag "1.0" zeigt weiterhin auf das Commit `D` nicht auf `D'`
+
+ * In Mercurial kann man Tags verschieben. In Git ist das schwierig, 
+   aber nicht unmöglich. Deshalb sollte man neben dem Tagnamen immer
+   auch den Commit-Hash ausgelieferter Versionen dokumentieren.
+
+ * Es ist empfehlenswert, im Build-Prozess den Commit-Hash in die
+   ausgelieferten Pakete schreiben zu lassen.
+
  * Solange das Commit `D` nicht aus dem Repository gelöscht wird, bleibt 
    die Historie also nachvollziehbar.
 
+ * Git schützt Commits, die mit einem Tag versehen sind vor dem *Garbage
+   Collector*. In Mercurial verschwinden Commits nur, wenn sie explizit gelöscht werden.
 
+ * Falls man veröffentlichte Geschichte neu schreibt, muss man sich im Team
+   darauf einigen auf dem neuen Strang weiter zu arbeiten (im Beispiel `D'`). Anderenfalls würde es Probleme geben, weil Git/Mercurial versuchen würden, die duplizierten Commits doppelt anzuwenden.
+
+Kurz: Solange man den Commit-Hash einer Version kennt, kann man die Entstehungshistorie nachvollziehen. Manipulationen sind zwar möglich, aber sie erzeugen immer andere Commit-Hashes, so dass die neuen Versionen immer von den alten unterschieden werden können.
 
 Fazit
 -----
