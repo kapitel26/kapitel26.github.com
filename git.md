@@ -27,5 +27,15 @@ Troubleshooting: Falls doch mal was schief geht
 
  * [Verlorene Commits wiederfinden](/Git/2012/05/08/abgeschnittene-commits-zurueckholen)
  * [Push mit Force](/Git/2012/04/28/push-mit-force-in-git)
+
+
+Alle Beiträge (chronologisch)
+-----------------------------
+
+<ul>
+	{% assign pages_list = site.categories["Git"] %}  
+	{% include JB/pages_list %}
+</ul>
+
  
 
