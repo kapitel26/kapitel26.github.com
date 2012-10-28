@@ -17,6 +17,11 @@ Interessantes über Git
  * [Reflog](/Git/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten)
  * [Garbage Collector](/Git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector)
 
+Best Practices
+--------------
+
+ * Klarere Historie durch [No-Fast-Forward als Default](Git/2012/10/12/no-fast-forward-als-default)
+
 Troubleshooting: Falls doch mal was schief geht
 -----------------------------------------------
 
