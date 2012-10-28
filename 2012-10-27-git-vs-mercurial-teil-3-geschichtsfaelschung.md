@@ -2,7 +2,7 @@
 layout: post
 title: "Git vs. Mercurial - Geschichtsfälschung (Teil 3)"
 category: Git
-tags: [Git, Mercurial]
+tags: [Git, Mercurial, Commit-Hash, Rebasing, Staging, Stashing]
 # just to fix a highlightin problem]()
 author: bst
 ---
