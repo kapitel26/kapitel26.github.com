@@ -10,7 +10,9 @@ weight: 4
 Interessantes über Git
 ----------------------
 
- * **Git vs. Mercurial** {% include git-vs-hg.md %}
+ * **Git vs. Mercurial**
+   <br>
+   {% include git-vs-hg-series.md %}
  * [Subtree](Git/2012/08/10/git-subtree---alternative-zu-submodulen)
  * [Reflog](/Git/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten)
  * [Garbage Collector](/Git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector)
