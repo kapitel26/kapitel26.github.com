@@ -1,4 +1,8 @@
 require "fileutils"
+require "io/wait"
+
+require "rubygems"
+require "open4"
 
 class DemoCommandline
 
