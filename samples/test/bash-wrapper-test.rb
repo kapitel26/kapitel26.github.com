@@ -6,9 +6,14 @@ class BashWrapperTest < Test::Unit::TestCase
 		@b = BashWrapper.new
 	end
 
-	def test_some_commands
-		@b.sh "echo dosenwurst"
-		@b.sh "ls asdfklj"
-		@b.sh "echo hanswurst"
+	def test_output
+		out = @b.sh "echo dosenwurst"
+		assert_equal "dosenwurst\n", out
 	end
+
+	def test_exitcode
+		out = @b.sh "echo dosenwurst"
+		assert_equal "dosenwurst\n", out
+	end
+
 end

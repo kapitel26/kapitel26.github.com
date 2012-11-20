@@ -4,19 +4,20 @@ require "io/wait"
 
 class BashWrapper
 
+
 	def initialize
 		@pid, @stdin, @stdout, @stderr = Open4::popen4 "/bin/bash" 
-		@magic = "72dfb552fe434ffe03e15e48ae9a884471f24340\n"
+		@magic = "72dfb552fe434ffe03e15e48ae9a884471f24340"
+		@magicrex = /72dfb552fe434ffe03e15e48ae9a884471f24340 (.*)\n/
 	end
 
 	def sh command
-		puts "> #{command}"
 		@stdin.puts command
-		@stdin.puts "echo \"retcode: $?\""
-		@stdin.puts "echo \"#{@magic}\""
+		@stdin.puts "echo \"#{@magic} $?\""
 		@stdin.flush
-		puts read_stdout_upto_next_magic_line
+		out = read_stdout_upto_next_magic_line
 		puts read_stderr_available
+		out
 	end
 
 	def read_stdout_upto_next_magic_line
@@ -26,9 +27,12 @@ class BashWrapper
 				sleep 0.1
 			end 
 			line = @stdout.readline
-			break if line == @magic
+			break if line =~ @magicrex
 			out << line
 		end
+		exitcode = $1.to_i
+		puts exitcode
+		puts out
 		out
 	end
 
