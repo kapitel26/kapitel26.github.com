@@ -20,6 +20,8 @@ class BashWrapper
 		[out, err, exitcode]
 	end
 
+	private
+
 	def read_stdout_upto_next_magic_line
 		out = ""
 		loop do
