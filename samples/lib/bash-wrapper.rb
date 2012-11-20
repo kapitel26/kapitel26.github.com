@@ -16,7 +16,7 @@ class BashWrapper
 		@stdin.puts "echo \"#{@magic} $?\""
 		@stdin.flush
 		out = read_stdout_upto_next_magic_line
-		puts read_stderr_available
+		# puts read_stderr_available
 		out
 	end
 
@@ -31,8 +31,6 @@ class BashWrapper
 			out << line
 		end
 		exitcode = $1.to_i
-		puts exitcode
-		puts out
 		out
 	end
 

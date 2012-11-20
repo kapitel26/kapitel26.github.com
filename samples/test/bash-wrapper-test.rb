@@ -9,11 +9,8 @@ class BashWrapperTest < Test::Unit::TestCase
 	def test_output
 		out = @b.sh "echo dosenwurst"
 		assert_equal "dosenwurst\n", out
-	end
-
-	def test_exitcode
-		out = @b.sh "echo dosenwurst"
-		assert_equal "dosenwurst\n", out
+		out = @b.sh 'echo -e "zwei\nZeilen"'
+		assert_equal "zwei\nZeilen\n", out
 	end
 
 end
