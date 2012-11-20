@@ -16,8 +16,8 @@ class BashWrapper
 		@stdin.puts "echo \"#{@magic} $?\""
 		@stdin.flush
 		out, exitcode = read_stdout_upto_next_magic_line
-		# puts read_stderr_available
-		[out, exitcode]
+		err = read_stderr_available
+		[out, err, exitcode]
 	end
 
 	def read_stdout_upto_next_magic_line

@@ -7,16 +7,21 @@ class BashWrapperTest < Test::Unit::TestCase
 	end
 
 	def test_output
-		out, exitcode = @b.sh "echo dosenwurst"
+		out, err, exitcode = @b.sh "echo dosenwurst"
 		assert_equal "dosenwurst\n", out
-		out, exitcode = @b.sh 'echo -e "zwei\nZeilen"'
+		out, err, exitcode = @b.sh 'echo -e "zwei\nZeilen"'
 		assert_equal "zwei\nZeilen\n", out
 	end
 
+	def test_err
+		out, err, exitcode = @b.sh "ls asdf"
+		assert_equal "ls: asdf: No such file or directory\n", err
+	end
+
 	def test_exitcode
-		out, exitcode = @b.sh "false"
+		out, err, exitcode = @b.sh "false"
 		assert_equal 1, exitcode
-		out, exitcode = @b.sh "echo wurst"
+		out, err, exitcode = @b.sh "echo wurst"
 		assert_equal 0, exitcode
 	end
 
