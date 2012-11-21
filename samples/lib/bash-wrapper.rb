@@ -4,7 +4,6 @@ require "io/wait"
 
 class BashWrapper
 
-
 	def initialize
 		@pid, @stdin, @stdout, @stderr = Open4::popen4 "/bin/bash" 
 		@magic = "72dfb552fe434ffe03e15e48ae9a884471f24340"
@@ -19,6 +18,7 @@ class BashWrapper
 		err = read_stderr_available
 		[out, err, exitcode]
 	end
+
 
 	private
 
