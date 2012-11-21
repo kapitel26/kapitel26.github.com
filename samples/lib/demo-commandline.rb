@@ -1,8 +1,5 @@
 require "fileutils"
-require "io/wait"
-
-require "rubygems"
-require "open4"
+require "bash-wrapper"
 
 class DemoCommandline
 
@@ -12,10 +9,12 @@ class DemoCommandline
 		@root="sample1"
 		FileUtils::rm_rf @root
 		FileUtils::mkdir @root
+		@ba = BashWrapper.new
 
 		self.instance_eval &block
 
 		$stdout.flush
+
 	end
 
 	def fullpath(ext = nil)
@@ -29,7 +28,7 @@ class DemoCommandline
 	def sh command
 		# puts "> #{command}"
 		# puts
-		out = `cd #{fullpath}; #{command}` 
+		out, err, exitcode = @ba.sh "cd #{fullpath}; #{command}"
 		out.each_line do |line|
 			puts "  #{line}"
 		end

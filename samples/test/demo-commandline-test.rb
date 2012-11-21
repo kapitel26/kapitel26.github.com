@@ -16,4 +16,14 @@ class DemoCommandlineTest < Test::Unit::TestCase
 		assert_equal "", `ls sample1`
 	end
 
+	# def test_edit_files
+	# 	DemoCommandline.new do
+	# 		edit 'kaese/wurst', 
+	# 			:content =>"hallowelt\n",
+	# 			:commit => :false
+
+	# 		assert_equal "hallowelt\n", `cat wurst` 
+	# 	end
+	# end
+
 end
