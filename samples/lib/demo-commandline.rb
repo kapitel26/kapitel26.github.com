@@ -3,10 +3,10 @@ require "bash-wrapper"
 
 class DemoCommandline
 
-	@@edit_nr = 1
 
 	def initialize(&block)
 		@root="sample1"
+		@edit_nr = 1
 		FileUtils::rm_rf @root
 		FileUtils::mkdir @root
 		@ba = BashWrapper.new
@@ -44,13 +44,13 @@ class DemoCommandline
 
 		if File.exists?(fullpath(filepath))
 			lines = File.new(fullpath(filepath)).lines.to_a
-			message = "Created"
+			message = "Edited"
 		else
 			lines = []
-			message = "Edited"
+			message = "Created"
 		end
 
-		message << " file #{filepath}  lines #{opts[:line_numbers].inspect}  (edit nr. #{@@edit_nr})"
+		message << " file #{filepath} lines #{opts[:line_numbers].inspect} (edit nr. #{@edit_nr})"
 
 		if opts[:content].nil?
 			opts[:content] = edit_lines(lines, opts[:line_numbers], message).join() 
@@ -58,7 +58,10 @@ class DemoCommandline
 		
 		open_file(fullpath(filepath), "w") { |f| f << opts[:content] }
 
-		sh "hg commit -A -m \"#{message}\"" if opts[:commit]
+		if opts[:commit]
+			sh "hg commit -A -m \"#{message}\"" 
+		end
+
 	end
 
 	private
@@ -69,8 +72,8 @@ class DemoCommandline
 
 	def edit_lines(lines, line_numbers, message)
 		line_numbers = [lines.size] if line_numbers.empty?
+		@edit_nr += 1
 		line_numbers.each do |nr| 
-			@@edit_nr += 1
 			lines[nr] = "#{nr}: #{message}\n" 
 		end
 		lines.map { |line| line ||= "\n" }
