@@ -45,5 +45,5 @@ class DemoCommandlineTest < Test::Unit::TestCase
 		end
 		assert_equal "a\n1: Edited file kaese lines [1] (edit nr. 1)\n2: Edited file kaese lines [2] (edit nr. 2)\n", `cat sample1/kaese` 
 	end
-	
+
 end

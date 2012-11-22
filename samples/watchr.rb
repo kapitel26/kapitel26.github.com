@@ -1,3 +1,5 @@
+require "rainbow"
+
 last_commit_comment = nil
 commit_nr = 1
 
@@ -7,6 +9,7 @@ watch( '.*\.rb' )  do |md|
 	exitcode = $?.to_i
 	puts "Exited with: #{exitcode}"
 	if exitcode == 0
+		puts "*** GREEN ***".color(:green)
 		commit_comment = IO.read("commit-comment")
 		if last_commit_comment != commit_comment
 			commit_nr = 1
@@ -20,5 +23,7 @@ watch( '.*\.rb' )  do |md|
 		else
 			raise "failed to commit"
 		end
+	else
+		puts "*** RED ***".color(:red)
 	end
 end
