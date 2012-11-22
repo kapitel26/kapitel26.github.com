@@ -3,7 +3,6 @@ require "bash-wrapper"
 
 class DemoCommandline
 
-
 	def initialize(&block)
 		@root="sample1"
 		@edit_nr = 1
@@ -61,7 +60,6 @@ class DemoCommandline
 		if opts[:commit]
 			sh "hg commit -A -m \"#{message}\"" 
 		end
-
 	end
 
 	private
