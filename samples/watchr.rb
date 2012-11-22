@@ -10,6 +10,8 @@ watch( '.*\.rb' )  do |md|
 	puts "Exited with: #{exitcode}"
 	if exitcode == 0
 		puts "*** GREEN ***".color(:green)
+		# TODO check if somethin has changed
+		# TODO check for untracked files
 		commit_comment = IO.read("commit-comment")
 		if last_commit_comment != commit_comment
 			commit_nr = 1

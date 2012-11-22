@@ -13,7 +13,7 @@ class DemoCommandline
 		self.instance_eval &block
 
 		$stdout.flush
-
+		
 	end
 
 	def fullpath(ext = nil)
