@@ -10,6 +10,10 @@ class PlainRenderer
 		@io.puts s
 	end
 
+	def commandline(command)
+		@io.puts "> #{command}"
+	end
+
 	def flush
 		@io.flush
 	end
@@ -33,8 +37,7 @@ class DemoCommandline
 	end
 
 	def sh command
-		# puts "> #{command}"
-		# puts
+		@renderer.commandline command
 		out, err, exitcode = @ba.sh "#{command}"
 		out.each_line do |line|
 			puts "  #{line}"

@@ -3,6 +3,11 @@ require "stringio"
 
 class DemoCommandlineTest < Test::Unit::TestCase
 
+	def setup
+		@result = ""
+		@renderer = PlainRenderer.new(StringIO.new(@result))
+	end
+
 	def test_creates_working_dir
 		`rm -rf sample1`
 		DemoCommandline.new do
@@ -47,13 +52,18 @@ class DemoCommandlineTest < Test::Unit::TestCase
 		assert_equal "a\n1: Edited file kaese lines [1] (edit nr. 1)\n2: Edited file kaese lines [2] (edit nr. 2)\n", `cat sample1/kaese` 
 	end
 
-	def test_output_on_PlainRenderer
-		result = ""
-		DemoCommandline.new(PlainRenderer.new(StringIO.new(result)))  do
+	def test_output_on_PlainRenderer_comment
+		DemoCommandline.new(@renderer)  do
 			comment 'beaufort'
 		end
-		assert_equal "# beaufort\n", result 
+		assert_equal "# beaufort\n", @result 
 	end
 
+	def test_output_on_PlainRenderer_shell_commands
+		DemoCommandline.new(@renderer)  do
+			sh 'echo moin'
+		end
+		assert_equal "> echo moin\n", @result 
+	end
 
 end
