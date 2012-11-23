@@ -1,9 +1,24 @@
 require "fileutils"
 require "bash-wrapper"
 
+class PlainRenderer
+	def initialize(io)
+		@io = io
+	end
+
+	def comment(s)
+		@io.puts s
+	end
+
+	def flush
+		@io.flush
+	end
+end
+
 class DemoCommandline
 
-	def initialize(&block)
+	def initialize(renderer = PlainRenderer.new($stdout), &block)
+		@renderer = renderer
 		@root="sample1"
 		@edit_nr = 1
 		FileUtils::rm_rf @root
@@ -13,6 +28,7 @@ class DemoCommandline
 
 		self.instance_eval &block
 
+		@renderer.flush
 		$stdout.flush
 	end
 
@@ -27,7 +43,7 @@ class DemoCommandline
 	end
 
 	def comment text
-		puts "# #{text}"
+		@renderer.comment "# #{text}"
 	end
 
 	def edit(filepath, options = {})
