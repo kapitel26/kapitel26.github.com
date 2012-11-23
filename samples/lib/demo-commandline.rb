@@ -9,24 +9,17 @@ class DemoCommandline
 		FileUtils::rm_rf @root
 		FileUtils::mkdir @root
 		@ba = BashWrapper.new
+		@ba.sh "cd #{@root}"
 
 		self.instance_eval &block
 
 		$stdout.flush
 	end
 
-	def fullpath(ext = nil)
-		if ext.nil?
-			@root
-		else
-			"#{@root}/#{ext}"
-		end
-	end
-
 	def sh command
 		# puts "> #{command}"
 		# puts
-		out, err, exitcode = @ba.sh "cd #{fullpath}; #{command}"
+		out, err, exitcode = @ba.sh "#{command}"
 		out.each_line do |line|
 			puts "  #{line}"
 		end
@@ -54,7 +47,7 @@ class DemoCommandline
 			opts[:content] = edit_lines(lines, opts[:line_numbers], message).join() 
 		end
 		
-		open_file(fullpath(filepath), "w") { |f| f << opts[:content] }
+		File.open(fullpath(filepath), "w") { |f| f << opts[:content] }
 
 		if opts[:commit]
 			sh "hg commit -A -m \"#{message}\"" 
@@ -62,6 +55,10 @@ class DemoCommandline
 	end
 
 	private
+
+	def fullpath(ext)
+		"#{@root}/#{ext}"
+	end
 
 	def open_file(filepath, mode = "r", &block)
 		File.open(filepath, mode, &block)
