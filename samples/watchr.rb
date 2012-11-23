@@ -12,7 +12,7 @@ def commit_it
 	end
 	@@last_commit_comment = commit_comment
 	message = commit_comment
-	message << " #{@@commit_nr}" if @@commit_nr > 1
+	message += " #{@@commit_nr}" if @@commit_nr > 1
 	system "git commit -am \"#{message}\""
 	raise "failed to commit" unless $?.to_i == 0
 	puts "Committed to Git: #{message}".color(:blue)
