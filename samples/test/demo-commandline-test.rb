@@ -61,9 +61,9 @@ class DemoCommandlineTest < Test::Unit::TestCase
 
 	def test_output_on_PlainRenderer_shell_commands
 		DemoCommandline.new(@renderer)  do
-			sh 'echo moin'
+			sh 'echo moin; echo error >&2'
 		end
-		assert_equal "> echo moin\n", @result 
+		assert_equal "> echo moin; echo error >&2\nmoin\nerror\n", @result 
 	end
 
 end
