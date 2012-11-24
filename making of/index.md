@@ -4,6 +4,7 @@ title: "\"making of\""
 description: ""
 group: navigation
 author: bst
+weight: 7
 ---
 {% include JB/setup %}
 
@@ -47,7 +48,7 @@ Hinweise dazu.
    funktioniert. Sieht aber ganz gut aus.
  
  * [**Jekyll Bootstrap**](http://jekyllbootstrap.com) 
-   ist eine Template zum Bloggen. Enthält die oben genannten Tools.
+   ist ein Template zum Bloggen. Enthält die oben genannten Tools.
   
  * [**Aptana Studio**](http://aptana.com/)
    ist eine Eclipse-basierte Open-Source IDE für so Webzeug. Kann man

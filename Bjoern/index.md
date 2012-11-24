@@ -4,6 +4,7 @@ title: "Bjørn"
 description: "Über Bjørn Stachmann"
 group: navigation
 author: bst
+weight: 8
 ---
 {% include JB/setup %}
 

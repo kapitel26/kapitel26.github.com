@@ -3,6 +3,7 @@ layout: page
 title: "Git-Buch"
 description: ""
 group: navigation
+weight: 6
 ---
 {% include JB/setup %}
 

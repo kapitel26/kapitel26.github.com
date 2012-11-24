@@ -1,0 +1,7 @@
+require "bash-wrapper"
+
+bw = BashWrapper.new
+
+bw.sh "echo dosenwurst"
+bw.sh "ls asdfklj"
+bw.sh "echo hanswurst"
