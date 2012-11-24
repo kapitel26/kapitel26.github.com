@@ -15,6 +15,18 @@ class AbstractRenderer
 	end
 end
 
+class NoRenderer < AbstractRenderer
+	def comment(s)
+	end
+
+	def commandline(command, out, err)
+	end
+
+	def direct text
+	end
+end
+
+
 class MarkdownRenderer < AbstractRenderer
 	def comment(s)
 		@io.puts "    # #{s}"
