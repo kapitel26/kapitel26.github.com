@@ -10,9 +10,6 @@ class AbstractRenderer
 		@io.flush
 	end
 
-	def direct text
-		@io.puts text
-	end
 end
 
 class NoRenderer < AbstractRenderer
@@ -43,6 +40,11 @@ class MarkdownRenderer < AbstractRenderer
 		@io.puts "    "
 	end
 
+	def direct text
+		@io.puts text
+		@io.puts
+	end
+
 	private
 
 	def indent(text)
@@ -59,6 +61,10 @@ class PlainRenderer < AbstractRenderer
 		@io.puts "> #{command}"
 		@io.puts out unless out.empty?
 		@io.puts err unless err.empty?
+	end
+
+	def direct text
+		@io.puts text
 	end
 end
 

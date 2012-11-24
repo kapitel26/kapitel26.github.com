@@ -133,6 +133,7 @@ class MarkdownRendererTest < Test::Unit::TestCase
     
 hallo
 welt
+
 	eos
   end
 
@@ -146,10 +147,12 @@ welt
 		show
 		direct 'there_again'
 	end
-	
+
 	assert_equal <<-eos, @result
 moin
+
 there_again
+
 	eos
   end
 end
