@@ -47,7 +47,7 @@ Moin!
   def test_edit_new_file_with_default_content
 	@commandline.edit 'kaese', :commit => false
 	assert_equal \
-		"0: Created in kaese /1\n", 
+		"0: Create file \"kaese\" /1\n", 
 		IO.read("sample1/kaese")
   end
 
@@ -55,9 +55,9 @@ Moin!
 	@commandline.edit 'kaese', :line_numbers => [1,3], :commit => false
 	assert_equal <<-eos,
 
-1: Created line 1,3 in kaese /1
+1: Create line 1,3 in file "kaese" /1
 
-3: Created line 1,3 in kaese /1
+3: Create line 1,3 in file "kaese" /1
 	eos
 	IO.read("sample1/kaese")
   end
@@ -68,8 +68,8 @@ Moin!
 	@commandline.edit 'kaese', :line_numbers => [2], :commit => false
 	assert_equal <<-eos,
 a
-1: Edited line 1 in kaese /1
-2: Edited line 2 in kaese /2
+1: Edit line 1 in file "kaese" /1
+2: Edit line 2 in file "kaese" /2
 	eos
 	IO.read("sample1/kaese")
   end
@@ -123,11 +123,11 @@ class MarkdownRendererTest < Test::Unit::TestCase
     > echo moin
     moin
     
-    # Created line 1,3 in kaese
+    # Create line 1,3 in file "kaese"
     
-    # Edited in kaese
+    # Edit file "kaese"
     
-    # Edited line 3 in kaese
+    # Edit line 3 in file "kaese"
     
 	eos
   end

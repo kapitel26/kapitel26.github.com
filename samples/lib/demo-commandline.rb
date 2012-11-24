@@ -92,9 +92,9 @@ class DemoCommandline
 
 		lines = exists?(filepath) ? File.new(fullpath(filepath)).lines.to_a : []
 	
-		prefix = exists?(filepath) ? "Edited" : "Created"
-		line_nr_string = opts[:line_numbers].empty? ? "" : "line #{opts[:line_numbers].join ','} "
-		comment = "#{prefix} #{line_nr_string}in #{filepath}"
+		prefix = exists?(filepath) ? "Edit" : "Create"
+		line_nr_string = opts[:line_numbers].empty? ? "" : "line #{opts[:line_numbers].join ','} in "
+		comment = "#{prefix} #{line_nr_string}file \"#{filepath}\""
 		message = "#{comment} /#{@edit_nr}"
 
 		if opts[:content].nil?
