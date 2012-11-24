@@ -46,16 +46,18 @@ Moin!
 
   def test_edit_new_file_with_default_content
 	@commandline.edit 'kaese', :commit => false
-	assert_equal "0: Created file kaese lines [] (edit nr. 1)\n", `cat sample1/kaese` 
+	assert_equal \
+		"0: Created in kaese /1\n", 
+		IO.read("sample1/kaese")
   end
 
   def test_edit_new_file_at_specified_lines
 	@commandline.edit 'kaese', :line_numbers => [1,3], :commit => false
 	assert_equal <<-eos,
 
-1: Created file kaese lines [1, 3] (edit nr. 1)
+1: Created line 1,3 in kaese /1
 
-3: Created file kaese lines [1, 3] (edit nr. 1)
+3: Created line 1,3 in kaese /1
 	eos
 	IO.read("sample1/kaese")
   end
@@ -66,8 +68,8 @@ Moin!
 	@commandline.edit 'kaese', :line_numbers => [2], :commit => false
 	assert_equal <<-eos,
 a
-1: Edited file kaese lines [1] (edit nr. 1)
-2: Edited file kaese lines [2] (edit nr. 2)
+1: Edited line 1 in kaese /1
+2: Edited line 2 in kaese /2
 	eos
 	IO.read("sample1/kaese")
   end

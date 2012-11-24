@@ -9,7 +9,7 @@ DemoCommandline.new do
 
 	sh 'hg branch releases'
 	edit '.hg/hgrc', 
-		:content =>"[ui]\nlogtemplate=\"{rev} on {branches}: {desc|firstline}\\n\"\n",
+		:content =>"[ui]\nlogtemplate=\"{branches}: {desc|firstline}\\n\"\n",
 		:commit => :false
 	edit 'user-roles.xml', :line_numbers => [0,1,2]
 	edit 'file2'
