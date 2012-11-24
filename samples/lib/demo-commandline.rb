@@ -9,7 +9,7 @@ class AbstractRenderer
 	def flush
 		@io.flush
 	end
-	
+
 	def direct text
 		@io.puts text
 	end
@@ -89,6 +89,10 @@ class DemoCommandline
 
 	def comment text
 		@renderer.comment "# #{text}"
+	end
+
+	def direct text
+		@renderer.direct text
 	end
 
 	def edit(filepath, options = {})

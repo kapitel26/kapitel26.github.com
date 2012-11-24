@@ -118,6 +118,7 @@ class MarkdownRendererTest < Test::Unit::TestCase
 	@commandline.edit 'kaese', :line_numbers => [1,3], :commit => false
 	@commandline.edit 'kaese', :commit => false
 	@commandline.edit 'kaese', :line_numbers => [3], :commit => false
+	@commandline.direct "hallo\nwelt"
 
 	assert_equal <<-eos, @result
     > echo moin
@@ -129,6 +130,8 @@ class MarkdownRendererTest < Test::Unit::TestCase
     
     # Edit line 3 in file "kaese"
     
+hallo
+welt
 	eos
   end
 end
