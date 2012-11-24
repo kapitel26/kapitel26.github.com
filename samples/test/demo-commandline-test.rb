@@ -110,15 +110,16 @@ class MarkdownRendererTest < Test::Unit::TestCase
 	@result = ""
 	@renderer = MarkdownRenderer.new(StringIO.new(@result))
 	FileUtils::rm_rf "sample1"
-	@commandline = DemoCommandline.new(@renderer)
   end
 
   def test_output
-	@commandline.sh 'echo moin'
-	@commandline.edit 'kaese', :line_numbers => [1,3], :commit => false
-	@commandline.edit 'kaese', :commit => false
-	@commandline.edit 'kaese', :line_numbers => [3], :commit => false
-	@commandline.direct "hallo\nwelt"
+	@commandline = DemoCommandline.new(@renderer) do
+		sh 'echo moin'
+		edit 'kaese', :line_numbers => [1,3], :commit => false
+		edit 'kaese', :commit => false
+		edit 'kaese', :line_numbers => [3], :commit => false
+		direct "hallo\nwelt"
+	end
 
 	assert_equal <<-eos, @result
     > echo moin
@@ -136,14 +137,16 @@ welt
   end
 
   def test_hide_and_show
-	@commandline.direct 'moin'
-	@commandline.hide
-	@commandline.sh 'echo hidden'
-	@commandline.edit 'hidden', :commit => false
-	@commandline.direct "hidden"
-	@commandline.show
-	@commandline.direct 'there_again'
-
+	@commandline = DemoCommandline.new(@renderer) do
+		direct 'moin'
+		hide
+		sh 'echo hidden'
+		edit 'hidden', :commit => false
+		direct "hidden"
+		show
+		direct 'there_again'
+	end
+	
 	assert_equal <<-eos, @result
 moin
 there_again
