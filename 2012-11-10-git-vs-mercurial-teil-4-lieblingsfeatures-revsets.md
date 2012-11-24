@@ -20,39 +20,9 @@ Wenn viele Entwickler an einer Software arbeiten,
 kann die Commit-Historie ganz schön unübersichtlich werden. 
 Sowohl Git als auch Mercurial bieten zahlreiche Kommandos,
 um die Historie zu analysieren. Aber nur Mercurial eine 
-eigene *Query Language dafür*:
+eigene *Query Language* dafür:
 
-Ein Beispiel: Die aktuelle Software hat die Version `1_1_3`. 
-Ein neues Feature soll ausgeliefert werden. 
-Die QA entdeckt einen Fehler, den es in `1_1_3` noch nicht
-gegeben hat.
-
-	> hg log -r "branch(myfeature)"
-
-Zeigt alle Änderungen auf `myfeature`. 
-Oha, ganz schön viele! Aber halt: Teile von `myfeature`
-wurden schon in `1_1_3` ausgeliefert. Die können wir
-aussortieren.
-
-	> hg log -r "branch(myfeature) 
-	             and not ancestors(release_1_1_3)"
-
-QA sagt, der Fehler könnte was mit Berechtigungen zu tun haben.
-Wir untersuchen, ob auf dem Branch seit `release_1_1_3` die Datei
-`user-roles.xml` verändert wurde.
-
-    > hg log -r "branch(myfeature) 
-                 and not ancestors(release_1_1_3) 
-                 and file('user-roles.xml')"
-
-Falls wir jetzt ein Commit gefunden haben, lohnt es sich vielleicht
-noch zu prüfen, ob die Änderung original auf `myfeature` stattgefunden hat, oder ob sie von einem anderen Branch 
-"hereingemerged" wurde.
-
-	> hg log -r "branch(myfeature) 
-	             and not ancestors(release_1_1_3)
-	             and modifies('user-roles.xml') 
-	             and not merge()"
+{% include samples/hg-revsets-sample-1.rb.md %}
 
 Großartiges Feature!
 
