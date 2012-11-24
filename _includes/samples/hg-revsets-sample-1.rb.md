@@ -12,7 +12,7 @@ Das Beispiel zeigt die Branches `releases` und `myfeature`:
     |\
     | o  myfeature: Edit file user-roles.xml
     | |
-    o |  releases: Added tag release_1_1_3 for changeset e2e06b4467d4
+    o |  releases: Added tag release_1_1_3 for changeset 08210f70520a
     | |
     o |  releases: Edit line 0 in file user-roles.xml
     | |
@@ -51,7 +51,8 @@ Wir untersuchen, ob auf dem Branch seit `release_1_1_3` die Datei
 `user-roles.xml` verändert wurde.
 
 
-    > hg log -r "branch(myfeature) and not ancestors(release_1_1_3) and file('user-roles.xml')"
+    > hg log -r "branch(myfeature) and not ancestors(release_1_1_3)
+           and file('user-roles.xml')"
     myfeature: Edit file user-roles.xml
     myfeature: merge releases into feature
     

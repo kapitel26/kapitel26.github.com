@@ -68,8 +68,10 @@ Wir untersuchen, ob auf dem Branch seit `release_1_1_3` die Datei
 
 		eos
 
-	    sh 'hg log -r "branch(myfeature) and not ancestors(release_1_1_3)' +
-	       ' and file(\'user-roles.xml\')"'
+	    sh <<-eos
+hg log -r "branch(myfeature) and not ancestors(release_1_1_3)
+           and file(\'user-roles.xml\')"
+        eos
 
 		direct <<-eos
 Falls wir jetzt ein Commit gefunden haben, lohnt es sich vielleicht
