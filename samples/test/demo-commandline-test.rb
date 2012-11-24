@@ -122,9 +122,9 @@ class MarkdownRendererTest < Test::Unit::TestCase
     > echo moin
     moin
     
-    # Created line 1,3 in kaese /1
+    # Created line 1,3 in kaese
     
-    # Edited in kaese /2
+    # Edited in kaese
     
 	eos
   end

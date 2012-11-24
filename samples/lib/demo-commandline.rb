@@ -94,7 +94,8 @@ class DemoCommandline
 	
 		prefix = exists?(filepath) ? "Edited" : "Created"
 		line_nr_string = opts[:line_numbers].empty? ? "" : "line #{opts[:line_numbers].join ','} "
-		message = "#{prefix} #{line_nr_string}in #{filepath} /#{@edit_nr}"
+		comment = "#{prefix} #{line_nr_string}in #{filepath}"
+		message = "#{comment} /#{@edit_nr}"
 
 		if opts[:content].nil?
 			opts[:content] = edit_lines(lines, opts[:line_numbers], message).join() 
@@ -102,7 +103,7 @@ class DemoCommandline
 		
 		File.open(fullpath(filepath), "w") { |f| f << opts[:content] }
 
-		@renderer.comment message
+		@renderer.comment comment
 
 		if opts[:commit]
 			silent_sh "hg commit -A -m \"#{message}\"" 
