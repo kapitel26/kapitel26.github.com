@@ -117,6 +117,7 @@ class MarkdownRendererTest < Test::Unit::TestCase
 	@commandline.sh 'echo moin'
 	@commandline.edit 'kaese', :line_numbers => [1,3], :commit => false
 	@commandline.edit 'kaese', :commit => false
+	@commandline.edit 'kaese', :line_numbers => [3], :commit => false
 
 	assert_equal <<-eos, @result
     > echo moin
@@ -125,6 +126,8 @@ class MarkdownRendererTest < Test::Unit::TestCase
     # Created line 1,3 in kaese
     
     # Edited in kaese
+    
+    # Edited line 3 in kaese
     
 	eos
   end
