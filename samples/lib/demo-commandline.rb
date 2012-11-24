@@ -24,6 +24,7 @@ end
 class DemoCommandline
 
 	def initialize(renderer = PlainRenderer.new($stdout), &block)
+		block ||= lambda {}
 		@renderer = renderer
 		@root="sample1"
 		@edit_nr = 1
@@ -34,8 +35,11 @@ class DemoCommandline
 
 		self.instance_eval &block
 
+		flush
+	end
+
+	def flush
 		@renderer.flush
-		$stdout.flush
 	end
 
 	def sh command, options = {}
@@ -44,6 +48,8 @@ class DemoCommandline
 		if options[:valid_exits].include? exitcode
 			@renderer.commandline command, out, err
 		else
+			$stdout.puts out unless out.empty?
+			$stderr.puts err unless err.empty?
 			raise "command exited with #{exitcode} #{command}"
 		end
 	end
