@@ -16,6 +16,10 @@ class AbstractRenderer
 end
 
 class NoRenderer < AbstractRenderer
+	def initialize
+		super(nil)
+	end
+
 	def comment(s)
 	end
 
@@ -128,6 +132,14 @@ class DemoCommandline
 		if opts[:commit]
 			silent_sh "hg commit -A -m \"#{comment}\"" 
 		end
+	end
+
+	def hide
+		@renderer = NoRenderer.new
+	end
+
+	def show
+		@renderer = @main_renderer
 	end
 
 	private

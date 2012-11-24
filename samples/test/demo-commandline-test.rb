@@ -135,25 +135,18 @@ welt
 	eos
   end
 
-  def test_output
-	@commandline.sh 'echo moin'
-	@commandline.edit 'kaese', :line_numbers => [1,3], :commit => false
-	@commandline.edit 'kaese', :commit => false
-	@commandline.edit 'kaese', :line_numbers => [3], :commit => false
-	@commandline.direct "hallo\nwelt"
+  def test_hide_and_show
+	@commandline.direct 'moin'
+	@commandline.hide
+	@commandline.sh 'echo hidden'
+	@commandline.edit 'hidden', :commit => false
+	@commandline.direct "hidden"
+	@commandline.show
+	@commandline.direct 'there_again'
 
 	assert_equal <<-eos, @result
-    > echo moin
-    moin
-    
-    # Create line 1,3 in file "kaese"
-    
-    # Edit file "kaese"
-    
-    # Edit line 3 in file "kaese"
-    
-hallo
-welt
+moin
+there_again
 	eos
   end
 end
