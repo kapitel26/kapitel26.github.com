@@ -24,10 +24,8 @@ class DemoCommandlineTest < Test::Unit::TestCase
 	assert_equal <<-eos, 
 > echo Moin
 Moin
-
 > echo Moin!
 Moin!
-
 	eos
 	@result
   end

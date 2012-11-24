@@ -12,8 +12,8 @@ class PlainRenderer
 
 	def commandline(command, out, err)
 		@io.puts "> #{command}"
-		@io.puts out
-		@io.puts err
+		@io.puts out unless out.empty?
+		@io.puts err unless err.empty?
 	end
 
 	def flush
