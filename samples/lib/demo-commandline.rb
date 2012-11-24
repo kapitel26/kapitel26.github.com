@@ -106,7 +106,7 @@ class DemoCommandline
 		@renderer.comment comment
 
 		if opts[:commit]
-			silent_sh "hg commit -A -m \"#{message}\"" 
+			silent_sh "hg commit -A -m \"#{comment}\"" 
 		end
 	end
 
