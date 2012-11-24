@@ -63,6 +63,7 @@ class DemoCommandline
 	def initialize(renderer = PlainRenderer.new($stdout), &block)
 		block ||= lambda {}
 		@renderer = renderer
+		@main_renderer = renderer
 		@root="sample1"
 		@edit_nr = 1
 		FileUtils::rm_rf @root
