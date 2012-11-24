@@ -134,4 +134,26 @@ hallo
 welt
 	eos
   end
+
+  def test_output
+	@commandline.sh 'echo moin'
+	@commandline.edit 'kaese', :line_numbers => [1,3], :commit => false
+	@commandline.edit 'kaese', :commit => false
+	@commandline.edit 'kaese', :line_numbers => [3], :commit => false
+	@commandline.direct "hallo\nwelt"
+
+	assert_equal <<-eos, @result
+    > echo moin
+    moin
+    
+    # Create line 1,3 in file "kaese"
+    
+    # Edit file "kaese"
+    
+    # Edit line 3 in file "kaese"
+    
+hallo
+welt
+	eos
+  end
 end
