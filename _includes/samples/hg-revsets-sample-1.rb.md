@@ -12,7 +12,7 @@ Das Beispiel zeigt die Branches `releases` und `myfeature`:
     |\
     | o  myfeature: Edit file user-roles.xml
     | |
-    o |  releases: Added tag release_1_1_3 for changeset 08210f70520a
+    o |  releases: Added tag release_1_1_3 for changeset 957b172f350d
     | |
     o |  releases: Edit line 0 in file user-roles.xml
     | |
@@ -41,7 +41,8 @@ wurden schon in `1_1_3` ausgeliefert. Die können wir
 aussortieren.
 
 
-    > hg log -r "branch(myfeature) and not ancestors(release_1_1_3)"
+    > hg log -r "branch(myfeature) 
+                 and not ancestors(release_1_1_3)"
     myfeature: Edit file user-roles.xml
     myfeature: merge releases into feature
     myfeature: Create file file4
@@ -51,8 +52,9 @@ Wir untersuchen, ob auf dem Branch seit `release_1_1_3` die Datei
 `user-roles.xml` verändert wurde.
 
 
-    > hg log -r "branch(myfeature) and not ancestors(release_1_1_3)
-           and file('user-roles.xml')"
+    > hg log -r "branch(myfeature) 
+                 and not ancestors(release_1_1_3)
+                 and file('user-roles.xml')"
     myfeature: Edit file user-roles.xml
     myfeature: merge releases into feature
     
@@ -61,6 +63,9 @@ noch zu prüfen, ob die Änderung original auf `myfeature` stattgefunden hat, od
 "hereingemerged" wurde.
 
 
-    > hg log -r "branch(myfeature) and not ancestors(release_1_1_3) and modifies('user-roles.xml') and not merge()"
+    > hg log -r "branch(myfeature)
+                 and not ancestors(release_1_1_3)
+                 and modifies('user-roles.xml')
+                 and not merge()"
     myfeature: Edit file user-roles.xml
     

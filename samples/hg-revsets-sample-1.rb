@@ -59,7 +59,10 @@ aussortieren.
 
 		eos
 
-	    sh 'hg log -r "branch(myfeature) and not ancestors(release_1_1_3)"'
+	    sh <<-eos
+hg log -r "branch(myfeature) 
+           and not ancestors(release_1_1_3)"
+        eos
 
 		direct <<-eos
 QA sagt, der Fehler könnte was mit Berechtigungen zu tun haben.
@@ -69,7 +72,8 @@ Wir untersuchen, ob auf dem Branch seit `release_1_1_3` die Datei
 		eos
 
 	    sh <<-eos
-hg log -r "branch(myfeature) and not ancestors(release_1_1_3)
+hg log -r "branch(myfeature) 
+           and not ancestors(release_1_1_3)
            and file(\'user-roles.xml\')"
         eos
 
@@ -80,8 +84,11 @@ noch zu prüfen, ob die Änderung original auf `myfeature` stattgefunden hat, od
 
 		eos
 
-	    sh 'hg log -r "branch(myfeature) and not ancestors(release_1_1_3) ' +
-	       'and modifies(\'user-roles.xml\') and not merge()"'
-
+	    sh <<-eos
+hg log -r "branch(myfeature)
+           and not ancestors(release_1_1_3)
+           and modifies(\'user-roles.xml\')
+           and not merge()"
+        eos
 	end
 end
