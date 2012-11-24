@@ -34,7 +34,11 @@ class MarkdownRenderer < AbstractRenderer
 	end
 
 	def commandline(command, out, err)
-		@io.puts "    > #{command}"
+		prompt = "> "
+		command.split("\n").each do |line|
+			@io.write "    #{prompt}#{line}\n"
+			prompt = "  "
+		end
 		@io.puts indent(out) unless out.empty?
 		@io.puts indent(err) unless err.empty?
 		@io.puts "    "
