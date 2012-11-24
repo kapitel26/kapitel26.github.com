@@ -9,4 +9,10 @@ Thumbs.db
 .rbenv-version
 .rvmrc
 
+samples/sample1
+
 *.swp
+
+kapitel26.sublime-workspace
+
+commit-comment
