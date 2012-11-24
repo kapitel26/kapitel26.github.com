@@ -9,6 +9,10 @@ class AbstractRenderer
 	def flush
 		@io.flush
 	end
+
+	def direct text
+		@io.puts text
+	end
 end
 
 class MarkdownRenderer < AbstractRenderer
