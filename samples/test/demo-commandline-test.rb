@@ -103,3 +103,22 @@ a
   end
 
 end
+
+class MarkdownRendererTest < Test::Unit::TestCase
+
+  def setup
+	@result = ""
+	@renderer = MarkdownRenderer.new(StringIO.new(@result))
+	FileUtils::rm_rf "sample1"
+	@commandline = DemoCommandline.new(@renderer)
+  end
+
+  def test_output
+	@commandline.sh 'echo moin'
+	assert_equal <<-eos, @result
+    > echo moin
+    moin
+    
+	eos
+  end
+end

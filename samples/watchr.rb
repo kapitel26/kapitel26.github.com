@@ -19,6 +19,7 @@ def commit_it
 	system "git commit -am \"#{message}\""
 	raise "failed to commit" unless $?.to_i == 0
 	puts "Committed to Git:\n#{message}".color(:blue)
+	puts "Sequence with #{@@commit_nr} commits\n".color(:blue)
 	@@commit_nr += 1
 end
 
