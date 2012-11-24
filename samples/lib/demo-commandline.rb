@@ -13,7 +13,7 @@ end
 
 class MarkdownRenderer < AbstractRenderer
 	def comment(s)
-		@io.puts "    # {s}"
+		@io.puts "    # #{s}"
 	end
 
 	def commandline(command, out, err)
@@ -100,6 +100,8 @@ class DemoCommandline
 		end
 		
 		File.open(fullpath(filepath), "w") { |f| f << opts[:content] }
+
+		@renderer.comment message
 
 		if opts[:commit]
 			silent_sh "hg commit -A -m \"#{message}\"" 
