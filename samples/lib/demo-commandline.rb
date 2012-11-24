@@ -26,7 +26,6 @@ class NoRenderer < AbstractRenderer
 	end
 end
 
-
 class MarkdownRenderer < AbstractRenderer
 	def comment(s)
 		@io.puts "    # #{s}"
