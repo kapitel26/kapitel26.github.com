@@ -4,7 +4,7 @@ $LOAD_PATH << File.expand_path(File.dirname(__FILE__)+"/lib")
 
 require "commandline-sample-maker"
 
-DemoCommandline.new do
+DemoCommandline.new(MarkdownRenderer.new($stdout)) do
 	sh 'hg init'
 
 	sh 'hg branch releases'
@@ -37,10 +37,5 @@ DemoCommandline.new do
        ' and file(\'user-roles.xml\')"'
     sh 'hg log -r "branch(myfeature) and not ancestors(release_1_1_3) ' +
        'and modifies(\'user-roles.xml\') and not merge()"'
-
-    sh 'cat file2'
-    sh 'cat file3'
-    sh 'cat file4'
-    sh 'cat user-roles.xml'
 
 end

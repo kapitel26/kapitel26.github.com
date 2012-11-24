@@ -1,11 +1,36 @@
 require "fileutils"
 require "bash-wrapper"
 
-class PlainRenderer
+class AbstractRenderer
 	def initialize(io)
 		@io = io
 	end
 
+	def flush
+		@io.flush
+	end
+end
+
+class MarkdownRenderer < AbstractRenderer
+	def comment(s)
+		@io.puts "    # {s}"
+	end
+
+	def commandline(command, out, err)
+		@io.puts "    > #{command}"
+		@io.puts indent(out) unless out.empty?
+		@io.puts indent(err) unless err.empty?
+		@io.puts "    "
+	end
+
+	private
+
+	def indent(text)
+		text.lines.map { |l| "    #{l}" }.join
+	end
+end
+
+class PlainRenderer < AbstractRenderer
 	def comment(s)
 		@io.puts s
 	end
@@ -14,10 +39,6 @@ class PlainRenderer
 		@io.puts "> #{command}"
 		@io.puts out unless out.empty?
 		@io.puts err unless err.empty?
-	end
-
-	def flush
-		@io.flush
 	end
 end
 
