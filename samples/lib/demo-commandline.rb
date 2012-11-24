@@ -38,9 +38,14 @@ class DemoCommandline
 		$stdout.flush
 	end
 
-	def sh command
+	def sh command, options = {}
+		options = {:valid_exits => [0]}.merge options
 		out, err, exitcode = @ba.sh "#{command}"
-		@renderer.commandline command, out, err
+		if options[:valid_exits].include? exitcode
+			@renderer.commandline command, out, err
+		else
+			raise "command exited with #{exitcode} #{command}"
+		end
 	end
 
 	def comment text

@@ -66,4 +66,26 @@ class DemoCommandlineTest < Test::Unit::TestCase
 		assert_equal "> echo moin; echo error >&2\nmoin\nerror\n", @result 
 	end
 
+	def test_raises_on_nonzero_exitcode_by_default
+		assert_raises(RuntimeError) {
+			DemoCommandline.new(@renderer)  do
+				sh 'false'
+			end			
+		}
+	end
+
+	def test_declare_valid_exit_codes
+		DemoCommandline.new(@renderer)  do
+			sh 'false', :valid_exits => [1]
+		end			
+	end
+
+	def test_declare_valid_exit_codes_will_raise_on_invalid_exits
+		assert_raises(RuntimeError) {
+			DemoCommandline.new(@renderer)  do
+				sh 'false', :valid_exits => [7,3]
+			end			
+		}
+	end
+
 end
