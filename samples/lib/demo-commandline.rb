@@ -61,15 +61,10 @@ class DemoCommandline
 	def edit(filepath, options = {})
 		opts = {:line_numbers => [], :commit => true}.merge(options)
 
-		if File.exists?(fullpath(filepath))
-			lines = File.new(fullpath(filepath)).lines.to_a
-			message = "Edited"
-		else
-			lines = []
-			message = "Created"
-		end
-
-		message << " file #{filepath} lines #{opts[:line_numbers].inspect} (edit nr. #{@edit_nr})"
+		lines = exists?(filepath) ? File.new(fullpath(filepath)).lines.to_a : []
+	
+		prefix = exists?(filepath) ? "Edited" : "Created"
+		message = "#{prefix} file #{filepath} lines #{opts[:line_numbers].inspect} (edit nr. #{@edit_nr})"
 
 		if opts[:content].nil?
 			opts[:content] = edit_lines(lines, opts[:line_numbers], message).join() 
@@ -83,6 +78,10 @@ class DemoCommandline
 	end
 
 	private
+
+	def exists? filepath
+		File.exists?(fullpath(filepath))
+	end
 
 	def fullpath(ext)
 		"#{@root}/#{ext}"
