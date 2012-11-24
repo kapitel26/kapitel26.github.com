@@ -5,17 +5,20 @@ require "rainbow"
 
 puts "THE UNITTESTS ARE WATCHING YOU!".color(:yellow)
 
+def decorate comment
+	@@commit_nr > 1 ? "fixup! #{comment}" : comment 
+end
+
 def commit_it
 	commit_comment = IO.read("commit-comment")
 	if @@last_commit_comment != commit_comment
 		@@commit_nr = 1
 	end
 	@@last_commit_comment = commit_comment
-	message = commit_comment
-	message += " #{@@commit_nr}" if @@commit_nr > 1
+	message = decorate(commit_comment)
 	system "git commit -am \"#{message}\""
 	raise "failed to commit" unless $?.to_i == 0
-	puts "Committed to Git: #{message}".color(:blue)
+	puts "Committed to Git:\n#{message}".color(:blue)
 	@@commit_nr += 1
 end
 
