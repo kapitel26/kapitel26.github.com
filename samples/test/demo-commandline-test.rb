@@ -115,6 +115,8 @@ class MarkdownRendererTest < Test::Unit::TestCase
 
   def test_output
 	@commandline.sh 'echo moin'
+	@commandline.edit 'kaese', :commit => false
+
 	assert_equal <<-eos, @result
     > echo moin
     moin
