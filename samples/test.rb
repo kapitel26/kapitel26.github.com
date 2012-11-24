@@ -5,6 +5,8 @@ $LOAD_PATH << File.expand_path(File.dirname(__FILE__)+"/lib")
 require "commandline-sample-maker"
 
 DemoCommandline.new(MarkdownRenderer.new($stdout)) do
+	hide
+
 	sh 'hg init'
 
 	sh 'hg branch releases'
@@ -28,6 +30,13 @@ DemoCommandline.new(MarkdownRenderer.new($stdout)) do
 	sh 'hg merge releases --tool internal:merge'
 	sh 'hg commit -m "merge releases into feature"'
 	edit 'file4'
+
+	show
+	direct <<-eos
+Das Beispiel zeigt einen Commitgraphen mit einem
+Hauptbranch `releases` und einen Featurebranch
+Namens `myfeature`. 
+	eos
 
 	sh 'hg log --graph'
 
