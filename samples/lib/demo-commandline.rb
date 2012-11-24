@@ -44,14 +44,16 @@ class DemoCommandline
 
 	def sh command, options = {}
 		options = {:valid_exits => [0]}.merge options
+
 		out, err, exitcode = @ba.sh "#{command}"
-		if options[:valid_exits].include? exitcode
-			@renderer.commandline command, out, err
-		else
+
+		unless options[:valid_exits].include? exitcode
 			$stdout.puts out unless out.empty?
 			$stderr.puts err unless err.empty?
 			raise "command exited with #{exitcode} #{command}"
 		end
+		
+		@renderer.commandline command, out, err
 	end
 
 	def comment text
@@ -94,6 +96,7 @@ class DemoCommandline
 	def edit_lines(lines, line_numbers, message)
 		line_numbers = [lines.size] if line_numbers.empty?
 		@edit_nr += 1
+
 		line_numbers.each do |nr| 
 			lines[nr] = "#{nr}: #{message}\n" 
 		end
