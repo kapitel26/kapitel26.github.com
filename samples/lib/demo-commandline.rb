@@ -43,6 +43,11 @@ class DemoCommandline
 	end
 
 	def sh command, options = {}
+		out, err, exitcode = silent_sh command, options
+		@renderer.commandline command, out, err
+	end
+
+	def silent_sh command, options = {}
 		options = {:valid_exits => [0]}.merge options
 
 		out, err, exitcode = @ba.sh "#{command}"
@@ -53,8 +58,9 @@ class DemoCommandline
 			raise "command exited with #{exitcode} #{command}"
 		end
 		
-		@renderer.commandline command, out, err
+		[out, err, exitcode]
 	end
+
 
 	def comment text
 		@renderer.comment "# #{text}"
