@@ -14,6 +14,7 @@ end
 class MarkdownRenderer < AbstractRenderer
 	def comment(s)
 		@io.puts "    # #{s}"
+		@io.puts "    "
 	end
 
 	def commandline(command, out, err)

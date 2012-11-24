@@ -123,7 +123,9 @@ class MarkdownRendererTest < Test::Unit::TestCase
     moin
     
     # Created line 1,3 in kaese /1
+    
     # Edited in kaese /2
+    
 	eos
   end
 end
