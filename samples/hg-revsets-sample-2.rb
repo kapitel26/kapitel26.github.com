@@ -32,7 +32,7 @@ File.open("../_includes/samples/#{__FILE__}.md", "w") do |io|
 
 		hg 'branch releases'
 		edit '.hg/hgrc', 
-			:content =>"[ui]\nlogtemplate=\"{branches}: {desc|firstline}\\n\"\n"
+			:content =>"[ui]\nlogtemplate=\"{rev}@{branches}: {desc|firstline}\\n\"\n"
 
 		edit 'hello', :line_numbers => [0,1,2,3,4,5]
 
@@ -54,7 +54,7 @@ File.open("../_includes/samples/#{__FILE__}.md", "w") do |io|
 		edit 'hello'
 		hg_graft :onto => "releases"
 
-		hg 'branch feature'
+		hg 'branch FOX'
 		edit 'hello'
 		hg_merge :onto => "releases"
 
@@ -63,9 +63,28 @@ File.open("../_includes/samples/#{__FILE__}.md", "w") do |io|
 
 		show
 		direct <<-eos
-BlaBla
+--------------------------------
 		eos
 
 		hg 'log --graph'
+
+		sh <<-eos
+hg log -r "branch('re:FIX_.*')"
+        eos
+
+		sh <<-eos
+hg log -r "ancestors('release_1_1_3')"
+        eos
+
+		sh <<-eos
+hg log -r "origin(ancestors('release_1_1_3'))"
+        eos
+
+		sh <<-eos
+hg log -r "branch('re:^FIX_.*')
+           and not (ancestors('release_1_1_3')
+           			or origin(ancestors('release_1_1_3')))"
+        eos
+
 	end
 end
