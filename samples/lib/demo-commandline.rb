@@ -2,14 +2,21 @@ require "fileutils"
 require "bash-wrapper"
 
 class AbstractRenderer
+	
+	# mode in [:full, :only_commands]
+
 	def initialize(io)
 		@io = io
+		@mode = :full
 	end
 
 	def flush
 		@io.flush
 	end
 
+	def mode newMode
+		@mode = newMode
+	end
 end
 
 class NoRenderer < AbstractRenderer
@@ -34,9 +41,15 @@ class MarkdownRenderer < AbstractRenderer
 	end
 
 	def commandline(command, out, err)
-		@io.puts "    > #{command}"
-		@io.puts indent(out) unless out.empty?
-		@io.puts indent(err) unless err.empty?
+		prompt = "> "
+		command.split("\n").each do |line|
+			@io.write "    #{prompt}#{line}\n"
+			prompt = "  "
+		end
+		if @mode == :full
+			@io.puts indent(out) unless out.empty?
+			@io.puts indent(err) unless err.empty?
+		end
 		@io.puts "    "
 	end
 
@@ -146,6 +159,10 @@ class DemoCommandline
 
 	def show
 		@renderer = @main_renderer
+	end
+
+	def mode newMode
+		@renderer.mode newMode
 	end
 
 	private
