@@ -43,6 +43,8 @@ File.open("../_includes/samples/#{__FILE__}.md", "w") do |io|
 		edit 'hello'
 		hg_graft :rev => "FIX_graft_before", :onto => "releases"
 
+		hg 'tag release_1_1_3'
+
 		show
 		direct <<-eos
 BlaBla
