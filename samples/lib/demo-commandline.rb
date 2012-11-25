@@ -17,12 +17,6 @@ class AbstractRenderer
 	def mode newMode
 		@mode = newMode
 	end
-end
-
-class NoRenderer < AbstractRenderer
-	def initialize
-		super(nil)
-	end
 
 	def comment(s)
 	end
@@ -32,6 +26,13 @@ class NoRenderer < AbstractRenderer
 
 	def direct text
 	end
+end
+
+class NoRenderer < AbstractRenderer
+	def initialize
+		super(nil)
+	end
+
 end
 
 class MarkdownRenderer < AbstractRenderer
