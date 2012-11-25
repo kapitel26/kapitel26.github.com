@@ -19,22 +19,35 @@ class AbstractRenderer
 	end
 
 	def comment(s)
+		render_comment(s)
 	end
 
 	def commandline(command, out, err)
+		render_commandline(command, out, err)
 	end
 
 	def direct text
+		render_direct(text)
 	end
+
+	def render_comment(s)
+	end
+
+	def render_commandline(command, out, err)
+	end
+
+	def render_direct text
+	end
+
 end
 
 class MarkdownRenderer < AbstractRenderer
-	def comment(s)
+	def render_comment(s)
 		@io.puts "    # #{s}"
 		@io.puts "    "
 	end
 
-	def commandline(command, out, err)
+	def render_commandline(command, out, err)
 		prompt = "> "
 		command.split("\n").each do |line|
 			@io.write "    #{prompt}#{line}\n"
@@ -47,7 +60,7 @@ class MarkdownRenderer < AbstractRenderer
 		@io.puts "    "
 	end
 
-	def direct text
+	def render_direct text
 		@io.puts text
 		@io.puts
 	end
@@ -60,17 +73,17 @@ class MarkdownRenderer < AbstractRenderer
 end
 
 class PlainRenderer < AbstractRenderer
-	def comment(s)
+	def render_comment(s)
 		@io.puts s
 	end
 
-	def commandline(command, out, err)
+	def render_commandline(command, out, err)
 		@io.puts "> #{command}"
 		@io.puts out unless out.empty?
 		@io.puts err unless err.empty?
 	end
 
-	def direct text
+	def render_direct text
 		@io.puts text
 	end
 end
