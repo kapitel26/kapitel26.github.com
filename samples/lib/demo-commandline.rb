@@ -8,6 +8,7 @@ class AbstractRenderer
 	def initialize(io)
 		@io = io
 		@mode = :full
+		@show = [:comment, :command, :out, :err]
 	end
 
 	def flush
@@ -18,27 +19,31 @@ class AbstractRenderer
 		@mode = newMode
 	end
 
+	def show elements_to_show
+		@show = elements_to_show
+	end
+
 	def comment(s)
-		render_comment(s)
+		render_comment(s) if @show.include? :comment
 	end
 
 	def commandline(command, out, err)
-		render_commandline(command, out, err)
+		render_commandline(command, out, err) 
 	end
 
 	def direct text
-		render_direct(text)
-	end
-
-	def render_comment(s)
+		render_direct(text) if @show.include? :comment
 	end
 
 	protected
 
+	def render_comment(s)
+	end
+
 	def render_commandline(command, out, err)
-		render_command(command)
-		render_output(out) if @mode == :full
-		render_err(err) if @mode == :full
+		render_command(command) if @show.include? :command
+		render_output(out) if @show.include? :out
+		render_err(err) if @show.include? :err
 	end
 
 	def render_command(command)
@@ -63,7 +68,7 @@ class MarkdownRenderer < AbstractRenderer
 
 	def render_commandline(command, out, err)
 		super
-		@io.puts "    "
+		@io.puts "    " if @show.include? :command
 	end
 
 	def render_command(command)
@@ -189,15 +194,19 @@ class DemoCommandline
 	end
 
 	def hide
-		@renderer = AbstractRenderer.new(nil)
+		@renderer.show []
 	end
 
 	def show
-		@renderer = @main_renderer
+		@renderer.show [:comment, :command, :out, :err]
 	end
 
+	#deprecated
 	def mode newMode
-		@renderer.mode newMode
+		case mode
+		when :full then @renderer.show [:comment, :command, :out, :err]
+		when :only_commands then @renderer.show [:comment, :command]
+		end
 	end
 
 	private
