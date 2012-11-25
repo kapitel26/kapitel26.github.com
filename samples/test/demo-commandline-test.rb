@@ -155,4 +155,22 @@ there_again
 
 	eos
   end
+
+  def test_render_multiline_command
+	@commandline = DemoCommandline.new(@renderer) do
+		sh <<-eos
+echo "hallo
+      welt"
+		eos
+	end
+
+	assert_equal <<-eos, @result
+    > echo "hallo
+            welt"
+    hallo
+          welt
+    
+	eos
+  end
+
 end

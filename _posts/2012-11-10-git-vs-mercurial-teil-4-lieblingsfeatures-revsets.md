@@ -10,59 +10,51 @@ author: bst
 
 {% include git-vs-hg.md %}
 
-In den letzten Folgen ging es um Dinge, die beide Tools können. Interessant ist aber, auch Git kann und Mercurial nicht und
-umgegekehrt?
+In den letzten Folgen ging um das, was beide Tools können. Heute 
+werfe ich mal einen Blick auf ein Feature, das nur in Mercurial
+vorhanden ist.
 
 Mercurial Revsets
 -----------------
 
 Wenn viele Entwickler an einer Software arbeiten, 
-kann die Commit-Historie ganz schön unübersichtlich werden. 
+kann die Commit-Historie unübersichtlich werden. 
 Sowohl Git als auch Mercurial bieten zahlreiche Kommandos,
-um die Historie zu analysieren. Aber nur Mercurial eine 
-eigene *Query Language dafür*:
+um die Historie zu analysieren. Aber nur Mercurial hat eine 
+eigene *Query Language* dafür:
 
-Ein Beispiel: Die aktuelle Software hat die Version `1_1_3`. 
-Ein neues Feature soll ausgeliefert werden. 
-Die QA entdeckt einen Fehler, den es in `1_1_3` noch nicht
-gegeben hat.
+{% include samples/hg-revsets-sample-1.rb.md %}
 
-	> hg log -r "branch(myfeature)"
+{% include samples/hg-revsets-sample-2.rb.md %}
 
-Zeigt alle Änderungen auf `myfeature`. 
-Oha, ganz schön viele! Aber halt: Teile von `myfeature`
-wurden schon in `1_1_3` ausgeliefert. Die können wir
-aussortieren.
+Noch ein Beispiel: Wissen, welche Sachen ich noch nicht abgeschlossen habe.
 
-	> hg log -r "branch(myfeature) 
-	             and not ancestors(release_1_1_3)"
+    hg log -r "head()
+               and author("stachi")
+               and not closed()"
 
-QA sagt, der Fehler könnte was mit Berechtigungen zu tun haben.
-Wir untersuchen, ob auf dem Branch seit `release_1_1_3` die Datei
-`user-roles.xml` verändert wurde.
+Das Ganze funktioniert übrigens nicht nur für `hg log` sondern 
+für jedes Kommando, das eine Option `-r` bzw. `--rev` Option
+bietet.
 
-    > hg log -r "branch(myfeature) 
-                 and not ancestors(release_1_1_3) 
-                 and file('user-roles.xml')"
-
-Falls wir jetzt ein Commit gefunden haben, lohnt es sich vielleicht
-noch zu prüfen, ob die Änderung original auf `myfeature` stattgefunden hat, oder ob sie von einem anderen Branch 
-"hereingemerged" wurde.
-
-	> hg log -r "branch(myfeature) 
-	             and not ancestors(release_1_1_3)
-	             and modifies('user-roles.xml') 
-	             and not merge()"
-
-Großartiges Feature!
-
-Wer mehr darüber wissen möchte:
+Großartiges Feature! Wer [mehr darüber wissen](http://www.selenic.com/hg/help/revsets) 
+möchte:
 
     hg help revsets
+
+Und Git?
+--------
+
+Natürlich bietet auch Git zahlreiche Möglichkeiten, Dinge
+über das Repository herauszufinden. Aber sie sind
+verteilt auf viele Optionen, verschiedene Befehle und 
+ein paar syntaktische Sonderlocken. Sie lassen sich nicht
+nicht so frei kombinieren und sind oft schlechter lesbar
+als die SQL-artige Syntax der *Query Language* von Mercurial.
 
 Fazit
 -----
 
-Mercurial-Revsets sind ein ungemein nützliches Tool,
-um die Historie zu analysieren. 
-Ich wünschte, Git hätte auch etwas vergleichbares.
+Die Mercurial-Revsets *Query Language* ist ein ungemein 
+nützliches Tool, um die Historie zu analysieren. 
+Ich wünschte, dass Git so etwas auch hätte.

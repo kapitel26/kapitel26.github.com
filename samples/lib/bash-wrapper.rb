@@ -25,7 +25,7 @@ class BashWrapper
 		out = ""
 		loop do
 			while !@stdout.ready? do 
-				sleep 0.1
+				sleep 0.001
 			end 
 			line = @stdout.readline
 			break if line =~ @magicrex
