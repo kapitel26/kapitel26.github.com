@@ -46,7 +46,7 @@ Das Beispiel zeigt die Branches `releases` und `myfeature`:
 		sh 'hg log --graph'
 
 		direct <<-eos
-Zeigt alle Änderungen auf `myfeature`. 
+Zeige alle Änderungen auf dem Branch `myfeature`. 
 
 		eos
 
@@ -78,9 +78,9 @@ hg log -r "branch(myfeature)
         eos
 
 		direct <<-eos
-Falls wir jetzt ein Commit gefunden haben, lohnt es sich vielleicht
-noch zu prüfen, ob die Änderung original auf `myfeature` stattgefunden hat, oder ob sie von einem anderen Branch 
-"hereingemerged" wurde.
+Falls wir jetzt Commits gefunden haben, lohnt es sich vielleicht
+noch zu prüfen, ob die Änderung wirklich auf `myfeature` stattgefunden 
+haben, und nicht von woanders "hereingemerged" wurde.
 
 		eos
 

@@ -24,9 +24,9 @@ end
 
 File.open("../_includes/samples/#{__FILE__}.md", "w") do |io|
 
-	DemoCommandline.new(MarkdownRenderer.new($stdout)) do
-#	DemoCommandline.new(MarkdownRenderer.new(io)) do
-#		hide
+#	DemoCommandline.new(MarkdownRenderer.new($stdout)) do
+	DemoCommandline.new(MarkdownRenderer.new(io)) do
+		hide
 
 		hg 'init'
 
@@ -61,12 +61,7 @@ File.open("../_includes/samples/#{__FILE__}.md", "w") do |io|
 		hg 'branch FIX_open'
 		edit 'hello'
 
-		show
-		direct <<-eos
---------------------------------
-		eos
-
-		hg 'log --graph'
+		# hg 'log --graph'
 
 		sh <<-eos
 hg log -r "branch('re:FIX_.*')"
@@ -80,10 +75,29 @@ hg log -r "ancestors('release_1_1_3')"
 hg log -r "origin(ancestors('release_1_1_3'))"
         eos
 
+		show
+
+        mode :commands_only
+
+		direct <<-eos
+Mehr? Herausfinden, welche Bugfixes im `release_1_1_3` noch nicht
+enthalen sind:
+		eos
+
 		sh <<-eos
 hg log -r "branch('re:^FIX_.*')
-           and not (ancestors('release_1_1_3')
-           			or origin(ancestors('release_1_1_3')))"
+           - ancestors('release_1_1_3')"
+        eos
+
+		direct <<-eos
+Stimmt noch nicht ganz. Bugfixes könne ja auch per Cherry-Pick
+(`graft`, `transplant` oder `rebase`) übertragen worden sein:
+		eos
+
+		sh <<-eos
+hg log -r "branch('re:^FIX_.*')
+           - (ancestors('release_1_1_3')
+              or origin(ancestors('release_1_1_3')))"
         eos
 
 	end
