@@ -16,7 +16,8 @@ def hg_merge(p)
 end
 
 def hg_graft(p)
-	p[:rev] ||= "."
+	hg "branch"
+	p[:rev] ||= silent_sh("hg log -r . --template '{rev}\\n'")[0]
 	hg "up #{p[:onto]}"
 	hg "graft -r #{p[:rev]}"
 end
@@ -41,9 +42,24 @@ File.open("../_includes/samples/#{__FILE__}.md", "w") do |io|
 
 		hg 'branch FIX_graft_before'
 		edit 'hello'
-		hg_graft :rev => "FIX_graft_before", :onto => "releases"
+		hg_graft :onto => "releases"
 
 		hg 'tag release_1_1_3'
+
+		hg 'branch FIX_merge_after'
+		edit 'hello'
+		hg_merge :onto => "releases"
+
+		hg 'branch FIX_graft_after'
+		edit 'hello'
+		hg_graft :onto => "releases"
+
+		hg 'branch feature'
+		edit 'hello'
+		hg_merge :onto => "releases"
+
+		hg 'branch FIX_open'
+		edit 'hello'
 
 		show
 		direct <<-eos
