@@ -28,13 +28,6 @@ class AbstractRenderer
 	end
 end
 
-class NoRenderer < AbstractRenderer
-	def initialize
-		super(nil)
-	end
-
-end
-
 class MarkdownRenderer < AbstractRenderer
 	def comment(s)
 		@io.puts "    # #{s}"
@@ -155,7 +148,7 @@ class DemoCommandline
 	end
 
 	def hide
-		@renderer = NoRenderer.new
+		@renderer = AbstractRenderer.new(nil)
 	end
 
 	def show
