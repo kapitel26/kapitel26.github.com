@@ -33,7 +33,21 @@ class AbstractRenderer
 	def render_comment(s)
 	end
 
+	protected
+
 	def render_commandline(command, out, err)
+		render_command(command)
+		render_output(out) if @mode == :full
+		render_err(err) if @mode == :full
+	end
+
+	def render_command(command)
+	end
+
+	def render_output(out)
+	end
+
+	def render_err(err)
 	end
 
 	def render_direct text
@@ -48,16 +62,24 @@ class MarkdownRenderer < AbstractRenderer
 	end
 
 	def render_commandline(command, out, err)
+		super
+		@io.puts "    "
+	end
+
+	def render_command(command)
 		prompt = "> "
 		command.split("\n").each do |line|
 			@io.write "    #{prompt}#{line}\n"
 			prompt = "  "
 		end
-		if @mode == :full
-			@io.puts indent(out) unless out.empty?
-			@io.puts indent(err) unless err.empty?
-		end
-		@io.puts "    "
+	end
+
+	def render_output(out)
+		@io.puts indent(out) unless out.empty?
+	end
+
+	def render_err(err)
+		@io.puts indent(err) unless err.empty?
 	end
 
 	def render_direct text
@@ -77,9 +99,15 @@ class PlainRenderer < AbstractRenderer
 		@io.puts s
 	end
 
-	def render_commandline(command, out, err)
+	def render_command(command)
 		@io.puts "> #{command}"
+	end
+
+	def render_output(out)
 		@io.puts out unless out.empty?
+	end
+
+	def render_err(err)
 		@io.puts err unless err.empty?
 	end
 
