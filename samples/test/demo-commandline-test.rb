@@ -140,12 +140,14 @@ welt
   def test_hide_and_show
 	@commandline = DemoCommandline.new(@renderer) do
 		direct 'moin'
-		hide
+		show []
 		sh 'echo hidden'
 		edit 'hidden', :commit => false
 		direct "hidden"
 		show
 		direct 'there_again'
+		show [:command]
+		sh "echo wurst"
 	end
 
 	assert_equal <<-eos, @result
@@ -153,6 +155,8 @@ moin
 
 there_again
 
+    > echo wurst
+    
 	eos
   end
 

@@ -193,12 +193,8 @@ class DemoCommandline
 		end
 	end
 
-	def hide
-		@renderer.show []
-	end
-
-	def show
-		@renderer.show [:comment, :command, :out, :err]
+	def show elements_to_show = [:comment, :command, :out, :err]
+		@renderer.show elements_to_show
 	end
 
 	#deprecated
