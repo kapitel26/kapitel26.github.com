@@ -3,20 +3,14 @@ require "bash-wrapper"
 
 class AbstractRenderer
 	
-	# mode in [:full, :only_commands]
 
 	def initialize(io)
 		@io = io
-		@mode = :full
 		@show = [:comment, :command, :out, :err]
 	end
 
 	def flush
 		@io.flush
-	end
-
-	def mode newMode
-		@mode = newMode
 	end
 
 	def show elements_to_show
@@ -195,14 +189,6 @@ class DemoCommandline
 
 	def show elements_to_show = [:comment, :command, :out, :err]
 		@renderer.show elements_to_show
-	end
-
-	#deprecated
-	def mode newMode
-		case mode
-		when :full then @renderer.show [:comment, :command, :out, :err]
-		when :only_commands then @renderer.show [:comment, :command]
-		end
 	end
 
 	private
