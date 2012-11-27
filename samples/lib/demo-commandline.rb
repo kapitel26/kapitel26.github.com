@@ -1,8 +1,11 @@
 require "fileutils"
 require "bash-wrapper"
 require "renderer"
+require "mercurial-extension"
 
 class DemoCommandline
+
+	include MercurialExtension
 
 	def initialize(renderer = PlainRenderer.new($stdout), &block)
 		block ||= lambda {}
@@ -27,6 +30,7 @@ class DemoCommandline
 	def sh command, options = {}
 		out, err, exitcode = silent_sh command, options
 		@renderer.commandline command, out, err
+		[out, err, command, exitcode]
 	end
 
 	def silent_sh command, options = {}

@@ -6,7 +6,7 @@ require "commandline-sample-maker"
 
 File.open("../_includes/samples/#{__FILE__}.md", "w") do |io|
 
-	DemoCommandline.new(MarkdownRenderer.new($stdout)) do
+	DemoCommandline.new(MarkdownRenderer.new(io)) do
 		show []
 
 		sh 'hg init'
