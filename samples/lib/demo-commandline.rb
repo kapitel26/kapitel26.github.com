@@ -57,35 +57,31 @@ class DemoCommandline
 
 	def edit(filepath, options = {})
 		opts = {:line_numbers => [], :commit => true, :on_branch => nil}.merge(options)
-
-		branch = opts[:on_branch]
-		if branch
-			out, err, command, exitcode = sh "hg log -r #{branch}", :valid_exits => [0,255]
-			if exitcode == 255
-				hg "branch #{branch}"
-			else
-				hg "update #{branch}"
-			end
-		end
-
-		lines = exists?(filepath) ? File.new(fullpath(filepath)).lines.to_a : []
 	
-		prefix = exists?(filepath) ? "Edit" : "Create"
-		line_nr_string = opts[:line_numbers].empty? ? "" : "line #{opts[:line_numbers].join ','} in "
-		comment = "#{prefix} #{line_nr_string}file \"#{filepath}\""
-		message = "#{comment} /#{@edit_nr}"
+		branch = opts[:on_branch]
+		hg_to_branch(branch) unless branch.nil?
 
-		if opts[:content].nil?
-			opts[:content] = edit_lines(lines, opts[:line_numbers], message).join() 
-		end
-		
-		File.open(fullpath(filepath), "w") { |f| f << opts[:content] }
+		file = fullpath(filepath)
+		comment = create_comment(file, opts[:line_numbers])
+		message = "#{comment} /#{@edit_nr}"
+		opts[:content] ||=  edited_content(file, opts[:line_numbers], message)
+		File.open(file, "w") { |f| f << opts[:content] }
 
 		@renderer.comment comment
 
-		if opts[:commit]
-			silent_sh "hg commit -A -m \"#{comment}\"" 
-		end
+		hg_commit comment if opts[:commit]
+	end
+
+	def edited_content(file, line_numbers, message)
+		lines = File.exists?(file) ? File.new(file).lines.to_a : []
+		message = "#{create_comment(file, line_numbers)} /#{@edit_nr}"
+		edit_lines(lines, line_numbers, message).join() 
+	end
+
+	def create_comment(file, line_numbers)
+		prefix = File.exists?(file) ? "Edit" : "Create"
+		line_nr_string = line_numbers.empty? ? "" : "line #{line_numbers.join ','} in "
+		"#{prefix} #{line_nr_string}file \"#{File.basename(file)}\""
 	end
 
 	def show elements_to_show = [:comment, :command, :out, :err]

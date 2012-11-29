@@ -1,4 +1,5 @@
 require "rainbow"
+require "terminal-notifier"
 
 @@last_commit_comment = nil
 @@commit_nr = 1
@@ -40,9 +41,11 @@ def run_tests
 	exitcode = $?.to_i
 	puts "Exited with: #{exitcode}"
 	if exitcode == 0
+		TerminalNotifier.notify('Hello World', :title => 'GREEN', :subtitle => 'Programming Language')
 		puts "*** GREEN ***".color(:green)
 		commit_if_possible
 	else
+		TerminalNotifier.notify('Hello World', :title => 'RED', :subtitle => 'Programming Language')
 		puts "*** RED ***".color(:red)
 	end
 end

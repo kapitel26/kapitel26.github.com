@@ -18,4 +18,17 @@ module MercurialExtension
 		hg "graft -r #{p[:rev]}"
 	end
 
+	def hg_to_branch branch
+		out, err, command, exitcode = sh "hg log -r #{branch}", :valid_exits => [0,255]
+		if exitcode == 255
+			hg "branch #{branch}"
+		else
+			hg "update #{branch}"
+		end
+	end
+
+	def hg_commit comment
+		silent_sh "hg commit -A -m \"#{comment}\"" 
+	end
+
 end
