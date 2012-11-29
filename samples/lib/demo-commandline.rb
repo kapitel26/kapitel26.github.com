@@ -56,7 +56,17 @@ class DemoCommandline
 	end
 
 	def edit(filepath, options = {})
-		opts = {:line_numbers => [], :commit => true}.merge(options)
+		opts = {:line_numbers => [], :commit => true, :on_branch => nil}.merge(options)
+
+		branch = opts[:on_branch]
+		if branch
+			out, err, command, exitcode = sh "hg log -r #{branch}", :valid_exits => [0,255]
+			if exitcode == 255
+				hg "branch #{branch}"
+			else
+				hg "update #{branch}"
+			end
+		end
 
 		lines = exists?(filepath) ? File.new(fullpath(filepath)).lines.to_a : []
 	

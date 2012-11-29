@@ -46,4 +46,21 @@ class MercurialExtensionTest < Test::Unit::TestCase
 	end
   end
 
+  def test_edit_on_branch
+  	test = self
+	@commandline = DemoCommandline.new(@renderer) do
+		hg 'init'
+		hg 'branch master'
+		edit 'on_master'
+
+		edit 'on_feature', :on_branch => "feature"
+		test.assert_equal "feature\n", hg('log -r 1 --template "{branches}\n"')[0]
+		test.assert_equal "feature\n", hg('branch')[0]
+
+		edit 'on_master', :on_branch => "master"
+		test.assert_equal "master\n", hg('log -r 2 --template "{branches}\n"')[0]
+		test.assert_equal "master\n", hg('branch')[0]
+	end
+  end
+
 end
