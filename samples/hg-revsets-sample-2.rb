@@ -6,9 +6,9 @@ require "commandline-sample-maker"
 
 File.open("../_includes/samples/#{__FILE__}.md", "w") do |io|
 
-#	DemoCommandline.new(MarkdownRenderer.new($stdout)) do
-	DemoCommandline.new(MarkdownRenderer.new(io)) do
-		show []
+	DemoCommandline.new(MarkdownRenderer.new($stdout)) do
+#	DemoCommandline.new(MarkdownRenderer.new(io)) do
+#		show []
 
 		hg 'init'
 
@@ -18,32 +18,27 @@ File.open("../_includes/samples/#{__FILE__}.md", "w") do |io|
 
 		edit 'hello', :line_numbers => [0,1,2,3,4,5]
 
-		hg 'branch FIX_merge_before'
-		edit 'hello'
+		edit 'hello', :on_branch => 'FIX_merge_before'
 		hg_merge :onto => "releases"
 
-		hg 'branch FIX_graft_before'
-		edit 'hello'
+		edit 'hello', :on_branch => 'FIX_graft_before'
 		hg_graft :onto => "releases"
 
 		hg 'tag release_1_1_3'
 
-		hg 'branch FIX_merge_after'
-		edit 'hello'
+		edit 'hello', :on_branch => 'FIX_merge_after'
 		hg_merge :onto => "releases"
 
-		hg 'branch FIX_graft_after'
-		edit 'hello'
+		edit 'hello', :on_branch => 'FIX_graft_after'
 		hg_graft :onto => "releases"
 
-		hg 'branch FOX'
-		edit 'hello'
+		edit 'hello', :on_branch => 'FOX'
 		hg_merge :onto => "releases"
 
 		hg 'branch FIX_open'
 		edit 'hello'
 
-		# hg 'log --graph'
+		hg 'log --graph'
 
 		sh <<-eos
 hg log -r "branch('re:FIX_.*')"
@@ -57,7 +52,7 @@ hg log -r "ancestors('release_1_1_3')"
 hg log -r "origin(ancestors('release_1_1_3'))"
         eos
 
-        show [:command, :comment]
+#        show [:command, :comment]
 
 		direct <<-eos
 Mehr? Herausfinden, welche Bugfixes im `release_1_1_3` noch nicht
