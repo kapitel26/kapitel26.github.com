@@ -30,7 +30,6 @@ Moin!
 	@result
   end
 
-
   def test_overwrites_existing_working_dir
   	File.open("sample1/alt", "w") { |f| f.write "egal" }
 	DemoCommandline.new(@renderer)
