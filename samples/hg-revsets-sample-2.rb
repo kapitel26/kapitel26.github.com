@@ -8,7 +8,7 @@ File.open("../_includes/samples/#{__FILE__}.md", "w") do |io|
 
 #	DemoCommandline.new(MarkdownRenderer.new($stdout)) do
 	DemoCommandline.new(MarkdownRenderer.new(io)) do
-#		show []
+		show []
 
 		hg 'init'
 
@@ -52,7 +52,7 @@ hg log -r "ancestors('release_1_1_3')"
 hg log -r "origin(ancestors('release_1_1_3'))"
         eos
 
-#        show [:command, :comment]
+        show [:command, :comment]
 
 		direct <<-eos
 Mehr? Herausfinden, welche Bugfixes im `release_1_1_3` noch nicht
