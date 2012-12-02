@@ -1,87 +1,11 @@
 require "fileutils"
 require "bash-wrapper"
-
-class AbstractRenderer
-	
-	# mode in [:full, :only_commands]
-
-	def initialize(io)
-		@io = io
-		@mode = :full
-	end
-
-	def flush
-		@io.flush
-	end
-
-	def mode newMode
-		@mode = newMode
-	end
-end
-
-class NoRenderer < AbstractRenderer
-	def initialize
-		super(nil)
-	end
-
-	def comment(s)
-	end
-
-	def commandline(command, out, err)
-	end
-
-	def direct text
-	end
-end
-
-class MarkdownRenderer < AbstractRenderer
-	def comment(s)
-		@io.puts "    # #{s}"
-		@io.puts "    "
-	end
-
-	def commandline(command, out, err)
-		prompt = "> "
-		command.split("\n").each do |line|
-			@io.write "    #{prompt}#{line}\n"
-			prompt = "  "
-		end
-		if @mode == :full
-			@io.puts indent(out) unless out.empty?
-			@io.puts indent(err) unless err.empty?
-		end
-		@io.puts "    "
-	end
-
-	def direct text
-		@io.puts text
-		@io.puts
-	end
-
-	private
-
-	def indent(text)
-		text.lines.map { |l| "    #{l}" }.join
-	end
-end
-
-class PlainRenderer < AbstractRenderer
-	def comment(s)
-		@io.puts s
-	end
-
-	def commandline(command, out, err)
-		@io.puts "> #{command}"
-		@io.puts out unless out.empty?
-		@io.puts err unless err.empty?
-	end
-
-	def direct text
-		@io.puts text
-	end
-end
+require "renderer"
+require "mercurial-extension"
 
 class DemoCommandline
+
+	include MercurialExtension
 
 	def initialize(renderer = PlainRenderer.new($stdout), &block)
 		block ||= lambda {}
@@ -106,6 +30,7 @@ class DemoCommandline
 	def sh command, options = {}
 		out, err, exitcode = silent_sh command, options
 		@renderer.commandline command, out, err
+		[out, err, command, exitcode]
 	end
 
 	def silent_sh command, options = {}
@@ -131,38 +56,36 @@ class DemoCommandline
 	end
 
 	def edit(filepath, options = {})
-		opts = {:line_numbers => [], :commit => true}.merge(options)
-
-		lines = exists?(filepath) ? File.new(fullpath(filepath)).lines.to_a : []
+		opts = {:line_numbers => [], :commit => true, :on_branch => nil}.merge(options)
 	
-		prefix = exists?(filepath) ? "Edit" : "Create"
-		line_nr_string = opts[:line_numbers].empty? ? "" : "line #{opts[:line_numbers].join ','} in "
-		comment = "#{prefix} #{line_nr_string}file \"#{filepath}\""
-		message = "#{comment} /#{@edit_nr}"
+		branch = opts[:on_branch]
+		hg_to_branch(branch) unless branch.nil?
 
-		if opts[:content].nil?
-			opts[:content] = edit_lines(lines, opts[:line_numbers], message).join() 
-		end
-		
-		File.open(fullpath(filepath), "w") { |f| f << opts[:content] }
+		file = fullpath(filepath)
+		comment = create_comment(file, opts[:line_numbers])
+		message = "#{comment} /#{@edit_nr}"
+		opts[:content] ||=  edited_content(file, opts[:line_numbers], message)
+		File.open(file, "w") { |f| f << opts[:content] }
 
 		@renderer.comment comment
 
-		if opts[:commit]
-			silent_sh "hg commit -A -m \"#{comment}\"" 
-		end
+		hg_commit comment if opts[:commit]
 	end
 
-	def hide
-		@renderer = NoRenderer.new
+	def edited_content(file, line_numbers, message)
+		lines = File.exists?(file) ? File.new(file).lines.to_a : []
+		message = "#{create_comment(file, line_numbers)} /#{@edit_nr}"
+		edit_lines(lines, line_numbers, message).join() 
 	end
 
-	def show
-		@renderer = @main_renderer
+	def create_comment(file, line_numbers)
+		prefix = File.exists?(file) ? "Edit" : "Create"
+		line_nr_string = line_numbers.empty? ? "" : "line #{line_numbers.join ','} in "
+		"#{prefix} #{line_nr_string}file \"#{File.basename(file)}\""
 	end
 
-	def mode newMode
-		@renderer.mode newMode
+	def show elements_to_show = [:comment, :command, :out, :err]
+		@renderer.show elements_to_show
 	end
 
 	private

@@ -12,7 +12,7 @@ Das Beispiel zeigt die Branches `releases` und `myfeature`:
     |\
     | o  myfeature: Edit file user-roles.xml
     | |
-    o |  releases: Added tag release_1_1_3 for changeset 957b172f350d
+    o |  releases: Added tag release_1_1_3 for changeset c9cd4f3a5334
     | |
     o |  releases: Edit line 0 in file user-roles.xml
     | |
@@ -24,10 +24,10 @@ Das Beispiel zeigt die Branches `releases` und `myfeature`:
     |
     o  releases: Create line 0,1,2 in file user-roles.xml
     |
-    o  releases: Create file .hg/hgrc
+    o  releases: Create file hgrc
     
     
-Zeigt alle Änderungen auf `myfeature`. 
+Zeige alle Änderungen auf dem Branch `myfeature`. 
 
 
     > hg log -r "branch(myfeature)"
@@ -58,9 +58,9 @@ Wir untersuchen, ob auf dem Branch seit `release_1_1_3` die Datei
     myfeature: Edit file user-roles.xml
     myfeature: merge releases into feature
     
-Falls wir jetzt ein Commit gefunden haben, lohnt es sich vielleicht
-noch zu prüfen, ob die Änderung original auf `myfeature` stattgefunden hat, oder ob sie von einem anderen Branch 
-"hereingemerged" wurde.
+Falls wir jetzt Commits gefunden haben, lohnt es sich vielleicht
+noch zu prüfen, ob die Änderung wirklich auf `myfeature` stattgefunden 
+haben, und nicht von woanders "hereingemerged" wurde.
 
 
     > hg log -r "branch(myfeature)

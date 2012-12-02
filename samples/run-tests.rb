@@ -7,3 +7,5 @@ require "commandline-sample-maker"
 
 require "bash-wrapper-test"
 require "demo-commandline-test"
+require "markdown-renderer-test"
+require "mercurial-extensions-test"

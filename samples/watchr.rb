@@ -1,4 +1,5 @@
 require "rainbow"
+require "terminal-notifier"
 
 @@last_commit_comment = nil
 @@commit_nr = 1
@@ -20,6 +21,7 @@ def commit_it
 	raise "failed to commit" unless $?.to_i == 0
 	puts "Committed to Git:\n#{message}".color(:blue)
 	puts "Sequence with #{@@commit_nr} commits\n".color(:blue)
+	TerminalNotifier.notify(message, :title => 'Committed to Git')
 	@@commit_nr += 1
 end
 
@@ -40,9 +42,11 @@ def run_tests
 	exitcode = $?.to_i
 	puts "Exited with: #{exitcode}"
 	if exitcode == 0
+		TerminalNotifier.notify("Unit Tests (#{__FILE__})", :title => 'GREEN')
 		puts "*** GREEN ***".color(:green)
 		commit_if_possible
 	else
+		TerminalNotifier.notify("Unit Tests (#{__FILE__})", :title => 'RED')
 		puts "*** RED ***".color(:red)
 	end
 end
