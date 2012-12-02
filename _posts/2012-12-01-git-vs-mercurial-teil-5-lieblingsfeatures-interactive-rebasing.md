@@ -11,7 +11,7 @@ author: bst
 {% include git-vs-hg.md %}
 
 Ich kenne Entwickler die committen kaum öfter als zwei
-oder drei Mal am Tag. Die überlegen sich was, sie tun
+oder drei Mal am Tag. Die überlegen sich, was sie tun
 wollen, wie sie es tun wollen, implementieren genau das, 
 testen es, reparieren es und liefern es dann ab. 
 Falls Sie zu diesen Entwicklern gehören, 
