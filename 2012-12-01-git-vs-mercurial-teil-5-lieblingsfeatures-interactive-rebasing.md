@@ -146,30 +146,29 @@ seiner Mitwelt teilt.
 Tipps
 -----
 
- * Es empfiehlt sich nur solche Commits zu überarbeiten,
-   die man lokal erstellt aber noch nicht mit anderen
-   geteilt hat (per `git push`).
+Keine Angst! Wenn man sich mal vertan hat, kann man
+das Rebasing leicht wieder rückgängig machen: Mit
+`git log --walk-reflogs` nachsehen, welches die letzte
+"gute" Version war und dann z. B. mit
+`git reset --hard HEAD@{2}` wieder zurücksetzen.
 
- * Nützlich ist die Option `--autosquash`, die 
-   Commits mit gleichem Kommentar automatisch
-   zusammenfasst.
+Es empfiehlt sich nur solche Commits zu überarbeiten,
+die man lokal erstellt und noch nicht mit anderen
+geteilt hat (per `git push`).
 
- * Die Rebasing-Befehle dürfen abgekürzt werden,
-   um noch schneller rebasen zu können.
+Unterbrochene Rebasings könne mit `git rebase --abort`
+abgebrochen werden.
+
+Nützlich ist die Option `--autosquash`, die 
+Commits mit gleichem Kommentar automatisch
+zusammenfasst.
+
+Die Rebasing-Befehle dürfen abgekürzt werden,
+um noch schneller rebasen zu können.
 
     p 1f23222 HTML-Darstellung verbessern
     s 6b6114a HTML-Darstellung verbessern
     e 1d87986 Bugfix: Falsche Klammerung in Ausdruck
-
- *  Keine Angst! Wenn man sich mal vertan hat, kann man
-   das Rebasing leicht wieder rückgängig machen: Mit
-   `git log --walk-reflogs` nachsehen, welches die letzte
-   "gute" Version war und dann z. B. mit
-   `git reset --hard HEAD@{2}` wieder zurücksetzen.
-
- * Unterbrochene Rebasings könne mit `git rebase --abort`
-   abgebrochen werden.
-
 ... und Mercurial
 -----------------
 
