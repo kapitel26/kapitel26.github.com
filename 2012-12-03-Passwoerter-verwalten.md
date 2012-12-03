@@ -2,7 +2,7 @@
 layout: post
 title: "Credential Helper - Passwörter verwalten"
 author: rp
-category: 
+category: Git
 tags: [Git, "credential helper"]
 ---
 {% include JB/setup %}
