@@ -19,7 +19,9 @@ Interessantes über Git
 
 Best Practices
 --------------
-
+ 
+ * [Passwörter verwalten](/Git/2012/12/03/Passwoerter-verwalten)
+   mit dem "Credential Helper"
  * Klarere Historie durch [No-Fast-Forward als Default](Git/2012/10/12/no-fast-forward-als-default)
 
 Troubleshooting: Falls doch mal was schief geht
