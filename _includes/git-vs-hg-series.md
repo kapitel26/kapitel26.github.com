@@ -3,4 +3,5 @@
 [Kommandozeile](/Git/2012/09/19/git-vs-mercurial---kommandozeile) /
 [Geschichtsfälschung](/Git/2012/10/27/git-vs-mercurial-teil-3-geschichtsfaelschung) /
 [Revsets](/Git/2012/11/10/git-vs-mercurial-teil-4-lieblingsfeatures-revsets) /
-[Interactive Rebasing](/Git/2012/12/01/git-vs-mercurial-teil-5-lieblingsfeatures-interactive-rebasing)
+[Interactive Rebasing](/Git/2012/12/01/git-vs-mercurial-teil-5-lieblingsfeatures-interactive-rebasing) /
+[Git Repository](/Git/2013/01/30/git-vs-mercurial-teil-6-lieblingsfeatures-git-repository)
