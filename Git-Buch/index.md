@@ -86,6 +86,11 @@ Bernd, Christian, Claudia, Olli, Markus, Stefan, Tim, und Uwe
 Nur René und Bjørn nicht. Wir wollten auch mal sagen können:
 *"Wie ich in meinem Buch geschrieben habe, ..."*
 
+Fehler! Euer Buch hat Fehler?
+-----------------------------
+
+Naja, schon. Damit es in der nächsten Auflage besser wird, [sammeln wir gemeldete Fehler](errata.html).
+
 Links
 -----
 

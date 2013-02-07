@@ -2,8 +2,19 @@
 	"folders":
 	[
 		{
-			"path": "/Users/stachi/work/kapitel26",
-			"folder_exclude_patterns": ["_site"]
+			"folder_exclude_patterns":
+			[
+				"_site"
+			],
+			"path": "/Users/stachi/work/kapitel26"
+		},
+		{
+			"folder_exclude_patterns":
+			[
+				"output",
+				"tmp"
+			],
+			"path": "/Users/stachi/GTD/Buch"
 		}
 	]
 }
