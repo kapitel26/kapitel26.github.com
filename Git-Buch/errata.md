@@ -28,10 +28,8 @@ Kapitel Commits zusammenstellen
   - Der Staging-Bereich hält für jede von Git verwaltete Datei
     *einen Snapshot des Dateiinhalts*.
 
-  - Mit dem `add`-Befehl werde Änderungen, z. B. neue Dateien, geänderte Dateien oder auch einzelne Abschnitte geänderter Dateien, zum Stage-Bereich hinzugefügt. Gespeichert werden aber Snapshots der Inhalte.
+  - Mit dem `add`-Befehl werde Änderungen, z. B. neue Dateien, geänderte Dateien oder auch einzelne Abschnitte geänderter Dateien, zum Stage-Bereich hinzugefügt. Gespeichert werden aber Snapshots der geänderten Inhalte.
   
-  - Bei einem Commit .
-
 
 
   
