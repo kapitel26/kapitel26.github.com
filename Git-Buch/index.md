@@ -17,6 +17,11 @@ weight: 6
 		<h4>Dezentrale Versionsverwaltung im Team - Grundlagen und Workflows</h4>
 		&nbsp;<br/>
 		dpunkt.verlag
+    &nbsp;<br/>
+    &nbsp;<br/>
+    <a href="errata.html">
+      Errata
+    </a>&nbsp;
   </div>
   <div class="span3" align="center">
   	<a href="https://www.etracker.de/ccr?et=zP8a2JahxlSYm82zlOj+EDSTW184jk7ZAlL9xo89yeU=&etcc_cmp=dpunkt+-+Git-Buch&etcc_med=STC_CC_ATTR_VALUE_CAMPAIGN&etcc_grp=Git-buch&etcc_ctv=Buchcover&etcc_url=http%3A%2F%2Fwww.dpunkt.de%2Fbuecher%2F3545.html">
@@ -55,6 +60,11 @@ praxiserprobt und bieten einen guten Startpunkt, wenn man Git
 im Team einführen möchste. Individuell anpassen kann (und wird)
 man die Workflows dann im Laufe der Zeit.  
 
+Fehler?! Euer Buch hat Fehler?
+-----------------------------
+
+Naja gut, schon. Damit es in der nächsten Auflage besser wird, sammeln wir die Fehler [hier](errata.html).
+
 Warum habt Ihr ein Git-Buch geschrieben?
 ----------------------------------------
 
@@ -85,11 +95,6 @@ Bernd, Christian, Claudia, Olli, Markus, Stefan, Tim, und Uwe
 (in alphabetischer Reihenfolge ) haben exzellente Fachbücher geschrieben.
 Nur René und Bjørn nicht. Wir wollten auch mal sagen können:
 *"Wie ich in meinem Buch geschrieben habe, ..."*
-
-Fehler! Euer Buch hat Fehler?
------------------------------
-
-Naja, schon. Damit es in der nächsten Auflage besser wird, [sammeln wir gemeldete Fehler](errata.html).
 
 Links
 -----
