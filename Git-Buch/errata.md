@@ -18,8 +18,8 @@ Kapitel 3 Was sind Commits?
 * **25 unten** "... dürfen Commit-Hashes verkürzt angegeben werden ..." wird ergänzt um den Zusatz "sofern es nur ein einziges 
   Commit mit diesem Prefix gibt.".
 
-Kapitel Commits zusammenstellen
---------------------------
+Kapitel 4 Commits zusammenstellen
+---------------------------------
 
 * **27, Abb. 4-1** Leserfrage: Werden im Staging-Bereich Änderungen Diffs oder Dateiinhalts gespeichert?
   
