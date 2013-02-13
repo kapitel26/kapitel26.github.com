@@ -5,8 +5,12 @@ description: ""
 ---
 {% include JB/setup %}
 
+Verbesserungsvorschläge und Feedback bitte an git@eToSquare.de
+
+Schreibfehler korrigieren wir direkt im Masterdokument für die nächste Auflage. Inhaltliche Fehler listen wir hier auf:
+
 Kapitel 2 Erste Schritte
------------------
+------------------------
 
 * **15 oben:** Der Pfad `/Users/rene/Temp/projekte/erste-schritte`  ist falsch, richtig ist `/projekte/erste-schritte`.
 
