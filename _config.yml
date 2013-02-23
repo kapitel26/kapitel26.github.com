@@ -9,7 +9,7 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : "Das sechundzwanzigste Kapitel"
+title : "Das sechsundzwanzigste Kapitel"
 tagline: "Ein Blog über Git und die Welt"
 author :
   name : Bjørn Stachmann, René Preißel
