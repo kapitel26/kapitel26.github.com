@@ -10,7 +10,7 @@ Analytics
 
 Wir wollen natürlich wissen, was auf unserer Site los ist.
 Vor allem ob Ihr die dezent platzierten Anzeigen
-für [unser Buch](/Git-Buch) auch fleißig klickt. 
+für [unser Buch](/git-buch) auch fleißig klickt. 
 Hierzu nutzen wir die **exzellente Optimisation Suite** von 
 [**etracker**](http://www.etracker.de).
 

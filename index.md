@@ -5,7 +5,7 @@ tagline:
 ---
 {% include JB/setup %}
 
-Wenn man ein [Buch](Git-Buch) schreibt, muss man irgendwann aufhören. 
+Wenn man ein [Buch](git-buch) schreibt, muss man irgendwann aufhören. 
 Schließlich soll das Ganze ja irgendwann gedruckt und verkauft werden. 
 Bei unserem Git-Buch, war das nach 25 Kapiteln der Fall.
 Mit 25 Kapiteln ist Git aber noch lange nicht erschöpfend behandelt,
@@ -16,7 +16,7 @@ Das **Sechsundzwanzigste Kapitel** steht also für all die Dinge,
 Wir hoffen, dass für Euch (Ihr anonyme Masse da draußen im Internet), 
 etwas Interessantes dabei ist:
 
-**[René](/Rene)**  & **[Bjørn](/Bjoern)** 
+**[René](/rene)**  & **[Bjørn](/bjoern)** 
 
 Liste aller Beiträge
 --------------------

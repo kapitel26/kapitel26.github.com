@@ -89,7 +89,7 @@ Die nächste Wunderwaffe von Git ist der `reset`-Befehl. Dieser Befehl kann glei
 den Branch-Zeiger, den sogenannten *Index* und den Workspace manipulieren. 
 Es gibt dafür 5 Modi: `--soft`, `--mixed`, `--hard`, `--merge` und `--keep`, 
 die bestimmen, was verändert wird und was nicht (Branch-Zeiger, Index und/oder Workspace). 
-Obwohl ich schon lange mit Git arbeite und ein [Buch](../../../../../Git-Buch/) darüber geschrieben habe,
+Obwohl ich schon lange mit Git arbeite und ein [Buch](../../../../../git-buch/) darüber geschrieben habe,
 öffne ich auch heute noch oft die Man-Page, bevor ich ein `reset` durchführe.
 
 Die Man-Page für `git reset` hat 369 Zeilen.
