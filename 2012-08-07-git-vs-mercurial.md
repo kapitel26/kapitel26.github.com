@@ -31,7 +31,7 @@ Um es vorwegzunehmen: Ich beantworte diese Frage hier nicht.
 Ich schätze beide Systeme sehr. Mit Mercurial arbeite ich 
 seit über 2 Jahren fast täglich und gerne. Git hat wiederum
 hat mich mich so fasziniert,
-dass ich unbedingt ein [Buch](Git-Buch) darüber schreiben mußte.
+dass ich unbedingt ein [Buch](git-buch) darüber schreiben mußte.
 
 Vorstellung der Kontrahenten
 ============================

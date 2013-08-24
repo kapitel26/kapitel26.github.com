@@ -8,12 +8,12 @@ author: bst
 ---
 {% include JB/setup %}
 
- * [Die Kontrahenden (Teil 0)](/Git/2012/08/07/git-vs-mercurial)
- * [Branches (Teil 1)](/Git/2012/08/25/git-vs-mercurial-teil-1-branches)
+ * [Die Kontrahenden (Teil 0)](/git/2012/08/07/git-vs-mercurial)
+ * [Branches (Teil 1)](/git/2012/08/25/git-vs-mercurial-teil-1-branches)
 
 
 Nach einem "*Vorfall*" in einem befreundeten Projekt wurde ich gefragt,
-ob wir in unserem [Buch](/Git-Buch) denn auch vor "`push` mit `-f`" warnen.
+ob wir in unserem [Buch](/git-buch) denn auch vor "`push` mit `-f`" warnen.
 Für einen kurzen Augenblick stieg der Puls:
 Hatten wir das tatsächlich übersehen?
 Ein kurzer Blick ins Inhaltsverzeichnis beruhigte mein Gewissen.
@@ -69,14 +69,14 @@ wenn man `git log` ausführt, aber
  * sie sind sehr wahrscheinlich immer noch im da 
    und bleiben es erstmal auch. Der Garbage-Collector 
    gewährt normalerweise eine Frist von mindestens 
-   [zwei Wochen,](/Git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector/) 
+   [zwei Wochen,](/git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector/) 
    bevor er abräumt.
    
  * Git ist dezentral. Wahrscheinlich haben auch andere Entwickler
    Kopien der Commits auf ihren Rechnern.
    
  * wenn das Repository
-   [richtig konfiguriert ist](/Git/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten/),
+   [richtig konfiguriert ist](/git/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten/),
    führt Git Buch über alle Änderungen an Branches und Tags (genannt *Reflog*),
    so dass man Verlorenes leicht wieder finden kann.
    

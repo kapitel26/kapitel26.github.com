@@ -375,5 +375,5 @@ sich mal jemand "verbranched" hat.
 Vor allem aber erleichtern sie den Umgang mit **privaten 
 experimentellen Branches**.
 
-[reflog-post]: /Git/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten/
-[gc-post]: /Git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector/
+[reflog-post]: /git/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten/
+[gc-post]: /git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector/

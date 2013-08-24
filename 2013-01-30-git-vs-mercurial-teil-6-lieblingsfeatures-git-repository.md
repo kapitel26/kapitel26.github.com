@@ -61,7 +61,7 @@ drei Operationen:
 
  1. Ein *Object* einfügen
  2. Ein *Object* holen, dessen Hash-Wert man kennt
- 3. [Garbage Collection](/Git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector/))
+ 3. [Garbage Collection](/git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector/))
 
 *... und alle Anderen so: "Yeah, that's stupid! And everybody: STUPID!"*
 
