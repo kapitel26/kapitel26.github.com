@@ -43,3 +43,10 @@ immer noch die gleichen und gute Software zu machen ist immer noch
 ein wenig Abenteuer und viel harte Arbeit. 
 Trotzdem, oder vielleicht gerade deshalb, mag ich nicht davon lassen.
  
+
+<div class="span3" align="left">
+	Bjørn auf Social Media<br/> 
+    <a href="http://www.twitter.com/old_stachi">Twitter</a>
+    <a href="http://www.xing.com/profile/Bjorn_Stachmann">Xing</a>
+    <a href="https://plus.google.com/107293837004630946370?rel=me">Google</a><br/>
+</div>
