@@ -48,5 +48,5 @@ Trotzdem, oder vielleicht gerade deshalb, mag ich nicht davon lassen.
 	Bjørn auf Social Media<br/> 
     <a href="http://www.twitter.com/old_stachi">Twitter</a>
     <a href="http://www.xing.com/profile/Bjorn_Stachmann">Xing</a>
-    <a href="https://plus.google.com/107293837004630946370?rel=me">Google</a><br/>
+    <a rel="me" href="https://plus.google.com/107293837004630946370">Google+</a><br/>
 </div>
