@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Warum wir Git lieben</title>
+
+		<meta name="description" content="Ein Vortrag über Git für die Continuous Lifecycle Konferenz 2013 Konferenz in Karlsruhe">
+		<meta name="author" content="Bjørn Stachmann, René Preissel">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../css/reveal.min.css">
+		<link rel="stylesheet" href="../css/theme/solarized.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="../css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+<div class="reveal">
+
+	<div class="slides">
+
+
+
+<!-- SLIDE -->
+		<section data-markdown><script type="text/template">
+			<aside class="notes">
+Startfolie. Vor dem Vortrag einblenden. Erzählen, wie wir zu Git kamen. Erst skeptisch. Inzwischen überzeugt.<p>
+Charakte des Vortrags: Sightseeing-Tour. Vieles zeigen, wenig erklären. View "Warum?", ein wenig "Wohin noch?" und möglichst kein "Was?" und "Wie?".
+			</aside>
+
+Git
+===
+
+```bash
+$ git init
+
+# We ♥︎ it!
+
+$ |
+```
+
+Warum wir es lieben
+-------------------
+
+Vortrag zur Continuous Lifecycle Konferenz
+2013 in Karlsruhe
+
+Bjørn Stachmann & René Preißel
+
+					</script>
+		</section>
+
+		<section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				Nichts sagen.
+				</aside>
+
+Ob wohl Zitronenfalter <br/> Zitronen falten?
+---------------------------------------------------
+
+![Zitronenfalter](img/istock-zitronenfalter.jpg)
+
+			</script></section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				Vorlesen als Denkanstoss. Warten. Der Begriff Versionsverwaltung stammt aus einer Zeit als Bürokraten das gemacht haben. Oft gab es eigene Abteilungen dafür.
+				</aside>
+
+### Ob wohl Versionsverwaltungen <br/> Versionen verwalten ?
+
+![Aktenarchiv](img/istock-aktenarchiv.jpg)
+
+			</script></section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+Git kann Änderungen aufzeichnen, Daten sichern, Protokolle erstellen, alte Versionen herstellen, Unterschiede aufzeigen.
+				</aside>
+
+Doch, schon
+-----------
+
+```bash
+commit 686158a5bb83ef701c71f54b95eb04f9f0732144
+Author: Bjørn Stachmann
+Date:   Wed Oct 30 21:51:38 2013 +0100
+
+    speakernotes ausprobiert
+
+ material/ContinuousLifecycle-2013/warum-wir-git-lieben.html | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+ ```
+
+aber ...
+--------
+			</script></section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+Ohne Worte. Warten. Nächste Folie.
+				</aside>
+
+... darum geht es nicht
+-----------------------
+
+			</script></section>
+
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					Git wurde für den Linux-Kernel entwickelt. Verwaltung war da nicht das, worum es geht.
+				</aside>
+
+### Wollen viele <br/> ein gemeinsames Ziel erreichen, <br/> zählt nur eines:
+
+<!-- TODO Bild: Weltkugel, Pinguin -->
+			</script></section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+
+Zusammenarbeit!
+===============
+
+
+			</script></section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					Einige Entwickler arbeiten am Kern. Andere fixen Bugs. Weitere internationalisieren. Wieder andere erproben Neues. Alle haben unterschiedliche Arbeitsweisen und Releasezyklen. Trotzdem müssen sie ständig Informationen und Code austauschen.
+				</aside>
+
+![Dezentrale Zusammenarbeit](img/dezentrale-zusammenarbeit.png)
+
+
+			</script></section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+Ein paar Kernbegriffe. Klon - vollwertige Kopie eines Repositories. Fork - unabhängige Weiterentwicklung. Push/Pull - Übertragen von Commits. Merge - 3-Wege (Basis: Commit-Graph).<p>
+				</aside>
+
+Dezentral arbeiten,
+
+ * Klon
+ * Fork
+
+sich mit anderen austauschen
+
+ * Push
+ * Push
+
+und Ergebnisse zusammenführen
+
+ * Merge
+
+			</script></section>
+
+
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					Meine Definition von Git.
+					Denkanstoss: Wikipedia dezentral? Wäre das möglich? Wäre das Cool?<p>
+					Im nächsten Abschnitt folgt der Pull-Request, das "Killer-Feature" zur Kollaboration.
+				</aside>
+
+Git
+===
+
+ist ein Werkzeug, <br/> mit dem Entwickler <br/> dezentral zusammenarbeiten.
+-------------------------------------------------------------------------------
+			</script></section>
+
+
+
+		</section>
+
+		<section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					Vielleicht eines der wichtigsten Features von Git.
+					Mann kann Git ohne Github benutzen. 
+					Aber vielleicht wäre es nicht geworden, was es ist, 
+					wenn es keine Pull-Requests gäbe.
+				</aside>
+
+
+# Pull-Requests
+
+![Tauziehen](img/istock-pull.jpg)
+
+			</script></section>
+
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					Beispiel beschreiben: Entwickler findet Bug und möchte ihn fixen.
+				</aside>
+
+Hoppla, ein Bug!
+----------------
+
+<!-- TODO Bild: Ein Bug -->
+
+Da könnte man doch ...
+
+<!-- TODO ## Screenshot: Clone url Section -->
+
+gesagt, getan:
+			</script></section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					Zeigen, dass es eigentlich nur 3 Schritte brauch. 1. Klonen 2. lokal Arbeiten 3. Pull-Request
+				</aside>
+Ich so ...
+----------
+
+```bash
+$ git clone https://github.com/developer/someproject.git
+
+$ git checkout -b my-bugfix  # Optional
+# fix the Bug. Work, Commit and Branch as you like.
+$ git commit -am "Bug fixed"
+
+$ git push  # TODO Option für set-upstream
+# im Github UI auf Pull-Request klicken
+```
+
+			</script></section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					Pull auf der nächsten Seite
+				</aside>
+
+... und der Maintainer dann so ...
+----------------------------------
+
+<!-- ### Screenshot: Eintreffender pull-request -->
+
+ * Inbox checken
+
+ * Diff prüfen (Review)
+
+ * Pull ausführen ...
+
+			</script></section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					Was passiert beim Pull?
+					Einfache Operation, große Wirkung.
+				</aside>
+
+### **```pull = fetch + merge```**
+
+ * ```fetch```
+
+   - holt Commits aus einem anderen Repository
+   - der Commit-Graph wird angereichert
+   - Branches bleiben unberührt
+
+ * ```merge```
+
+   - Änderungen zusammenführen 
+   - 3-Wege
+   - neues Commit (meistens)
+<!-- evtl. Pull-Bild aus dem Buch -->
+			</script></section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					
+				</aside>
+
+Pull-Workflow
+=============
+
+Gibt dem Maintainer mehr Kontrolle 
+
+über das *Blessed Repository*, und 
+
+dem Entwickler Freiheit für
+
+ * eigenen Workflow 
+ * für Experimente
+ * und eigenes Timing.
+
+			</script></section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				    Zusammenfassung.
+					Früher: Patches per Mail. Wer hat Zugriff auf das zentrale Repo?
+						Lock-In.
+				</aside>
+
+Git
+===
+
+(und Github)
+------------
+
+machen es leichter,
+
+zu Open-Soure beizutragen.
+			</script></section>
+
+
+		</section>		
+		<section>		
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					
+				</aside>
+
+
+Ad hoc<br/>Versionierung
+========================
+
+![Tomcat](img/tomcat.png)
+
+			</script></section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					Viel Trial und Error nötig. Oft hat man am Ende an mehr Stellen geschraubt, als nötig war.	
+				</aside>
+
+> **Tomcat\* zu konfigurieren<br/>erfordert großen Seelenfrieden**
+
+<br/><br/><br/>
+
+\* Ersetzen Sie ggf. "Tomcat" durch ein konfigurierbares Serverprodukt ihrer Wahl.
+			</script></section>
+
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+						
+				</aside>
+Einfach ein Git Repo anlegen
+
+```bash
+$ cd tomcat-123
+
+$ git init
+$ git add .
+$ git commit -m "Config after installation of 123"
+
+$ git checkout -b vm-configuration
+$ git commit -am "Config after installation of 123"
+
+# dann ändern und häufig committen
+
+# -> Live Demo
+```
+
+und 
+			</script></section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					Brew ist ein schönes Beispiel, das die beiden vorigen Abschnitte kombiniert.
+				</aside>
+Auch Cool
+---------
+
+![Homebrew Logo](img/homebrew-logo.png)
+
+ * Rezepte (Configs) in einem Git-Repo
+
+ * Man kann Rezepte lokal erstellen ändern
+   und versionieren.
+
+ * Cooles Rezept erstellt/verbesert ➙ Pull-Request
+
+ * Brew wächst und gedeiht, weil Contribution so einfach ist!
+
+			</script></section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+						Nicht vergessen: Überleitung zu Cherry-Pick
+				</aside>
+### Ad Hoc Versionierung<br/>von Konfigurationen ist Cool
+
+ * Leichtgewichtig
+ * Überall einsetzbar
+ * Super Undo ➙ ```git reset```
+ * Historie von Änderungen ➙ ```git log```
+ * Überblick, auch bei vielen Experimenten ➙ ```git branch```
+ * Leichte Übertragung in andere Umgebungen ➙ ```git clone```
+ * Config zusammenstellen ➙ ```git cherry-pick```
+
+			</script></section>
+
+		</section>	
+
+
+		<section>		
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+Cherry Picking
+==============
+
+<!-- Bild: Kirschen -->
+![Kirschen pflücken](img/istock-cherry-picking.jpg)
+
+			</script></section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+
+					Joke: Werner macht die Grünen Blau.
+					Ausgangsituation. Auf dem Featue-Branch sind mehrere Neue Commit. Master hat sich auch weiter entwickelt.
+				</aside>
+
+
+2 Branches (```blau```, ```gruen```)
+
+![Cherry Picking](img/master-feature.png)
+
+**Ziel**: Änderungen von ```gruen``` auf ```blau``` bringen.
+
+			</script></section>
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					Am Bild die drei Operationen erläutern.
+				</aside>
+![Cherry Picking](img/cherry-picking.png)
+
+			</script></section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+					Befehle kurz erläutern, dann LIVE.
+				</aside>
+Befehle
+-------
+
+```bash
+$ git branch --no-merged
+$ git cherry
+
+$ git merge
+
+$ git cherry-pick
+
+$ git rebase      # ggf. mit --onto
+
+# -> Live Demo
+```
+
+			</script></section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+## Merge, Cherry-Pick & Rebase
+
+Git macht es leicht<br/>*Änderungen*<br/>aus verschiedene Branches<br/>zu *kombinieren*,
+
+und dabei den *Überblick* zu behalten.
+
+
+			</script></section>
+		</section>		
+
+		<section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+## Code kneten
+
+<!-- TODO Bild: Teig -->
+![Teig kneten](img/istock-teig-kneten.jpg)
+
+> ** ```git rebase --interactive``` **
+
+			</script></section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+```bash
+                                †
+                           †            †          †
+
+                        †      †      †        †
+                                  †
+                     †       †          †        †     
+                                  †
+
+```
+
+> Eine Versionsverwaltung ist ein Friedhof,
+> auf dem Sourcecode rituell begraben wird,
+> wenn er nicht mehr lebt.
+>
+> Oder doch nicht?
+			</script></section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+```bash
+$ git rebase --interactive head~3     # letzte 3 Commits
+
+$ git rebase --interactive            # ab origin 
+
+# Rebase 5176a9e..86f81a0 onto 5176a9e
+#
+# Commands:
+#  p, pick = Nix tun. Einfach übernehmen.
+#  r, reword = Neuer Kommentar
+#  e, edit = Anhalten, Commit neu machen. Dann '--continue'
+#  s, squash = Zusammendampfen. Kombinierter Kommentar
+#  f, fixup = Zusammendampfen
+#  x, exec = Shell-Kommando
+
+# -> Live Demo
+```
+
+			</script></section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+Log (Vision)
+============
+
+> Das Log erzählt die Geschichte einer Software.<br/>
+> Wie sie entstanden ist<br/>
+> und warum sie ist, wie sie ist.
+>
+> Ich verfeinere es,<br/>
+> bis andere es lesen<br/>
+> und verstehen können.
+			</script></section>
+
+		</section>		
+
+		<section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+Clones, <br/> Hooks <br/> &Deployment
+=====================================
+
+			</script></section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+
+ Git ermöglicht Aktionen, wenn Commits in einem Repository eintreffen (Hooks), z. B. 
+
+   - Builds
+   - Tests
+   - Review-Requests
+   - Deployments
+
+
+			</script></section>
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+
+Die dezentrale Architektur ermöglicht es, den Repositories eine Bedeutung zu geben, z. B.
+
+   * Wenn der Entwickler *Team*-Repository pushed, werden die automatischen Tests durchgeführt. Waren die Tests erfolgreich erfolgt ein Push ins *QA*-Repository
+
+   * Ein Push ins *QA*-Repository löst Aufforderungen zu Reviews und Manuellen Tests aus.
+
+   * Ist alles OK pushed QA ins Production-Repository. Dort wird dann automatisch ein Deployment des neuen Stands durchgeführt.
+
+			</script></section>
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+
+![deployment flow](img/deployment-flow.png)
+
+			</script></section>
+
+
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+
+Git erleichtert einen kontrollierten Übergang zwischen den Phasen des Deploments.
+
+Mit einer Kette von Repositories und den richtigen Hooks, kann ein sehr hoher Automatisierungsgrad für im Deployment-Prozess erreicht werden.
+			</script></section>
+
+		</section>
+
+
+		<section>
+
+
+<!-- SLIDE -->
+			<section data-markdown><script type="text/template">
+				<aside class="notes">
+				</aside>
+Warum wir Git lieben
+--------------------
+
+ * **Zusammenarbeit**: Dezentral, weltweit
+ * **Pull-Requests** erleichtern Open-Soure Contributions
+ * **Ad hoc Versionierung**: Clever konfigurieren
+ * **Cherry-Picking**: Änderungen flexibel zusammenstellen.
+ * **Interactive Rebasing**: Für schönere Historien 
+ * **Clones & Hooks**: Erleichtern komplexe Deployments
+
+(unsere Lieblingsfeatures ohne Anspruch auf Vollständigkeit)
+
+			</script></section>
+
+
+
+		</section>		
+
+<!-- SLIDE -->
+		<section data-markdown><script type="text/template">
+
+Bjørn Stachmann [@old_stachi](https://twitter.com/old_stachi), René Preißel [rp@eToSquare.de](mailto:rp@eToSquare.de)
+
+<img src="img/buch-cover-klein.jpg" align="middle" alt="Buch Cover">
+
+
+... und nicht vergessen: Der Anfang ist immer
+
+```bash
+$ git init
+```
+
+		</script></section>
+	</div>
+
+</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
