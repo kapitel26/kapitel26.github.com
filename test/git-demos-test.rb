@@ -1,9 +1,9 @@
 # encoding: UTF-8
 
-class GeoMapTest < Test::Unit::TestCase
+class GitDemosTest < Test::Unit::TestCase
 
-	def do_something
-		assert_equal 1000, 2000
+	def test_do_something
+		assert_equal 1000, 1000
 	end
 
 end
