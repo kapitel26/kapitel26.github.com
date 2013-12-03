@@ -2,10 +2,21 @@
 
 class GitDemosTest < Test::Unit::TestCase
 
-	include GitDemos
+	def setup
+		FileUtils.rm_rf 'tmp'
+		@demo = GitDemos.new('tmp')
+	end
 
-	def test_do_something
-		assert_equal 1000, do_something
+	def test_log_is_empty_at_startup
+		assert @demo.log.empty?
+	end
+
+	def test_init
+		@demo.init
+
+		assert File.directory? 'tmp'
+
+		assert @demo.log.last[:desc] = "Initialize demo directory in 'tmp'"
 	end
 
 end
