@@ -44,6 +44,35 @@ class GitDemosTest < Test::Unit::TestCase
 		assert_equal @demo.log.last[:shell], ["kaese $ mkdir gouda"]
 	end
 
+	def test_nested_cds
+		@demo.shell 'mkdir -p kaese/gouda'
+		@demo.cd 'kaese'
+		@demo.cd 'gouda'
+
+		@demo.shell 'mkdir mittelalt'
+		assert File.directory? 'tmp/kaese/gouda/mittelalt'
+		assert_equal ["kaese/gouda $ mkdir mittelalt"], @demo.log.last[:shell]
+	end
+
+	def test_nested_up
+		@demo.shell 'mkdir -p kaese/gouda'
+		@demo.cd 'kaese'
+		@demo.cd 'gouda'
+
+		@demo.shell 'mkdir unten'
+		@demo.cd '..'
+		@demo.shell 'mkdir mitte'
+		@demo.cd '..'
+		@demo.shell 'mkdir oben'
+
+		assert File.directory? 'tmp/kaese/gouda/unten'
+		assert File.directory? 'tmp/kaese/mitte'
+		assert File.directory? 'tmp/oben'
+		puts @demo.log.inspect
+		assert_equal @demo.log[-2][:desc], "Change directory to '..'."
+		assert_equal @demo.log[-4][:desc], "Change directory to '..'."
+	end
+
 end
 
 
