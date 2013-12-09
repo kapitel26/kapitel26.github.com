@@ -24,6 +24,15 @@ class GitDemosTest < Test::Unit::TestCase
 		assert_equal @demo.log.last[:shell], [" $ git init my-little-repo"]
 	end
 
+	def test_shell
+		@demo.shell 'mkdir wurstpelle'
+
+		`ls tmp/wurstpelle`
+		assert_equal 0, $?.to_i
+		assert_equal @demo.log.last[:desc], "Execute shell command 'mkdir wurstpelle'."
+		assert_equal @demo.log.last[:shell], [" $ mkdir wurstpelle"]
+	end
+
 end
 
 
