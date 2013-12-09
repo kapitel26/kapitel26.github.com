@@ -4,6 +4,7 @@ class GitDemos
 
 	def initialize dir
 		@basedir = dir
+		@current_path = [@basedir]
 		@log = []
 	end
 
@@ -22,11 +23,17 @@ class GitDemos
 		_shell shell_command
 	end
 
-	def _shell shell_command
-		cmd = "cd #{@basedir}"
-		cmd << " && #{shell_command}"
+	def cd directory
+		@log << { desc: "Change directory to '#{directory}'.", shell: [] }		
+		@current_path << directory
+	end
 
-		puts cmd
+
+	def _shell shell_command
+		pwd = @current_path.join('/')
+
+		cmd = "cd #{pwd}"
+		cmd << " && #{shell_command}"
 
 		@log.last[:shell] = [ " $ #{shell_command}" ]
 		`#{cmd}`		

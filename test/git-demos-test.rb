@@ -33,6 +33,19 @@ class GitDemosTest < Test::Unit::TestCase
 		assert_equal @demo.log.last[:shell], [" $ mkdir wurstpelle"]
 	end
 
+	def test_cd
+		@demo.shell 'mkdir kaese'
+		@demo.cd 'kaese'
+		assert_equal @demo.log.last[:desc], "Change directory to 'kaese'."
+		assert_equal @demo.log.last[:shell], []
+
+		@demo.shell 'mkdir gouda'
+		assert File.directory? 'tmp/kaese/gouda'
+		assert_equal @demo.log.last[:shell], [" $ mkdir gouda"]
+	end
+
+
+
 end
 
 
