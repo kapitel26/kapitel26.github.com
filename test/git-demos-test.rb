@@ -20,9 +20,9 @@ class GitDemosTest < Test::Unit::TestCase
 		`cd tmp/my-little-repo && git status`
 		assert_equal 0, $?.to_i
 
-		assert @demo.log.last[:desc] = "Create new repository in 'my-little-repo'."
+		assert_equal @demo.log.last[:desc], "Create new repository in 'my-little-repo'."
+		assert_equal @demo.log.last[:shell], [" $ git init my-little-repo"]
 	end
-
 
 end
 

@@ -13,11 +13,14 @@ class GitDemos
 	end
 
 	def new_repo repo_dir
-		@log << { desc: "Create new repository in '#{repo_dir}'" }
-		cmd = ""
-		cmd << "cd #{@basedir}"
-		cmd << " && git init #{repo_dir}"
+		@log << { desc: "Create new repository in '#{repo_dir}'." }
+		
+		shell_command = "git init #{repo_dir}"
 
+		cmd = "cd #{@basedir}"
+		cmd << " && #{shell_command}"
+
+		@log.last[:shell] = [ " $ #{shell_command}" ]
 		`#{cmd}`
 	end
 end
