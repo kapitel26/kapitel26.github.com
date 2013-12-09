@@ -8,7 +8,16 @@ class GitDemos
 	end
 
 	def init
+		@log << { desc: "Initialize demo directory in '#{@basedir}'" }
 		FileUtils.mkdir_p @basedir
-		@log << { desc: "Initialize demo directory in '#{@basedir}'" } 	
+	end
+
+	def new_repo repo_dir
+		@log << { desc: "Create new repository in '#{repo_dir}'" }
+		cmd = ""
+		cmd << "cd #{@basedir}"
+		cmd << " && git init #{repo_dir}"
+
+		`#{cmd}`
 	end
 end
