@@ -20,28 +20,27 @@ class GitDemosTest < Test::Unit::TestCase
 		`cd tmp/my-little-repo && git status`
 		assert_equal 0, $?.to_i
 
-		assert_equal @demo.log.last[:desc], "Create new repository in 'my-little-repo'."
-		assert_equal @demo.log.last[:shell], [" $ git init my-little-repo"]
+		assert_equal "Create new repository in 'my-little-repo'.", @demo.log.last[:desc]
+		assert_equal [" $ git init my-little-repo"], @demo.log.last[:shell]
 	end
 
 	def test_shell
 		@demo.shell 'mkdir wurstpelle'
 
-		`ls tmp/wurstpelle`
-		assert_equal 0, $?.to_i
-		assert_equal @demo.log.last[:desc], "Execute shell command 'mkdir wurstpelle'."
-		assert_equal @demo.log.last[:shell], [" $ mkdir wurstpelle"]
+		assert File.directory? 'tmp/wurstpelle'
+		assert_equal "Execute shell command 'mkdir wurstpelle'.", @demo.log.last[:desc]
+		assert_equal [" $ mkdir wurstpelle"], @demo.log.last[:shell]
 	end
 
 	def test_cd
 		@demo.shell 'mkdir kaese'
 		@demo.cd 'kaese'
-		assert_equal @demo.log.last[:desc], "Change directory to 'kaese'."
-		assert_equal @demo.log.last[:shell], []
+		assert_equal "Change directory to 'kaese'.", @demo.log.last[:desc]
+		assert_equal [], @demo.log.last[:shell]
 
 		@demo.shell 'mkdir gouda'
 		assert File.directory? 'tmp/kaese/gouda'
-		assert_equal @demo.log.last[:shell], ["kaese $ mkdir gouda"]
+		assert_equal ["kaese $ mkdir gouda"], @demo.log.last[:shell]
 	end
 
 	def test_nested_cds
@@ -68,9 +67,8 @@ class GitDemosTest < Test::Unit::TestCase
 		assert File.directory? 'tmp/kaese/gouda/unten'
 		assert File.directory? 'tmp/kaese/mitte'
 		assert File.directory? 'tmp/oben'
-		puts @demo.log.inspect
-		assert_equal @demo.log[-2][:desc], "Change directory to '..'."
-		assert_equal @demo.log[-4][:desc], "Change directory to '..'."
+		assert_equal "Change directory to '..'.", @demo.log[-2][:desc]
+		assert_equal "Change directory to '..'.", @demo.log[-4][:desc]
 	end
 
 end
