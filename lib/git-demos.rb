@@ -9,7 +9,7 @@ class GitDemos
 	end
 
 	def init
-		@log << { desc: "Initialize demo directory in '#{@basedir}'" }
+		@log << { desc: "Initialize demo directory in '#{@basedir}'." }
 		FileUtils.mkdir_p @basedir
 	end
 
@@ -24,8 +24,21 @@ class GitDemos
 	end
 
 	def cd directory
-		@log << { desc: "Change directory to '#{directory}'.", shell: [] }		
+		@log << { desc: "Change directory to '#{directory}'." }		
 		@current_path << directory
+	end
+
+	def to_markdown
+		s = ""
+		@log.each do |entry|
+			s << entry[:desc] << "\n"
+			if entry[:shell] && !entry[:shell].empty?
+				s << "\n"
+				entry[:shell].each { |cmd| s << "    " << cmd << "\n" } 
+			end
+			s << "\n"
+		end
+		s
 	end
 
 	def _shell shell_command

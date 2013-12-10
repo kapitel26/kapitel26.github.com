@@ -36,7 +36,7 @@ class GitDemosTest < Test::Unit::TestCase
 		@demo.shell 'mkdir kaese'
 		@demo.cd 'kaese'
 		assert_equal "Change directory to 'kaese'.", @demo.log.last[:desc]
-		assert_equal [], @demo.log.last[:shell]
+		assert_equal nil, @demo.log.last[:shell]
 
 		@demo.shell 'mkdir gouda'
 		assert File.directory? 'tmp/kaese/gouda'
@@ -70,6 +70,30 @@ class GitDemosTest < Test::Unit::TestCase
 		assert_equal "Change directory to '..'.", @demo.log[-2][:desc]
 		assert_equal "Change directory to '..'.", @demo.log[-4][:desc]
 	end
+
+	def test_to_markdown
+		@demo.new_repo 'my-little-repo'
+		@demo.cd 'my-little-repo'
+		@demo.shell 'touch wurst'
+
+		expected = <<-EOS
+Initialize demo directory in 'tmp'.
+
+Create new repository in 'my-little-repo'.
+
+     $ git init my-little-repo
+
+Change directory to 'my-little-repo'.
+
+Execute shell command 'touch wurst'.
+
+    my-little-repo $ touch wurst
+
+		EOS
+
+		assert_equal expected, @demo.to_markdown
+	end
+
 
 end
 
