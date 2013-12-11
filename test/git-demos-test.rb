@@ -21,7 +21,7 @@ class GitDemosTest < Test::Unit::TestCase
 		assert_equal 0, $?.to_i
 
 		assert_equal "Create new repository in 'my-little-repo'.", @demo.log.last[:desc]
-		assert_equal [" $ git init my-little-repo"], @demo.log.last[:shell]
+		assert_equal ["$ git init my-little-repo"], @demo.log.last[:shell]
 	end
 
 	def test_shell
@@ -29,7 +29,7 @@ class GitDemosTest < Test::Unit::TestCase
 
 		assert File.directory? 'tmp/wurstpelle'
 		assert_equal "Execute shell command 'mkdir wurstpelle'.", @demo.log.last[:desc]
-		assert_equal [" $ mkdir wurstpelle"], @demo.log.last[:shell]
+		assert_equal ["$ mkdir wurstpelle"], @demo.log.last[:shell]
 	end
 
 	def test_cd
@@ -81,7 +81,7 @@ Initialize demo directory in 'tmp'.
 
 Create new repository in 'my-little-repo'.
 
-     $ git init my-little-repo
+    $ git init my-little-repo
 
 Change directory to 'my-little-repo'.
 
@@ -93,7 +93,6 @@ Execute shell command 'touch wurst'.
 
 		assert_equal expected, @demo.to_markdown
 	end
-
 
 end
 

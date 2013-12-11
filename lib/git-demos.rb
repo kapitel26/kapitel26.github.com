@@ -49,7 +49,8 @@ class GitDemos
 		cmd << " && #{shell_command}"
 
 		relative = @current_path.join('/')
-		@log.last[:shell] = [ "#{relative} $ #{shell_command}" ]
+		relative << ' ' unless @current_path.empty?
+		@log.last[:shell] = [ "#{relative}$ #{shell_command}" ]
 		`#{cmd}`		
 	end
 end
