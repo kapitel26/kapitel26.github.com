@@ -94,6 +94,11 @@ Execute shell command 'touch wurst'.
 		assert_equal expected, @demo.to_markdown
 	end
 
+	def test_create
+		@demo.create_file 'hallo.txt'
+
+		assert_equal "Create new file 'hallo.txt'.", @demo.log.last[:desc]
+		assert_equal nil, @demo.log.last[:shell]
+	end
+
 end
-
-

@@ -41,10 +41,13 @@ class GitDemos
 		s
 	end
 
-	def _shell shell_command
-		base = @basedir
-		pwd = ([base] << @current_path).join('/')
+	def create_file filename
+		@log << { desc: "Create new file '#{filename}'." }		
+		content = (1..12).collect { |i| "#{i} egal" }.join("\n")
+		File.write(pwd << "/" << filename, content)
+	end
 
+	def _shell shell_command
 		cmd = "cd #{pwd}"
 		cmd << " && #{shell_command}"
 
@@ -52,5 +55,9 @@ class GitDemos
 		relative << ' ' unless @current_path.empty?
 		@log.last[:shell] = [ "#{relative}$ #{shell_command}" ]
 		`#{cmd}`		
+	end
+
+	def pwd
+		([@basedir] << @current_path).join('/')
 	end
 end
