@@ -97,7 +97,16 @@ Execute shell command 'touch wurst'.
 	def test_create
 		@demo.create_file 'hallo.txt'
 
+		assert File.exist? 'tmp/hallo.txt'
 		assert_equal "Create new file 'hallo.txt'.", @demo.log.last[:desc]
+		assert_equal nil, @demo.log.last[:shell]
+	end
+
+	def test_create_with_path
+		@demo.create_file 'lebensmittel/kaese/gouda.txt'
+
+		assert File.exist? 'tmp/lebensmittel/kaese/gouda.txt'
+		assert_equal "Create new file 'lebensmittel/kaese/gouda.txt'.", @demo.log.last[:desc]
 		assert_equal nil, @demo.log.last[:shell]
 	end
 

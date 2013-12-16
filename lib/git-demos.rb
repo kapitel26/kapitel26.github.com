@@ -44,7 +44,9 @@ class GitDemos
 	def create_file filename
 		@log << { desc: "Create new file '#{filename}'." }		
 		content = (1..12).collect { |i| "#{i} egal" }.join("\n")
-		File.write(pwd << "/" << filename, content)
+		fullpath = pwd << "/" << filename
+		FileUtils.mkdir_p(File.dirname(fullpath))
+		File.write(fullpath, content)
 	end
 
 	def _shell shell_command
