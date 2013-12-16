@@ -34,7 +34,10 @@ class GitDemos
 			s << entry[:desc] << "\n"
 			if entry[:shell] && !entry[:shell].empty?
 				s << "\n"
-				entry[:shell].each { |cmd| s << "    " << cmd << "\n" } 
+				entry[:shell].each { |cmd| s << "    " << cmd << "\n" }
+				if entry[:out]
+					entry[:out].each { |outputline| s << "    " << outputline << "\n" }
+				end
 			end
 			s << "\n"
 		end
@@ -57,7 +60,7 @@ class GitDemos
 		relative << ' ' unless @current_path.empty?
 		@log.last[:shell] = [ "#{relative}$ #{shell_command}" ]
 		output = `#{cmd}`
-		@log.last[:out] = [output.chomp]
+		@log.last[:out] = output.lines.map { |l| l.rstrip }
 	end
 
 	def pwd

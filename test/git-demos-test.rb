@@ -38,6 +38,12 @@ class GitDemosTest < Test::Unit::TestCase
 		assert_equal ["MOIN"], @demo.log.last[:out]
 	end
 
+	def test_shell_output_multiline
+		@demo.shell 'echo "MOIN\n  WELT"'
+
+		assert_equal ["MOIN", "  WELT"], @demo.log.last[:out]
+	end
+
 	def test_cd
 		@demo.shell 'mkdir kaese'
 		@demo.cd 'kaese'
@@ -88,12 +94,31 @@ Initialize demo directory in 'tmp'.
 Create new repository in 'my-little-repo'.
 
     $ git init my-little-repo
+    Initialized empty Git repository in /Users/stachi/work/git-demos/tmp/my-little-repo/.git/
 
 Change directory to 'my-little-repo'.
 
 Execute shell command 'touch wurst'.
 
     my-little-repo $ touch wurst
+
+		EOS
+
+		assert_equal expected, @demo.to_markdown
+	end
+
+	def test_to_markdown_multiline
+		@demo.shell "echo A; echo '   B'; echo 	C"
+
+		expected = <<-EOS
+Initialize demo directory in 'tmp'.
+
+Execute shell command 'echo A; echo '   B'; echo 	C'.
+
+    $ echo A; echo '   B'; echo 	C
+    A
+       B
+    C
 
 		EOS
 
