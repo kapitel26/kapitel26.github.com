@@ -56,7 +56,8 @@ class GitDemos
 		relative = @current_path.join('/')
 		relative << ' ' unless @current_path.empty?
 		@log.last[:shell] = [ "#{relative}$ #{shell_command}" ]
-		`#{cmd}`		
+		output = `#{cmd}`
+		@log.last[:out] = [output.chomp]
 	end
 
 	def pwd

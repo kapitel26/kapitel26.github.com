@@ -32,6 +32,12 @@ class GitDemosTest < Test::Unit::TestCase
 		assert_equal ["$ mkdir wurstpelle"], @demo.log.last[:shell]
 	end
 
+	def test_shell_output
+		@demo.shell 'echo MOIN'
+
+		assert_equal ["MOIN"], @demo.log.last[:out]
+	end
+
 	def test_cd
 		@demo.shell 'mkdir kaese'
 		@demo.cd 'kaese'
