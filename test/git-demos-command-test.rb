@@ -93,4 +93,22 @@ class GitDemosCommandTest < AbstractGitDemosTest
 		assert_equal nil, @demo.log.last[:shell]
 	end
 
+	def test_create_with_path
+		@demo.create_file 'lebensmittel/kaese/gouda.txt'
+
+		assert File.exist? 'tmp/lebensmittel/kaese/gouda.txt'
+		assert_equal "Create new file 'lebensmittel/kaese/gouda.txt'.", @demo.log.last[:desc]
+		assert_equal nil, @demo.log.last[:shell]
+	end
+
+	def test_section_dsl
+		@demo.section do
+			shell "touch wurst"
+			shell "touch kaese"
+		end
+
+		assert File.exist? 'tmp/wurst'
+		assert File.exist? 'tmp/kaese'
+	end
+
 end

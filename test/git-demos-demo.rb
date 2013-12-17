@@ -8,11 +8,14 @@ puts "see the demo in #{demo_file}"
 FileUtils.rm_rf 'tmp/demo'
 
 @demo = GitDemos.new('tmp/demo')
-@demo.init
-@demo.new_repo 'my-little-repo'
-@demo.cd 'my-little-repo'
-@demo.shell 'touch wurst'
-@demo.shell 'ls -lah'
+@demo.section do
+	init
+	new_repo 'my-little-repo'
+	cd 'my-little-repo'
+	shell 'touch wurst'
+	shell 'ls -lah'
+	shell 'echo MOIN'
+end
 
 out = @demo.to_markdown
 maruku = Maruku.new(out)

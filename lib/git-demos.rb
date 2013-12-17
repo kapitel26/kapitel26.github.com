@@ -66,4 +66,8 @@ class GitDemos
 	def pwd
 		([@basedir] << @current_path).join('/')
 	end
+
+	def section &block
+		instance_eval &block
+	end
 end
