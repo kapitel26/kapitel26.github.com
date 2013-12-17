@@ -9,3 +9,5 @@ require "git-demos"
 require "git-demos-test"
 require "git-demos-command-test"
 require "git-demos-rendering-test"
+
+require "git-demos-demo"
