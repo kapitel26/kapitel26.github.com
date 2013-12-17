@@ -7,7 +7,7 @@ class GitDemosRenderingTest < AbstractGitDemosTest
 		@demo.cd 'my-little-repo'
 		@demo.shell 'touch wurst'
 
-		expected = <<-EOS
+		assert_equal <<-EOS, @demo.to_markdown
 Initialize demo directory in 'tmp'.
 
 Create new repository in 'my-little-repo'.
@@ -22,14 +22,12 @@ Execute shell command 'touch wurst'.
     my-little-repo $ touch wurst
 
 		EOS
-
-		assert_equal expected, @demo.to_markdown
 	end
 
 	def test_to_markdown_multiline
 		@demo.shell "echo A; echo '   B'; echo 	C"
 
-		expected = <<-EOS
+		assert_equal <<-EOS, @demo.to_markdown
 Initialize demo directory in 'tmp'.
 
 Execute shell command 'echo A; echo '   B'; echo 	C'.
@@ -41,7 +39,5 @@ Execute shell command 'echo A; echo '   B'; echo 	C'.
 
 		EOS
 
-		assert_equal expected, @demo.to_markdown
 	end
-
 end
