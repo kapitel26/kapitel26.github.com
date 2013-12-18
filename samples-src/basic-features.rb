@@ -1,9 +1,5 @@
 # encoding: UTF-8
 
-require "rubygems"
-require "maruku"
-
-
 @demo = GitDemos.new('tmp/demo')
 @demo.section do
 	init
@@ -12,7 +8,6 @@ require "maruku"
 	shell 'touch wurst'
 	markdown '## Und hier so Sachen machen'
 	shell 'ls -lah'
-	shell 'echo MOIN'
+	shell 'echo MOIN MOIN MOIN'
 end
 
-@demo.to_markdown('tmp/basic-features.html')

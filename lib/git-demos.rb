@@ -73,10 +73,8 @@ class GitDemos
 			s << "\n"
 		end
 		if file
-			puts "writing to #{file}"
 			maruku = Maruku.new(s)
 			html = maruku.to_html
-			puts html
 			File.write(file, html)
 		end
 		s
