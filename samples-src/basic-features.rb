@@ -2,6 +2,7 @@
 
 @demo = GitDemos.new('tmp/demo')
 @demo.section do
+	
 	init
 	new_repo 'my-little-repo'
 	cd 'my-little-repo'

@@ -1,3 +1,7 @@
+require "fileutils"
+require "rubygems"
+require "maruku"
+
 class GitDemos
 
 	attr_reader :log
