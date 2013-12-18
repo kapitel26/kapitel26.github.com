@@ -40,4 +40,20 @@ Execute shell command 'echo A; echo '   B'; echo 	C'.
 		EOS
 
 	end
+
+	def test_direct_markdown
+		@demo.markdown <<-EOS
+Hallo
+Welt
+		EOS
+
+		assert_equal <<-EOS, @demo.to_markdown
+Initialize demo directory in 'tmp'.
+
+Hallo
+Welt
+
+
+		EOS
+	end
 end

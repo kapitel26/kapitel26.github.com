@@ -70,4 +70,8 @@ class GitDemos
 	def section &block
 		instance_eval &block
 	end
+
+	def markdown content
+		@log << { desc: content }		
+	end
 end

@@ -13,6 +13,7 @@ FileUtils.rm_rf 'tmp/demo'
 	new_repo 'my-little-repo'
 	cd 'my-little-repo'
 	shell 'touch wurst'
+	markdown '## Und hier so Sachen machen'
 	shell 'ls -lah'
 	shell 'echo MOIN'
 end
