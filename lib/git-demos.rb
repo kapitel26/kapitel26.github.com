@@ -28,7 +28,7 @@ class GitDemos
 		@current_path << directory
 	end
 
-	def to_markdown
+	def to_markdown file = nil
 		s = ""
 		@log.each do |entry|
 			s << entry[:desc] << "\n"
@@ -40,6 +40,12 @@ class GitDemos
 				end
 			end
 			s << "\n"
+		end
+		if file
+			puts "writing to #{file}"
+			maruku = Maruku.new(s)
+			html = maruku.to_html
+			File.write(file, html)
 		end
 		s
 	end

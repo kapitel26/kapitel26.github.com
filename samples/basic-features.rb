@@ -3,9 +3,6 @@
 require "rubygems"
 require "maruku"
 
-demo_file = 'demo.html'
-puts "see the demo in #{demo_file}"
-FileUtils.rm_rf 'tmp/demo'
 
 @demo = GitDemos.new('tmp/demo')
 @demo.section do
@@ -18,7 +15,4 @@ FileUtils.rm_rf 'tmp/demo'
 	shell 'echo MOIN'
 end
 
-out = @demo.to_markdown
-maruku = Maruku.new(out)
-html = maruku.to_html
-File.write(demo_file, html)
+@demo.to_markdown('tmp/basic-features.html')
