@@ -4,3 +4,4 @@ ccdd-log
 *.sublime-workspace
 tmp/
 demo.html
+samples/

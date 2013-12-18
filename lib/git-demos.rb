@@ -28,28 +28,6 @@ class GitDemos
 		@current_path << directory
 	end
 
-	def to_markdown file = nil
-		s = ""
-		@log.each do |entry|
-			s << entry[:desc] << "\n"
-			if entry[:shell] && !entry[:shell].empty?
-				s << "\n"
-				entry[:shell].each { |cmd| s << "    " << cmd << "\n" }
-				if entry[:out]
-					entry[:out].each { |outputline| s << "    " << outputline << "\n" }
-				end
-			end
-			s << "\n"
-		end
-		if file
-			puts "writing to #{file}"
-			maruku = Maruku.new(s)
-			html = maruku.to_html
-			File.write(file, html)
-		end
-		s
-	end
-
 	def create_file filename
 		@log << { desc: "Create new file '#{filename}'." }		
 		content = (1..12).collect { |i| "#{i} egal" }.join("\n")
@@ -80,4 +58,28 @@ class GitDemos
 	def markdown content
 		@log << { desc: content }		
 	end
+
+	def to_markdown file = nil
+		s = ""
+		@log.each do |entry|
+			s << entry[:desc] << "\n"
+			if entry[:shell] && !entry[:shell].empty?
+				s << "\n"
+				entry[:shell].each { |cmd| s << "    " << cmd << "\n" }
+				if entry[:out]
+					entry[:out].each { |outputline| s << "    " << outputline << "\n" }
+				end
+			end
+			s << "\n"
+		end
+		if file
+			puts "writing to #{file}"
+			maruku = Maruku.new(s)
+			html = maruku.to_html
+			puts html
+			File.write(file, html)
+		end
+		s
+	end
+
 end
