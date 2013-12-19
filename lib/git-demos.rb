@@ -10,9 +10,7 @@ class GitDemos
 		@basedir = dir
 		@current_path = []
 		@log = []
-	end
 
-	def init
 		@log << { desc: "Initialize demo directory in '#{@basedir}'." }
 		FileUtils.mkdir_p @basedir
 	end
