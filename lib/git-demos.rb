@@ -26,8 +26,12 @@ class GitDemos
 	end
 
 	def cd directory
-		@log << { desc: "Change directory to '#{directory}'." }		
-		@current_path << directory
+		@log << { desc: "Change directory to '#{directory}'." }
+		if directory == ".." 
+			@current_path.pop
+		else
+			@current_path << directory
+		end
 	end
 
 	def create_file filename

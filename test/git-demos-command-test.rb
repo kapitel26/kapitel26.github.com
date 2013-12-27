@@ -80,18 +80,10 @@ class GitDemosCommandTest < AbstractGitDemosTest
 		@demo.shell 'mkdir -p kaese/gouda'
 		@demo.cd 'kaese'
 		@demo.cd 'gouda'
-
-		@demo.shell 'mkdir unten'
 		@demo.cd '..'
-		@demo.shell 'mkdir mitte'
-		@demo.cd '..'
-		@demo.shell 'mkdir oben'
+		@demo.shell 'touch brie'
 
-		assert File.directory? 'tmp/kaese/gouda/unten'
-		assert File.directory? 'tmp/kaese/mitte'
-		assert File.directory? 'tmp/oben'
-		assert_equal "Change directory to '..'.", @demo.log[-2][:desc]
-		assert_equal "Change directory to '..'.", @demo.log[-4][:desc]
+		assert_equal ["kaese $ touch brie"], @demo.log.last[:shell]
 	end
 
 
