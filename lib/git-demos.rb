@@ -15,10 +15,6 @@ class GitDemos
 		FileUtils.mkdir_p @basedir
 	end
 
-	def new_repo repo_dir
-		shell "git init #{repo_dir}", "Create new repository in '#{repo_dir}'."
-	end
-
 	def shell shell_command, desc = nil
 		action desc || "Execute shell command '#{shell_command}'."
 
@@ -61,9 +57,13 @@ class GitDemos
 		instance_eval &block
 	end
 
-	def markdown content
-		action content		
+	### aliaes and shortcuts
+
+	def new_repo repo_dir
+		shell "git init #{repo_dir}", "Create new repository in '#{repo_dir}'."
 	end
+
+	### rendering
 
 	def to_markdown file = nil
 		s = ""

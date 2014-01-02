@@ -3,7 +3,7 @@
 @demo = GitDemos.new('tmp/demo')
 @demo.section do
 
-	markdown <<-EOS
+	action <<-EOS
 ## Markdown
 
 You can add *Markown*.

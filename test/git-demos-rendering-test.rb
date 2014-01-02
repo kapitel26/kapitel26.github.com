@@ -41,8 +41,8 @@ Execute shell command 'echo A; echo '   B'; echo 	C'.
 
 	end
 
-	def test_direct_markdown
-		@demo.markdown <<-EOS
+	def test_action_with_markdown
+		@demo.action <<-EOS
 Hallo
 Welt
 		EOS

@@ -5,7 +5,7 @@ FileUtils.rm_rf 'workspaces/subtree'
 @demo = GitDemos.new('workspaces/subtree')
 @demo.section do
 
-	markdown '### Projekt mit Verzeichnissen "wurst" und "kaese erzeugen"'
+	action '### Projekt mit Verzeichnissen "wurst" und "kaese erzeugen"'
 
 	new_repo 'project'
 	cd 'project'
@@ -28,14 +28,13 @@ FileUtils.rm_rf 'workspaces/subtree'
 	shell 'git add kaese/edamer'
 	shell 'git commit -am "create file edamer"'
 
-	markdown 'Initial history'
 	shell 'git log --oneline'
 
-	markdown '### leeres Repo "kaese.git" erzeugen'
+	action '### leeres Repo "kaese.git" erzeugen'
 	cd '..'
 	shell 'git init --bare kaese.git'
 
-	markdown '### Änderungen nach kaese splitten'
+	action '### Änderungen nach kaese splitten'
 	cd 'project'
 	shell 'git subtree push --prefix kaese ../kaese.git master'
 
