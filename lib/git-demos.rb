@@ -20,8 +20,8 @@ class GitDemos
 	end
 
 	def shell shell_command, desc = nil
-		desc ||= "Execute shell command '#{shell_command}'."
-		@log << { desc: desc }
+		action desc || "Execute shell command '#{shell_command}'."
+
 		relative = @current_path.join('/')
 		relative << ' ' unless @current_path.empty?
 		@log.last[:shell] = [ "#{relative}$ #{shell_command}" ]
@@ -30,8 +30,13 @@ class GitDemos
 		@log.last[:out] = output.lines.map { |l| l.rstrip }
 	end
 
+	def action desc
+		@log << { desc: desc }
+	end
+
 	def cd directory
-		@log << { desc: "Change directory to '#{directory}'." }
+		action "Change directory to '#{directory}'."
+
 		if directory == ".." 
 			@current_path.pop
 		else
@@ -40,7 +45,8 @@ class GitDemos
 	end
 
 	def create_file filename
-		@log << { desc: "Create new file '#{filename}'." }		
+		action "Create new file '#{filename}'."
+
 		content = (1..12).collect { |i| "#{i} egal" }.join("\n")
 		fullpath = pwd << "/" << filename
 		FileUtils.mkdir_p(File.dirname(fullpath))
@@ -56,7 +62,7 @@ class GitDemos
 	end
 
 	def markdown content
-		@log << { desc: content }		
+		action content		
 	end
 
 	def to_markdown file = nil
