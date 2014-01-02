@@ -6,24 +6,38 @@ FileUtils.rm_rf 'workspaces/subtree'
 @demo.section do
 
 	markdown '### Projekt mit Verzeichnissen "wurst" und "kaese erzeugen"'
+
 	new_repo 'project'
 	cd 'project'
 	create_file 'wurst/salami'
 	shell 'git add --all'
 	shell 'git commit -m "create directory wurst with file salami"'
+
 	create_file 'kaese/gouda'
+	shell 'git add kaese/gouda'
+	shell 'git commit -m "create file gouda"'
+
+	shell 'echo EDIT >> wurst/salami'
+	shell 'git commit -am "edit file salami"'
+
+	shell 'echo EDIT >> kaese/gouda'
+	shell 'echo EDIT >> wurst/salami'
+	shell 'git commit -am "edit file gouda wurst and gouda"'
+
 	create_file 'kaese/edamer'
-	shell 'git add --all'
-	shell 'git commit -m "create directory kaese with files gouda and edamer"'
-	cd '..'
+	shell 'git add kaese/edamer'
+	shell 'git commit -am "create file edamer"'
+
+	markdown 'Initial history'
+	shell 'git log --oneline'
 
 	markdown '### leeres Repo "kaese.git" erzeugen'
+	cd '..'
 	shell 'git init --bare kaese.git'
 
 	markdown '### Änderungen nach kaese splitten'
 	cd 'project'
 	shell 'git subtree push --prefix kaese ../kaese.git master'
-	shell 'git log --oneline'
 
 	cd '..'
 	cd 'kaese.git'
