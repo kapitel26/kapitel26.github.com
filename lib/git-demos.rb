@@ -2,7 +2,11 @@ require "fileutils"
 require "rubygems"
 require "maruku"
 
+require "git-demos-shortcuts"
+
 class GitDemos
+
+	include GitDemosShortcuts
 
 	attr_reader :log
 

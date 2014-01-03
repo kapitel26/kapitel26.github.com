@@ -7,16 +7,6 @@ class GitDemosCommandTest < AbstractGitDemosTest
 		assert @demo.log.last[:desc] = "Initialize demo directory in 'tmp'"
 	end
 
-	def test_new_repo
-		@demo.new_repo 'my-little-repo'
-
-		`cd tmp/my-little-repo && git status`
-		assert_equal 0, $?.to_i
-
-		assert_equal "Create new repository in 'my-little-repo'.", @demo.log.last[:desc]
-		assert_equal ["$ git init my-little-repo"], @demo.log.last[:shell]
-	end
-
 	def test_shell
 		@demo.shell 'mkdir wurstpelle'
 
