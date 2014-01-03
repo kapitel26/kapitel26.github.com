@@ -21,7 +21,10 @@ class GitDemos
 
 	def shell shell_command, desc = nil
 		action desc || "Execute shell command '#{shell_command}'."
+		_shell shell_command
+	end
 
+	def _shell shell_command
 		relative = @current_path.join('/')
 		relative << ' ' unless @current_path.empty?
 		@log.last[:shell] = [ "#{relative}$ #{shell_command}" ]
@@ -46,7 +49,11 @@ class GitDemos
 
 	def create filename
 		action "Create new file '#{filename}'."
+		_create filename
+	end
 
+
+	def _create filename
 		content = (1..12).collect { |i| "#{i} egal" }.join("\n")
 		fullpath = pwd << "/" << filename
 		FileUtils.mkdir_p(File.dirname(fullpath))
