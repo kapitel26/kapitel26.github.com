@@ -15,7 +15,7 @@ You can add *Markown*.
 
 	cd 'repo'
 
-	create_file 'wurst'
+	create 'wurst'
 
 	shell 'git add --all'
 	shell 'git commit -m "first commit"'

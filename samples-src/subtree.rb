@@ -9,22 +9,22 @@ FileUtils.rm_rf 'workspaces/subtree'
 
 	new_repo 'project'
 	cd 'project'
-	create_file 'wurst/salami'
+	create 'wurst/salami'
 	shell 'git add --all'
 	shell 'git commit -m "create directory wurst with file salami"'
 
-	create_file 'kaese/gouda'
+	create 'kaese/gouda'
 	shell 'git add kaese/gouda'
 	shell 'git commit -m "create file gouda"'
 
-	shell 'echo EDIT >> wurst/salami'
+	edit 'wurst/salami'
 	shell 'git commit -am "edit file salami"'
 
-	shell 'echo EDIT >> kaese/gouda'
-	shell 'echo EDIT >> wurst/salami'
+	edit 'kaese/gouda'
+	edit 'wurst/salami'
 	shell 'git commit -am "edit file gouda wurst and gouda"'
 
-	create_file 'kaese/edamer'
+	create 'kaese/edamer'
 	shell 'git add kaese/edamer'
 	shell 'git commit -am "create file edamer"'
 

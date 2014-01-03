@@ -40,7 +40,7 @@ class GitDemos
 		end
 	end
 
-	def create_file filename
+	def create filename
 		action "Create new file '#{filename}'."
 
 		content = (1..12).collect { |i| "#{i} egal" }.join("\n")
@@ -51,7 +51,7 @@ class GitDemos
 
 	def edit filename
 		action "Edit file '#{filename}'."
-		
+
 		fullpath = pwd << "/" << filename
 		content = File.read(fullpath)
 		content << "#{content.lines.to_a.length + 1} edited\n"

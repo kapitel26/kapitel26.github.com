@@ -88,7 +88,7 @@ class GitDemosCommandTest < AbstractGitDemosTest
 
 
 	def test_create
-		@demo.create_file 'hallo.txt'
+		@demo.create 'hallo.txt'
 
 		assert File.exist? 'tmp/hallo.txt'
 		assert_equal "Create new file 'hallo.txt'.", @demo.log.last[:desc]
@@ -96,7 +96,7 @@ class GitDemosCommandTest < AbstractGitDemosTest
 	end
 
 	def test_create_with_path
-		@demo.create_file 'lebensmittel/kaese/gouda.txt'
+		@demo.create 'lebensmittel/kaese/gouda.txt'
 
 		assert File.exist? 'tmp/lebensmittel/kaese/gouda.txt'
 		assert_equal "Create new file 'lebensmittel/kaese/gouda.txt'.", @demo.log.last[:desc]
@@ -104,7 +104,7 @@ class GitDemosCommandTest < AbstractGitDemosTest
 	end
 
 	def test_create_with_path
-		@demo.create_file 'lebensmittel/kaese/gouda.txt'
+		@demo.create 'lebensmittel/kaese/gouda.txt'
 
 		assert File.exist? 'tmp/lebensmittel/kaese/gouda.txt'
 		assert_equal "Create new file 'lebensmittel/kaese/gouda.txt'.", @demo.log.last[:desc]
@@ -112,7 +112,7 @@ class GitDemosCommandTest < AbstractGitDemosTest
 	end
 
 	def test_edit
-		@demo.create_file 'hallo.txt'
+		@demo.create 'hallo.txt'
 		a = File.read('tmp/hallo.txt')
 
 		@demo.edit 'hallo.txt'
