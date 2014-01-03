@@ -111,6 +111,16 @@ class GitDemosCommandTest < AbstractGitDemosTest
 		assert_equal nil, @demo.log.last[:shell]
 	end
 
+	def test_edit
+		@demo.create_file 'hallo.txt'
+		a = File.read('tmp/hallo.txt')
+
+		@demo.edit 'hallo.txt'
+		b = File.read('tmp/hallo.txt')
+		assert !(a == b)
+		assert b.length > a.length
+	end
+
 	def test_section_dsl
 		@demo.section do
 			shell "touch wurst"

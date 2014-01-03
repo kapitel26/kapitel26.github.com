@@ -49,6 +49,15 @@ class GitDemos
 		File.write(fullpath, content)
 	end
 
+	def edit filename
+		action "Edit file '#{filename}'."
+		
+		fullpath = pwd << "/" << filename
+		content = File.read(fullpath)
+		content << "#{content.lines.to_a.length + 1} edited\n"
+		File.write(fullpath, content)
+	end
+
 	def pwd
 		([@basedir] << @current_path).join('/')
 	end
