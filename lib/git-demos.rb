@@ -27,10 +27,13 @@ class GitDemos
 	def _shell shell_command
 		relative = @current_path.join('/')
 		relative << ' ' unless @current_path.empty?
-		@log.last[:shell] = [ "#{relative}$ #{shell_command}" ]
+		@log.last[:shell] ||= []
+		@log.last[:shell] <<  "#{relative}$ #{shell_command}"
 		cmd = "cd #{pwd} && #{shell_command}"
 		output = `#{cmd}`
-		@log.last[:out] = output.lines.map { |l| l.rstrip }
+		@log.last[:out] ||= []
+		output.lines.map { |l| @log.last[:out] << l.rstrip }
+		@log.last[:out]
 	end
 
 	def action desc

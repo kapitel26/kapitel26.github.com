@@ -21,13 +21,13 @@ class GitDemosShortcutTest < AbstractGitDemosTest
 		assert File.exists? 'tmp/repo/file'
 
 		assert_equal "Create and edit 'file'.", @demo.log.last[:desc]
-		assert_equal ["repo $ git commit -m 'created new file file'"], @demo.log.last[:shell]
+		assert_equal ["repo $ git add file", "repo $ git commit -m 'created new file file'"], @demo.log.last[:shell]
 
 		assert_equal "created new file file", last_commit_comment
 	end
 
 	def last_commit_comment
-		/[0-9a-z]+\s+(.*)/.match(@demo.shell('git log --oneline -1')[0])[1]
+		/[0-9a-z]+\s+(.*)/.match(@demo.shell('git log --oneline -1').last)[1]
 	end
 
 end
