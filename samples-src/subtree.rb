@@ -10,14 +10,12 @@ FileUtils.rm_rf 'workspaces/subtree'
 	new_repo 'project'
 	cd 'project'
 	create_and_commit 'wurst/salami'
-
 	create_and_commit 'kaese/gouda'
 
 	edit 'wurst/salami'
 	shell 'git commit -am "edit file salami"'
 
-	edit 'kaese/gouda'
-	edit 'wurst/salami'
+	edit 'kaese/gouda', 'wurst/salami'
 	shell 'git commit -am "edit file gouda wurst and gouda"'
 
 	create_and_commit 'kaese/edamer'

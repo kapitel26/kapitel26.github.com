@@ -63,13 +63,15 @@ class GitDemos
 		File.write(fullpath, content)
 	end
 
-	def edit filename
-		action "Edit file '#{filename}'."
+	def edit *filenames
+		action "Edit files #{filenames.join(', ')}."
 
-		fullpath = pwd << "/" << filename
-		content = File.read(fullpath)
-		content << "#{content.lines.to_a.length + 1} edited\n"
-		File.write(fullpath, content)
+		filenames.each do |filename|
+			fullpath = pwd << "/" << filename
+			content = File.read(fullpath)
+			content << "#{content.lines.to_a.length + 1} edited\n"
+			File.write(fullpath, content)
+		end
 	end
 
 	def pwd

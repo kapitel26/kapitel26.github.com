@@ -120,6 +120,23 @@ class GitDemosCommandTest < AbstractGitDemosTest
 		assert b.length > a.length
 	end
 
+	def test_multifile_edit
+		@demo.create 'a'
+		@demo.create 'b'
+
+		a1 = File.read('tmp/a')
+		b1 = File.read('tmp/b')
+
+		@demo.edit 'a' , 'b'
+
+		a2 = File.read('tmp/a')
+		b2 = File.read('tmp/b')
+
+		assert a2.length > a1.length
+		assert b2.length > b1.length
+	end
+
+
 	def test_section_dsl
 		@demo.section do
 			shell "touch wurst"

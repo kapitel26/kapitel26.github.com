@@ -27,7 +27,7 @@ class GitDemosShortcutTest < AbstractGitDemosTest
 	end
 
 	def last_commit_comment
-		/[0-9a-z]+\s+(.*)/.match(@demo.shell('git log --oneline -1').last)[1]
+		/[0-9a-z]+\s+(.*)/.match(@demo.shell('git log --oneline -1')[0])[1]
 	end
 
 end
