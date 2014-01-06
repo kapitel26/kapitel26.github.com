@@ -9,13 +9,9 @@ FileUtils.rm_rf 'workspaces/subtree'
 
 	new_repo 'project'
 	cd 'project'
-	create 'wurst/salami'
-	shell 'git add --all'
-	shell 'git commit -m "create directory wurst with file salami"'
+	create_and_commit 'wurst/salami'
 
-	create 'kaese/gouda'
-	shell 'git add kaese/gouda'
-	shell 'git commit -m "create file gouda"'
+	create_and_commit 'kaese/gouda'
 
 	edit 'wurst/salami'
 	shell 'git commit -am "edit file salami"'
@@ -24,9 +20,7 @@ FileUtils.rm_rf 'workspaces/subtree'
 	edit 'wurst/salami'
 	shell 'git commit -am "edit file gouda wurst and gouda"'
 
-	create 'kaese/edamer'
-	shell 'git add kaese/edamer'
-	shell 'git commit -am "create file edamer"'
+	create_and_commit 'kaese/edamer'
 
 	shell 'git log --oneline'
 
