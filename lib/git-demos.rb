@@ -1,4 +1,6 @@
 require "fileutils"
+require "open3"
+
 require "rubygems"
 require "maruku"
 
@@ -30,7 +32,8 @@ class GitDemos
 		@log.last[:shell] ||= []
 		@log.last[:shell] <<  "#{relative}$ #{shell_command}"
 		cmd = "cd #{pwd} && #{shell_command}"
-		output = `#{cmd}`
+		output, err, process = Open3.capture3(cmd)
+		# TODO record err and exitcode
 		@log.last[:out] ||= []
 		output.lines.map { |l| @log.last[:out] << l.rstrip }
 		@log.last[:out]

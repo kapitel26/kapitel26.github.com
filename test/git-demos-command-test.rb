@@ -136,7 +136,6 @@ class GitDemosCommandTest < AbstractGitDemosTest
 		assert b2.length > b1.length
 	end
 
-
 	def test_section_dsl
 		@demo.section do
 			shell "touch wurst"
