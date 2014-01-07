@@ -15,4 +15,11 @@ module GitDemosShortcuts
 		_shell "git commit -m 'created new file #{file}'"
 	end
 
+	def edit_and_commit *files
+		action "Edit and commit #{files.join(', ')}."
+		_edit *files
+		_shell "git add #{files.join(' ')}"
+		_shell "git commit -m 'edited file #{files.join(', ')}'"
+	end
+
 end

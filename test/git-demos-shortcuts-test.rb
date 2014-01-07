@@ -19,11 +19,24 @@ class GitDemosShortcutTest < AbstractGitDemosTest
 		@demo.create_and_commit 'file'
 
 		assert File.exists? 'tmp/repo/file'
-
 		assert_equal "Create and edit 'file'.", @demo.log.last[:desc]
 		assert_equal ["repo $ git add file", "repo $ git commit -m 'created new file file'"], @demo.log.last[:shell]
-
 		assert_equal "created new file file", last_commit_comment
+	end
+
+	def test_cedit_and_commit
+		@demo.new_repo 'repo'
+		@demo.cd 'repo'
+		@demo.shell 'touch file-a'
+		@demo.shell 'touch file-b'
+
+		@demo.edit_and_commit 'file-a', 'file-b'
+
+		assert File.read('tmp/repo/file-a').length > 0
+		assert File.read('tmp/repo/file-b').length > 0
+		assert_equal "Edit and commit file-a, file-b.", @demo.log.last[:desc]
+		assert_equal ["repo $ git add file-a file-b", "repo $ git commit -m 'edited file file-a, file-b'"], @demo.log.last[:shell]
+		assert_equal "edited file file-a, file-b", last_commit_comment
 	end
 
 	def last_commit_comment

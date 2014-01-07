@@ -12,11 +12,8 @@ FileUtils.rm_rf 'workspaces/subtree'
 	create_and_commit 'wurst/salami'
 	create_and_commit 'kaese/gouda'
 
-	edit 'wurst/salami'
-	shell 'git commit -am "edit file salami"'
-
-	edit 'kaese/gouda', 'wurst/salami'
-	shell 'git commit -am "edit file gouda wurst and gouda"'
+	edit_and_commit 'wurst/salami'
+	edit_and_commit 'kaese/gouda', 'wurst/salami'
 
 	create_and_commit 'kaese/edamer'
 

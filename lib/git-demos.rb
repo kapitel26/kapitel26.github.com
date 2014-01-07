@@ -55,7 +55,6 @@ class GitDemos
 		_create filename
 	end
 
-
 	def _create filename
 		content = (1..12).collect { |i| "#{i} egal" }.join("\n")
 		fullpath = pwd << "/" << filename
@@ -65,7 +64,10 @@ class GitDemos
 
 	def edit *filenames
 		action "Edit files #{filenames.join(', ')}."
+		_edit *filenames
+	end
 
+	def _edit *filenames
 		filenames.each do |filename|
 			fullpath = pwd << "/" << filename
 			content = File.read(fullpath)
