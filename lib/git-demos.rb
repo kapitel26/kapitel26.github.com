@@ -27,16 +27,22 @@ class GitDemos
 	end
 
 	def _shell shell_command
-		relative = @current_path.join('/')
-		relative << ' ' unless @current_path.empty?
-		@log.last[:shell] ||= []
-		@log.last[:shell] <<  "#{relative}$ #{shell_command}"
 		cmd = "cd #{pwd} && #{shell_command}"
 		output, err, process = Open3.capture3(cmd)
 		# TODO record err and exitcode
-		@log.last[:out] ||= []
-		output.lines.map { |l| @log.last[:out] << l.rstrip }
+
+		relative = @current_path.join('/')
+		relative << ' ' unless @current_path.empty?
+
+		append_to_log :shell,  "#{relative}$ #{shell_command}"
+		output.lines.each { |l| append_to_log :out, l.rstrip }
+
 		@log.last[:out]
+	end
+
+	def append_to_log key, value
+		@log.last[key] ||= []
+		@log.last[key] <<  value
 	end
 
 	def action desc
