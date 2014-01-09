@@ -3,6 +3,7 @@
 FileUtils.rm_rf 'workspaces/subtree'
 
 @demo = GitDemos.new('workspaces/subtree')
+
 @demo.section do
 
 	action '### Projekt mit Verzeichnissen "wurst" und "kaese erzeugen"'
