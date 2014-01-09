@@ -34,7 +34,7 @@ class GitDemos
 		@log.last[key] <<  value
 	end
 
-	def action desc
+	def description desc
 		@log << { desc: desc }
 	end
 

@@ -6,7 +6,7 @@ FileUtils.rm_rf 'workspaces/subtree'
 
 @demo.section do
 
-	action '### Projekt mit Verzeichnissen "wurst" und "kaese erzeugen"'
+	description '### Projekt mit Verzeichnissen "wurst" und "kaese erzeugen"'
 
 	new_repo 'project'
 	cd 'project'
@@ -20,11 +20,11 @@ FileUtils.rm_rf 'workspaces/subtree'
 
 	shell 'git log --oneline'
 
-	action '### leeres Repo "kaese.git" erzeugen'
+	description '### leeres Repo "kaese.git" erzeugen'
 	cd '..'
 	shell 'git init --bare kaese.git'
 
-	action '### Änderungen nach kaese splitten'
+	description '### Änderungen nach kaese splitten'
 	cd 'project'
 	shell 'git subtree push --prefix kaese ../kaese.git master'
 

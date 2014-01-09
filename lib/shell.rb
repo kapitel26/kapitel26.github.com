@@ -1,7 +1,7 @@
 module Shell
 
 	def shell shell_command, desc = nil
-		action desc || "Execute shell command '#{shell_command}'."
+		description desc || "Execute shell command '#{shell_command}'."
 		_shell shell_command
 	end
 

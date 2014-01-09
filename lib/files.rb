@@ -1,7 +1,7 @@
 module Files
 
 	def create filename
-		action "Create new file '#{filename}'."
+		description "Create new file '#{filename}'."
 		_create filename
 	end
 
@@ -13,7 +13,7 @@ module Files
 	end
 
 	def edit *filenames
-		action "Edit files #{filenames.join(', ')}."
+		description "Edit files #{filenames.join(', ')}."
 		_edit *filenames
 	end
 
