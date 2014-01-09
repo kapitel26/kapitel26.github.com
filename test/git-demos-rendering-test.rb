@@ -2,6 +2,29 @@
 
 class GitDemosRenderingTest < AbstractGitDemosTest
 
+
+	def test_description_to_markdown
+		@demo.description 'Hallo Welt!'
+
+		assert_equal <<-EOS, @demo.to_markdown
+Initialize demo directory in 'tmp'.
+
+Hallo Welt!
+
+		EOS
+	end
+
+	def test_markdown_to_markdown
+		@demo.markdown 'XYZ'
+
+		assert_equal <<-EOS, @demo.to_markdown
+Initialize demo directory in 'tmp'.
+
+XYZ
+
+		EOS
+	end
+
 	def test_to_markdown
 		@demo.new_repo 'my-little-repo'
 		@demo.cd 'my-little-repo'
