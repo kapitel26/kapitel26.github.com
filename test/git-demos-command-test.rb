@@ -7,6 +7,8 @@ class GitDemosCommandTest < AbstractGitDemosTest
 		assert @demo.log.last[:desc] = "Initialize demo directory in 'tmp'"
 	end
 
+	## shell 
+
 	def test_shell
 		@demo.shell 'mkdir wurstpelle'
 
