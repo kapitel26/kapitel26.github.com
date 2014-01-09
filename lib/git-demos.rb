@@ -34,7 +34,7 @@ class GitDemos
 		@log.last[key] <<  value
 	end
 
-	def markdown md
+	def text md
 		@log << { desc: md }
 	end
 

@@ -14,8 +14,8 @@ Hallo Welt!
 		EOS
 	end
 
-	def test_markdown_to_markdown
-		@demo.markdown 'XYZ'
+	def test_text_to_markdown
+		@demo.text 'XYZ'
 
 		assert_equal <<-EOS, @demo.to_markdown
 Initialize demo directory in 'tmp'.
