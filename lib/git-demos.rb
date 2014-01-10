@@ -35,7 +35,7 @@ class GitDemos
 	end
 
 	def text md
-		@log << { desc: md }
+		@log << { text: md }
 	end
 
 	def description desc

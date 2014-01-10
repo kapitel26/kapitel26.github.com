@@ -3,7 +3,10 @@ module Rendering
 	def to_markdown file = nil
 		s = ""
 		@log.each do |entry|
-			s << entry[:desc] << "\n"
+			s << entry[:text] << "\n" if entry[:text]
+
+			s << entry[:desc] << "\n" if entry[:desc]
+			
 			if entry[:shell] && !entry[:shell].empty?
 				s << "\n"
 				entry[:shell].each { |cmd| s << "    " << cmd << "\n" }
