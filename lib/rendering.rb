@@ -5,8 +5,8 @@ module Rendering
 		@log.each do |entry|
 			s << entry[:text] << "\n" if entry[:text]
 
-			s << entry[:desc] << "\n" if entry[:desc]
-			
+			s << "    # " << entry[:desc] << "\n" if entry[:desc]
+
 			if entry[:shell] && !entry[:shell].empty?
 				s << "\n"
 				entry[:shell].each { |cmd| s << "    " << cmd << "\n" }
