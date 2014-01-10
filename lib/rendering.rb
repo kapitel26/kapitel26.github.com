@@ -8,7 +8,6 @@ module Rendering
 			s << "    # " << entry[:desc] << "\n" if entry[:desc]
 
 			if entry[:shell] && !entry[:shell].empty?
-				s << "\n"
 				entry[:shell].each { |cmd| s << "    " << cmd << "\n" }
 				if entry[:out]
 					entry[:out].each { |outputline| s << "    " << outputline << "\n" }
