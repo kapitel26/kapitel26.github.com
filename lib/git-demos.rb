@@ -25,7 +25,7 @@ class GitDemos
 		@current_path = []
 		@log = []
 
-		@log << { desc: "Initialize demo directory in '#{@basedir}'." }
+		@log << { text: "<!-- working directory in #{@basedir} -->" }
 		FileUtils.mkdir_p @basedir
 	end
 

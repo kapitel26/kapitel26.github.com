@@ -7,7 +7,7 @@ class GitDemosRenderingTest < AbstractGitDemosTest
 		@demo.description 'Hallo Welt!'
 
 		assert_equal <<-EOS, @demo.to_markdown
-    # Initialize demo directory in 'tmp'.
+<!-- working directory in tmp -->
     # Hallo Welt!
 		EOS
 	end
@@ -16,7 +16,7 @@ class GitDemosRenderingTest < AbstractGitDemosTest
 		@demo.text 'XYZ'
 
 		assert_equal <<-EOS, @demo.to_markdown
-    # Initialize demo directory in 'tmp'.
+<!-- working directory in tmp -->
 XYZ
 		EOS
 	end
@@ -27,7 +27,7 @@ XYZ
 		@demo.shell 'touch wurst'
 
 		assert_equal <<-EOS, @demo.to_markdown
-    # Initialize demo directory in 'tmp'.
+<!-- working directory in tmp -->
     # Create new repository in 'my-little-repo'.
     $ git init my-little-repo
     Initialized empty Git repository in /Users/stachi/work/git-demos/tmp/my-little-repo/.git/
@@ -41,7 +41,7 @@ XYZ
 		@demo.shell "echo A; echo '   B'; echo 	C"
 
 		assert_equal <<-EOS, @demo.to_markdown
-    # Initialize demo directory in 'tmp'.
+<!-- working directory in tmp -->
     # Execute shell command 'echo A; echo '   B'; echo 	C'.
     $ echo A; echo '   B'; echo 	C
     A
@@ -58,7 +58,7 @@ Welt
 		EOS
 
 		assert_equal <<-EOS, @demo.to_markdown
-    # Initialize demo directory in 'tmp'.
+<!-- working directory in tmp -->
 Hallo
 Welt
 
