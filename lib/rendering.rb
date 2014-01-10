@@ -7,7 +7,6 @@ module Rendering
 			render_desc(s, entry) if entry[:desc]
 			render_shell(s, entry) if entry[:shell]
 			render_out(s, entry) if entry[:out]
-			s << "\n"
 		end
 	
 		if file
