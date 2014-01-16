@@ -4,24 +4,25 @@ module Rendering
 
 	def to_markdown file = nil
 		@renderers ||= {
-			text: lambda { |s, data| s << data << "\n"  },
-			desc: lambda { |s, data| s << "    # " << data << "\n"  },
-			shell: lambda { |s, data| data.each { |cmd| s << "    " << cmd << "\n" } },
-			out: lambda { |s, data| data.each { |outputline| s << "    " << outputline << "\n" }  }
+			text: lambda { |output, data| output << data << "\n"  },
+			desc: lambda { |output, data| output << "    # " << data << "\n"  },
+			shell: lambda { |output, data| data.each { |cmd| output << "    " << cmd << "\n" } },
+			out: lambda { |output, data| data.each { |outputline| output << "    " << outputline << "\n" }  }
 		}
 
-		s = ""
+		output = ""
 		@log.each do |entry|
 			TYPES.reject { |type| entry[type].nil? }.
-				map { |type| @renderers[type].call(s,entry[type]) }
+				map { |type| @renderers[type].call(output, entry[type]) }
 		end
 	
 		if file
-			maruku = Maruku.new(s)
+			maruku = Maruku.new(output)
 			html = maruku.to_html
 			File.write(file, html)
 		end
-		s
+
+		output
 	end
 
 end
