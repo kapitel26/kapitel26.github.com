@@ -1,6 +1,5 @@
 module Rendering
 
-	TYPES = [:text, :desc, :shell, :out]
 
 	RENDERERS = {
 			text: lambda { |output, data| output << data << "\n"  },
@@ -11,20 +10,19 @@ module Rendering
 
 	def to_markdown file = nil
 		
-
-		output = ""
+		out = ""
+		
 		@log.each do |entry|
-			TYPES.reject { |type| entry[type].nil? }.
-				map { |type| RENDERERS[type].call(output, entry[type]) }
+			RENDERERS.each_pair { |type, renderer| renderer[out, entry[type]] if entry[type] }
 		end
 	
 		if file
-			maruku = Maruku.new(output)
+			maruku = Maruku.new(out)
 			html = maruku.to_html
 			File.write(file, html)
 		end
 
-		output
+		out
 	end
 
 end
