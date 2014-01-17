@@ -10,7 +10,7 @@ module Rendering
 	def to_markdown to_html_file = nil
 		
 		out = ""
-		show = RENDERERS.keys
+		show = Set.new(RENDERERS.keys)
 
 		@log.each do |entry|
 			if entry[:hide]
