@@ -6,7 +6,15 @@ FileUtils.rm_rf 'workspaces/subtree'
 
 @demo.section do
 
-	text '### Projekt mit Verzeichnissen "wurst" und "kaese erzeugen"'
+	text <<-EOS
+Ein Teilprojekt aus einem großen Projekt herausziehen
+-----------------------------------------------------
+
+
+### Ein Projekt aus mehreren Modulen
+	EOS
+
+	hide :desc, :shell, :out
 
 	new_repo 'project'
 	cd 'project'
@@ -18,10 +26,13 @@ FileUtils.rm_rf 'workspaces/subtree'
 
 	create_and_commit 'kaese/edamer'
 
+	show :out, :shell
 	shell 'git log --oneline'
+	hide :out
 
 	text '### leeres Repo "kaese.git" erzeugen'
 	cd '..'
+	show 
 	shell 'git init --bare kaese.git'
 
 	text '### Änderungen nach kaese splitten'
@@ -30,6 +41,7 @@ FileUtils.rm_rf 'workspaces/subtree'
 
 	cd '..'
 	cd 'kaese.git'
+
 	shell 'git log --oneline'
 
 	# shell 'git log --oneline'
