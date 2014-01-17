@@ -64,4 +64,16 @@ Welt
 
 		EOS
 	end
+
+	def test_hide_out
+		@demo.hide :out
+		@demo.shell 'echo A'
+
+		assert_equal <<-EOS, @demo.to_markdown
+<!-- working directory in tmp -->
+    # Execute shell command 'echo A'.
+    $ echo A
+		EOS
+
+	end
 end
