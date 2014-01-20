@@ -23,7 +23,7 @@ module Rendering
 		end
 	
 		if to_html_file
-			File.write(to_html_file, Maruku.new(out).to_html)
+			File.write(to_html_file, Maruku.new(out).to_html_document)
 		end
 
 		out
