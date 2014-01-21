@@ -12,14 +12,14 @@ module GitDemosShortcuts
 		description "Create and edit '#{file}'."
 		_create file
 		_shell "git add #{file}"
-		_shell "git commit -m 'created new file #{file}'"
+		_shell "git commit -m 'create new file #{file}'"
 	end
 
 	def edit_and_commit *files
 		description "Edit and commit #{files.join(', ')}."
 		_edit *files
 		_shell "git add #{files.join(' ')}"
-		_shell "git commit -m 'edited file #{files.join(', ')}'"
+		_shell "git commit -m 'edit file #{files.join(', ')}'"
 	end
 
 end

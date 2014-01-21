@@ -28,17 +28,15 @@ dann kann es sinnvoll sein, mit `git subtree` zu arbeiten. Ein Beispiel zeigt, w
 #### `lecker` - ein Projekt mit zwei Teilprojekten (Beispiel)
 	__
 
-
 	hide :out, :shell, :desc
 
 	new_repo 'lecker'
 	cd 'lecker'
+
 	create_and_commit 'wurst/salami'
 	create_and_commit 'kaese/gouda'
-
 	edit_and_commit 'wurst/salami'
 	edit_and_commit 'kaese/gouda', 'wurst/salami'
-
 	create_and_commit 'kaese/edamer'
 
 	show :out
@@ -77,25 +75,24 @@ Dann wird das neues Repository für das Teilprojekt angelegt. Wir erzeugen es al
 Aus dem Gesamtrepository heraus kann man mit `git subtree push` Commits in ein anderes Repository kopieren lassen. Der Parameter `--prefix` gibt an, welches Verzeichnis extrahiert werden soll.
 	__
 
-
 	cd 'lecker'
 	shell 'git subtree push --prefix kaese ../kaese.git master'
 
 	text <<-__
-Voila! Das war's.
+Voilà! Das war's.
 
 ### Was ist passiert?
 
 Das neue Repository enthält jene Dateien, die im Gesamtrepository unterhalb des `kaese`-Verzeichnisses liegen. Im neuen Repository liegen Sie auf oberster Ebene.
 	__
 
-	cd '..'; cd 'kaese.git'; show :out; hide :shell
+	cd '..'; cd 'kaese.git'; 
+	show :out; hide :shell
 	shell 'git ls-tree master -r --name-only'
 
 	text <<-__
 Es wurden aber nicht nur die Dateien übernommen, sondern auch ihre Historie. Die Commits wurden kopiert. Das Log zeigt die gleichen Commits wie das Log im Gesamtrepository. Allerdings wurden jene Commits weggelassen, die keine Dateien in `kaese` berührten.
 	__
-
 
 	shell 'git log --oneline --reverse'
 
