@@ -10,8 +10,6 @@ FileUtils.rm_rf 'workspaces/subtree'
 `subtree`-Repository für ein Teilprojekt erstellen
 --------------------------------------------------
 
-```Test``` XXX **```git add `ls`#  ```**
-
 Es gibt verschieden Gründe, weshalb man mitunter ein Teilprojekt eines größeren Projekts in einem separaten Repository verwalten möchte:
 
  * Man möchte es als Bibliothek für andere Projekte bereit stellen.
@@ -91,7 +89,7 @@ Voila! Das war's.
 Das neue Repository enthält jene Dateien, die im Gesamtrepository unterhalb des `kaese`-Verzeichnisses liegen. Im neuen Repository liegen Sie auf oberster Ebene.
 	__
 
-	cd '..'; cd 'kaese.git'; show :out
+	cd '..'; cd 'kaese.git'; show :out; hide :shell
 	shell 'git ls-tree master -r --name-only'
 
 	text <<-__
@@ -106,7 +104,6 @@ Auch die Inhalte der Commits sind gefiltert. Betrachtet man ein gemischtes Commi
 	__
 
 	shell 'git log --oneline --stat head^^!'
-
 
 end
 

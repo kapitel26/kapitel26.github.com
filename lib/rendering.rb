@@ -1,10 +1,17 @@
+
+def split_command line
+	/(.*\$) (.*)/.match(line)
+	[$1,$2]
+end
+
+
 module Rendering
 
 	RENDERERS = {
-			text: lambda { |output, data| output << data << "\n"  },
-			desc: lambda { |output, data| output << "    # " << data << "\n"  },
-			shell: lambda { |output, data| data.each { |cmd| output << "    " << cmd << "\n" } },
-			out: lambda { |output, data| data.each { |outputline| output << "    " << outputline << "\n" }  },
+		text: lambda { |output, data| output << data << "\n"  },
+		desc: lambda { |output, data| output << "    # " << data << "\n"  },
+		shell: lambda { |output, data| data.each { |l| prompt, cmd = split_command(l); output << "```#{prompt}``` **```#{cmd}```**\n\n" } },
+		out: lambda { |output, data| data.each { |outputline| output << "    " << outputline << "\n" }  },
 	}
 
 	def to_markdown to_html_file = nil
