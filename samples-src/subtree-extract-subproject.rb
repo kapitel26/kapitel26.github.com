@@ -2,7 +2,7 @@
 
 FileUtils.rm_rf 'workspaces/subtree'
 
-@demo = GitDemos.new('workspaces/subtree')
+@demo = GitDemos.new('workspaces/subtree-extract-subproject')
 
 @demo.section do
 
