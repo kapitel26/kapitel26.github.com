@@ -17,10 +17,12 @@ You can add *Markown*.
 
 	create 'wurst'
 
+	shell 'ls'
+
 	shell 'git add --all'
+
 	shell 'git commit -m "first commit"'
 	shell 'git log --oneline'
-
 
 end
 

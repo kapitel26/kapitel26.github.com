@@ -8,7 +8,13 @@ module Shell
 	def _shell shell_command
 		cmd = "cd #{pwd} && #{shell_command}"
 		output, err, process = Open3.capture3(cmd)
-		# TODO record err and exitcode
+
+		exitcode = process.exitstatus
+		if exitcode != 0
+			raise "Error #{exitcode} while executing #{cmd}\n---stdout---\n#{output}---stderr---\n#{err}------------"
+		end
+
+		# TODO record err
 
 		relative = @current_path.join('/')
 		relative << ' ' unless @current_path.empty?

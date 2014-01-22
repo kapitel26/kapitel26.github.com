@@ -31,4 +31,10 @@ class GitDemosShellTest < AbstractGitDemosTest
 		assert_equal ["hallo", "welt"], @demo.log.last[:out]
 	end
 
+	def test_shell_raises_exception_after_exitcode
+		assert_raises(RuntimeError) do
+			@demo.shell 'cat adaf234214'
+		end
+	end
+
 end
