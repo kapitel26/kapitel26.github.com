@@ -1,8 +1,8 @@
 # encoding: UTF-8
 
-FileUtils.rm_rf 'workspaces/subtree-extract-subproject'
-
-@demo = GitDemos.new('workspaces/subtree-extract-subproject')
+samplename = 'subtree-extract-subproject'
+FileUtils.rm_rf "workspaces/#{samplename}"
+@demo = GitDemos.new("workspaces/#{samplename}")
 
 @demo.section do
 
@@ -29,23 +29,14 @@ dann kann es sinnvoll sein, mit `git subtree` zu arbeiten. Ein Beispiel zeigt, w
 	__
 
 	hide :out, :shell, :desc
-
-	new_repo 'lecker'
-	cd 'lecker'
-
-	create_and_commit 'wurst/salami'
-	create_and_commit 'kaese/gouda'
-	edit_and_commit 'wurst/salami'
-	edit_and_commit 'kaese/gouda', 'wurst/salami'
-	create_and_commit 'kaese/edamer'
-
-	show :out
+	createSubtreeSampleMainProject(self)
 
 	text <<-__
 Das Gesamtprojekt hat drei Dateien in zwei Teilprojekten `wurst` und `kaese`.
 Das Log zeigt eine gemischte Historie mit Änderungen an
 beiden Teilprojekten.
 	__
+	show :out
 	shell 'git log --oneline --reverse'
 
 	text <<-__
@@ -58,26 +49,21 @@ Es sollen die Dateien im Unterverzeichnis 'kaese' extrahiert werden.
 	__
 	shell 'git ls-tree master -r --name-only'
 	hide :out
-
 	text <<-__
 #### Schritt 2: Leeres Repository anlegen
 
 Dann wird das neues Repository für das Teilprojekt angelegt. Wir erzeugen es als `bare`-Repository, weil wir dorthin pushen wollen. Im Beispiel nennen wir es `kaese.git` 
 	__
-
 	cd '..'
 	show :shell
 	shell 'git init --bare kaese.git'
-
 	text <<-__
-#### Schritt 3: Übertragen der Commits mit `git subtree push
+#### Schritt 3: Übertragen der Commits mit `git subtree push`
 
 Aus dem Gesamtrepository heraus kann man mit `git subtree push` Commits in ein anderes Repository kopieren lassen. Der Parameter `--prefix` gibt an, welches Verzeichnis extrahiert werden soll.
 	__
-
 	cd 'lecker'
 	shell 'git subtree push --prefix kaese ../kaese.git master'
-
 	text <<-__
 Voilà! Das war's.
 
@@ -85,21 +71,17 @@ Voilà! Das war's.
 
 Das neue Repository enthält jene Dateien, die im Gesamtrepository unterhalb des `kaese`-Verzeichnisses liegen. Im neuen Repository liegen Sie auf oberster Ebene.
 	__
-
-	cd '..'; cd 'kaese.git'; 
+	cd '..'; 
+	cd 'kaese.git'; 
 	show :out; hide :shell
 	shell 'git ls-tree master -r --name-only'
-
 	text <<-__
 Es wurden aber nicht nur die Dateien übernommen, sondern auch ihre Historie. Die Commits wurden kopiert. Das Log zeigt die gleichen Commits wie das Log im Gesamtrepository. Allerdings wurden jene Commits weggelassen, die keine Dateien in `kaese` berührten.
 	__
-
 	shell 'git log --oneline --reverse'
-
 	text <<-__
 Auch die Inhalte der Commits sind gefiltert. Betrachtet man ein gemischtes Commit aus dem Gesamtrepository (mit Änderungen in `wurst` und `kaese`, so sieht man im neuen Repository nur die Änderungen an Dateien, die ursprünglich in  'kaese' lagen.
 	__
-
 	shell 'git log --oneline --stat head^^!'
 
 end
