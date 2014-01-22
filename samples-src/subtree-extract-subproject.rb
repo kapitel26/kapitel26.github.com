@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-FileUtils.rm_rf 'workspaces/subtree'
+FileUtils.rm_rf 'workspaces/subtree-extract-subproject'
 
 @demo = GitDemos.new('workspaces/subtree-extract-subproject')
 
@@ -43,23 +43,23 @@ dann kann es sinnvoll sein, mit `git subtree` zu arbeiten. Ein Beispiel zeigt, w
 
 	text <<-__
 Das Gesamtprojekt hat drei Dateien in zwei Teilprojekten `wurst` und `kaese`.
-	__
-	shell 'git ls-tree master -r --name-only'
-
-	text <<-__
 Das Log zeigt eine gemischte Historie mit Änderungen an
 beiden Teilprojekten.
 	__
 	shell 'git log --oneline --reverse'
-	hide :out
 
 	text <<-__
 Die Dateien `edamer` und `gouda` unterhalb des Verzeichnisses `kaese` sollen in einem eigenen Repository verwaltet werden.
 
 #### Schritt 1: Falls erforderlich, Teilprojekt in ein Verzeichnis bringen
 
-Sorgen Sie dafür, dass alle Dateien des Teilprojekts unterhalb eines Verzeichnisses im Gesamtprojekts liegen. In unserem Beispiel ist dies bereits der Fall.
+Sorgen Sie dafür, dass alle Dateien des Teilprojekts unterhalb eines Verzeichnisses im Gesamtprojekts liegen. In unserem Beispiel ist dies bereits der Fall. 
+Es sollen die Dateien im Unterverzeichnis 'kaese' extrahiert werden.
+	__
+	shell 'git ls-tree master -r --name-only'
+	hide :out
 
+	text <<-__
 #### Schritt 2: Leeres Repository anlegen
 
 Dann wird das neues Repository für das Teilprojekt angelegt. Wir erzeugen es als `bare`-Repository, weil wir dorthin pushen wollen. Im Beispiel nennen wir es `kaese.git` 
