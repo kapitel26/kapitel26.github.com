@@ -10,3 +10,13 @@ def createSubtreeSampleMainProject(demo)
 	end
 end
 
+def createCreateAndCloneSubprojectKaese(demo)
+	demo.section do
+
+		shell 'git init --bare ../kaese.git'
+		shell 'git subtree push --prefix kaese ../kaese.git master'
+		cd '..'
+		shell 'git clone kaese.git kaese'
+
+	end
+end
