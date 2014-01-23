@@ -1,5 +1,6 @@
 # encoding: UTF-8
 
+FileUtils.rm_rf "tmp/demo"
 @demo = GitDemos.new('tmp/demo')
 @demo.section do
 

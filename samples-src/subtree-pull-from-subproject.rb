@@ -12,24 +12,25 @@ FileUtils.rm_rf "workspaces/#{samplename}"
 
 	__
 
-	shell 'git init kaese.git'
 
 	#hide :out, :shell, :desc
 	createSubtreeSampleMainProject(self)
-	# shell 'git subtree push --prefix kaese ../kaese.git master'
-	# shell 'git log --oneline'
-	# cd '..'
-	# shell 'git clone kaese.git kaese'
-	# cd 'kaese'
+
+	shell 'git init --bare ../kaese.git'
+	shell 'git subtree push --prefix kaese ../kaese.git master'
+	cd '..'
+
+	shell 'git clone kaese.git kaese'
+	cd 'kaese'
 	
 	# show :out, :shell, :desc
 	# shell 'git checkout master'
-	# shell 'git log --oneline'
-	# shell 'ls -lah'
-	# #edit 'gouda'
-	# #edit 'gouda', 'edamer'
+	shell 'ls -lah'
+	edit_and_commit 'gouda'
+	edit_and_commit 'gouda', 'edamer'
+	shell 'git log --oneline'
 
-	# text "### schluss"
+	text "### schluss"
 
 
 end
