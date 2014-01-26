@@ -6,54 +6,51 @@ FileUtils.rm_rf "workspaces/#{samplename}"
 
 @demo.section do
 
-	shell 'git init --bare kaese.git'
 
 	hide :out, :shell, :desc
+	shell 'git init --bare kaese.git'
+
 	createSubtreeSampleMainProject(self)
-#	createCreateAndCloneSubprojectKaese(self)
-	show :out, :shell, :desc
+
+	show :out
 	shell <<-__ 
 rev=$(git subtree split --prefix kaese --rejoin) 
 git push ../kaese.git $rev:refs/heads/master 
 	__
-	shell 'git log --oneline --graph --all'
-
+	hide :out, :shell
 	cd '..'
 	shell 'git clone kaese.git kaese'
-	
+
 	text <<-__
 Änderungen aus einem Teilprojekt mit eigenem Repository abholen
 ----------------------------------------------------------------
 
-Im Teilprojekt `kaese` wurden zwei Commits erstellt, 
-diese Commits sollen im `lecker`-Projekt in den Ordner `kaese`
-nachgeholt werden.
+### Ausgangsituaution
+
+Im Teilprojekt `kaese` sind zwei neue Commits entstanden,
+die im Gesamtprojekt `lecker` noch nicht bekannt sind.
 	__
-
-
-
 	cd 'kaese'
 	create_and_commit 'brie'
 	edit_and_commit 'gouda', 'brie'
-	shell 'pwd'
-	shell 'git log --oneline --decorate=short'
-
+	show :out
+	shell 'echo -- kaese -- ; git log --all --pretty="%s %d"'
+	
 	text <<-__
-`subtree pull`
---------------
+diese Commits sollen im `lecker`-Projekt in den Ordner `kaese`
+nachgeholt werden.
+
+### Der Befehl `git subtree pull`
 	__
 	cd '..'; cd 'lecker'
 	show :shell, :out
-	shell 'git status'
-	shell 'pwd'
-	shell 'git log --oneline --decorate'
 	shell 'git subtree pull --prefix kaese ../kaese master'
 
-	shell 'git log --oneline --graph --all'
+	text "### Was ist pasiert"
 
-	shell 'git ls-tree master -r --name-only'
+	hide :shell; show :out 
 
- 	text "### schluss!"
+	shell 'echo -- kaese -- ; git log --graph --all --pretty="%s %d"'
 
 
 end
