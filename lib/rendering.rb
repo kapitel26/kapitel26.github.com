@@ -26,6 +26,9 @@ module Rendering
 			if entry[:show]
 				show = show + entry[:show]
 			end
+			if entry[:enable]
+				show = entry[:enable]
+			end
 			RENDERERS.each_pair { |type, renderer| renderer[out, entry[type]] if entry[type] && show.include?(type) }
 		end
 	
@@ -34,6 +37,10 @@ module Rendering
 		end
 
 		out
+	end
+
+	def enable *types_to_show
+		@log << { enable: types_to_show }
 	end
 
 	def hide *types_to_hide

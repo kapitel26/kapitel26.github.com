@@ -7,20 +7,19 @@ FileUtils.rm_rf "workspaces/#{samplename}"
 @demo.section do
 
 
-	hide :out, :shell, :desc
+	enable []
 	shell 'git init --bare kaese.git'
 
 	createSubtreeSampleMainProject(self)
 
-	show :out
 	shell <<-__ 
 rev=$(git subtree split --prefix kaese --rejoin) 
 git push ../kaese.git $rev:refs/heads/master 
 	__
-	hide :out, :shell
 	cd '..'
 	shell 'git clone kaese.git kaese'
 
+	enable :text
 	text <<-__
 Änderungen aus einem Teilprojekt mit eigenem Repository abholen
 ----------------------------------------------------------------
@@ -33,8 +32,8 @@ die im Gesamtprojekt `lecker` noch nicht bekannt sind.
 	cd 'kaese'
 	create_and_commit 'brie'
 	edit_and_commit 'gouda', 'brie'
-	show :out
-	shell 'echo -- kaese -- ; git log --all --pretty="%s %d"'
+	enable :out, :text
+	shell 'echo -- kaese -- ; git log  --all --pretty="%s %d" -3'
 	
 	text <<-__
 diese Commits sollen im `lecker`-Projekt in den Ordner `kaese`
@@ -43,14 +42,13 @@ nachgeholt werden.
 ### Der Befehl `git subtree pull`
 	__
 	cd '..'; cd 'lecker'
-	show :shell, :out
+	enable :shell, :text
 	shell 'git subtree pull --prefix kaese ../kaese master'
 
 	text "### Was ist pasiert"
 
-	hide :shell; show :out 
-
-	shell 'echo -- kaese -- ; git log --graph --all --pretty="%s %d"'
+	enable :out 
+	shell 'echo -- lecker -- ; git log --graph --all --pretty="%s %d"'
 
 
 end
