@@ -22,4 +22,8 @@ module GitDemosShortcuts
 		_shell "git commit -m 'edit #{files.join(', ')}'"
 	end
 
+	def gitlog param = ""
+		shell "echo Log for #{@current_path.last}; git log --graph --pretty=\"%s %d\" #{param}"
+	end
+
 end

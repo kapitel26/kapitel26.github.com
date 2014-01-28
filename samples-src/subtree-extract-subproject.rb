@@ -37,7 +37,7 @@ Das Log zeigt eine gemischte Historie mit Änderungen an
 beiden Teilprojekten.
 	__
 	show :out, :text
-	shell 'git log --oneline --reverse'
+	gitlog
 
 	text <<-__
 Die Dateien `edamer` und `gouda` unterhalb des Verzeichnisses `kaese` sollen in einem eigenen Repository verwaltet werden.
@@ -78,7 +78,7 @@ Das neue Repository enthält jene Dateien, die im Gesamtrepository unterhalb des
 	text <<-__
 Es wurden aber nicht nur die Dateien übernommen, sondern auch ihre Historie. Die Commits wurden kopiert. Das Log zeigt die gleichen Commits wie das Log im Gesamtrepository. Allerdings wurden jene Commits weggelassen, die keine Dateien in `kaese` berührten.
 	__
-	shell 'git log --oneline --reverse'
+	gitlog
 	text <<-__
 Auch die Inhalte der Commits sind gefiltert. Betrachtet man ein gemischtes Commit aus dem Gesamtrepository (mit Änderungen in `wurst` und `kaese`, so sieht man im neuen Repository nur die Änderungen an Dateien, die ursprünglich in  'kaese' lagen.
 	__

@@ -24,7 +24,7 @@ class GitDemosShortcutTest < AbstractGitDemosTest
 		assert_equal "create file", last_commit_comment
 	end
 
-	def test_cedit_and_commit
+	def test_edit_and_commit
 		@demo.new_repo 'repo'
 		@demo.cd 'repo'
 		@demo.shell 'touch file-a'
@@ -37,6 +37,29 @@ class GitDemosShortcutTest < AbstractGitDemosTest
 		assert_equal "Edit and commit file-a, file-b.", @demo.log.last[:desc]
 		assert_equal ["repo $ git add file-a file-b", "repo $ git commit -m 'edit file-a, file-b'"], @demo.log.last[:shell]
 		assert_equal "edit file-a, file-b", last_commit_comment
+	end
+
+	def test_log
+		@demo.new_repo 'repo'
+		@demo.cd 'repo'
+		@demo.create_and_commit 'file-a'
+		@demo.create_and_commit 'file-b'
+		@demo.gitlog
+
+		assert_equal <<-__ ,  @demo.log.last[:out].join("\n")+"\n"
+Log for repo
+* create file-b  (HEAD, master)
+* create file-a
+		__
+
+		@demo.gitlog '-1'
+
+		assert_equal <<-__ ,  @demo.log.last[:out].join("\n")+"\n"
+Log for repo
+* create file-b  (HEAD, master)
+		__
+
+
 	end
 
 	def last_commit_comment

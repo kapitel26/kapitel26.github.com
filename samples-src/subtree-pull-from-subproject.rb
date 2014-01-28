@@ -6,7 +6,6 @@ FileUtils.rm_rf "workspaces/#{samplename}"
 
 @demo.section do
 
-
 	show []
 	shell 'git init --bare kaese.git'
 
@@ -34,7 +33,7 @@ diese sollen im Projekt `lecker`, wo `kaese` ein Subtree ist,
 	create_and_commit 'brie'
 	edit_and_commit 'gouda', 'brie'
 	show :out, :text
-	shell 'echo -- kaese -- ; git log  --all --pretty="%s %d" -3'
+	gitlog '-3'
 	
 	text <<-__
 ### Der Befehl `git subtree pull`
@@ -48,8 +47,7 @@ diese sollen im Projekt `lecker`, wo `kaese` ein Subtree ist,
 	__
 
 	show :out 
-	shell 'echo -- lecker -- ; git log --graph --all --pretty="%s %d"'
-
+	gitlog
 
 end
 
