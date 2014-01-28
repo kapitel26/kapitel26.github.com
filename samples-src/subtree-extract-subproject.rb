@@ -28,7 +28,7 @@ dann kann es sinnvoll sein, mit `git subtree` zu arbeiten. Ein Beispiel zeigt, w
 #### `lecker` - ein Projekt mit zwei Teilprojekten (Beispiel)
 	__
 
-	hide :out, :shell, :desc
+	enable
 	createSubtreeSampleMainProject(self)
 
 	text <<-__
@@ -36,7 +36,7 @@ Das Gesamtprojekt hat drei Dateien in zwei Teilprojekten `wurst` und `kaese`.
 Das Log zeigt eine gemischte Historie mit Änderungen an
 beiden Teilprojekten.
 	__
-	show :out
+	enable :out, :text
 	shell 'git log --oneline --reverse'
 
 	text <<-__
@@ -48,14 +48,14 @@ Sorgen Sie dafür, dass alle Dateien des Teilprojekts unterhalb eines Verzeichni
 Es sollen die Dateien im Unterverzeichnis 'kaese' extrahiert werden.
 	__
 	shell 'git ls-tree master -r --name-only'
-	hide :out
+	enable :out, :text
 	text <<-__
 #### Schritt 2: Leeres Repository anlegen
 
 Dann wird das neues Repository für das Teilprojekt angelegt. Wir erzeugen es als `bare`-Repository, weil wir dorthin pushen wollen. Im Beispiel nennen wir es `kaese.git` 
 	__
 	cd '..'
-	show :shell
+	enable :shell, :text
 	shell 'git init --bare kaese.git'
 	text <<-__
 #### Schritt 3: Übertragen der Commits mit `git subtree push`
@@ -73,7 +73,7 @@ Das neue Repository enthält jene Dateien, die im Gesamtrepository unterhalb des
 	__
 	cd '..'; 
 	cd 'kaese.git'; 
-	show :out; hide :shell
+	enable :out, :shell, :text
 	shell 'git ls-tree master -r --name-only'
 	text <<-__
 Es wurden aber nicht nur die Dateien übernommen, sondern auch ihre Historie. Die Commits wurden kopiert. Das Log zeigt die gleichen Commits wie das Log im Gesamtrepository. Allerdings wurden jene Commits weggelassen, die keine Dateien in `kaese` berührten.

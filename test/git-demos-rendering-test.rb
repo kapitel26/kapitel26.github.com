@@ -83,37 +83,28 @@ Welt
 		EOS
 	end
 
-	def test_hide
-		@demo.hide :out
+	def test_enable
+		@demo.enable :shell, :text
 		
+		@demo.text "MOIN"
 		@demo.shell 'echo A'
 		assert_equal <<-EOS, @demo.to_markdown
 <!-- working directory in tmp -->
-    # Execute shell command 'echo A'.
+MOIN
 ```$``` **```echo A```**
 
 		EOS
 
 	end
 
-	def test_hide_many
-		@demo.hide :desc, :shell, :out
+	def test_enable_nothing
+		@demo.enable 
 
+		@demo.text 'MOIN'
 		@demo.shell 'echo A'
 		assert_equal <<-EOS, @demo.to_markdown
 <!-- working directory in tmp -->
 		EOS
 	end
 
-	def test_show
-		@demo.hide :desc, :shell, :out
-		@demo.show :shell
-
-		@demo.shell 'echo A'
-		assert_equal <<-EOS, @demo.to_markdown
-<!-- working directory in tmp -->
-```$``` **```echo A```**
-
-		EOS
-	end
 end

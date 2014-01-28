@@ -20,15 +20,7 @@ module Rendering
 		show = Set.new(RENDERERS.keys)
 
 		@log.each do |entry|
-			if entry[:hide]
-				show = show - entry[:hide]
-			end
-			if entry[:show]
-				show = show + entry[:show]
-			end
-			if entry[:enable]
-				show = entry[:enable]
-			end
+			show = entry[:enable] if entry[:enable]
 			RENDERERS.each_pair { |type, renderer| renderer[out, entry[type]] if entry[type] && show.include?(type) }
 		end
 	
@@ -42,14 +34,5 @@ module Rendering
 	def enable *types_to_show
 		@log << { enable: types_to_show }
 	end
-
-	def hide *types_to_hide
-		@log << { hide: types_to_hide }
-	end
-
-	def show *types_to_show
-		@log << { show: types_to_show }
-	end
-
 
 end
