@@ -7,7 +7,7 @@ FileUtils.rm_rf "workspaces/#{samplename}"
 @demo.section do
 
 
-	enable []
+	show []
 	shell 'git init --bare kaese.git'
 
 	createSubtreeSampleMainProject(self)
@@ -19,35 +19,35 @@ git push ../kaese.git $rev:refs/heads/master
 	cd '..'
 	shell 'git clone kaese.git kaese'
 
-	enable :text
+	show :text
 	text <<-__
 Änderungen aus einem Teilprojekt mit eigenem Repository abholen
 ----------------------------------------------------------------
 
 ### Ausgangsituaution
 
-Im Teilprojekt `kaese` sind zwei neue Commits entstanden,
-die im Gesamtprojekt `lecker` noch nicht bekannt sind.
+Im Projekt `kaese` sind zwei neue Commits entstanden,
+diese sollen im Projekt `lecker`, wo `kaese` ein Subtree ist,
+übernommen werden.
 	__
 	cd 'kaese'
 	create_and_commit 'brie'
 	edit_and_commit 'gouda', 'brie'
-	enable :out, :text
+	show :out, :text
 	shell 'echo -- kaese -- ; git log  --all --pretty="%s %d" -3'
 	
 	text <<-__
-diese Commits sollen im `lecker`-Projekt in den Ordner `kaese`
-nachgeholt werden.
-
 ### Der Befehl `git subtree pull`
 	__
 	cd '..'; cd 'lecker'
-	enable :shell, :text
+	show :shell, :text
 	shell 'git subtree pull --prefix kaese ../kaese master'
 
-	text "### Was ist pasiert"
+	text <<-__
+### Was ist pasiert"
+	__
 
-	enable :out 
+	show :out 
 	shell 'echo -- lecker -- ; git log --graph --all --pretty="%s %d"'
 
 

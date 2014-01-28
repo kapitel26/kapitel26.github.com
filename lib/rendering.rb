@@ -17,11 +17,13 @@ module Rendering
 	def to_markdown to_html_file = nil
 		
 		out = ""
-		show = Set.new(RENDERERS.keys)
+		show_these_only = Set.new(RENDERERS.keys)
 
-		@log.each do |entry|
-			show = entry[:enable] if entry[:enable]
-			RENDERERS.each_pair { |type, renderer| renderer[out, entry[type]] if entry[type] && show.include?(type) }
+		@log.each do |entry| 
+			show_these_only = entry[:show] if entry[:show]
+			RENDERERS.each_pair do |type, renderer|
+				renderer[out, entry[type]] if entry[type] && show_these_only.include?(type)
+			end
 		end
 	
 		if to_html_file
@@ -31,8 +33,8 @@ module Rendering
 		out
 	end
 
-	def enable *types_to_show
-		@log << { enable: types_to_show }
+	def show *types_to_show
+		@log << { show: types_to_show }
 	end
 
 end

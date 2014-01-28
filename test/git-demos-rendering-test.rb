@@ -34,8 +34,6 @@ XYZ
 		EOS
 	end
 
-
-
 	def test_to_markdown
 		@demo.new_repo 'my-little-repo'
 		@demo.cd 'my-little-repo'
@@ -83,8 +81,8 @@ Welt
 		EOS
 	end
 
-	def test_enable
-		@demo.enable :shell, :text
+	def test_show
+		@demo.show :shell, :text
 		
 		@demo.text "MOIN"
 		@demo.shell 'echo A'
@@ -94,11 +92,10 @@ MOIN
 ```$``` **```echo A```**
 
 		EOS
-
 	end
 
-	def test_enable_nothing
-		@demo.enable 
+	def test_show_nothing
+		@demo.show 
 
 		@demo.text 'MOIN'
 		@demo.shell 'echo A'
