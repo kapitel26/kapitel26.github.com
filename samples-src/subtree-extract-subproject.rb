@@ -23,7 +23,7 @@ Natürlich könnte man einfach die Source-Dateien des Teilprojekts aus dem Haupt
  * oder künftige Änderungen zwischen Teil- und Gesamtprojekt austauschen möchte, 
  * und die Sourcen vollständig im Gesamptprojekt erhalten möchte,
 
-dann kann es sinnvoll sein, mit `git subtree` zu arbeiten. Ein Beispiel zeigt, wie das geht:
+dann kann es sinnvoll sein, mit `git subtree` zu arbeiten. Ein Beispiel zeigt, wie das tgeh:
 
 #### `lecker` - ein Projekt mit zwei Teilprojekten (Beispiel)
 	__
@@ -37,6 +37,7 @@ Das Log zeigt eine gemischte Historie mit Änderungen an
 beiden Teilprojekten.
 	__
 	show :out, :text
+	cd 'lecker'
 	gitlog
 
 	text <<-__
@@ -54,16 +55,28 @@ Es sollen die Dateien im Unterverzeichnis 'kaese' extrahiert werden.
 
 Dann wird das neues Repository für das Teilprojekt angelegt. Wir erzeugen es als `bare`-Repository, weil wir dorthin pushen wollen. Im Beispiel nennen wir es `kaese.git` 
 	__
-	cd '..'
+	# cd '..'
 	show :shell, :text
-	shell 'git init --bare kaese.git'
+	shell 'git init --bare ../kaese.git'
+	shell 'git remote add kaeserepo ../kaese.git'
+
 	text <<-__
+
+
 #### Schritt 3: Übertragen der Commits mit `git subtree push`
 
-Aus dem Gesamtrepository heraus kann man mit `git subtree push` Commits in ein anderes Repository kopieren lassen. Der Parameter `--prefix` gibt an, welches Verzeichnis extrahiert werden soll.
+Aus dem Gesamtrepository heraus kann man mit `git subtree push` Commits in ein anderes Repository kopieren lassen. 
+Der Parameter `--prefix` gibt an, welches Verzeichnis extrahiert werden soll.
 	__
-	cd 'lecker'
-	shell 'git subtree push --prefix kaese ../kaese.git master'
+	show :shell, :out, :text
+	shell 'git subtree push --prefix=kaese ../kaese.git master'
+
+	text <<-__
+Falls man später aus dem ausgelagerten Repository (hier: `kaese`) Commits zurückholen möchte,
+dann empfiehlt es sich danach gleich ein `git subtree pull` auszuführen.
+	__
+	shell 'git subtree pull --prefix kaese kaeserepo master'
+
 	text <<-__
 Voilà! Das war's.
 
@@ -83,6 +96,19 @@ Es wurden aber nicht nur die Dateien übernommen, sondern auch ihre Historie. Di
 Auch die Inhalte der Commits sind gefiltert. Betrachtet man ein gemischtes Commit aus dem Gesamtrepository (mit Änderungen in `wurst` und `kaese`, so sieht man im neuen Repository nur die Änderungen an Dateien, die ursprünglich in  'kaese' lagen.
 	__
 	shell 'git log --oneline --stat head^^!'
+	text <<-__
+Blabla
+	__
+
+	cd '..'
+	cd 'lecker'
+	shell 'git fetch ../kaese.git'
+	shell 'git branch -r'
+	gitlog
+	text <<-__
+TODO: Warum das Pull?
+	__
+
 
 end
 

@@ -10,13 +10,8 @@ FileUtils.rm_rf "workspaces/#{samplename}"
 	shell 'git init --bare kaese.git'
 
 	createSubtreeSampleMainProject(self)
+	createCreateAndCloneSubprojectKaese(self)
 
-	shell <<-__ 
-rev=$(git subtree split --prefix kaese --rejoin) 
-git push ../kaese.git $rev:refs/heads/master 
-	__
-	cd '..'
-	shell 'git clone kaese.git kaese'
 
 	show :text
 	text <<-__
@@ -25,15 +20,28 @@ git push ../kaese.git $rev:refs/heads/master
 
 ### Ausgangsituaution
 
+Ein Teilprojekt `kaese` wurde aus dem Gesamtprojekt `lecker`
+herausgelöst.
+	__
+
+	cd 'lecker'
+	show :out, :text
+	gitlog 
+	show :text
+	cd '..'
+
+	text <<-__
 Im Projekt `kaese` sind zwei neue Commits entstanden,
 diese sollen im Projekt `lecker`, wo `kaese` ein Subtree ist,
 übernommen werden.
 	__
+
+	shell 'git clone kaese.git kaese'
 	cd 'kaese'
 	create_and_commit 'brie'
 	edit_and_commit 'gouda', 'brie'
 	show :out, :text
-	gitlog '-3'
+	gitlog 
 	
 	text <<-__
 ### Der Befehl `git subtree pull`
@@ -50,4 +58,3 @@ diese sollen im Projekt `lecker`, wo `kaese` ein Subtree ist,
 	gitlog
 
 end
-
