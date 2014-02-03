@@ -13,26 +13,26 @@ FileUtils.rm_rf "workspaces/#{samplename}"
 Es gibt verschieden Gründe, weshalb man mitunter ein Teilprojekt eines größeren Projekts in einem separaten Repository verwalten möchte:
 
  * Man möchte es als Bibliothek für andere Projekte bereit stellen.
- * Man möchte es Open-Source veröffentlichen. Das Gesamtprojekt aber nicht.
+ * Man möchte es Open-Source veröffentlichen. Das Hauptprojekt aber nicht.
  * Man möchte es von externen Entwicklern weiterentwickeln lassen, ohne dass diese Zugriff auf das Gesamtrepository erhalten.
  * Man möchte den Entwicklern kleinere Repositorys an die Hand geben, weil das Gesamtrepository sehr groß geworden ist.
 
-Natürlich könnte man einfach die Source-Dateien des Teilprojekts aus dem Hauptprojekt entfernen, und sie ein neues, unabhängiges Repository importieren. Wenn man jedoch
+Natürlich könnte man einfach die Source-Dateien des Teilprojekts in ein neues, unabhängiges Repository kopieren. Wenn man jedoch
 
  * die Historie der Commits aus dem Hauptrepository übernehmen möchte, 
- * oder künftige Änderungen zwischen Teil- und Gesamtprojekt austauschen möchte, 
+ * oder künftige Änderungen zwischen Teil- und Hauptprojekt austauschen möchte, 
  * und die Sourcen vollständig im Gesamptprojekt erhalten möchte,
 
-dann kann es sinnvoll sein, mit `git subtree` zu arbeiten. Ein Beispiel zeigt, wie das tgeh:
+dann kann es sinnvoll sein, mit `git subtree` zu arbeiten. Ein Beispiel zeigt, wie das geht:
 
-#### `lecker` - ein Projekt mit zwei Teilprojekten (Beispiel)
+#### (Beispiel) `lecker` - das Hauptprojekt mit zwei Teilprojekten 
 	__
 
 	show
 	createSubtreeSampleMainProject(self)
 
 	text <<-__
-Das Gesamtprojekt hat drei Dateien in zwei Teilprojekten `wurst` und `kaese`.
+Das Hauptprojekt hat drei Dateien in zwei Teilprojekten `wurst` und `kaese`.
 Das Log zeigt eine gemischte Historie mit Änderungen an
 beiden Teilprojekten.
 	__
@@ -41,6 +41,9 @@ beiden Teilprojekten.
 	gitlog
 
 	text <<-__
+
+#### (Beispiel) 'kaese' - ein Teilprojekt, das herausgelöst werden soll
+
 Die Dateien `edamer` und `gouda` unterhalb des Verzeichnisses `kaese` sollen in einem eigenen Repository verwaltet werden.
 
 #### Schritt 1: Falls erforderlich, Teilprojekt in ein Verzeichnis bringen
@@ -67,14 +70,11 @@ Dann wird das neues Repository für das Teilprojekt angelegt. Wir erzeugen es al
 
 Aus dem Gesamtrepository heraus kann man mit `git subtree push` Commits in ein anderes Repository kopieren lassen. 
 Der Parameter `--prefix` gibt an, welches Verzeichnis extrahiert werden soll.
-	__
-	show :shell, :out, :text
-	shell 'git subtree push --prefix=kaese ../kaese.git master'
-
-	text <<-__
 Falls man später aus dem ausgelagerten Repository (hier: `kaese`) Commits zurückholen möchte,
-dann empfiehlt es sich danach gleich ein `git subtree pull` auszuführen.
+dann empfiehlt es sichm, gleich ein `git subtree pull` hinterherzuschicken.
 	__
+	show :shell, :text
+	shell 'git subtree push --prefix=kaese kaeserepo master'
 	shell 'git subtree pull --prefix kaese kaeserepo master'
 
 	text <<-__
