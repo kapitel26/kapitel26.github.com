@@ -10,8 +10,8 @@ module Rendering
 	RENDERERS = {
 		text: lambda { |output, data| output << data << "\n"  },
 		desc: lambda { |output, data| output << "    # " << data << "\n"  },
-		shell: lambda { |output, data| data.each { |l| prompt, cmd = split_command(l); output << "```#{prompt}``` **```#{cmd}```**\n\n" } },
-		out: lambda { |output, data| data.each { |outputline| output << "    " << outputline << "\n" }  },
+		shell: lambda { |output, data| pre(output); data.each { |l| prompt, cmd = split_command(l); output << "#{prompt} <b>#{cmd}</b>\n" } },
+		out: lambda { |output, data| pre(output); data.each { |outputline| output << outputline << "\n" }  },
 	}
 
 	def to_markdown to_html_file = nil
@@ -24,6 +24,7 @@ module Rendering
 			RENDERERS.each_pair do |type, renderer|
 				renderer[out, entry[type]] if entry[type] && show_these_only.include?(type)
 			end
+			Rendering.slash_pre(out)
 		end
 	
 		if to_html_file
@@ -35,6 +36,20 @@ module Rendering
 
 	def show *types_to_show
 		@log << { show: types_to_show }
+	end
+
+	def self.pre(output)
+		unless @pre
+			output << "<pre>\n"
+			@pre = true
+		end	
+	end
+
+	def self.slash_pre(output)
+		if @pre
+			output << "</pre>\n"
+			@pre = nil
+		end
 	end
 
 end

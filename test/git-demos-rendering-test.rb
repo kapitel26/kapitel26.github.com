@@ -28,9 +28,10 @@ XYZ
 		assert_equal <<-EOS, @demo.to_markdown
 <!-- working directory in tmp -->
     # Execute shell command 'echo A'.
-```$``` **```echo A```**
-
-    A
+<pre>
+$ <b>echo A</b>
+A
+</pre>
 		EOS
 	end
 
@@ -42,13 +43,15 @@ XYZ
 		assert_equal <<-EOS, @demo.to_markdown
 <!-- working directory in tmp -->
     # Create new repository in 'my-little-repo'.
-```$``` **```git init my-little-repo```**
-
-    Initialized empty Git repository in /Users/stachi/work/git-demos/tmp/my-little-repo/.git/
+<pre>
+$ <b>git init my-little-repo</b>
+Initialized empty Git repository in /Users/stachi/work/git-demos/tmp/my-little-repo/.git/
+</pre>
     # Change directory to 'my-little-repo'.
     # Execute shell command 'touch wurst'.
-```my-little-repo $``` **```touch wurst```**
-
+<pre>
+my-little-repo $ <b>touch wurst</b>
+</pre>
 		EOS
 	end
 
@@ -58,11 +61,12 @@ XYZ
 		assert_equal <<-EOS, @demo.to_markdown
 <!-- working directory in tmp -->
     # Execute shell command 'echo A; echo '   B'; echo 	C'.
-```$``` **```echo A; echo '   B'; echo 	C```**
-
-    A
-       B
-    C
+<pre>
+$ <b>echo A; echo '   B'; echo 	C</b>
+A
+   B
+C
+</pre>
 		EOS
 
 	end
@@ -89,8 +93,9 @@ Welt
 		assert_equal <<-EOS, @demo.to_markdown
 <!-- working directory in tmp -->
 MOIN
-```$``` **```echo A```**
-
+<pre>
+$ <b>echo A</b>
+</pre>
 		EOS
 	end
 

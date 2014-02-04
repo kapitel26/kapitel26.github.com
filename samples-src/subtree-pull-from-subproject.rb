@@ -31,7 +31,7 @@ herausgelöst.
 	cd '..'
 
 	text <<-__
-Im Projekt `kaese` sind zwei neue Commits entstanden,
+Im Projekt `kaese` sind inzwischen zwei neue Commits entstanden,
 diese sollen im Projekt `lecker`, wo `kaese` ein Subtree ist,
 übernommen werden.
 	__
