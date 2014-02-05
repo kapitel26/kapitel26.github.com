@@ -7,47 +7,48 @@ end
 
 module Rendering
 
-	RENDERERS = {
-		text: lambda { |output, data| output << data << "\n"  },
-		desc: lambda { |output, data| output << "    # " << data << "\n"  },
-		shell: lambda { |output, data| pre(output); data.each { |l| prompt, cmd = split_command(l); output << "#{prompt} <b>#{cmd}</b>\n" } },
-		out: lambda { |output, data| pre(output); data.each { |outputline| output << outputline << "\n" }  },
-	}
+	def create_renderers
+		{
+			text: lambda { |data| normal; @out << data << "\n"  },
+			desc: lambda { |data| normal; @out << "    # " << data << "\n"  },
+			shell: lambda { |data| code; data.each { |l| prompt, cmd = split_command(l); @out << "#{prompt} <b>#{cmd}</b>\n" } },
+			out: lambda { |data| code; data.each { |outputline| @out << outputline << "\n" }  },
+		}
+	end
 
 	def to_markdown to_html_file = nil
-		
-		out = ""
-		show_these_only = Set.new(RENDERERS.keys)
+		@renderers ||= create_renderers
+		@out = ""
+		show_these_only = Set.new(@renderers.keys)
 
 		@log.each do |entry| 
 			show_these_only = entry[:show] if entry[:show]
-			RENDERERS.each_pair do |type, renderer|
-				renderer[out, entry[type]] if entry[type] && show_these_only.include?(type)
+			@renderers.each_pair do |type, renderer|
+				renderer[entry[type]] if entry[type] && show_these_only.include?(type)
 			end
-			Rendering.slash_pre(out)
-		end
-	
-		if to_html_file
-			File.write(to_html_file, Maruku.new(out).to_html_document)
 		end
 
-		out
+		normal
+		
+		File.write(to_html_file, Maruku.new(@out).to_html_document) if to_html_file
+	
+		@out
 	end
 
 	def show *types_to_show
 		@log << { show: types_to_show }
 	end
 
-	def self.pre(output)
+	def code
 		unless @pre
-			output << "<pre>\n"
+			@out << "<pre>\n"
 			@pre = true
 		end	
 	end
 
-	def self.slash_pre(output)
+	def normal
 		if @pre
-			output << "</pre>\n"
+			@out << "</pre>\n"
 			@pre = nil
 		end
 	end
