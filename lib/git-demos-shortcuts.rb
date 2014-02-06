@@ -23,7 +23,11 @@ module GitDemosShortcuts
 	end
 
 	def gitlog param = ""
-		shell "echo Log for #{@current_path.last}; git log --graph --pretty=\"%s %d\" #{param}"
+		shell <<-EOS
+branch=`git rev-parse --abbrev-ref HEAD`; \
+	echo \"-- Branch '$branch' in '#{pwd}' --\"; \
+	git log --graph --pretty=\"%s %d\" #{param}
+		EOS
 	end
 
 end

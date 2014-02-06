@@ -10,8 +10,12 @@ module Directories
 		end
 	end
 
-	def pwd
+	def working_dir
 		([@basedir] << @current_path).join('/')
+	end
+
+	def pwd
+		@current_path.join('/')
 	end
 
 end

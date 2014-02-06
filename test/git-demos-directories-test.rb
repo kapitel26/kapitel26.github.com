@@ -51,4 +51,14 @@ class GitDemosDirectoriesTest < AbstractGitDemosTest
 		assert_equal ["kaese $ touch brie"], @demo.log.last[:shell]
 	end
 
+	def test_pwd
+		@demo.shell 'mkdir -p kaese/gouda'
+		@demo.cd 'kaese'
+		@demo.cd 'gouda'
+
+		assert_equal "kaese/gouda", @demo.pwd
+	end
+
+
+
 end

@@ -47,7 +47,7 @@ class GitDemosShortcutTest < AbstractGitDemosTest
 		@demo.gitlog
 
 		assert_equal <<-__ ,  @demo.log.last[:out].join("\n")+"\n"
-Log for repo
+-- Branch 'master' in 'repo' --
 * create file-b  (HEAD, master)
 * create file-a
 		__
@@ -55,7 +55,7 @@ Log for repo
 		@demo.gitlog '-1'
 
 		assert_equal <<-__ ,  @demo.log.last[:out].join("\n")+"\n"
-Log for repo
+-- Branch 'master' in 'repo' --
 * create file-b  (HEAD, master)
 		__
 

@@ -6,7 +6,7 @@ module Shell
 	end
 
 	def _shell shell_command
-		cmd = "cd #{pwd} && #{shell_command}"
+		cmd = "cd #{working_dir} && #{shell_command}"
 		output, err, process = Open3.capture3(cmd)
 
 		exitcode = process.exitstatus
