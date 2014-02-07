@@ -1,12 +1,12 @@
 module Files
 
-	def create filename
+	def create filename, content = nil
 		description "Create new file '#{filename}'."
-		_create filename
+		_create filename, content
 	end
 
-	def _create filename
-		content = (1..12).collect { |i| "#{i} egal" }.join("\n")
+	def _create filename, content = nil
+		content ||= (1..12).collect { |i| "#{i} egal" }.join("\n")
 		fullpath = working_dir << "/" << filename
 		FileUtils.mkdir_p(File.dirname(fullpath))
 		File.write(fullpath, content)
