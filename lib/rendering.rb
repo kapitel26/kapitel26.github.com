@@ -1,9 +1,9 @@
+require "cgi"
 
 def split_command line
 	/(.*\$) (.*)/.match(line)
 	[$1,$2]
 end
-
 
 module Rendering
 
@@ -11,8 +11,8 @@ module Rendering
 		{
 			text: lambda { |data| normal; @out << data << "\n"  },
 			desc: lambda { |data| normal; @out << "    # " << data << "\n"  },
-			shell: lambda { |data| code; data.each { |l| prompt, cmd = split_command(l); @out << "#{prompt} <b>#{cmd}</b>\n" } },
-			out: lambda { |data| code; data.each { |outputline| @out << outputline << "\n" }  },
+			shell: lambda { |data| code; data.each { |l| prompt, cmd = split_command(l); @out << "#{prompt} <b>#{escape(cmd)}</b>\n" } },
+			out: lambda { |data| code; data.each { |outputline| @out  << escape(outputline) << "\n" }  },
 		}
 	end
 
@@ -51,6 +51,10 @@ module Rendering
 			@out << "</pre>\n"
 			@pre = nil
 		end
+	end
+
+	def escape(some_string)
+		CGI::escapeHTML(some_string)
 	end
 
 end

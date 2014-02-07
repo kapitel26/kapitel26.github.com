@@ -9,10 +9,15 @@ FileUtils.rm_rf "workspaces/#{samplename}"
 	text <<-__
 `.gitignore`
 ------------
+
+    Moin
+    Moin!
 	__
 
 	new_repo "repo"
 	cd "repo"
+
+
 
 	create "anton/file"
 	create "berta/file1"
