@@ -59,6 +59,4 @@ class GitDemosDirectoriesTest < AbstractGitDemosTest
 		assert_equal "kaese/gouda", @demo.pwd
 	end
 
-
-
 end

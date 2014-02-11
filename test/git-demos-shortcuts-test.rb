@@ -66,4 +66,55 @@ class GitDemosShortcutTest < AbstractGitDemosTest
 		/[0-9a-z]+\s+(.*)/.match(@demo.shell('git log --oneline -1')[0])[1]
 	end
 
+	def test_show_all
+		@demo.show []
+
+		@demo.show_all
+
+		@demo.text "Text"
+		@demo.shell "echo Moin"
+		assert_equal <<-__, @demo.to_markdown
+<!-- working directory in tmp -->
+Text
+    # Execute shell command 'echo Moin'.
+<pre>
+$ <b>echo Moin</b>
+Moin
+</pre>
+	__
+	end
+
+	def test_hide_output
+		@demo.show []
+
+		@demo.hide_output
+
+		@demo.text "Text"
+		@demo.shell "echo Moin"
+		assert_equal <<-__, @demo.to_markdown
+<!-- working directory in tmp -->
+Text
+<pre>
+$ <b>echo Moin</b>
+</pre>
+		__
+	end
+
+	def test_hide_shell
+		@demo.show []
+
+		@demo.hide_shell
+
+		@demo.text "Text"
+		@demo.shell "echo Moin"
+		assert_equal <<-__, @demo.to_markdown
+<!-- working directory in tmp -->
+Text
+<pre>
+Moin
+</pre>
+		__
+	end
+
+
 end

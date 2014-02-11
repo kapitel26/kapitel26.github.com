@@ -30,4 +30,17 @@ branch=`git rev-parse --abbrev-ref HEAD`; \
 		EOS
 	end
 
+	def show_all
+		show :text, :shell, :out, :desc
+	end
+
+	def hide_output
+		show :text, :shell
+	end
+
+	def hide_shell
+		show :text, :out
+	end
+
+
 end
