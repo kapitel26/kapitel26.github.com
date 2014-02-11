@@ -73,8 +73,6 @@ gitignore <<-__
 	create "bob/sub/as1"
 	create "carl"
 
-	show :out, :shell, :text
-
 	text <<-__
 Oft gibt es in einem Projekt Dateien oder Verzeichnisse, die man
 nicht versionieren möchte, z. B. generierte Dateien, Editor-Backups
@@ -93,6 +91,7 @@ Aber es gibt ein paar kleine Fallstricke dabei.
 Wir betrachteh ein Beispiel:
 	__
 
+	show_all
 	shell 'git status --short --untracked-files=all'
 
  	text <<-__
