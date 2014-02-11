@@ -89,6 +89,21 @@ $ <b>echo A</b>
 		EOS
 	end
 
+	def test_block
+		@demo.show :out do
+			@demo.shell 'echo A'
+		end
+		@demo.text "MOIN"
+		assert_equal <<-EOS, @demo.to_markdown
+<!-- working directory in tmp -->
+<pre>
+A
+</pre>
+MOIN
+		EOS
+	end
+
+
 	def test_show_nothing
 		@demo.show 
 

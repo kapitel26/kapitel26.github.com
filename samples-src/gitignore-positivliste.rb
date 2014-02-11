@@ -152,7 +152,6 @@ fügen dann `!/ada/sub/` wieder hinzu:
 	gitignore <<-__
 /*
 !/ada/
-/ada/*
 !/ada/sub/
 	__
  	text <<-__
@@ -167,10 +166,9 @@ Weil's so schön war ;-) gleich nochmal:
 	gitignore <<-__
 /*
 !/ada/
-/ada/*
 !/ada/sub/
-/ada/sub/*
 !/ada/sub/sub/
+!/ada/sub/sub/**
 	__
 	shell 'git status --short --untracked-files=all'
  	text <<-__

@@ -96,6 +96,24 @@ $ <b>echo Moin</b>
 		__
 	end
 
+	def test_hide_output_block
+		@demo.show []
+
+		@demo.shell "echo A"
+		@demo.hide_output do |variable|
+			@demo.shell "echo B"
+		end
+		@demo.shell "echo C"
+
+		assert_equal <<-__, @demo.to_markdown
+<!-- working directory in tmp -->
+<pre>
+$ <b>echo B</b>
+</pre>
+		__
+	end
+
+
 	def test_hide_shell
 		@demo.show []
 
