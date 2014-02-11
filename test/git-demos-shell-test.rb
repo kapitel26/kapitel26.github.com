@@ -6,7 +6,6 @@ class GitDemosShellTest < AbstractGitDemosTest
 		@demo.shell 'mkdir wurstpelle'
 
 		assert File.directory? 'tmp/wurstpelle'
-		assert_equal "Execute shell command 'mkdir wurstpelle'.", @demo.log.last[:desc]
 		assert_equal ["$ mkdir wurstpelle"], @demo.log.last[:shell]
 	end
 
@@ -23,10 +22,9 @@ class GitDemosShellTest < AbstractGitDemosTest
 	end
 
 	def test_shell_output_multiline_commands
-		@demo.shell 'echo hallo', "2 commands"
+		@demo.shell 'echo hallo'
 		@demo._shell 'echo welt'
 
-		assert_equal "2 commands", @demo.log.last[:desc]
 		assert_equal ["$ echo hallo", "$ echo welt"], @demo.log.last[:shell]
 		assert_equal ["hallo", "welt"], @demo.log.last[:out]
 	end

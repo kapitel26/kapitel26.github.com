@@ -1,7 +1,7 @@
 module Shell
 
-	def shell shell_command, desc = nil
-		description desc || "Execute shell command '#{shell_command}'."
+	def shell shell_command
+		@log << {}
 		_shell shell_command
 	end
 

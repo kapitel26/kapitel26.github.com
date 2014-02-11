@@ -6,7 +6,6 @@ class GitDemosFilesTest < AbstractGitDemosTest
 		@demo.create 'hallo.txt'
 
 		assert File.exist? 'tmp/hallo.txt'
-		assert_equal "Create new file 'hallo.txt'.", @demo.log.last[:desc]
 		assert_equal nil, @demo.log.last[:shell]
 	end
 
@@ -14,7 +13,6 @@ class GitDemosFilesTest < AbstractGitDemosTest
 		@demo.create 'lebensmittel/kaese/gouda.txt'
 
 		assert File.exist? 'tmp/lebensmittel/kaese/gouda.txt'
-		assert_equal "Create new file 'lebensmittel/kaese/gouda.txt'.", @demo.log.last[:desc]
 		assert_equal nil, @demo.log.last[:shell]
 	end
 
@@ -22,7 +20,6 @@ class GitDemosFilesTest < AbstractGitDemosTest
 		@demo.create 'lebensmittel/kaese/gouda.txt'
 
 		assert File.exist? 'tmp/lebensmittel/kaese/gouda.txt'
-		assert_equal "Create new file 'lebensmittel/kaese/gouda.txt'.", @demo.log.last[:desc]
 		assert_equal nil, @demo.log.last[:shell]
 	end
 

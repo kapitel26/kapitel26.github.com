@@ -8,7 +8,6 @@ class GitDemosShortcutTest < AbstractGitDemosTest
 		`cd tmp/my-little-repo && git status`
 		assert_equal 0, $?.to_i
 
-		assert_equal "Create new repository in 'my-little-repo'.", @demo.log.last[:desc]
 		assert_equal ["$ git init my-little-repo"], @demo.log.last[:shell]
 	end
 
@@ -19,7 +18,6 @@ class GitDemosShortcutTest < AbstractGitDemosTest
 		@demo.create_and_commit 'file'
 
 		assert File.exists? 'tmp/repo/file'
-		assert_equal "Create and edit 'file'.", @demo.log.last[:desc]
 		assert_equal ["repo $ git add file", "repo $ git commit -m 'create file'"], @demo.log.last[:shell]
 		assert_equal "create file", last_commit_comment
 	end
@@ -34,7 +32,6 @@ class GitDemosShortcutTest < AbstractGitDemosTest
 
 		assert File.read('tmp/repo/file-a').length > 0
 		assert File.read('tmp/repo/file-b').length > 0
-		assert_equal "Edit and commit file-a, file-b.", @demo.log.last[:desc]
 		assert_equal ["repo $ git add file-a file-b", "repo $ git commit -m 'edit file-a, file-b'"], @demo.log.last[:shell]
 		assert_equal "edit file-a, file-b", last_commit_comment
 	end
@@ -76,7 +73,6 @@ class GitDemosShortcutTest < AbstractGitDemosTest
 		assert_equal <<-__, @demo.to_markdown
 <!-- working directory in tmp -->
 Text
-    # Execute shell command 'echo Moin'.
 <pre>
 $ <b>echo Moin</b>
 Moin

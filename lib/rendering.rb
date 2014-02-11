@@ -10,7 +10,6 @@ module Rendering
 	def create_renderers
 		{
 			text: lambda { |data| normal; @out << data << "\n"  },
-			desc: lambda { |data| normal; @out << "    # " << data << "\n"  },
 			shell: lambda { |data| code; data.each { |l| prompt, cmd = split_command(l); @out << "#{prompt} <b>#{escape(cmd)}</b>\n" } },
 			out: lambda { |data| code; data.each { |outputline| @out  << escape(outputline) << "\n" }  },
 		}

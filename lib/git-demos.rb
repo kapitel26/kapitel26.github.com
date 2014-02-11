@@ -39,10 +39,6 @@ class GitDemos
 		@log << { text: md }
 	end
 
-	def description desc
-		@log << { desc: desc }
-	end
-
 	def section &block
 		instance_eval &block
 	end

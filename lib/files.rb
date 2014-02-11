@@ -1,7 +1,7 @@
 module Files
 
 	def create filename, content = nil
-		description "Create new file '#{filename}'."
+		@log << {}
 		_create filename, content
 	end
 
@@ -13,7 +13,7 @@ module Files
 	end
 
 	def edit *filenames
-		description "Edit files #{filenames.join(', ')}."
+		@log << {}
 		_edit *filenames
 	end
 

@@ -1,8 +1,6 @@
 module Directories
 
 	def cd directory
-		description "Change directory to '#{directory}'."
-
 		if directory == ".." 
 			@current_path.pop
 		else

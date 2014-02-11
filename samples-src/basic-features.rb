@@ -4,7 +4,7 @@ FileUtils.rm_rf "tmp/demo"
 @demo = GitDemos.new('tmp/demo')
 @demo.section do
 
-	description <<-EOS
+	text <<-EOS
 ## Markdown
 
 You can add *Markown*.
