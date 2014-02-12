@@ -43,10 +43,9 @@ versionieren möchte.
 	
 	# Verzeichnis ada/sub/sub/ schrittweise "un-ignorieren"
 	!/ada/
-	/ada/*
 	!/ada/sub/
-	/ada/sub/*
 	!/ada/sub/sub/
+	!/ada/sub/sub/**
 
 Etwas längere Antwort
 ---------------------
@@ -114,6 +113,7 @@ denn `git add -f` sticht `.gitignore`
  	__
 	shell 'git add -f ada/sub/sub/dss1'
 	shell 'git status --short --untracked-files=all'
+	shell 'git reset -- ada/sub/sub/dss1'
 	text <<-__
 Der Nachteil dabei: Das Verzeichnis `ada/sub/sub`
 bleib weiterhin unbeobachtet. `git status`zeigt
@@ -140,8 +140,9 @@ Und mit `/*` schließt den Pfad `/ada/`
 Aber man kann `/ada/` wieder einblenden:
  	__
 	gitignore <<-__
-/*
+*
 !/ada/
+!/ada/**
  	__
 	shell 'git status --short --untracked-files=all'
  	text <<-__
@@ -150,9 +151,10 @@ Wir nehmen mit `/ada/*` alles wieder weg und
 fügen dann `!/ada/sub/` wieder hinzu:
 	__
 	gitignore <<-__
-/*
+*
 !/ada/
 !/ada/sub/
+!/ada/sub/**
 	__
  	text <<-__
 Jetzt sind alle Dateien unterhalb von /ada/sub wieder drin!
@@ -164,7 +166,7 @@ Weil's so schön war ;-) gleich nochmal:
 	__
 
 	gitignore <<-__
-/*
+*
 !/ada/
 !/ada/sub/
 !/ada/sub/sub/
