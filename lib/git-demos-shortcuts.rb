@@ -31,7 +31,11 @@ branch=`git rev-parse --abbrev-ref HEAD`; \
 	end
 
 	def show_all
-		show :text, :shell, :out, :desc
+		if block_given?
+			show(:text, :shell, :out, :desc) { yield }
+		else
+			show :text, :shell, :out, :desc
+		end
 	end
 
 	def hide_output 
@@ -40,10 +44,21 @@ branch=`git rev-parse --abbrev-ref HEAD`; \
 		else
 			show :text, :shell
 		end
+	end
 
+	def hide_all
+		if block_given?
+			show() { yield }
+		else
+			show
+		end
 	end
 
 	def hide_shell
-		show :text, :out
+		if block_given?
+			show(:text, :out) { yield }
+		else
+			show :text, :out
+		end
 	end
 end

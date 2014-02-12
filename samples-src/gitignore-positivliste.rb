@@ -113,7 +113,9 @@ denn `git add -f` sticht `.gitignore`
  	__
 	shell 'git add -f ada/sub/sub/dss1'
 	shell 'git status --short --untracked-files=all'
-	shell 'git reset -- ada/sub/sub/dss1'
+	hide_all do
+		shell 'git reset -- ada/sub/sub/dss1'
+	end
 	text <<-__
 Der Nachteil dabei: Das Verzeichnis `ada/sub/sub`
 bleib weiterhin unbeobachtet. `git status`zeigt
