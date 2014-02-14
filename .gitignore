@@ -3,6 +3,5 @@ commit-comment
 ccdd-log
 *.sublime-workspace
 tmp/
-demo.html
 samples/
 workspaces/
