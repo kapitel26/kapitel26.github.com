@@ -12,7 +12,7 @@ FileUtils.mkdir_p "samples"
 Dir.glob("#{basedir}/samples-src**/*.rb") do |f|
 	load f
 	markdown = @demo.to_markdown
-	mdfile = "#{basedir}/samples-out/#{File.basename(f)}.md"
+	mdfile = "_posts/#{File.basename(f)}.md"
 	File.write(mdfile, markdown)
 
 	message << " " << mdfile
