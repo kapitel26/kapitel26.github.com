@@ -12,11 +12,22 @@ def gitignore content
 	__
 end
 
+
+
 @demo.section do
 
 	text <<-__
-MOIN MOIN
+---
+layout: post
+title: "Whitelists mit gitignore"
+category: Git
+tags: [Git, ignore, gitignore, whitelist]
+author: bst
+---
 
+	__
+
+	text <<-__
 `.gitignore` als Whitelist, geht das?
 =====================================
 
