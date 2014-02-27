@@ -26,7 +26,6 @@ class GitDemos
 		@current_path = []
 		@log = []
 
-		@log << { text: "<!-- working directory in #{@basedir} -->" }
 		FileUtils.mkdir_p @basedir
 	end
 

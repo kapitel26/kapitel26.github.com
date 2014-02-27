@@ -5,7 +5,6 @@ class GitDemosRenderingTest < AbstractGitDemosTest
 
 	def test_empty_to_markdown
 		assert_equal <<-EOS, @demo.to_markdown
-<!-- working directory in tmp -->
 		EOS
 	end
 
@@ -13,7 +12,6 @@ class GitDemosRenderingTest < AbstractGitDemosTest
 		@demo.text 'XYZ'
 
 		assert_equal <<-EOS, @demo.to_markdown
-<!-- working directory in tmp -->
 XYZ
 		EOS
 	end
@@ -23,7 +21,6 @@ XYZ
 		@demo.shell 'echo A'
 
 		assert_equal <<-EOS, @demo.to_markdown
-<!-- working directory in tmp -->
 <pre>
 $ <b>echo A</b>
 A
@@ -37,7 +34,6 @@ A
 		@demo.shell 'touch wurst'
 
 		assert_equal <<-EOS, @demo.to_markdown
-<!-- working directory in tmp -->
 <pre>
 $ <b>git init my-little-repo</b>
 Initialized empty Git repository in /Users/stachi/work/git-demos/tmp/my-little-repo/.git/
@@ -50,7 +46,6 @@ my-little-repo $ <b>touch wurst</b>
 		@demo.shell "echo A; echo '   B'; echo 	C"
 
 		assert_equal <<-EOS, @demo.to_markdown
-<!-- working directory in tmp -->
 <pre>
 $ <b>echo A; echo '   B'; echo 	C</b>
 A
@@ -68,7 +63,6 @@ Welt
 		EOS
 
 		assert_equal <<-EOS, @demo.to_markdown
-<!-- working directory in tmp -->
 Hallo
 Welt
 
@@ -81,7 +75,6 @@ Welt
 		@demo.text "MOIN"
 		@demo.shell 'echo A'
 		assert_equal <<-EOS, @demo.to_markdown
-<!-- working directory in tmp -->
 MOIN
 <pre>
 $ <b>echo A</b>
@@ -95,7 +88,6 @@ $ <b>echo A</b>
 		end
 		@demo.text "MOIN"
 		assert_equal <<-EOS, @demo.to_markdown
-<!-- working directory in tmp -->
 <pre>
 A
 </pre>
@@ -110,7 +102,6 @@ MOIN
 		@demo.text 'MOIN'
 		@demo.shell 'echo A'
 		assert_equal <<-EOS, @demo.to_markdown
-<!-- working directory in tmp -->
 		EOS
 	end
 
