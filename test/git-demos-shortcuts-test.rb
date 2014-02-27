@@ -71,7 +71,6 @@ class GitDemosShortcutTest < AbstractGitDemosTest
 		@demo.text "Text"
 		@demo.shell "echo Moin"
 		assert_equal <<-__, @demo.to_markdown
-<!-- working directory in tmp -->
 Text
 <pre>
 $ <b>echo Moin</b>
@@ -88,7 +87,6 @@ Moin
 		@demo.text "Text"
 		@demo.shell "echo Moin"
 		assert_equal <<-__, @demo.to_markdown
-<!-- working directory in tmp -->
 Text
 <pre>
 $ <b>echo Moin</b>
@@ -106,7 +104,6 @@ $ <b>echo Moin</b>
 		@demo.shell "echo C"
 
 		assert_equal <<-__, @demo.to_markdown
-<!-- working directory in tmp -->
 <pre>
 $ <b>echo B</b>
 </pre>
@@ -122,7 +119,6 @@ $ <b>echo B</b>
 		@demo.text "Text"
 		@demo.shell "echo Moin"
 		assert_equal <<-__, @demo.to_markdown
-<!-- working directory in tmp -->
 Text
 <pre>
 Moin

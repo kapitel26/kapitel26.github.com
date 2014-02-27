@@ -4,7 +4,6 @@ class GitDemosCommandTest < AbstractGitDemosTest
 
 	def test_workspace_after_init
 		assert File.directory? 'tmp'
-		assert @demo.log.last[:desc] = "Initialize demo directory in 'tmp'"
 	end
 
 	def test_section_dsl
