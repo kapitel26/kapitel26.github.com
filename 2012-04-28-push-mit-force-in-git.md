@@ -29,6 +29,7 @@ Wie viele andere Befehle auch hat der `push`-Befehl in Git eine Option `-f`
 bzw. `--force`. Es ist nur selten eine gute Idee, diese zu nutzen. 
 
  * **Vorher**
+ 
    <pre>
    --O---A---F1---F2  origin/master
           \
@@ -40,6 +41,7 @@ bzw. `--force`. Es ist nur selten eine gute Idee, diese zu nutzen.
    <pre>$ push -f               # Hoppla, das war nicht gewollt!</pre>
 
  * **Nachher**
+
    <pre>
    --O---A---F1---F2  "Abgeschnitten!"
           \
