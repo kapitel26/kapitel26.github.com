@@ -41,12 +41,12 @@ dann wäre eine Whitelist praktischer. Geht das auch?
 		new_repo "repo"
 		cd "repo"
 
-		create "b1/file-b1"
-		create "b1/b2/file-b2"
-		create "b1/b2/b3/file-b3"
-		create "b1/b2/b3/b4/file-ab4"
+		create "a/file-a"
+		create "a/b/file-b"
+		create "a/b/c/file-c"
+		create "a/b/c/d/file-d"
 		
-		create "file-c1"
+		create "file"
 	end
 
 
@@ -63,11 +63,11 @@ es geht:
 # Erstmal alles ignorieren
 *
 
-# Verzeichnis /b1/b2/b3/ "un-ignorieren"
-!/b1/
-!/b1/b2/
-!/b1/b2/b3/
-!/b1/b2/b3/**
+# Verzeichnis /a/b/c/ "un-ignorieren"
+!/a/
+!/a/b/
+!/a/b/c/
+!/a/b/c/**
 	__
 
 	hide_all { shell 'git status --short --untracked-files=all' }
@@ -97,7 +97,7 @@ Aber es gibt ein paar kleine Fallstricke dabei.
 ### Beispiel
 
 Wir haben ein Projekt mit mehreren Dateien in verschiedenen Verzeichnissen,
-wollen aber nur die Dateien unterhab von `/b1/b2/b3/` versionieren.
+wollen aber nur die Dateien unterhab von `/a/b/c/` versionieren.
 	__
 
 	hide_all { gitignore "" }
@@ -122,14 +122,14 @@ Wenn wir wollen, können wir einzelne Dateien
 trotzdem in die Versionierung aufnehmen,
 denn `git add -f` sticht `.gitignore`
  	__
-	shell 'git add -f b1/b2/b3/file-b3'
+	shell 'git add -f a/b/c/file-c'
 	shell 'git status --short --untracked-files=all'
 	hide_all do
-		shell 'git reset -- b1/b2/b3/file-b3'
+		shell 'git reset -- a/b/c/file-c'
 	end
 	text <<-__
 Der Nachteil dabei: Es wird nur die einzelne Datei aufgenommen, 
-aber das Verzeichnis `/b1/b2/b3/`
+aber das Verzeichnis `/a/b/c/`
 bleibt weiterhin unbeobachtet. `git status` zeigt beispielsweise nicht, 
 wenn dort noch neue unversionierte Dateien auftauchen.
 
@@ -139,41 +139,41 @@ Dateien und Verzeichnisse laut Manual-Page *un-ignoriert* werden:
  	__
 	gitignore <<-__
 *
-!/b1/b2/b3/
+!/a/b/c/
  	__
 	shell 'git status --short --untracked-files=all'
  	text <<-__
-WTF! Warum ist `/b1/b2/b3/` nicht wieder aktiv geworden?
+WTF! Warum ist `/a/b/c/` nicht wieder aktiv geworden?
 Laut Dokumentation wirkt `!` auf Pfade,
 die in vorigen Zeilen ausgeblendet wurden.
-Das Verzeichnis `/b1/b2/b3/` wurde doch in der Zeile mit dem  `*` ausgeblendet, oder?
+Das Verzeichnis `/a/b/c/` wurde doch in der Zeile mit dem  `*` ausgeblendet, oder?
 Warum ist sie dann jetzt nicht wieder sichtbar?
-Tatsächlich wurde durch `*` das Verzeichnis `/b1/` ausgeschlossen.
+Tatsächlich wurde durch `*` das Verzeichnis `/a/` ausgeschlossen.
 Die darunter liegenden Verzeichnisse wurden nur implizit mit ausgeschlossen.
 
-Was wir tun können, ist: Zuerst mit `/b1/` das Verzeichnis
-wieder zurückholen. Und dann mit `/b1/**` dafür sorgen,
+Was wir tun können, ist: Zuerst mit `/a/` das Verzeichnis
+wieder zurückholen. Und dann mit `/a/**` dafür sorgen,
 dass auch alle Dateien und Verzeichnisse darunter wieder sichtbar werden 
 (diese waren ja ebenfalls durch `*` ausgeschlossen)
  	__
 	gitignore <<-__
 *
-!/b1/
-!/b1/**
+!/a/
+!/a/**
  	__
 	shell 'git status --short --untracked-files=all'
  	text <<-__
-Jetzt sind alle Dateien unterhalb von `/b1/` wieder drin!
+Jetzt sind alle Dateien unterhalb von `/a/` wieder drin!
 Und das kann man beliebig tief fortsetzen. 
 Weil's so schön war ;-) gleich nochmal:
 	__
 
 	gitignore <<-__
 *
-!/b1/
-!/b1/b2/
-!/b1/b2/b3/
-!/b1/b2/b3/**
+!/a/
+!/a/b/
+!/a/b/c/
+!/a/b/c/**
 			__
 	shell 'git status --short --untracked-files=all'
 
@@ -187,10 +187,10 @@ In unserem Beispiel würde es auch ohne Slashes am Anfang und Ende der Pfade geh
 
 	gitignore <<-__
 *
-!b1
-!b1/b2
-!b1/b2/b3
-!b1/b2/b3/**
+!a
+!a/b
+!a/b/c
+!a/b/c/**
 	__
 
 	text <<-__
@@ -199,7 +199,7 @@ am Anfang sorgen dafür, dass nur Pfade die so beginnen
 *matchen*. Slashes am Ende sorgen dafür, dass nur
 Verzeichnisse *matchen*.
 	__
-	create "b1/b1/b1/b1"
+	create "a/a/a/a"
 	shell 'git status --short --untracked-files=all'
 
 end
