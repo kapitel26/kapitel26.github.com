@@ -198,6 +198,8 @@ Ganz korrekt wäre das aber nicht, denn Slashes
 am Anfang sorgen dafür, dass nur Pfade die so beginnen
 *matchen*. Slashes am Ende sorgen dafür, dass nur
 Verzeichnisse *matchen*.
+Im Beispiel sind jetzt alle Dateien und Verzeichnisse, 
+die `a` heißen drin:
 	__
 	create "a/a/a/a"
 	shell 'git status --short --untracked-files=all'
