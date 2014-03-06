@@ -1,0 +1,7 @@
+ccdd
+commit-comment
+ccdd-log
+*.sublime-workspace
+tmp/
+samples/
+workspaces/
