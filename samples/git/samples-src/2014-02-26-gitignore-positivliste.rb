@@ -26,12 +26,13 @@ author: bst
 	__
 
 	text <<-__
-`.gitignore` als Whitelist, geht das?
-=====================================
+*".gitignore"* als Whitelist, geht das?
+=======================================
 
-`.gitignore` ist eine Blacklist (Negativliste), d. h. sie gibt an,
+
+`.gitignore` ist eine Blacklist-Datei (Negativliste), d. h. sie gibt an,
 welche Dateien man von der Versionierung *ausschließen* möchte. 
-Wenn man aber nur wenige Verzeichnisse in einer großen
+Wenn man aber nur wenige Verzeichnisse in einem großen
 Verzeichnisbaum mit Git versionieren möchte, 
 dann wäre eine Whitelist praktischer. Geht das auch?
 
@@ -39,9 +40,6 @@ dann wäre eine Whitelist praktischer. Geht das auch?
 	hide_all do
 		new_repo "repo"
 		cd "repo"
-
-		create "a1/file-a1"
-		create "a1/a2/file-a2"
 
 		create "b1/file-b1"
 		create "b1/b2/file-b2"
@@ -64,10 +62,6 @@ es geht:
 	gitignore <<-__
 # Erstmal alles ignorieren
 *
-
-# Verzeichnis /a1/ "un-ignorieren"
-!/a1/
-!/a1/**
 
 # Verzeichnis /b1/b2/b3/ "un-ignorieren"
 !/b1/
@@ -95,12 +89,15 @@ und bei `git add -all` nicht hinzugefügt.
 Manchmal gibt es aber auch die Situation, dass man eine große Verzeichnisstruktur
 vorliegen hat, davon aber nur einige wenige Dateien und Verzeichnisse
 versionieren möchte. Zum Beispiel: Ein `/etc/`-Verzeichnis enthält Konfigurationen
-für viele Tools. Einige davon sind für mein Projekt relevant und nur Diese
+für viele Tools. Einige davon sind für mein Projekt relevant und nur diese
 möchte ich versionieren. 
 Mit Git ist das (natürlich) auch möglich.
 Aber es gibt ein paar kleine Fallstricke dabei.
 
 ### Beispiel
+
+Wir haben ein Projekt mit mehreren Dateien in verschiedenen Verzeichnissen,
+wollen aber nur die Dateien unterhab von `/b1/b2/b3/` versionieren.
 	__
 
 	hide_all { gitignore "" }
@@ -108,21 +105,20 @@ Aber es gibt ein paar kleine Fallstricke dabei.
 	shell 'git status --short --untracked-files=all'
 
  	text <<-__
-Wir wollen nur Dateien unterhalb von  `/a1/` und `/b1/b2/b3/` versionieren.
-Man könnte jedes unerwünschte Verzeichnis in die `.gitignore` eintragen,
+Man könnte dazu jedes unerwünschte Verzeichnis in die `.gitignore` eintragen,
 dann bliebe übrig, was man möchte.
 Bei großen Projekten kann das aber mühsam sein und müsste auch ständig
 nachgepflegt werden, wenn neue Verzeichnisse hinzukommen.
 
-Stattdessen können einfach mit einem beherzten `*` erstmal alles ausschließen, 
-um dann später Verzeichnisse, die man versioneren möchte, zu *un-ignorieren*.
+Stattdessen können wir einfach mit einem beherzten `*` erstmal alles ausschließen,
+um dann später Verzeichnisse, die wir versioneren möchten, zu *un-ignorieren*.
  	__
 
 gitignore <<-__
 *
  	__
 	text <<-__
-Wenn wir wollen können einzelne Dateien
+Wenn wir wollen, können wir einzelne Dateien
 trotzdem in die Versionierung aufnehmen,
 denn `git add -f` sticht `.gitignore`
  	__
@@ -132,12 +128,13 @@ denn `git add -f` sticht `.gitignore`
 		shell 'git reset -- b1/b2/b3/file-b3'
 	end
 	text <<-__
-Der Nachteil dabei: 
-Das Verzeichnis `/b1/b2/b3/`
+Der Nachteil dabei: Es wird nur die einzelne Datei aufgenommen, 
+aber das Verzeichnis `/b1/b2/b3/`
 bleibt weiterhin unbeobachtet. `git status` zeigt beispielsweise nicht, 
 wenn dort noch neue unversionierte Dateien auftauchen.
 
-Mit vorangestelltem `!` können ausgeblendete 
+Nützlicher ist die `!`-Notation.
+Durch Zeilen mit vorangestelltem `!` können ausgeblendete 
 Dateien und Verzeichnisse laut Manual-Page *un-ignoriert* werden:
  	__
 	gitignore <<-__
@@ -204,9 +201,6 @@ Verzeichnisse *matchen*.
 	__
 	create "b1/b1/b1/b1"
 	shell 'git status --short --untracked-files=all'
-
-
- 
 
 end
 
