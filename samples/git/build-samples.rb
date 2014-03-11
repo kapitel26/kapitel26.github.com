@@ -1,6 +1,6 @@
 basedir = File.dirname(__FILE__)
 
-$LOAD_PATH.unshift basedir + "/../git-demos/lib"
+$LOAD_PATH.unshift basedir + "/../../_tools/git-demos/lib"
 $LOAD_PATH.unshift basedir + "/samples-src"
 
 require "git-demos"
