@@ -100,6 +100,12 @@ task :preview do
   system "jekyll server --watch"
 end # task :preview
 
+desc "Build the site"
+task :build do
+  # TODO don't festverdraht the path
+  system "export LANG=de_DE.UTF-8; /usr/local/Cellar/ruby/1.9.3-p362/bin/jekyll build"
+end 
+
 # Public: Alias - Maintains backwards compatability for theme switching.
 task :switch_theme => "theme:switch"
 
