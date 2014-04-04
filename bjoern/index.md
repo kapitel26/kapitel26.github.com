@@ -43,10 +43,26 @@ immer noch die gleichen und gute Software zu machen ist immer noch
 ein wenig Abenteuer und viel harte Arbeit. 
 Trotzdem, oder vielleicht gerade deshalb, mag ich nicht davon lassen.
  
+<div class="row">
 
-<div class="span3" align="left">
-	Bjørn auf Social Media<br/> 
-    <a href="http://www.twitter.com/old_stachi">Twitter</a>
-    <a href="http://www.xing.com/profile/Bjorn_Stachmann">Xing</a>
-    <a rel="me" href="https://plus.google.com/107293837004630946370">Google+</a><br/>
+	<div class="span3" align="left">
+		Bjørn auf Social Media<br/> 
+	    <a href="http://www.twitter.com/old_stachi">Twitter</a>
+	    <a href="http://www.xing.com/profile/Bjorn_Stachmann">Xing</a>
+	    <a rel="me" href="https://plus.google.com/107293837004630946370">Google+</a><br/>
+	</div>
+
 </div>
+
+Meine Beiträge
+--------------
+
+<ul class="posts">
+  {% for post in site.posts %}
+  	{% if post.author == "bst" %}
+	    <li><span>{{ post.date | date_to_string }} </span><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a> ({{post.author}})</li>
+	{% endif %}
+  {% endfor %}
+</ul>
+
+
