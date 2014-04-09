@@ -39,7 +39,7 @@ remoterepo $ <b>git branch</b>
   branch-c
 * master
 </pre>
-Mit der Option `--mirror` des `push`-Befehls erstellen wir eine Arbeitskopie
+Mit der Option `--mirror` des `clone`-Befehls erstellen wir eine Arbeitskopie
 des Repositorys.
 
 <pre>
@@ -49,10 +49,10 @@ Alle Branches aus 'remoterepo' sind als hier als *tracking Branch* abgebildet.
 
 <pre>
 localrepo $ <b>git branch -v</b>
-  branch-a 4a04fe3 create file-a
-  branch-b b02c2eb create file-b
-  branch-c c798950 create file-c
-* master   0ec2d33 create file-master
+  branch-a 0523ff7 create file-a
+  branch-b 2582789 create file-b
+  branch-c 53ef1a1 create file-c
+* master   2aebcc2 create file-master
 </pre>
 Diese Branches können wir jetzt nach Lust und Laune bearbeiten.
 
@@ -62,8 +62,7 @@ localrepo $ <b>git branch -D branch-b              # Löschen</b>
 localrepo $ <b>git branch -M branch-c moved-c      # Umbenennen</b>
 localrepo $ <b>git branch new-branch-d             # Neu anlegen</b>
 </pre>
-Ein einfaches `push` überträgt alles 
-von `localrepo` in das Ursprungsrepository `remoterepo`.
+Ein einfaches `push` überträgt alles.
 
 <pre>
 localrepo $ <b>git push</b>
@@ -72,13 +71,13 @@ Die Branches in beiden Repositorys stimmen überein.
 
 <pre>
 localrepo $ <b>git branch -v</b>
-  branch-a     0ec2d33 create file-master
-* master       0ec2d33 create file-master
-  moved-c      c798950 create file-c
-  new-branch-d 0ec2d33 create file-master
+  branch-a     2aebcc2 create file-master
+* master       2aebcc2 create file-master
+  moved-c      53ef1a1 create file-c
+  new-branch-d 2aebcc2 create file-master
 remoterepo $ <b>git branch -v</b>
-  branch-a     0ec2d33 create file-master
-* master       0ec2d33 create file-master
-  moved-c      c798950 create file-c
-  new-branch-d 0ec2d33 create file-master
+  branch-a     2aebcc2 create file-master
+* master       2aebcc2 create file-master
+  moved-c      53ef1a1 create file-c
+  new-branch-d 2aebcc2 create file-master
 </pre>
