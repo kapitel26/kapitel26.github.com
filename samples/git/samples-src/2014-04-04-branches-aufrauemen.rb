@@ -68,7 +68,7 @@ __
 	hide_all { cd '..' }
 
 	text <<-__
-Mit der Option `--mirror` des `push`-Befehls erstellen wir eine Arbeitskopie
+Mit der Option `--mirror` des `clone`-Befehls erstellen wir eine Arbeitskopie
 des Repositorys.
 __
 	shell 'git clone --mirror remoterepo localrepo'
