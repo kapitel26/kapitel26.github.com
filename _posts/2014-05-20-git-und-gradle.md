@@ -12,7 +12,7 @@ Maven habe ich immer dann genutzt, wenn das Projekt sich an die Standardkonventi
 und nur wenige zusätzliche Plugins benötigt wurden.
 Ant war mein Werkzeug, wenn ich mehr Freiheitsgrade brauchte.
 
-Gradle (http://www.gradle.org/) ermöglicht mir beides und ich frage mich, wie ich es so lange mit den
+[Gradle](http://www.gradle.org/) ermöglicht mir beides und ich frage mich, wie ich es so lange mit den
 anderen Werkzeugen ausgehalten habe.
 
 Ich werde in loser Folge ein paar Posts über die Möglichkeiten von Gradle im Zusammenspiel mit Git schreiben.
@@ -20,7 +20,7 @@ Ich werde in loser Folge ein paar Posts über die Möglichkeiten von Gradle im Z
 Los geht es heute mit dem Eintragen des Commit-Hash in die Manifest-Datei.
 
 ### Das Gradle-Git-Plugin
-Das Plugin (https://github.com/ajoberstar/gradle-git) wird in der Datei `build.gradle` folgendermassen hinzugefügt:
+Das [Git-Plugin](https://github.com/ajoberstar/gradle-git) wird in der Datei `build.gradle` folgendermassen hinzugefügt:
 
 <pre>
 buildscript {
@@ -35,12 +35,12 @@ buildscript {
 import org.ajoberstar.grgit.*
 </pre>
 
-Das Plugin basiert auf JGit (http://www.eclipse.org/jgit/) und ist somit plattformunabhägig.
+Das Plugin basiert auf [JGit](http://www.eclipse.org/jgit/) und ist somit plattformunabhägig.
 Es erfordert keine Installation von nativen Programmen auf dem Build-Rechner.
 
 ### Den Commit-Hash ermitteln
 
-Das Plugin bringt keine Tasks mit, sondern eine Groovy-API (http://ajoberstar.org/grgit/docs/groovydoc/index.html) die man in eigenen Tasks benutzen kann.
+Das Plugin bringt keine Tasks mit, sondern eine [Groovy-API](http://ajoberstar.org/grgit/docs/groovydoc/index.html) die man in eigenen Tasks benutzen kann.
 
 Um den Hash-Wert des aktuellen Commit zu ermitteln und auszugeben, reicht folgender Code:
 
