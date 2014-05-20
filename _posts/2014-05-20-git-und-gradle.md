@@ -46,7 +46,7 @@ Um den Hash-Wert des aktuellen Commit zu ermitteln und auszugeben, reicht folgen
 
 <pre>
 task printHeadHash << {
-  def grgit=Grgit.open('.')
+  def grgit=Grgit.open(project.file('.'))
   println grgit.head().id
 }
 </pre>
@@ -57,7 +57,7 @@ Um zu ermitteln, ob es unversionierte Änderungen gibt, geht man folgendermaßen
 
 <pre>
 task printIsClean << {
-  def grgit=Grgit.open('.')
+  def grgit=Grgit.open(project.file('.'))
   if(grgit.status().isClean()) {
     println "Alles versioniert"
   } else {
@@ -87,7 +87,7 @@ import org.ajoberstar.grgit.*
 
 jar {
   manifest {
-    def grgit=Grgit.open('.')
+    def grgit=Grgit.open(project.file('.'))
     if(grgit.status().isClean()) {
       attributes("Commit-Id": grgit.head().id)
     } else {
