@@ -3,7 +3,7 @@ require "open3"
 require "set"
 
 require "rubygems"
-require "maruku"
+require "kramdown"
 
 require "directories"
 require "files"

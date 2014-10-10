@@ -102,10 +102,10 @@ end # task :preview
 
 desc "Build the site"
 task :build do
-  system "/usr/local/Cellar/ruby/1.9.3-p362/bin/ruby samples/git/build-samples.rb"
-  raise "Couldn't create generated samples: #{$?.inspect}" unless $?.to_i == 0
+  # system "ruby samples/git/build-samples.rb"
+  # raise "Couldn't create generated samples: #{$?.inspect}" unless $?.to_i == 0
   # TODO don't festverdraht the path
-  system "export LANG=de_DE.UTF-8; /usr/local/Cellar/ruby/1.9.3-p362/bin/jekyll build"
+  system "export LANG=de_DE.UTF-8; jekyll build"
   raise "Jekyll failure: #{$?.inspect}" unless $?.to_i == 0
 end 
 

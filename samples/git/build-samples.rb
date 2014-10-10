@@ -7,7 +7,6 @@ require "git-demos"
 
 message = "Samples created:"
 
-
 FileUtils.mkdir_p "samples"
 Dir.glob("#{basedir}/samples-src**/*.rb") do |f|
 	load f
