@@ -1,3 +1,9 @@
+---
+title: "CoLi2014"
+description: ""
+group: navigation
+weight: 10
+---
 <!doctype html>
 <html lang="en">
 
@@ -6,7 +12,7 @@
 
 		<title>Warum wir Git lieben</title>
 
-		<meta name="description" content="Ein Vortrag über Git für die Continuous Lifecycle Konferenz 2013 Konferenz in Karlsruhe">
+		<meta name="description" content="Ein Vortrag über Git für die Continuous Lifecycle Konferenz 2014 Konferenz in Mannheim">
 		<meta name="author" content="Bjørn Stachmann, René Preissel">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -41,199 +47,24 @@
 <!-- SLIDE -->
 		<section data-markdown><script type="text/template">
 			<aside class="notes">
-Startfolie. Vor dem Vortrag einblenden. Erzählen, wie wir zu Git kamen. Erst skeptisch. Inzwischen überzeugt.<p>
-Charakte des Vortrags: Sightseeing-Tour. Vieles zeigen, wenig erklären. View "Warum?", ein wenig "Wohin noch?" und möglichst kein "Was?" und "Wie?".
+Startfolie. Vor dem Vortrag einblenden.
 			</aside>
 
-Git
-===
 
-```bash
-$ git init
-
-# We ♥︎ it!
-
-$ |
-```
-
-Warum wir es lieben
--------------------
+Git in freier Wildbahn
+----------------------
 
 Vortrag zur Continuous Lifecycle Konferenz
-2013 in Karlsruhe
+2015 in Mannheim
 
 Bjørn Stachmann & René Preißel
 
 					</script>
 		</section>
 
-		<section>
-
-
-
-<!-- SLIDE -->
-			<section data-markdown><script type="text/template">
-				<aside class="notes">
-				Nichts sagen.
-				</aside>
-
-Ob wohl Zitronenfalter <br/> Zitronen falten?
----------------------------------------------------
-
-![Zitronenfalter](img/istock-zitronenfalter.jpg)
-
-			</script></section>
-
-
-
-
-<!-- SLIDE -->
-			<section data-markdown><script type="text/template">
-				<aside class="notes">
-				Vorlesen als Denkanstoss. Warten. Der Begriff Versionsverwaltung stammt aus einer Zeit als Bürokraten das gemacht haben. Oft gab es eigene Abteilungen dafür.
-				</aside>
-
-### Ob wohl Versionsverwaltungen <br/> Versionen verwalten ?
-
-![Aktenarchiv](img/istock-aktenarchiv.jpg)
-
-			</script></section>
-
-
-
-
-<!-- SLIDE -->
-			<section data-markdown><script type="text/template">
-				<aside class="notes">
-Git kann Änderungen aufzeichnen, Daten sichern, Protokolle erstellen, alte Versionen herstellen, Unterschiede aufzeigen.
-				</aside>
-
-Doch, schon
------------
-
-```bash
-commit 686158a5bb83ef701c71f54b95eb04f9f0732144
-Author: Bjørn Stachmann
-Date:   Wed Oct 30 21:51:38 2013 +0100
-
-    speakernotes ausprobiert
-
- material/ContinuousLifecycle-2013/warum-wir-git-lieben.html | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
- ```
-
-aber ...
---------
-			</script></section>
-
-
-
-
-<!-- SLIDE -->
-			<section data-markdown><script type="text/template">
-				<aside class="notes">
-Ohne Worte. Warten. Nächste Folie.
-				</aside>
-
-... darum geht es nicht
------------------------
-
-			</script></section>
-
-
-
-
-
-<!-- SLIDE -->
-			<section data-markdown><script type="text/template">
-				<aside class="notes">
-					Git wurde für den Linux-Kernel entwickelt. Verwaltung war da nicht das, worum es geht.
-				</aside>
-
-### Wollen viele <br/> ein gemeinsames Ziel erreichen, <br/> zählt nur eines:
-
-<!-- TODO Bild: Weltkugel, Pinguin -->
-			</script></section>
-
-
-
-
-<!-- SLIDE -->
-			<section data-markdown><script type="text/template">
-				<aside class="notes">
-				</aside>
-
-Zusammenarbeit!
-===============
-
-
-			</script></section>
-
-
-
-
-<!-- SLIDE -->
-			<section data-markdown><script type="text/template">
-				<aside class="notes">
-					Einige Entwickler arbeiten am Kern. Andere fixen Bugs. Weitere internationalisieren. Wieder andere erproben Neues. Alle haben unterschiedliche Arbeitsweisen und Releasezyklen. Trotzdem müssen sie ständig Informationen und Code austauschen.
-				</aside>
-
-![Dezentrale Zusammenarbeit](img/dezentrale-zusammenarbeit.png)
-
-
-			</script></section>
-
-
-
-
-<!-- SLIDE -->
-			<section data-markdown><script type="text/template">
-				<aside class="notes">
-Ein paar Kernbegriffe. Klon - vollwertige Kopie eines Repositories. Fork - unabhängige Weiterentwicklung. Push/Pull - Übertragen von Commits. Merge - 3-Wege (Basis: Commit-Graph).<p>
-				</aside>
-
-Dezentral arbeiten,
-
- * Klon
- * Fork
-
-sich mit anderen austauschen
-
- * Push
- * Push
-
-und Ergebnisse zusammenführen
-
- * Merge
-
-			</script></section>
-
-
-
-
-
-
-<!-- SLIDE -->
-			<section data-markdown><script type="text/template">
-				<aside class="notes">
-					Meine Definition von Git.
-					Denkanstoss: Wikipedia dezentral? Wäre das möglich? Wäre das Cool?<p>
-					Im nächsten Abschnitt folgt der Pull-Request, das "Killer-Feature" zur Kollaboration.
-				</aside>
-
-Git
-===
-
-ist ein Werkzeug, <br/> mit dem Entwickler <br/> dezentral zusammenarbeiten.
--------------------------------------------------------------------------------
-			</script></section>
-
-
-
-		</section>
+<section>{% include_relative intro.html %}</section>
 
 		<section>
-
 
 
 
@@ -241,8 +72,8 @@ ist ein Werkzeug, <br/> mit dem Entwickler <br/> dezentral zusammenarbeiten.
 			<section data-markdown><script type="text/template">
 				<aside class="notes">
 					Vielleicht eines der wichtigsten Features von Git.
-					Mann kann Git ohne Github benutzen. 
-					Aber vielleicht wäre es nicht geworden, was es ist, 
+					Mann kann Git ohne Github benutzen.
+					Aber vielleicht wäre es nicht geworden, was es ist,
 					wenn es keine Pull-Requests gäbe.
 				</aside>
 
@@ -340,7 +171,7 @@ $ git push  # TODO Option für set-upstream
 
  * ```merge```
 
-   - Änderungen zusammenführen 
+   - Änderungen zusammenführen
    - 3-Wege
    - neues Commit (meistens)
 <!-- evtl. Pull-Bild aus dem Buch -->
@@ -352,19 +183,19 @@ $ git push  # TODO Option für set-upstream
 <!-- SLIDE -->
 			<section data-markdown><script type="text/template">
 				<aside class="notes">
-					
+
 				</aside>
 
 Pull-Workflow
 =============
 
-Gibt dem Maintainer mehr Kontrolle 
+Gibt dem Maintainer mehr Kontrolle
 
-über das *Blessed Repository*, und 
+über das *Blessed Repository*, und
 
 dem Entwickler Freiheit für
 
- * eigenen Workflow 
+ * eigenen Workflow
  * für Experimente
  * und eigenes Timing.
 
@@ -393,15 +224,15 @@ zu Open-Soure beizutragen.
 			</script></section>
 
 
-		</section>		
-		<section>		
+		</section>
+		<section>
 
 
 
 <!-- SLIDE -->
 			<section data-markdown><script type="text/template">
 				<aside class="notes">
-					
+
 				</aside>
 
 
@@ -417,7 +248,7 @@ Ad hoc<br/>Versionierung
 <!-- SLIDE -->
 			<section data-markdown><script type="text/template">
 				<aside class="notes">
-					Viel Trial und Error nötig. Oft hat man am Ende an mehr Stellen geschraubt, als nötig war.	
+					Viel Trial und Error nötig. Oft hat man am Ende an mehr Stellen geschraubt, als nötig war.
 				</aside>
 
 > **Tomcat\* zu konfigurieren<br/>erfordert großen Seelenfrieden**
@@ -434,7 +265,7 @@ Ad hoc<br/>Versionierung
 <!-- SLIDE -->
 			<section data-markdown><script type="text/template">
 				<aside class="notes">
-						
+
 				</aside>
 Einfach ein Git Repo anlegen
 
@@ -453,7 +284,7 @@ $ git commit -am "Config after installation of 123"
 # -> Live Demo
 ```
 
-und 
+und
 			</script></section>
 
 
@@ -498,10 +329,10 @@ Auch Cool
 
 			</script></section>
 
-		</section>	
+		</section>
 
 
-		<section>		
+		<section>
 
 
 
@@ -584,7 +415,7 @@ und dabei den *Überblick* zu behalten.
 
 
 			</script></section>
-		</section>		
+		</section>
 
 		<section>
 
@@ -615,7 +446,7 @@ und dabei den *Überblick* zu behalten.
 
                         †      †      †        †
                                   †
-                     †       †          †        †     
+                     †       †          †        †
                                   †
 
 ```
@@ -637,7 +468,7 @@ und dabei den *Überblick* zu behalten.
 ```bash
 $ git rebase --interactive head~3     # letzte 3 Commits
 
-$ git rebase --interactive            # ab origin 
+$ git rebase --interactive            # ab origin
 
 # Rebase 5176a9e..86f81a0 onto 5176a9e
 #
@@ -672,7 +503,7 @@ Log (Vision)
 > und verstehen können.
 			</script></section>
 
-		</section>		
+		</section>
 
 		<section>
 
@@ -694,7 +525,7 @@ Clones, <br/> Hooks <br/> &Deployment
 				<aside class="notes">
 				</aside>
 
- Git ermöglicht Aktionen, wenn Commits in einem Repository eintreffen (Hooks), z. B. 
+ Git ermöglicht Aktionen, wenn Commits in einem Repository eintreffen (Hooks), z. B.
 
    - Builds
    - Tests
@@ -760,7 +591,7 @@ Warum wir Git lieben
  * **Pull-Requests** erleichtern Open-Soure Contributions
  * **Ad hoc Versionierung**: Clever konfigurieren
  * **Cherry-Picking**: Änderungen flexibel zusammenstellen.
- * **Interactive Rebasing**: Für schönere Historien 
+ * **Interactive Rebasing**: Für schönere Historien
  * **Clones & Hooks**: Erleichtern komplexe Deployments
 
 (unsere Lieblingsfeatures ohne Anspruch auf Vollständigkeit)
@@ -769,7 +600,7 @@ Warum wir Git lieben
 
 
 
-		</section>		
+		</section>
 
 <!-- SLIDE -->
 		<section data-markdown><script type="text/template">
