@@ -33,6 +33,105 @@ Strukturelles
 
 <section data-markdown><script type="text/template">
   <aside class="notes">
+  Fallbeispiel
+  </aside>
+
+Unternehmen: **A, Verwaltung, 1-10 Devs**
+-----------------------------------------
+
+Inhouse-Entwicklung mehrerer Anwendungen für Web-Reporting, Laborwertverwaltung und admistrative Tools.
+
+Entscheidung: Repo pro Anwendung
+--------------------------------
+
+Die Anwendungen sind autark und haben keine direkten Abhängigkeiten.
+
+TODO: Keine Code-Wiederverwendung über die Projekt hinweg?
+
+</script></section>
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Fallbeispiel
+  </aside>
+
+Unternehmen: **B, Logistik, 20-50 Devs**
+-----------------------------------------
+
+ * große modulare Anwendung
+ * unabhängig arbeitende Teams
+ * gemeinsame Releases
+ * Maven Build mit Snapshot-Dependencies
+
+Gemeinsames Release aller Module.
+
+Entscheidung (zunächst): Repo pro Modul
+--------------------------------
+
+Es zeigt sich, dass der Verwaltungs- und Koordinationsaufwand für Repos und Branches recht hoch war.
+
+<!--
+TODO: Präziser wäre gut.
+VORSCHLSGL Welche Module in welchen Versionen sollen ausgeliefert werden?
+TODO: Sind Modulübergreifende Änderungen Teil die Ursache?
+-->
+
+Entscheidung (revidiert): 1 Repo
+--------------------------------
+
+VORSCHLAG: Release-Vorbereitungen vereinfacht. Es ist klar, was rausgehen soll, und was zu testen ist.
+
+</script></section>
+
+
+<!-- TODO evtl. C Finanzen -->
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Fallbeispiel
+
+  Problem bei Subtrees: Sehr viel Subtree-Merge-Commits bei jeder täglichen Integration. (> 30 Minuten). Mit read-tree-Lösung (< 2 Minuten).
+  </aside>
+
+Unternehmen: **D, Versicherung, 100+ Devs**
+-----------------------------------------
+
+ * etliche Teams
+ * viel Module (>100)
+ * komplexe Fachlichkeit, viele Abhängigkeiten
+ * seltene übergreifende Releases
+
+Gemeinsames Release aller Module.
+
+Entscheidung: Repo pro Modul
+--------------------------------
+
+Historie für die Team übersichtlicher.
+
+Entscheidung (zusätzlich): Globales Repo mit Subtrees
+--------------------------------
+
+Übergreifende Historisierung, Nachvollziehbarkeit, globales Release und Revisionssicherheit. Täglich zusammengeführte Basis für alle Entwicklungen.
+
+Zwei Varianten: Subtree vs. read-tree
+
+</script></section>
+
+<!-- TODO evtl. E embedded -->
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
   Frage-Folie
 
   Diese Frage ist vor allem dann relevant, wenn die Antwort auf die
@@ -85,5 +184,75 @@ Berechtigungen
 
 Wer darf was?
 -------------
+
+</script></section>
+
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Frage-Folie
+  </aside>
+
+Wer bestimmt, was ins Repo kommt?
+---------------------------------
+
+Push<br/>oder<br/>Pull?
+=======================
+
+</script></section>
+
+
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Fallbeispiel
+  </aside>
+
+Unternehmen: **D, Versicherung, 100+ Devs**
+-----------------------------------------
+
+ * etliche Teams
+ * viel Module (>100)
+ * komplexe Fachlichkeit, viele Abhängigkeiten
+ * seltene übergreifende Releases
+
+Gemeinsames Release aller Module.
+
+Entscheidung: Pull-Requests
+---------------------------
+
+Nicht der Entwickler, sondern Leitung bestimmt, ob und wann etwas übernommen wird.
+
+</script></section>
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Fallbeispiel
+  </aside>
+
+Unternehmen: **F, Finanzen, 10-20 Devs**
+-----------------------------------------
+
+Entwickeln Payment-Software in mehreren Teams.
+
+Entscheidung: Pull-Requests
+---------------------------
+
+Durch Pull-Requests wird garantiert, dass keine Änderung direkt vom Entwickler ins Hauptrepo wandert. Erst nach einem Code-Revew.
 
 </script></section>
