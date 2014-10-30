@@ -10,7 +10,7 @@
 | **H** | e-Commerce |
 | **I** |  |
 | **J** | Forschung |
-| **K** |  | |
+| **K** | e-Commerce | |
 
 Großes oder kleines Repo?
 =========================
@@ -21,6 +21,7 @@ Großes oder kleines Repo?
  * E - kleine Repos
  * H - viele Repos
  * J - Beides
+ * K - Großes
 
 
 Repo-Abhängigkeiten: Git oder Extern?
@@ -32,17 +33,20 @@ Repo-Abhängigkeiten: Git oder Extern?
  * E - extern
  * H - extern / Maven
  * J - extern / RPM
+ * K - ???
 
 Administration: Wer macht was?
 =========================
 
  * H - Branches Devs, Repos wenig
  * J - sind Admins
+ * K - Branches Devs, Repo auf Githun
 
 Berchtigungen: Wer darf was?
 =========================
 
  * J - freier Zugriff im Team, aber signes Tags für ausgelieferte Versionen
+ * K - freier Zugriff
 
 Push oder Pull-Requests?
 =========================
@@ -53,6 +57,7 @@ Push oder Pull-Requests?
  * E - ???
  * H - Push
  * J - Push
+ * K - Push
 
 Feature Branch?
 =========================
@@ -63,6 +68,7 @@ Feature Branch?
  * E - ???
  * F - Ja, Branch per Jira-Issue, wenige Tage
  * J - Ja
+ * K - Nein, (aber manchmal länger lebende regionale Branches)
 
 
 Merge oder Rebase?
@@ -75,6 +81,7 @@ Merge oder Rebase?
  * E - ???
  * H - Sowohl als auch
  * J - Merge
+ * K - Merge
 
 
 Böse Merge-Konflikte?
@@ -82,6 +89,7 @@ Böse Merge-Konflikte?
 
  * H - nein
  * J - nein
+ * K - Ja, wegen langlebiger branches
 
 Task-Tracker?
 =========================
@@ -92,6 +100,7 @@ Task-Tracker?
  * E - ???
  * H - Ja, Jira, Branchname
  * J - Nein
+ * K - Ja, Issue-ID in Commits
 
 
 
@@ -104,6 +113,7 @@ Diff-To-Master oder Commit-By-Commit?
  * E - ???
  * H - Commit-by-Commit nach Jenkins-Mail
  * J - Selten, Diff2master
+ * K - Selten
 
 Schöne Historie / Interaktives Rebase?
 =========================
@@ -128,6 +138,7 @@ Branches, Tags, Notes?
  * E - ???
  * H - Branches
  * J - Signed Tags
+ * K - Tags
 
 Bauen mit Jenkins?
 =========================
@@ -137,4 +148,5 @@ Bauen mit Jenkins?
  * D - Ja, komplex Build-Kette
  * E - ???
  * H - Ja
- * J Nein, Scripte zum RPM-Package-Build
+ * J - Nein, Scripte zum RPM-Package-Build
+ * K - Ja
