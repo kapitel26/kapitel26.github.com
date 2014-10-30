@@ -44,9 +44,9 @@ Inhouse-Entwicklung mehrerer Anwendungen für Web-Reporting, Laborwertverwaltung
 Entscheidung: Repo pro Anwendung
 --------------------------------
 
-Die Anwendungen sind autark und haben keine direkten Abhängigkeiten.
+ * Die Anwendungen sind autark und haben keine direkten Abhängigkeiten.
+ * Wiederverwendbare Module sind im eigenem Repo. Einbindung per Gradle.
 
-TODO: Keine Code-Wiederverwendung über die Projekt hinweg?
 
 </script></section>
 
@@ -73,12 +73,16 @@ Gemeinsames Release aller Module.
 Entscheidung (zunächst): Repo pro Modul
 --------------------------------
 
-Es zeigt sich, dass der Verwaltungs- und Koordinationsaufwand für Repos und Branches recht hoch war.
+Es zeigte sich, dass der Verwaltungs- und Koordinationsaufwand für Repos und Branches recht hoch war.
 
 <!--
 TODO: Präziser wäre gut.
 VORSCHLSGL Welche Module in welchen Versionen sollen ausgeliefert werden?
 TODO: Sind Modulübergreifende Änderungen Teil die Ursache?
+
+Ursachen:
+ * Branch/Tags anlegen in allen Repos
+ * Commits per Repo bei übergreifenden Änderungen
 -->
 
 Entscheidung (revidiert): 1 Repo
@@ -114,7 +118,9 @@ Gemeinsames Release aller Module.
 Entscheidung: Repo pro Modul
 --------------------------------
 
-Historie für die Team übersichtlicher.
+Separate Release-Planung pro Modul möglich (eigene Branches).
+Separate Freigaben von Änderungen pro Modul.
+Historie für die Teams übersichtlicher.
 
 Entscheidung (zusätzlich): Globales Repo mit Subtrees
 --------------------------------
@@ -151,6 +157,19 @@ Subrepo/Submodule vs. Gradle, Maven & Co.
 
 </script></section>
 
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  </aside>
+
+Repo-Abhängigkeiten
+-------------------
+
+* die meisten befragten Unternehmen arbeiten mit externen Abhängigkeiten (Ausnahme D-Versicherung, die teilweise mit Subtrees arbeitet)
+* Git Submodule und Subtrees sind komplexer nd nicht so flexibel wie externe Werkzeuge
+
+</script></section>
 
 
 
@@ -208,6 +227,21 @@ Push<br/>oder<br/>Pull?
 
 
 
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Frage-Folie
+  </aside>
+
+Pull-Requests
+=============
+
+![Pull-Request-1](pull-requests-1.png)
+![Pull-Request-2](pull-requests-2.png)
+
+</script></section>
+
 
 
 
@@ -222,7 +256,7 @@ Unternehmen: **D, Versicherung, 100+ Devs**
 -----------------------------------------
 
  * etliche Teams
- * viel Module (>100)
+ * viele Module (>100)
  * komplexe Fachlichkeit, viele Abhängigkeiten
  * seltene übergreifende Releases
 

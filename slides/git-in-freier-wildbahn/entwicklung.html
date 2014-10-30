@@ -53,8 +53,6 @@ TODO: Warum eigentlich? Keine QA, Kein Task-Tracking.
 
 
 
-
-
 <!---------------- SLIDE -------------- -->
 
 <section data-markdown><script type="text/template">
@@ -68,7 +66,7 @@ Unternehmen: **D, Versicherung, 100+ Devs**
  * etliche Teams
  * viel Module (>100)
  * komplexe Fachlichkeit, viele Abhängigkeiten
- * seltene übergreifende Releases
+ * seltene übergreifende Releases????
  * gemeinsames Release aller Module.
 
 Entscheidung: Feature-Branches
@@ -79,7 +77,6 @@ Entscheidung: Feature-Branches
  * Eclipse-basiertes Tooling erleichert Entwicklern den Feature-Workflow.
 
 </script></section>
-
 
 
 <!---------------- SLIDE -------------- -->
@@ -115,7 +112,32 @@ Merge<br/>oder<br/>Rebase?
 ==========================
 
 </script></section>
+<!---------------- SLIDE -------------- -->
 
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  </aside>
+
+Merge
+=====
+
+![Merge mit Branches](gemeinsamer-branch-merge.png)
+
+</script></section>
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  </aside>
+
+Rebase
+=====
+
+![Rebase mit Branches](gemeinsamer-branch-rebase.png)
+
+</script></section>
 
 
 
@@ -135,10 +157,38 @@ Inhouse-Entwicklung mehrerer Anwendungen für Web-Reporting, Laborwertverwaltung
 Entscheidung: Integration durchgängig per Rebase
 ------------------------------------------------
 
-Historie wird nur als Backup und zum Auditing genutzt (Wer hat wann was geändert). Die einfache lineare Historie genügt.
+Historie wird nur als Backup und zum Auditing genutzt (Wer hat wann was geändert).
+Die einfache lineare Historie genügt.
+
 
 </script></section>
 
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Fallbeispiel
+  </aside>
+
+Unternehmen: **D, Versicherung, 100+ Devs**
+-----------------------------------------
+
+ * etliche Teams
+ * viel Module (>100)
+ * Gemeinsames Arbeiten auf Feature-Branches
+
+
+
+
+Entscheidung: Merge
+---------------------------
+
+ * Weniger initialer Schulungsaufwand
+ * Eclipse-Tooling ist einfacher
+ * Komplexe Historie wird nur als Auditing benutzt
+
+</script></section>
 
 
 
