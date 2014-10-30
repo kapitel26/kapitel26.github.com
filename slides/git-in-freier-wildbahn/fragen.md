@@ -1,15 +1,15 @@
-| | Branche | Wer |
-|-------|------|---------|
-| **A** | Verwaltung | Wasswerke |
-| **B** | Logistik | HHLA |
-| **C** | Finanzen | Payone |
-| **D** | Versicherung | TK |
-| **E** | Embedded | MEN |
-| **F** |  | |
-| **G** |  | |
-| **H** | e-Commerce | |
-| **I** |  | |
-| **J** | Forschung | |
+| | Branche |
+|-------|------|
+| **A** | Verwaltung |
+| **B** | Logistik |
+| **C** | Finanzen |
+| **D** | Versicherung |
+| **E** | Embedded |
+| **F** |  |
+| **G** |  |
+| **H** | e-Commerce |
+| **I** |  |
+| **J** | Forschung |
 | **K** |  | |
 
 Großes oder kleines Repo?
