@@ -8,9 +8,11 @@
 | **F** |  |
 | **G** |  |
 | **H** | e-Commerce |
-| **I** |  |
+| **I** | e-Commerce |
 | **J** | Forschung |
-| **K** | e-Commerce | |
+| **K** | e-Commerce |
+| **L** | Open Source |
+| **M** | Cloud |
 
 Großes oder kleines Repo?
 =========================
@@ -20,6 +22,7 @@ Großes oder kleines Repo?
  * D - viele kleine Repos + ein großes Repo
  * E - kleine Repos
  * H - viele Repos
+ * I - Große + einige Kleine
  * J - Beides
  * K - Großes
 
@@ -32,6 +35,7 @@ Repo-Abhängigkeiten: Git oder Extern?
  * D - Subtree
  * E - extern
  * H - extern / Maven
+ * I - extern / Maven
  * J - extern / RPM
  * K - ???
 
@@ -39,12 +43,14 @@ Administration: Wer macht was?
 =========================
 
  * H - Branches Devs, Repos wenig
+ * I - Branches Devs, Repos wenig
  * J - sind Admins
  * K - Branches Devs, Repo auf Githun
 
 Berchtigungen: Wer darf was?
 =========================
 
+ * I - jeder Alles
  * J - freier Zugriff im Team, aber signes Tags für ausgelieferte Versionen
  * K - freier Zugriff
 
@@ -56,6 +62,7 @@ Push oder Pull-Requests?
  * D - Pull-Requests
  * E - ???
  * H - Push
+ * I - Push
  * J - Push
  * K - Push
 
@@ -67,6 +74,7 @@ Feature Branch?
  * D - Ja
  * E - ???
  * F - Ja, Branch per Jira-Issue, wenige Tage
+ * I - Manchmal
  * J - Ja
  * K - Nein, (aber manchmal länger lebende regionale Branches)
 
@@ -80,6 +88,7 @@ Merge oder Rebase?
  * D - Merge
  * E - ???
  * H - Sowohl als auch
+ * I - Merge
  * J - Merge
  * K - Merge
 
@@ -88,6 +97,7 @@ Böse Merge-Konflikte?
 =========================
 
  * H - nein
+ * I - nein
  * J - nein
  * K - Ja, wegen langlebiger branches
 
@@ -99,6 +109,7 @@ Task-Tracker?
  * D - Ja
  * E - ???
  * H - Ja, Jira, Branchname
+ * I - ???
  * J - Nein
  * K - Ja, Issue-ID in Commits
 
@@ -112,6 +123,7 @@ Diff-To-Master oder Commit-By-Commit?
  * D - Pull-Request-Review ~Diff-To-Master
  * E - ???
  * H - Commit-by-Commit nach Jenkins-Mail
+ * I - Selten, Berührungsängste
  * J - Selten, Diff2master
  * K - Selten
 
@@ -127,6 +139,7 @@ Staging Branches?
  * D - Ja
  * E - ???
  * H - master Branch
+ * I - ???
  * J - ???
 
 Branches, Tags, Notes?
@@ -137,6 +150,7 @@ Branches, Tags, Notes?
  * D - Branches + Tags
  * E - ???
  * H - Branches
+ * I - Tags
  * J - Signed Tags
  * K - Tags
 
@@ -148,5 +162,6 @@ Bauen mit Jenkins?
  * D - Ja, komplex Build-Kette
  * E - ???
  * H - Ja
+ * I - Ja
  * J - Nein, Scripte zum RPM-Package-Build
  * K - Ja
