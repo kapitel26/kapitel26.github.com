@@ -36,15 +36,15 @@ Strukturelles
   Fallbeispiel
   </aside>
 
-Unternehmen: **A, Verwaltung, 1-10 Devs**
------------------------------------------
+### Unternehmen: {% include_relative unternehmen/a.html %}
 
-Inhouse-Entwicklung mehrerer Anwendungen für Web-Reporting, Laborwertverwaltung und admistrative Tools.
+{% include_relative unternehmen/a-details.html %}
 
-Entscheidung: Repo pro Anwendung
---------------------------------
 
- * Die Anwendungen sind autark und haben keine direkten Abhängigkeiten.
+## Entscheidung: Repo pro Anwendung
+
+ * Die Anwendungen sind autark.
+ * Es gibt keine direkten Abhängigkeiten.
  * Wiederverwendbare Module sind im eigenem Repo. Einbindung per Gradle.
 
 
@@ -60,40 +60,62 @@ Entscheidung: Repo pro Anwendung
   Fallbeispiel
   </aside>
 
-Unternehmen: **B, Logistik, 20-50 Devs**
------------------------------------------
+### Unternehmen: {% include_relative unternehmen/b.html %}
 
- * große modulare Anwendung
- * unabhängig arbeitende Teams
- * gemeinsame Releases
- * Maven Build mit Snapshot-Dependencies
+{% include_relative unternehmen/a-details.html %}
 
-Gemeinsames Release aller Module.
 
-Entscheidung (zunächst): Repo pro Modul
---------------------------------
+## Entscheidung: Repo pro Modul
 
 Es zeigte sich, dass der Verwaltungs- und Koordinationsaufwand für Repos und Branches recht hoch war.
-
-<!--
-TODO: Präziser wäre gut.
-VORSCHLSGL Welche Module in welchen Versionen sollen ausgeliefert werden?
-TODO: Sind Modulübergreifende Änderungen Teil die Ursache?
-
-Ursachen:
- * Branch/Tags anlegen in allen Repos
- * Commits per Repo bei übergreifenden Änderungen
--->
-
-Entscheidung (revidiert): 1 Repo
---------------------------------
-
-VORSCHLAG: Release-Vorbereitungen vereinfacht. Es ist klar, was rausgehen soll, und was zu testen ist.
 
 </script></section>
 
 
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Fallbeispiel
+  </aside>
+
+### Unternehmen: {% include_relative unternehmen/b.html %}
+
+{% include_relative unternehmen/a-details.html %}
+
+## Entscheidung (revidiert): 1 Repo
+
+Besser. Release-Vorbereitungen vereinfacht. Es ist klar, was rausgehen soll, und was zu testen ist.
+
+</script></section>
 <!-- TODO evtl. C Finanzen -->
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Fallbeispiel
+  </aside>
+
+### Unternehmen: {% include_relative unternehmen/d.html %}
+
+{% include_relative unternehmen/d-details.html %}
+
+
+Entscheidung: Repo pro Modul
+--------------------------------
+
+ * Separate Release-Planung pro Modul möglich (eigene Branches).
+ * Separate Freigaben von Änderungen pro Modul.
+ * Historie für die Teams übersichtlicher.
+
+</script></section>
+
 
 
 <!---------------- SLIDE -------------- -->
@@ -105,22 +127,10 @@ VORSCHLAG: Release-Vorbereitungen vereinfacht. Es ist klar, was rausgehen soll, 
   Problem bei Subtrees: Sehr viel Subtree-Merge-Commits bei jeder täglichen Integration. (> 30 Minuten). Mit read-tree-Lösung (< 2 Minuten).
   </aside>
 
-Unternehmen: **D, Versicherung, 100+ Devs**
------------------------------------------
+### Unternehmen: {% include_relative unternehmen/d.html %}
 
- * etliche Teams
- * viel Module (>100)
- * komplexe Fachlichkeit, viele Abhängigkeiten
- * seltene übergreifende Releases
+{% include_relative unternehmen/d-details.html %}
 
-Gemeinsames Release aller Module.
-
-Entscheidung: Repo pro Modul
---------------------------------
-
-Separate Release-Planung pro Modul möglich (eigene Branches).
-Separate Freigaben von Änderungen pro Modul.
-Historie für die Teams übersichtlicher.
 
 Entscheidung (zusätzlich): Globales Repo mit Subtrees
 --------------------------------
@@ -130,6 +140,8 @@ Entscheidung (zusätzlich): Globales Repo mit Subtrees
 Zwei Varianten: Subtree vs. read-tree
 
 </script></section>
+
+
 
 <!-- TODO evtl. E embedded -->
 
@@ -252,15 +264,9 @@ Pull-Requests
   Fallbeispiel
   </aside>
 
-Unternehmen: **D, Versicherung, 100+ Devs**
------------------------------------------
+### Unternehmen: {% include_relative unternehmen/d.html %}
 
- * etliche Teams
- * viele Module (>100)
- * komplexe Fachlichkeit, viele Abhängigkeiten
- * seltene übergreifende Releases
-
-Gemeinsames Release aller Module.
+{% include_relative unternehmen/d-details.html %}
 
 Entscheidung: Pull-Requests
 ---------------------------
@@ -279,13 +285,11 @@ Nicht der Entwickler, sondern Leitung bestimmt, ob und wann etwas übernommen wi
   Fallbeispiel
   </aside>
 
-Unternehmen: **F, Finanzen, 10-20 Devs**
------------------------------------------
+### Unternehmen: {% include_relative unternehmen/f.html %}
 
-Entwickeln Payment-Software in mehreren Teams.
+{% include_relative unternehmen/f-details.html %}
 
-Entscheidung: Pull-Requests
----------------------------
+## Entscheidung: Pull-Requests
 
 Durch Pull-Requests wird garantiert, dass keine Änderung direkt vom Entwickler ins Hauptrepo wandert. Erst nach einem Code-Revew.
 
