@@ -247,6 +247,53 @@ Diff to master<br/>oder<br/>Commit by Commit?
 
 
 
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Fallbeispiel
+  </aside>
+
+### Unternehmen: {% include_relative unternehmen/h.html %}
+
+{% include_relative unternehmen/h-details.html %}
+
+Entscheidung: Commit by Commit
+-------------------------------
+
+Per Commit-Hook wird im Jenkins ein Build angestossen, und einem Mail mit Aufforderung zur Bestätigung durch Review verschickt. Vorteil: Es sind meist kleine überschaubare Einheiten zu Reviewen.
+
+</script></section>
+
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Fallbeispiel
+  </aside>
+
+### Unternehmen: {% include_relative unternehmen/l.html %}
+
+{% include_relative unternehmen/l-details.html %}
+
+Entscheidung: Diff to master
+----------------------------
+
+Für ein Open-Source-Projekt sind Code-Reviews essenziell.
+Pull-Requests, die eintreffen haben mitunter lange und verschlungene Commit-Historien. Meist ist es übersichtlicher, das Endergebnis zu betrachten.
+
+Das Projekt hat früher mit Subversion gearbeitet. Der Github-Pull-Request macht es leichter zum Projekt beizutragen. Das Projekt erhält mehr Contributions als vorher.
+
+</script></section>
+
+
+
+
 <!---------------- SLIDE -------------- -->
 
 <section data-markdown><script type="text/template">
@@ -257,9 +304,21 @@ Diff to master<br/>oder<br/>Commit by Commit?
 Habt ihr die History schön?
 ===========================
 
-Durch interactive Rebasing?
----------------------------
+</script></section>
 
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Ergänzung zur Frage-Folie
+  </aside>
+
+Git bietet mächtige Möglichkeiten Historie aufzubereiten und (ggf. auch nachträglich) schön zu machen, z. B. `rebase --interacte`, `rebase --onto`, `filter-branch`, `notes`.
+
+### Genutzt wird das kaum.
 </script></section>
 
 
