@@ -5,8 +5,8 @@
   Erläuterungen
   </aside>
 
-Entwickeln mit Git
-======
+Entwickeln
+==========
 
 </script></section>
 
@@ -20,10 +20,7 @@ Entwickeln mit Git
   Frage-Folie
   </aside>
 
-Feature-Branches
-----------------
-
-To Branch<br/>or<br/>not to branch?
+To branch<br/>or<br/>not to branch?
 ==================================
 
 </script></section>
@@ -38,15 +35,15 @@ To Branch<br/>or<br/>not to branch?
   Fallbeispiel
   </aside>
 
-Unternehmen: **A, Verwaltung, 1-10 Devs**
------------------------------------------
+### Unternehmen: {% include_relative unternehmen/a.html %}
 
-Inhouse-Entwicklung mehrerer Anwendungen für Web-Reporting, Laborwertverwaltung und admistrative Tools.
+{% include_relative unternehmen/a-details.html %}
 
-Entscheidung: Entwickeln auf einem Branch
------------------------------------------
+## Entscheidung: Entwickeln auf einem Branch
 
-TODO: Warum eigentlich? Keine QA, Kein Task-Tracking.
+* Keine Featureorientiert QA
+* Kein Issue-Tracking
+* Versionsverwaltung nur als Backup und zur Revision
 
 </script></section>
 
@@ -60,20 +57,14 @@ TODO: Warum eigentlich? Keine QA, Kein Task-Tracking.
   Fallbeispiel
   </aside>
 
-Unternehmen: **D, Versicherung, 100+ Devs**
------------------------------------------
+### Unternehmen: {% include_relative unternehmen/d.html %}
 
- * etliche Teams
- * viel Module (>100)
- * komplexe Fachlichkeit, viele Abhängigkeiten
- * seltene übergreifende Releases????
- * gemeinsames Release aller Module.
+{% include_relative unternehmen/d-details.html %}
 
-Entscheidung: Feature-Branches
----------------------------
+## Entscheidung: Feature-Branches
 
- * Eigenes komplexes Reporting ermöglicht Überblick, welche Änderunge für ein Release integriert wurden.
- * statische Code-Analyse und Peer-Review vor dem Merge
+ * Eigenes komplexes Reporting ermöglicht Überblick, welche Änderungen für ein Release integriert wurden.
+ * Statische Code-Analyse und Peer-Review vor dem Merge
  * Eclipse-basiertes Tooling erleichert Entwicklern den Feature-Workflow.
 
 </script></section>
@@ -86,13 +77,11 @@ Entscheidung: Feature-Branches
   Fallbeispiel
   </aside>
 
-Unternehmen: **F, Finanzen, 10-20 Devs**
------------------------------------------
+### Unternehmen: {% include_relative unternehmen/f.html %}
 
-Entwickeln Payment-Software in mehreren Teams.
+{% include_relative unternehmen/f-details.html %}
 
-Entscheidung: Feature Branches
------------------------------------------
+## Entscheidung: Feature Branches
 
 Rechtliche Vorgaben für Code-Reviews und Tracking-der Änderungen, weil die Feature-Branches gut kontrollierbare Einheiten bilden.
 
@@ -149,10 +138,9 @@ Rebase
   Fallbeispiel
   </aside>
 
-Unternehmen: **A, Verwaltung, 1-10 Devs**
------------------------------------------
+### Unternehmen: {% include_relative unternehmen/a.html %}
 
-Inhouse-Entwicklung mehrerer Anwendungen für Web-Reporting, Laborwertverwaltung und admistrative Tools.
+{% include_relative unternehmen/a-details.html %}
 
 Entscheidung: Integration durchgängig per Rebase
 ------------------------------------------------
@@ -171,15 +159,9 @@ Die einfache lineare Historie genügt.
   Fallbeispiel
   </aside>
 
-Unternehmen: **D, Versicherung, 100+ Devs**
------------------------------------------
+### Unternehmen: {% include_relative unternehmen/d.html %}
 
- * etliche Teams
- * viel Module (>100)
- * Gemeinsames Arbeiten auf Feature-Branches
-
-
-
+{% include_relative unternehmen/d-details.html %}
 
 Entscheidung: Merge
 ---------------------------
@@ -231,15 +213,14 @@ Und was ist mit dem Task-Tracker?
   Fallbeispiel
   </aside>
 
-Unternehmen: **F, Finanzen, 10-20 Devs**
------------------------------------------
+### Unternehmen: {% include_relative unternehmen/f.html %}
 
-Entwickeln Payment-Software in mehreren Teams.
+{% include_relative unternehmen/f-details.html %}
 
 Entscheidung: Issue-ID in jeder Commit-Message
 -----------------------------------------
 
-Nachvollziehbarkeit von Änderungen ist aufgrund rechtlicher Vorgaben erforlderlich.
+Nachvollziehbarkeit von Änderungen ist aufgrund rechtlicher Vorgaben erforderlich.
 
 </script></section>
 
