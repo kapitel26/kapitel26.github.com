@@ -159,13 +159,10 @@ Zwei Varianten: Subtree vs. read-tree
   Stand, wenn Änderungen mehrerer Module betreffen.
   </aside>
 
-Repo-Abhängigkeiten
--------------------
 
-**in Git**<br/>oder<br/>**extern**?
-===================================
+# Abhängigkeits-<br/>management
 
-Subrepo/Submodule vs. Gradle, Maven & Co.
+## mit Git (Submodule/Subtree)<br/>oder extern (Maven, Gradle & Co.)?
 
 </script></section>
 
@@ -179,7 +176,7 @@ Repo-Abhängigkeiten
 -------------------
 
 * die meisten befragten Unternehmen arbeiten mit externen Abhängigkeiten (Ausnahme D-Versicherung, die teilweise mit Subtrees arbeitet)
-* Git Submodule und Subtrees sind komplexer nd nicht so flexibel wie externe Werkzeuge
+* Git Submodule und Subtrees sind komplexer und nicht so flexibel wie externe Werkzeuge
 
 </script></section>
 
@@ -195,26 +192,10 @@ Repo-Abhängigkeiten
 Administration
 ==============
 
-Wer macht was?
---------------
-
-</script></section>
-
-
-
-
-<!---------------- SLIDE -------------- -->
-
-<section data-markdown><script type="text/template">
-  <aside class="notes">
-  Frage-Folie
-  </aside>
-
-Berechtigungen
-==============
-
-Wer darf was?
--------------
+ * Oft ist nicht viel zu tun. Insbesondere beim Big-Repo-Ansatz
+ * Admins richten Repos ein.
+ * Dev-Teams verwalten die Feature-Branches.
+ * Viele Nutzen Github
 
 </script></section>
 
@@ -229,10 +210,7 @@ Wer darf was?
   Frage-Folie
   </aside>
 
-Wer bestimmt, was ins Repo kommt?
----------------------------------
-
-Push<br/>oder<br/>Pull?
+Push oder Pull?
 =======================
 
 </script></section>
@@ -246,10 +224,20 @@ Push<br/>oder<br/>Pull?
   Frage-Folie
   </aside>
 
-Pull-Requests
-=============
-
 ![Pull-Request-1](pull-requests-1.png)
+
+</script></section>
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Frage-Folie
+  </aside>
+
 ![Pull-Request-2](pull-requests-2.png)
 
 </script></section>
