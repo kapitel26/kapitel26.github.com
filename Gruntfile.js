@@ -11,11 +11,10 @@ module.exports = function(grunt) {
 				' * http://lab.hakim.se/reveal-js\n' +
 				' * MIT licensed\n' +
 				' *\n' +
-				' * Copyright (C) 2013 Hakim El Hattab, http://hakim.se\n' +
+				' * Copyright (C) 2014 Hakim El Hattab, http://hakim.se\n' +
 				' */'
 		},
 
-		// Tests will be added soon
 		qunit: {
 			files: [ 'test/*.html' ]
 		},
@@ -48,7 +47,8 @@ module.exports = function(grunt) {
 					'css/theme/simple.css': 'css/theme/source/simple.scss',
 					'css/theme/sky.css': 'css/theme/source/sky.scss',
 					'css/theme/moon.css': 'css/theme/source/moon.scss',
-					'css/theme/solarized.css': 'css/theme/source/solarized.scss'
+					'css/theme/solarized.css': 'css/theme/source/solarized.scss',
+					'css/theme/blood.css': 'css/theme/source/blood.scss'
 				}
 			}
 		},
@@ -69,7 +69,8 @@ module.exports = function(grunt) {
 				globals: {
 					head: false,
 					module: false,
-					console: false
+					console: false,
+					unescape: false
 				}
 			},
 			files: [ 'Gruntfile.js', 'js/reveal.js' ]
