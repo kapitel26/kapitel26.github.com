@@ -36,7 +36,7 @@ Struktur
   Ergebnis-Folie
   </aside>
 
-<table cellspacing="30">
+<table cellspacing="15">
   <tr bgcolor="yellow">
     <th>&nbsp;1 großes Repo</th>
     <th>&nbsp;viele Kleine</th>
@@ -68,8 +68,6 @@ Struktur
 </table>
 
 </script></section>
-
-
 
 
 
@@ -221,6 +219,9 @@ Repo-Abhängigkeiten
 -------------------
 
 * die meisten befragten Unternehmen arbeiten mit externen Abhängigkeiten (Ausnahme D-Versicherung, die teilweise mit Subtrees arbeitet)
+  - davon wiederum nuzten die meisten Maven
+  - eines nutzt Gradle
+  - zwei arbeiteten mit Package-Managern
 * Git Submodule und Subtrees sind komplexer und nicht so flexibel wie externe Werkzeuge
 
 </script></section>
@@ -284,6 +285,41 @@ Push oder Pull?
   </aside>
 
 ![Pull-Request-2](pull-requests-2.png)
+
+</script></section>
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Ergebnis-Folie
+  </aside>
+
+<table cellspacing="15">
+  <tr bgcolor="yellow">
+    <th>&nbsp;Push</th>
+    <th>&nbsp;Pull-Requests</th>
+  </tr>
+  <tr>
+    <td>
+      {% include_relative unternehmen/a.html %}<br/>
+      {% include_relative unternehmen/b.html %}<br/>
+      {% include_relative unternehmen/h.html %}<br/>
+      {% include_relative unternehmen/i.html %}<br/>
+      {% include_relative unternehmen/j.html %}<br/>
+      {% include_relative unternehmen/k.html %}<br/>
+      {% include_relative unternehmen/m.html %}
+    </td>
+    <td>
+      {% include_relative unternehmen/c.html %}<br/>
+      {% include_relative unternehmen/d.html %}<br/>
+      {% include_relative unternehmen/l.html %}
+    </td>
+  </tr>
+</table>
 
 </script></section>
 

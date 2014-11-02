@@ -32,6 +32,52 @@ To branch<br/>or<br/>not to branch?
 
 <section data-markdown><script type="text/template">
   <aside class="notes">
+  Ergebnis-Folie
+  </aside>
+
+<table cellspacing="15">
+  <tr bgcolor="yellow">
+    <th colspan="2">&nbsp;Feature-Branches</th>
+  </tr>
+  <tr bgcolor="yellow">
+    <th>&nbsp;immer</th>
+    <th>&nbsp;nie</th>
+  </tr>
+  <tr>
+    <td>
+      {% include_relative unternehmen/c.html %}<br/>
+      {% include_relative unternehmen/d.html %}<br/>
+      {% include_relative unternehmen/f.html %}<br/>
+      {% include_relative unternehmen/j.html %}<br/>
+      {% include_relative unternehmen/l.html %}<br/>
+      {% include_relative unternehmen/m.html %}
+    </td>
+    <td>
+      {% include_relative unternehmen/a.html %}<br/>
+      {% include_relative unternehmen/k.html %}
+    </td>
+  </tr>
+  <tr bgcolor="yellow">
+    <th>&nbsp;manchmal</th>
+  </tr>
+  <tr>
+    <td>
+      {% include_relative unternehmen/b.html %}<br/>
+      {% include_relative unternehmen/i.html %}
+    </td>
+  </tr>
+
+</table>
+
+</script></section>
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
   Fallbeispiel
   </aside>
 
@@ -125,6 +171,49 @@ Rebase
 =====
 
 ![Rebase mit Branches](gemeinsamer-branch-rebase.png)
+
+</script></section>
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Ergebnis-Folie
+  </aside>
+
+<table cellspacing="15">
+  <tr bgcolor="yellow">
+    <th>&nbsp;Merge</th>
+    <th>&nbsp;Rebase</th>
+  </tr>
+  <tr>
+    <td>
+      {% include_relative unternehmen/d.html %}<br/>
+      {% include_relative unternehmen/i.html %}<br/>
+      {% include_relative unternehmen/j.html %}<br/>
+      {% include_relative unternehmen/k.html %}<br/>
+      {% include_relative unternehmen/l.html %}<br/>
+      {% include_relative unternehmen/m.html %}
+    </td>
+    <td>
+      {% include_relative unternehmen/a.html %}<br/>
+      {% include_relative unternehmen/c.html %}
+    </td>
+  </tr>
+  <tr bgcolor="yellow">
+    <th>&nbsp;Mal so, mal so</th>
+  </tr>
+  <tr>
+    <td>
+      {% include_relative unternehmen/b.html %}<br/>
+      {% include_relative unternehmen/h.html %}
+    </td>
+  </tr>
+
+</table>
 
 </script></section>
 
@@ -276,6 +365,35 @@ Diff to master<br/>oder<br/>Commit by Commit?
 =============================================
 
 
+
+</script></section>
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Ergebnis-Folie
+  </aside>
+
+<table cellspacing="15">
+  <tr bgcolor="yellow">
+    <th>&nbsp;Diff 2 master</th>
+    <th>&nbsp;Commit by Commit</th>
+  </tr>
+  <tr>
+    <td>
+      {% include_relative unternehmen/c.html %}<br/>
+      {% include_relative unternehmen/d.html %}<br/>
+      {% include_relative unternehmen/j.html %}<br/>
+      {% include_relative unternehmen/l.html %}
+    </td>
+    <td>
+      {% include_relative unternehmen/h.html %}
+    </td>
+</table>
 
 </script></section>
 
