@@ -5,10 +5,7 @@
   Erläuterungen
   </aside>
 
-Releasen
-========
-
-Software in Produktion bringen.
+# Releasen
 
 </script></section>
 
@@ -22,10 +19,13 @@ Software in Produktion bringen.
   Frage-Folie
   </aside>
 
-Staging-Branches?
-=================
+Staging-Branches
+================
 
 </script></section>
+
+
+
 
 <!---------------- SLIDE -------------- -->
 
@@ -33,10 +33,96 @@ Staging-Branches?
   <aside class="notes">
   </aside>
 
-Beispiel: Git-Flow
-========
+### Ein Branching-Modell kann einfach sein
+
+</script></section>
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Fallbeispiel
+
+  Anmerkung: Selbst die haben inzwischen ein paar Projekte mit `test`- und `stable`-Branches.
+  </aside>
+
+### Unternehmen: {% include_relative unternehmen/a.html %}
+
+{% include_relative unternehmen/a-details.html %}
+
+
+## Nur `master`
+
+Alle Projekte haben nur ein aktives Release. Erweiterungen und Bugfixes werden auf dem `master` erstellt und schnell ausgerollt.
+
+</script></section>
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  </aside>
+
+### Je nach Anforderung
+
+* Nachvollziehbarkeit von Auslieferungen
+* Kontrollierte Hotfixes
+* QA-Prozesse mit mehreren Staging umgebungen
+* Systematische Reviews
+* Genaue Kontrolle, wann was "rausgeht"
+* Mehrere Versionen gepflegt werden
+  - Nachvollziehbarket
+  - Backports
+
+### kann es auch ein klein wenig komplexer werde ...
+
+</script></section>
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  </aside>
+
+## Zum Beispiel, so wie es das Gitflow-Modell vorgibt
 
 ![Staging](staging-branches.png)
+
+</script></section>
+
+
+
+
+<!---------------- SLIDE -------------- -->
+
+<section data-markdown><script type="text/template">
+  <aside class="notes">
+  Fallbeispiel
+
+  Anmerkung: Selbst die haben inzwischen ein paar Projekte mit `test`- und `stable`-Branches.
+  </aside>
+
+### Unternehmen: {% include_relative unternehmen/d.html %}
+
+{% include_relative unternehmen/d-details.html %}
+
+## Branching-Modell
+
+Je Modul wird parallel ein aktives Release gepflegt, das nächste Release vorbereitet, und für nachfolgende Release weiter entwickelt.
+
+ * `master` teaminterne Integration
+ * `dev` teamübergreifende Freigabe
+ * `int` Vorbereitung für das nächste Release
+ * `prod` for das aktive Release
+ * `bugfix` geplante Bugfixes
+ * `hotfix` schnelle Bugfixes
+
+Das Abwärts-Mergen passiert automatisiert durch eigene Build-Skripte.
 
 </script></section>
 
@@ -72,12 +158,10 @@ Ist uns bisher nicht über den Weg gelaufen.
 Wie werden Release-Versionen markiert?
 --------------------------------------
 
-Branches, Tags, Notes, oder einfach nur Revision-Hashes?
+Branches, Tags oder Notes?
 ========================================================
 
 </script></section>
-
-
 
 
 <!---------------- SLIDE -------------- -->
