@@ -25,6 +25,9 @@ Großes oder kleines Repo?
  * I - Große + einige Kleine
  * J - Beides
  * K - Großes
+ * L - Großes
+ * M - viele Repos
+
 
 
 Repo-Abhängigkeiten: Git oder Extern?
@@ -36,8 +39,10 @@ Repo-Abhängigkeiten: Git oder Extern?
  * E - extern
  * H - extern / Maven
  * I - extern / Maven
- * J - extern / RPM
+ * J - extern / RPM Package Manager
  * K - ???
+ * L - extern / Maven
+ * M - extern / Package manager
 
 Administration: Wer macht was?
 =========================
@@ -46,13 +51,17 @@ Administration: Wer macht was?
  * I - Branches Devs, Repos wenig
  * J - sind Admins
  * K - Branches Devs, Repo auf Githun
+ * L - Branches Devs, Repo auf Githun
+ * M - Branches Devs, Repo auf Github enterpr
 
-Berchtigungen: Wer darf was?
+Berechtigungen: Wer darf was?
 =========================
 
  * I - jeder Alles
  * J - freier Zugriff im Team, aber signes Tags für ausgelieferte Versionen
  * K - freier Zugriff
+ * L - Nur mainter Push, Devs per PR
+ * M - freier Zugriff
 
 Push oder Pull-Requests?
 =========================
@@ -65,6 +74,8 @@ Push oder Pull-Requests?
  * I - Push
  * J - Push
  * K - Push
+ * L - Pull-Requests
+ * M - Push
 
 Feature Branch?
 =========================
@@ -77,6 +88,8 @@ Feature Branch?
  * I - Manchmal
  * J - Ja
  * K - Nein, (aber manchmal länger lebende regionale Branches)
+ * L - Ja
+ * M - Ja, Branch per Issue
 
 
 Merge oder Rebase?
@@ -91,6 +104,8 @@ Merge oder Rebase?
  * I - Merge
  * J - Merge
  * K - Merge
+ * L - Merge
+ * M - Merge
 
 
 Böse Merge-Konflikte?
@@ -100,6 +115,8 @@ Böse Merge-Konflikte?
  * I - nein
  * J - nein
  * K - Ja, wegen langlebiger branches
+ * L - Selten
+ * M - nein
 
 Task-Tracker?
 =========================
@@ -112,6 +129,8 @@ Task-Tracker?
  * I - ???
  * J - Nein
  * K - Ja, Issue-ID in Commits
+ * L - ???
+ * M - ???, Jira
 
 
 
@@ -126,6 +145,8 @@ Diff-To-Master oder Commit-By-Commit?
  * I - Selten, Berührungsängste
  * J - Selten, Diff2master
  * K - Selten
+ * L - Diff 2 Master
+ * Diff-to-master
 
 Schöne Historie / Interaktives Rebase?
 =========================
@@ -141,6 +162,8 @@ Staging Branches?
  * H - master Branch
  * I - ???
  * J - ???
+ * L - Master (und feature-branches)
+ * M - Master (noch pre-alpha)
 
 Branches, Tags, Notes?
 =========================
@@ -153,6 +176,8 @@ Branches, Tags, Notes?
  * I - Tags
  * J - Signed Tags
  * K - Tags
+ * L - Tags
+ * M - Tags
 
 Bauen mit Jenkins?
 =========================
@@ -165,3 +190,5 @@ Bauen mit Jenkins?
  * I - Ja
  * J - Nein, Scripte zum RPM-Package-Build
  * K - Ja
+ * L - Ja
+ * M - Nein
