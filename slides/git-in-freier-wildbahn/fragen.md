@@ -13,6 +13,7 @@
 | **K** | e-Commerce |
 | **L** | Open Source |
 | **M** | Cloud |
+| **N** | ERP |
 
 Großes oder kleines Repo?
 =========================
@@ -27,7 +28,7 @@ Großes oder kleines Repo?
  * K - Großes
  * L - Großes
  * M - viele Repos
-
+ * N - Großes
 
 
 Repo-Abhängigkeiten: Git oder Extern?
@@ -43,6 +44,7 @@ Repo-Abhängigkeiten: Git oder Extern?
  * K - ???
  * L - extern / Maven
  * M - extern / Package manager
+ * N = extern / Maven
 
 Administration: Wer macht was?
 =========================
@@ -53,6 +55,7 @@ Administration: Wer macht was?
  * K - Branches Devs, Repo auf Githun
  * L - Branches Devs, Repo auf Githun
  * M - Branches Devs, Repo auf Github enterpr
+ * N - Branches Devs, Repo wenig
 
 Berechtigungen: Wer darf was?
 =========================
@@ -62,6 +65,7 @@ Berechtigungen: Wer darf was?
  * K - freier Zugriff
  * L - Nur mainter Push, Devs per PR
  * M - freier Zugriff
+ * N - freier Zugriff
 
 Push oder Pull-Requests?
 =========================
@@ -76,6 +80,7 @@ Push oder Pull-Requests?
  * K - Push
  * L - Pull-Requests
  * M - Push
+ * N - Push
 
 Feature Branch?
 =========================
@@ -90,6 +95,7 @@ Feature Branch?
  * K - Nein, (aber manchmal länger lebende regionale Branches)
  * L - Ja
  * M - Ja, Branch per Issue
+ * N - Feature-Branch
 
 
 Merge oder Rebase?
@@ -106,6 +112,7 @@ Merge oder Rebase?
  * K - Merge
  * L - Merge
  * M - Merge
+ * N - Merge
 
 
 Böse Merge-Konflikte?
@@ -117,6 +124,7 @@ Böse Merge-Konflikte?
  * K - Ja, wegen langlebiger branches
  * L - Selten
  * M - nein
+ * N - nein
 
 Task-Tracker?
 =========================
@@ -131,6 +139,7 @@ Task-Tracker?
  * K - Ja, Issue-ID in Commits
  * L - ???
  * M - ???, Jira
+ * N - ???
 
 
 
@@ -146,7 +155,8 @@ Diff-To-Master oder Commit-By-Commit?
  * J - Selten, Diff2master
  * K - Selten
  * L - Diff 2 Master
- * Diff-to-master
+ * M - Diff-to-master
+ * N - Selten
 
 Schöne Historie / Interaktives Rebase?
 =========================
@@ -164,6 +174,7 @@ Staging Branches?
  * J - ???
  * L - Master (und feature-branches)
  * M - Master (noch pre-alpha)
+ * N - Ja
 
 Branches, Tags, Notes?
 =========================
@@ -178,6 +189,7 @@ Branches, Tags, Notes?
  * K - Tags
  * L - Tags
  * M - Tags
+ * N - ???
 
 Bauen mit Jenkins?
 =========================
@@ -192,3 +204,4 @@ Bauen mit Jenkins?
  * K - Ja
  * L - Ja
  * M - Nein
+ * N - Ja
