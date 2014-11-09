@@ -50,7 +50,8 @@ To branch<br/>or<br/>not to branch?
       {% include_relative unternehmen/f.html %}<br/>
       {% include_relative unternehmen/j.html %}<br/>
       {% include_relative unternehmen/l.html %}<br/>
-      {% include_relative unternehmen/m.html %}
+      {% include_relative unternehmen/m.html %}<br/>
+      {% include_relative unternehmen/n.html %}
     </td>
     <td>
       {% include_relative unternehmen/a.html %}<br/>
@@ -129,7 +130,7 @@ To branch<br/>or<br/>not to branch?
 
 ## Entscheidung: Feature Branches
 
-Rechtliche Vorgaben für Code-Reviews und Tracking-der Änderungen, weil die Feature-Branches gut kontrollierbare Einheiten bilden.
+Rechtliche Vorgaben für Code-Reviews und Tracking der Änderungen, weil die Feature-Branches gut kontrollierbare Einheiten bilden.
 
 </script></section>
 
@@ -196,7 +197,8 @@ Rebase
       {% include_relative unternehmen/j.html %}<br/>
       {% include_relative unternehmen/k.html %}<br/>
       {% include_relative unternehmen/l.html %}<br/>
-      {% include_relative unternehmen/m.html %}
+      {% include_relative unternehmen/m.html %}<br/>
+      {% include_relative unternehmen/n.html %}
     </td>
     <td>
       {% include_relative unternehmen/a.html %}<br/>
@@ -256,8 +258,8 @@ Entscheidung: Merge
 ---------------------------
 
  * Weniger initialer Schulungsaufwand
- * Eclipse-Tooling ist einfacher
- * Komplexe Historie wird nur als Auditing benutzt
+ * Eclipse-Tooling ist einfacher.
+ * Komplexe Historie wird nur als Auditing benutzt.
 
 </script></section>
 
@@ -415,7 +417,7 @@ Diff to master<br/>oder<br/>Commit by Commit?
 Entscheidung: Commit by Commit
 -------------------------------
 
-Per Commit-Hook wird im Jenkins ein Build angestossen, und einem Mail mit Aufforderung zur Bestätigung durch Review verschickt. Vorteil: Es sind meist kleine überschaubare Einheiten zu Reviewen.
+Per Receive-Hook wird im Jenkins ein Build angestossen und eine Mail mit Aufforderung zum Review verschickt. Vorteil: Es sind meist kleine überschaubare Einheiten zu reviewen.
 
 </script></section>
 
@@ -438,7 +440,7 @@ Entscheidung: Diff to master
 ----------------------------
 
 Für ein Open-Source-Projekt sind Code-Reviews essenziell.
-Pull-Requests, die eintreffen haben mitunter lange und verschlungene Commit-Historien. Meist ist es übersichtlicher, das Endergebnis zu betrachten.
+Eintreffende Pull-Requests haben mitunter lange und verschlungene Commit-Historien. Meist ist es übersichtlicher, das Endergebnis zu betrachten.
 
 Das Projekt hat früher mit Subversion gearbeitet. Der Github-Pull-Request macht es leichter zum Projekt beizutragen. Das Projekt erhält mehr Contributions als vorher.
 
@@ -509,24 +511,5 @@ Einige Unternehmen haben Gerrit ausprobiert.
  * Hohe Komplexität (Doppelte Ids, Amend-Workflow)
  * Nutzen Gerrit nur noch als Git-SSH-Server.
  * Umstieg auf Pull-Requests
-
-</script></section>
-
-
-
-<!---------------- SLIDE -------------- -->
-
-<section data-markdown><script type="text/template">
-  <aside class="notes">
-  Frage-Folie
-  </aside>
-
-Schwierigkeiten mit Git
-------------------------
-
-Gibt's nicht!<br/>oder etwa doch?
-=================================
-
-
 
 </script></section>

@@ -42,7 +42,8 @@ Staging-Branches
   <tr>
     <td>
       {% include_relative unternehmen/c.html %}<br/>
-      {% include_relative unternehmen/d.html %}
+      {% include_relative unternehmen/d.html %}<br/>
+      {% include_relative unternehmen/n.html %}
     </td>
     <td>
       {% include_relative unternehmen/a.html %}<br/>
@@ -101,14 +102,14 @@ Alle Projekte haben nur ein aktives Release. Erweiterungen und Bugfixes werden a
 
 * Nachvollziehbarkeit von Auslieferungen
 * Kontrollierte Hotfixes
-* QA-Prozesse mit mehreren Staging umgebungen
+* QA-Prozesse mit mehreren Staging-Umgebungen
 * Systematische Reviews
 * Genaue Kontrolle, wann was "rausgeht"
-* Mehrere Versionen gepflegt werden
+* Mehrere Versionen
   - Nachvollziehbarket
   - Backports
 
-### kann es auch ein klein wenig komplexer werde ...
+### kann es auch ein klein wenig komplexer werden ...
 
 </script></section>
 
@@ -152,8 +153,6 @@ Je Modul wird parallel ein aktives Release gepflegt, das nächste Release vorber
  * `bugfix` geplante Bugfixes
  * `hotfix` schnelle Bugfixes
 
-Das Abwärts-Mergen passiert automatisiert durch eigene Build-Skripte.
-
 </script></section>
 
 
@@ -172,24 +171,6 @@ Repo per Stage?
 ===============
 
 Ist uns bisher nicht über den Weg gelaufen.
-
-</script></section>
-
-
-
-
-<!---------------- SLIDE -------------- -->
-
-<section data-markdown><script type="text/template">
-  <aside class="notes">
-  Erläuterungen
-  </aside>
-
-Wie werden Release-Versionen markiert?
---------------------------------------
-
-Branches, Tags oder Notes?
-========================================================
 
 </script></section>
 

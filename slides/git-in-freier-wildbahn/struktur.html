@@ -21,8 +21,8 @@ Struktur
   Frage-Folie
   </aside>
 
-**1** großes Repo<br/>oder<br/>viele Kleine?
-============================================
+Big Repo<br/>oder<br/>viele Repos?
+==================================
 
 </script></section>
 
@@ -38,30 +38,31 @@ Struktur
 
 <table cellspacing="15">
   <tr bgcolor="yellow">
-    <th>&nbsp;1 großes Repo</th>
-    <th>&nbsp;viele Kleine</th>
+    <th>&nbsp;Big Repo</th>
+    <th>&nbsp;viele Repos</th>
   </tr>
   <tr>
     <td>
+      {% include_relative unternehmen/a.html %}<br/>
       {% include_relative unternehmen/b.html %}<br/>
       {% include_relative unternehmen/c.html %}<br/>
       {% include_relative unternehmen/k.html %}<br/>
-      {% include_relative unternehmen/l.html %}
+      {% include_relative unternehmen/l.html %}<br/>
+      {% include_relative unternehmen/n.html %}<br/>
+      {% include_relative unternehmen/i.html %}
     </td>
     <td>
-      {% include_relative unternehmen/a.html %}<br/>
       {% include_relative unternehmen/e.html %}<br/>
       {% include_relative unternehmen/h.html %}<br/>
       {% include_relative unternehmen/m.html %}
     </td>
   </tr>
   <tr bgcolor="yellow">
-    <th>&nbsp;Große & Kleine</th>
+    <th>&nbsp;Beides</th>
   </tr>
   </tr>
     <td>
       {% include_relative unternehmen/d.html %}<br/>
-      {% include_relative unternehmen/i.html %}<br/>
       {% include_relative unternehmen/j.html %}
     </td>
   <tr>
@@ -105,7 +106,7 @@ Struktur
 
 ### Unternehmen: {% include_relative unternehmen/b.html %}
 
-{% include_relative unternehmen/a-details.html %}
+{% include_relative unternehmen/b-details.html %}
 
 
 ## Entscheidung: Repo pro Modul
@@ -126,7 +127,7 @@ Es zeigte sich, dass der Verwaltungs- und Koordinationsaufwand für Repos und Br
 
 ### Unternehmen: {% include_relative unternehmen/b.html %}
 
-{% include_relative unternehmen/a-details.html %}
+{% include_relative unternehmen/b-details.html %}
 
 ## Entscheidung (revidiert): 1 Repo
 
@@ -180,8 +181,6 @@ Entscheidung (zusätzlich): Globales Repo mit Subtrees
 
 Übergreifende Historisierung, Nachvollziehbarkeit, globales Release und Revisionssicherheit. Täglich zusammengeführte Basis für alle Entwicklungen.
 
-Zwei Varianten: Subtree vs. read-tree
-
 </script></section>
 
 
@@ -218,11 +217,11 @@ Zwei Varianten: Subtree vs. read-tree
 Repo-Abhängigkeiten
 -------------------
 
-* die meisten befragten Unternehmen arbeiten mit externen Abhängigkeiten (Ausnahme D-Versicherung, die teilweise mit Subtrees arbeitet)
-  - davon wiederum nuzten die meisten Maven
-  - eines nutzt Gradle
-  - zwei arbeiteten mit Package-Managern
-* Git Submodule und Subtrees sind komplexer und nicht so flexibel wie externe Werkzeuge
+ * Die meisten befragten Unternehmen arbeiten mit externen Abhängigkeiten (Ausnahme D-Versicherung, die teilweise mit Subtrees arbeitet).
+   * Davon wiederum nuzten die meisten Maven.
+   * Eines nutzt Gradle.
+   * Zwei arbeiteten mit Package-Managern.
+ * Git Submodule und Subtrees sind komplexer und nicht so flexibel wie externe Werkzeuge.
 
 </script></section>
 
@@ -241,7 +240,6 @@ Administration
  * Oft ist nicht viel zu tun. Insbesondere beim Big-Repo-Ansatz
  * Admins richten Repos ein.
  * Dev-Teams verwalten die Feature-Branches.
- * Viele Nutzen Github
 
 </script></section>
 
@@ -311,7 +309,8 @@ Push oder Pull?
       {% include_relative unternehmen/i.html %}<br/>
       {% include_relative unternehmen/j.html %}<br/>
       {% include_relative unternehmen/k.html %}<br/>
-      {% include_relative unternehmen/m.html %}
+      {% include_relative unternehmen/m.html %}<br/>
+      {% include_relative unternehmen/n.html %}
     </td>
     <td>
       {% include_relative unternehmen/c.html %}<br/>
@@ -360,6 +359,6 @@ Nicht der Entwickler, sondern Leitung bestimmt, ob und wann etwas übernommen wi
 
 ## Entscheidung: Pull-Requests
 
-Durch Pull-Requests wird garantiert, dass keine Änderung direkt vom Entwickler ins Hauptrepo wandert. Erst nach einem Code-Revew.
+Durch Pull-Requests wird garantiert, dass keine Änderung direkt vom Entwickler ins Hauptrepo wandert. Erst nach einem Code-Review.
 
 </script></section>
