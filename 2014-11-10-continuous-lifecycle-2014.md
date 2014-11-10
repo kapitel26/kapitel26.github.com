@@ -72,3 +72,25 @@ Verzweigungen beherrschen (Ralf Gronkowski)
 Unterschiedlicher Versinen der Software beim Kunden im Einsatz.
 
 Parallele Entwicklung verschieder "Projekt" in Branches/Codelines
+
+Varianten per Branches. (Ist das gut?)
+
+Angeblich erfordert agile Entwickling Spring-Branches und Task-Branches.
+
+Claim: Es man braucht viele Branches.
+
+Und das ist erstmal komplexer. Erzeugt Angst.
+
+> Geheimwaffe als Lösung für fast alles: Mach' Dir doch 'nen Branch.
+
+### Hilfmittel
+
+ * Pläne -> Baseline vom weicheren zum Stabilern
+ * Protokolle -> Übertragung (Merge, Copy) nach Härterichtung
+ * Etikette
+   - Akzeptiere stabilisierende Änderungen
+   - Erzwinge nie destabilisierende Änderungen
+   - Merge nur in eine Richtung, so oft wie nötig, an der richtigen Stelle zuerst.
+
+Begriffe: Kopieroperation (Copy) -> Fast Forward merge
+Merge down, Copy up.
