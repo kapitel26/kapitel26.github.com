@@ -138,3 +138,25 @@ Interessante Punkt. **Ownership**. Alle. Wenn Du etwas findest, ist es Deine Ver
 Ergebnis: Flexibilität, Geschwindigkeit, Wir-Gefühl, Spaß.
 
 Pattern: Just do it.
+
+Multi-Projekt-Builds mit Gradle (Stoyan Stoyanov, @s_stoyanov)
+==============================================================
+
+Build-Prozess wächst und wird kryptisch. Problem, wenn nur ein Build-Engineer dafür zuständig ist.
+
+Frustriert von komischen Plugins und XML.
+
+Migration mit automatischem Vergleich der gebauten *ar's.
+
+Verwenden Grunt (JavaScript-Tool) für andere Tasks, die vorher mit Ant-Targets gebaut wurden.
+
+Notiz: Es gibt ein "buildSrc" Verzeichnis für Code, der im Build benötigt wird.
+
+Man kann mit wenig Code viel erreichen. Viel übersichtlicher.
+
+
+
+Code-Reviews (Frank Sons)
+=========================
+
+Notiz: Jeff Atwood: Talk "How to stop sucking and start being really awsome"
