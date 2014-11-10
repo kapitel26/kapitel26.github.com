@@ -11,6 +11,8 @@ author: bst
 The Culture of Continuous Flow (Jez Humble)
 ===========================================
 
+http://continuouslifecycle.de/lecture.php?id=4582
+
 Erstmal vorweg: Ich hab' ja so meine Probleme mit dem amerikanischen Stil.
 Gerade lese ich ein amerikanisches Fitnessbuch. Bevor man die erste Kniebeuge machen dar, muss man sich anhören wie toll Fitness ist (Chakka!), um wieviel Prozent man sein Gewicht reduzieren und die Kraft steigern kann und man erfährt ausführlich, warum alle vorigen Ansätze zur Fitnessertüchtigung erbärmliche Krücken sind. Dieser Vortrag beginnt sehr amerikanisch. Missionarisch mit Pauken und Trompeten angekündigt wird der Claim angekündigt: IT-Performance is messbar. IT-Performance korreliert messbar mit Unternehmenserfolg. DevOpsige Kultur steigert IT-Performance.
 
@@ -59,6 +61,8 @@ All are Dudes. We have the same problem in US.
 Packer, Vagrant, Puppet (Alexander Pacnik)
 ==========================================
 
+http://continuouslifecycle.de/lecture.php?id=4525
+
 Packer: Virtuelle Machinen für unterschiedliche Plattformen aus einer Quelle generieren.
 
 Vagrant: Virtualbox und VMWare Management.
@@ -68,6 +72,8 @@ Puppet: Provisionierung
 
 Verzweigungen beherrschen (Ralf Gronkowski)
 ===========================================
+
+http://continuouslifecycle.de/lecture.php?id=4561
 
 Unterschiedlicher Versinen der Software beim Kunden im Einsatz.
 
@@ -102,6 +108,8 @@ Interessanter Einwand: Refactorings. Sind erschwert, wenn man länger auf länge
 DevOps - The dawn of hierarchies (Matthias Kainer)
 ==================================================
 
+http://continuouslifecycle.de/lecture.php?id=4533
+
 Unfertige Featuers herausbringen. Das haben wir gemacht. Echte Experimente. Beispiel: Buttons statt klassischer Landing-Page.
 
 MobileWebApp Relaunch. Trick: Nur die Features im Relaunch, die wirklich genutzt werden.
@@ -119,6 +127,8 @@ Ziele? Wo kommen die her?
 Persönliche Entwicklung? Wo ist meine Jobbeschreibung
 
 ### Warum trotzdem weitermachen?
+
+http://continuouslifecycle.de/lecture.php?id=4583
 
 Wegen der Werte. Agile Manifesto ernst nehmen. Alles was man tut daraufhin hinterfragen.
 
@@ -142,6 +152,8 @@ Pattern: Just do it.
 Multi-Projekt-Builds mit Gradle (Stoyan Stoyanov, @s_stoyanov)
 ==============================================================
 
+http://continuouslifecycle.de/lecture.php?id=4583
+
 Build-Prozess wächst und wird kryptisch. Problem, wenn nur ein Build-Engineer dafür zuständig ist.
 
 Frustriert von komischen Plugins und XML.
@@ -158,6 +170,8 @@ Man kann mit wenig Code viel erreichen. Viel übersichtlicher.
 
 Code-Reviews (Frank Sons)
 =========================
+
+http://continuouslifecycle.de/lecture.php?id=4554
 
 Notiz: Jeff Atwood: Talk "How to stop sucking and start being really awsome"
 
@@ -176,3 +190,10 @@ Die große Runde hilft dem Team einen Standard festzulegen. Ein Reviewing-Tool h
 Tut richtig weh. Ist aber trotzdem gut? (Meine Anmerkung: Muss das sein?)
 
 Man lernt in der Gruppendiskussion, wann Kommentare Sinn machen.
+
+CD mit Gradle und Docker (Tobias Gesellchen)
+============================================
+
+http://continuouslifecycle.de/lecture.php?id=4541
+
+Die Technik dahinter ist schon 20 Jahre alt. Die Leichtigkeit machts. Leichter testen, schneller Testen. Wie in PROD.
