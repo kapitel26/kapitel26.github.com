@@ -134,3 +134,7 @@ Ansatz: Stories aus dem Backlog. Pull: Wer will da mitmachen. Wenn sich keiner f
 Entscheidung: Alles neu bauen. DevOps-Style. Microservices. Deployment von Anfang an integraler Bestandteil.
 
 Interessante Punkt. **Ownership**. Alle. Wenn Du etwas findest, ist es Deine Verantwortung, es zu beheben, oder dafür zu sorgen, dass es behoben wird.
+
+Ergebnis: Flexibilität, Geschwindigkeit, Wir-Gefühl, Spaß.
+
+Pattern: Just do it.
