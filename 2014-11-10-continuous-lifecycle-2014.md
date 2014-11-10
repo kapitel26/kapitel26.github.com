@@ -94,3 +94,43 @@ Und das ist erstmal komplexer. Erzeugt Angst.
 
 Begriffe: Kopieroperation (Copy) -> Fast Forward merge
 Merge down, Copy up.
+
+Interessanter Einwand: Refactorings. Sind erschwert, wenn man länger auf länger lebenden Projekt-Branches arbeitet.
+
+
+
+DevOps - The dawn of hierarchies (Matthias Kainer)
+==================================================
+
+Unfertige Featuers herausbringen. Das haben wir gemacht. Echte Experimente. Beispiel: Buttons statt klassischer Landing-Page.
+
+MobileWebApp Relaunch. Trick: Nur die Features im Relaunch, die wirklich genutzt werden.
+
+Organisatorisches Problem: Gilden für DevOps, DevPM, DevPX, NewMobile. -> Immer dynamischer Organisation. Kein Organigramm mehr.
+
+Ownership? Wer kümmert um die Bugs?
+
+Architektur? Soll willst Du nicht, dass die Architektur aussieht. (Wenn sie isch der dynamisch umstrukturierenden Organisation angleicht)
+
+Kommunikation? Wer ist Ansprechpartner
+
+Ziele? Wo kommen die her?
+
+Persönliche Entwicklung? Wo ist meine Jobbeschreibung
+
+### Warum trotzdem weitermachen?
+
+Wegen der Werte. Agile Manifesto ernst nehmen. Alles was man tut daraufhin hinterfragen.
+
+Buchtipp "Feel is Change". Patterns für Akzeptanz.
+
+Buchtipp "Tribal Leadership"
+
+Ansatz: Stories aus dem Backlog. Pull: Wer will da mitmachen. Wenn sich keiner findet, war es wohl doch nicht so wichtig.
+
+> So'n Rechenzentrum selber aufzubauen ist super ... <br/>
+> ... wenn man viel lernen möchte.
+
+Entscheidung: Alles neu bauen. DevOps-Style. Microservices. Deployment von Anfang an integraler Bestandteil.
+
+Interessante Punkt. **Ownership**. Alle. Wenn Du etwas findest, ist es Deine Verantwortung, es zu beheben, oder dafür zu sorgen, dass es behoben wird.
