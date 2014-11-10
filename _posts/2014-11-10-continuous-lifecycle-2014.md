@@ -174,3 +174,5 @@ Freitag für 2 Stunden in Big Round. Zentrales im Sprint. 300-400 Zeilen Code.
 Die große Runde hilft dem Team einen Standard festzulegen. Ein Reviewing-Tool hilft dann später Strecke zurückzulegen.
 
 Tut richtig weh. Ist aber trotzdem gut? (Meine Anmerkung: Muss das sein?)
+
+Man lernt in der Gruppendiskussion, wann Kommentare Sinn machen.

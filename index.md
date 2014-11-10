@@ -18,10 +18,8 @@ etwas Interessantes dabei ist:
 
 **[René](/rene)**  & **[Bjørn](/bjoern)**
 
-Aktuell
--------
-
-Slides zum aktuellen Vortrag: [**Git in freier Wildbahn**](/slides/git-in-freier-wildbahn/)
+Aktuell: [Continuous Lifecycle '14](/git/2014/11/11/continuous-lifecycle-2014/)
+------------------------------------------------
 
 Liste aller Beiträge
 --------------------
