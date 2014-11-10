@@ -160,3 +160,17 @@ Code-Reviews (Frank Sons)
 =========================
 
 Notiz: Jeff Atwood: Talk "How to stop sucking and start being really awsome"
+
+Pair-Programming. Driver/Navigator. Wenig Neues.
+
+### Reviews im Team
+
+> Kannst Du mir meinen Code erklären?
+
+Echt spannend. Klappt erstaunlich gut. An unerwarteten Stellen aber gar nicht.
+
+Freitag für 2 Stunden in Big Round. Zentrales im Sprint. 300-400 Zeilen Code.
+
+Die große Runde hilft dem Team einen Standard festzulegen. Ein Reviewing-Tool hilft dann später Strecke zurückzulegen.
+
+Tut richtig weh. Ist aber trotzdem gut? (Meine Anmerkung: Muss das sein?)
