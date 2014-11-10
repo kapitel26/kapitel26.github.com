@@ -5,6 +5,13 @@ category: Git
 tags:
  - Git
  - ConLi2014
+ - Docker
+ - Gradle
+ - Code-Reviews
+ - Contiuous
+ - Packer
+ - DevOps
+ - Branches
 author: bst
 ---
 
@@ -194,6 +201,36 @@ Man lernt in der Gruppendiskussion, wann Kommentare Sinn machen.
 CD mit Gradle und Docker (Tobias Gesellchen)
 ============================================
 
+### Docker
+
 http://continuouslifecycle.de/lecture.php?id=4541
 
 Die Technik dahinter ist schon 20 Jahre alt. Die Leichtigkeit machts. Leichter testen, schneller Testen. Wie in PROD.
+
+Docker ist "Die Applikation" aus Operations sicht.
+
+ * Operations um den Docker-Container herum
+ * Devs im Docker-Container
+
+Deployen durchaus auch Container, die mehrere Server enthalten.
+
+### Gradle, warum?
+
+> Das schönste daran ist Groovy
+
+Nützliche Plugins.
+
+### Sonstiges
+
+Externe Services künftig nicht mehr als WARs deployen sondern separat. Über URL aufrufbaur.
+
+Noch offen, wie sich die Orchestrierung im Docker-Umfeld.
+
+Zu lernen: Monitoring, Security
+
+Podium: Culture?! (Pavlo Baron)
+====================
+
+http://continuouslifecycle.de/panel.php?id=4615
+
+> "DevOps-Team": Creating a silo team to solve a silo problem seems somewhat ironic. (Jez Humble)
