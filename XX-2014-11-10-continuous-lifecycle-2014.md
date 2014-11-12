@@ -21,6 +21,9 @@ Montag
 Jetzt bin ich doch da, auf der Continuous Lifecycle Konferenz in Mannheim.
 Danach sah es zunächst nicht aus. Erst am späten Freitagnachmittag ereilte mich die Nachricht, dass die GDL ihren Streik schon am Samstag beenden würde. Ich konnte am Sonntag anreisen.
 
+<!--
+
+
 Hier ein paar Notizen zu den Vorträgen, die ich gehört habe.
 
 [The Culture of Continuous Flow<br/>(Jez Humble)](http://continuouslifecycle.de/lecture.php?id=4582)
@@ -102,7 +105,6 @@ Das geht mir persönlich dann doch zu weit. Ein wichtiger Einwand hierzu kam aus
 
 Motiverender Erfahtungsbericht über eine DevOps-Einführung.
 
-<!--
 Unfertige Featuers herausbringen. Das haben wir gemacht. Echte Experimente. Beispiel: Buttons statt klassischer Landing-Page.
 
 MobileWebApp Relaunch. Trick: Nur die Features im Relaunch, die wirklich genutzt werden.
