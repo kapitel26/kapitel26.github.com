@@ -5,7 +5,6 @@ header : Aktuelles zu Git
 group: navigation
 weight: 4
 ---
-{% include JB/setup %}
 
 Interessantes über Git
 ----------------------
@@ -38,6 +37,3 @@ Alle Beiträge (chronologisch)
 	{% assign pages_list = site.categories["Git"] %}  
 	{% include JB/pages_list %}
 </ul>
-
- 
-

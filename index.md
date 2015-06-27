@@ -3,7 +3,6 @@ layout: page
 title: Git - Das sechsundzwanzigste Kapitel
 tagline:
 ---
-{% include JB/setup %}
 
 Wenn man ein [Buch](git-buch) schreibt, muss man irgendwann aufhören.
 Schließlich soll das Ganze ja irgendwann gedruckt und verkauft werden.

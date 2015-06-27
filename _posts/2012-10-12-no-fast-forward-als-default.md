@@ -6,11 +6,10 @@ category: Git
 author: rp
 tags: [Git, --no-ff, --ff, --ff-only, merge]
 ---
-{% include JB/setup %}
 
 Fast-Forward-Merges
 -------------------
-Wenn man mit Git zwei Branches zusammenführt und es keine Änderungen im aktuellen Branch 
+Wenn man mit Git zwei Branches zusammenführt und es keine Änderungen im aktuellen Branch
 gibt, dann erzeugt Git kein Merge-Commit sondern setzt nur den aktuellen Branch-Zeiger auf
 das letzte Commit des hinzukommenden Branches.
 Dieses Verhalten ist beim gemeinsamen Arbeiten auf einem Branch auch gewünscht, weil es zu
@@ -18,7 +17,7 @@ einer linearen Historie mit nur minimaler Anzahl von Merge-Commits führt.
 
 No-FF bei Feature- und Release-Branches
 ---------------------------------------
-Arbeitet man dagegen mit Feature-Branches (Git-Buch Seite 123) oder nutzt man 
+Arbeitet man dagegen mit Feature-Branches (Git-Buch Seite 123) oder nutzt man
 Branches um ein Release vorzubereiten (Git-Buch Seite 167) dann will man eine sinnvolle
 First-Parent-Historie um die Commits eines Branches von anderen Branches zu unterscheiden.
 Durch Fast-Forward-Merges würde die First-Parent-Historie dagegen uneindeutig werden.
@@ -26,11 +25,11 @@ Durch Fast-Forward-Merges würde die First-Parent-Historie dagegen uneindeutig w
 Deswegen wird man beim Merge die Option `--no-ff`angeben.
 
 	$ git merge --no-ff f/feature-a  
-	
+
 No-FF als Default setzen
 ------------------------
 Über eine Konfigurationsvariable kann man No-Fast-Forward als Default setzen:
-	
+
 	$ git config --global merge.ff false
 
 Oder wenn man es nur für das aktuelle Repository will:
@@ -39,7 +38,7 @@ Oder wenn man es nur für das aktuelle Repository will:
 
 Fast-Forward-Merges trotzdem erzwingen
 --------------------------------------
-Über die Option `--ff-only`kann man normalerweise Erzwingen, dass ein Merge als Fast-Forward-Merge 
+Über die Option `--ff-only`kann man normalerweise Erzwingen, dass ein Merge als Fast-Forward-Merge
 durchgeführt wird. Falls es Änderungen in beiden Branches gibt, wird der Merge scheitern.
 Allerdings ist die Kombination von `merge.ff=false`und `--ff-only`verboten:
 
@@ -53,7 +52,7 @@ Es ist eine weitere Option `--ff` notwendig um trotz `merge.ff=false` einen Fast
 	Fast-forward
 	 a.txt | 1 +
 	 1 file changed, 1 insertion(+)
-	 
+
 Wenn man sich sicher ist, das ein Fast-Forward-Merge ausgeführt wird, kann man auch die Option `--ff-only` weglassen.
 Dann verhält sich Git wieder wie im Default-Zustand - wenn ein Fast-Forward möglich ist, wird dieser durchgeführt.
 
@@ -62,4 +61,3 @@ Dann verhält sich Git wieder wie im Default-Zustand - wenn ein Fast-Forward mö
 	Fast-forward
 	 a.txt | 1 +
 	 1 file changed, 1 insertion(+)
-

@@ -6,7 +6,6 @@ tags: [Git, Mercurial, Repository, Garbage Collection]
 # just to fix a highlightin problem]()
 author: bst
 ---
-{% include JB/setup %}
 
 {% include git-vs-hg.md %}
 
@@ -127,4 +126,3 @@ Das Repository von Git ist einfach. Git insgesamt ist es *nicht*. Auf der Porcel
 <!-- Links -->
 
 [Beck on Software Architecture]: http://my.safaribooksonline.com/book/-/9781466603363/chapter-13-the-philosophy-of-software-architecture/151
-

@@ -5,7 +5,6 @@ description: ""
 group: navigation
 weight: 5
 ---
-{% include JB/setup %}
 
 Der Umstieg auf eine neue Versionsverwaltung sollte ein gut geplanter Schritt sein.
 Es wird oft unterschätzt, von wie vielen Personen diese benutzt wird und das sie das 

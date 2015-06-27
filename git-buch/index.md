@@ -5,7 +5,6 @@ description: ""
 group: navigation
 weight: 6
 ---
-{% include JB/setup %}
 
 <div class="row">
   <div class="span3" align="right">

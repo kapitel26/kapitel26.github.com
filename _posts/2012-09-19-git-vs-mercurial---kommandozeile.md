@@ -7,7 +7,6 @@ tags: [Git, Mercurial]
 # just to fix a highlightin problem]()
 author: bst
 ---
-{% include JB/setup %}
 
 {% include git-vs-hg.md %}
 
@@ -151,5 +150,3 @@ tl;dr
 =====
 
 Die Git-Kommandozeile ist nicht Einsteiger-freundlich. Mercurial macht's besser.
-
-

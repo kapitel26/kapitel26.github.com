@@ -3,7 +3,6 @@ layout: page
 title: "Impressum"
 description: "Impressum"
 ---
-{% include JB/setup %}
 
 Verantwortlich für diese Website
 --------------------------------
@@ -14,5 +13,3 @@ Verantwortlich für diese Website
 
 Per **Email** erreichen sich mich beim Provider `yahoo.de`
 unter dem Benutzernamen `bstachmann`.
-
-{% include JB/setup %}
