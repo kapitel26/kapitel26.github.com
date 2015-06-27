@@ -5,9 +5,8 @@ category: Git
 tags: [Git, Rebasing]
 author: bst
 ---
-{% include JB/setup %}
 
-Gestern haben René und ich zwei kurze Vorträge 
+Gestern haben René und ich zwei kurze Vorträge
 in der Buchhandlung [Lehmanns](http://www.lehmanns.de/page/verlfb)
 in Hamburg gehalten.
 
@@ -32,7 +31,7 @@ Repository klonen.
 Neuen Branch erstellen und pushen.
 
     git checkout kata-hash-collisions-setup
-    git checkout -b lehmanns 
+    git checkout -b lehmanns
     git push --set-upstream origin lehmanns
 
 ### Eine einfache Änderung durchführen und committen
@@ -60,7 +59,7 @@ Ein anderer Entwickler arbeitet am selben Projekt. Wir richten eine Umgebung fü
 
 Wechseln auf den Branch für die gemeinsame Kata.
 
-    git checkout -b lehmanns 
+    git checkout -b lehmanns
 
 René behebt einen Fehler und pushed die Lösung.
 
@@ -88,11 +87,11 @@ Schöner wäre es, wenn René seinen Bugfix zuerst gemacht hätte und Bjørn sei
 
 **Wohin wird verschoben?** Normalerweise auf den `<upstream>` drauf.
 
-    git rebase origin/lehmanns 
+    git rebase origin/lehmanns
 
 ### Interactive Rebasing
 
-    git rebase --interactive 
+    git rebase --interactive
 
 Mit den Befehlen `reword`, `fixup`, `squash`, ... kann man die Historie manipulieren. Man kann dabei auch Commits verschieben oder Zeilen weglassen.
 
@@ -102,7 +101,7 @@ Achtung: Es kann dabei zu Merge-Konflikten kommen, die man auflösen muss, bevor
 
 Mit `edit` kann man das Rebase unterbrechen lasse, um einzelne Commits manuell zu bearbeiten.
 
-    git rebase --interactive 
+    git rebase --interactive
 
 Commit wieder aufmachen.
 
@@ -115,7 +114,7 @@ Jetzt kann man mit der Git GUI partiell Committen und so aus einem Commit zwei C
 
 Dann darf `rebase` weitermachen.
 
-    git rebase --continue 
+    git rebase --continue
 
 Anmerkung: Wenn man sich verrannt hat, hilft ein `git rebase --abort` auf den vorigen Stand zurück zu kommen.
 
@@ -125,21 +124,20 @@ Tipp: Nicht zu viele Änderungen auf einmal machen. Besser mehrere Rebases hinte
 
 Im Rebase verschieben wir das gewünscht Commit ganz nach unten. Dann steht das Commit nachher ganz oben in der History.
 
-    git rebase --interactive 
+    git rebase --interactive
 
 Bjørn einen Branch für den Hotfix.
 
     git checkout -b hotfix-repair-message
 
-Wir setzen den Ursprünglichen Branch einen Schritt zurück, so dass der den Hotfix nicht mehr enthält. 
+Wir setzen den Ursprünglichen Branch einen Schritt zurück, so dass der den Hotfix nicht mehr enthält.
 
     git branch -f lehmanns head^
 
-Dann Rebasen wir `--onto kata-hash-collisions-setup` 
+Dann Rebasen wir `--onto kata-hash-collisions-setup`
 
-    git rebase lehmanns --onto kata-hash-collisions-setup 
+    git rebase lehmanns --onto kata-hash-collisions-setup
 
 Sobald wir pushen steht der Branch für andere Entwickler zur Verfügung. Ganz unabhängig von unserer Feature-Entwiclung auf dem Branch `lehmanns`.
 
 Wenn wir den Fix auch in `lehmanns` wollen, können wir ihn mit `merge` oder `cherry-pick` wieder reinholgen. Oder wir rebasen `lehmanns` `--onto hotfix-repair-message`. Oder ...
-

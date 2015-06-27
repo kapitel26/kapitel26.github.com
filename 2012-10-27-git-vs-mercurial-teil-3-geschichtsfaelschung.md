@@ -6,7 +6,6 @@ tags: [Git, Mercurial, Commit-Hash, Rebasing, Staging, Stashing]
 # just to fix a highlightin problem]()
 author: bst
 ---
-{% include JB/setup %}
 
 {% include git-vs-hg.md %}
 
@@ -146,4 +145,3 @@ Fazit
 Die (lokale) Geschichte zu verändern, ist sehr nützlich, um *Historie* lesbar zu machen. Gelegentlich muss man es auch tun, um im Repository aufzuräumen.
 
 Git bietet ein starkes Tooling hierfür an. Über Plugins kann Ähnliches auch in Mercurial bekommen. 
-

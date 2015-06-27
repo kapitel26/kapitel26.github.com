@@ -7,8 +7,6 @@ tags: []
 author: bst
 ---
 
-{% include JB/setup %}
-
 Das *Reflog* ist dein Freund
 ----------------------------
 
@@ -62,4 +60,3 @@ Links
 * [Zu diesem Thema: Chris Johnsen auf Stackoverflow][1]
 
   [1]: http://stackoverflow.com/questions/3876206/how-do-i-view-a-git-repos-recieve-history
-
