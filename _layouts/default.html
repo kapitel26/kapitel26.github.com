@@ -3,7 +3,6 @@ theme :
   name : kapitel26
 ---
 {% assign BASE_PATH = nil %}
-{% assign HOME_PATH = "/" %}
 {% assign ASSET_PATH = "/assets/themes/kapitel26" %}
 
 <!DOCTYPE html>
@@ -37,7 +36,7 @@ theme :
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">
+          <a class="brand" href="/">
             {{ site.title }}
           	{% if site.tagline %} <p/><div class="mysitesubtitle"> {{ site.tagline }}</div> {% endif %}
           </a>
