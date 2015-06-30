@@ -32,36 +32,36 @@ theme :
     <meta name="google-site-verification" content="L2SRdiaRX4CbFkVt0oNZy8i3wwV1YKPIQo9KQxMPYDA" />
   </head>
   <body>
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="/">
-            {{ site.title }}
-          	{% if site.tagline %} <p/><div class="mysitesubtitle"> {{ site.tagline }}</div> {% endif %}
-          </a>
-          <div class="span12">
-	          <ul class="nav">
-	            {% assign pages_list = site.pages %}
-	            {% assign group = 'navigation' %}
-		    {% for weight in (1..10) %}
-                      {% for node in pages_list %}
-                        {% if node.title != null and node.weight != null and node.weight == weight  %}
-                          {% if group == null or group == node.group %}
-                          	{% if page.url == node.url %}
-                          	<li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
-                          	{% else %}
-                          	<li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
-                          	{% endif %}
-                          {% endif %}
-                        {% endif %}
-                      {% endfor %}
-		    {% endfor %}
-	            <li><a href="/atom.xml"><img src="/feed-icon.png" alt="RSS Feed"/></a></li>
-	          </ul>
-	        </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><code>kapitel-26</code></a>
         </div>
-      </div>
-    </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            {% assign pages_list = site.pages %}
+            {% assign group = 'navigation' %}
+            {% for weight in (1..10) %}
+              {% for node in pages_list %}
+                {% if node.title != null and node.weight != null and node.weight == weight  %}
+                  {% if group == null or group == node.group %}
+                    <li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!--/.container-fluid -->
+    </nav>
+
+
 
     <div class="container">
 
