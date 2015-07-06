@@ -1,27 +1,28 @@
 ---
 layout: default
 ---
-<div class="page-header">
-  <h1>{{ page.title }}</h1>
-</div>
 
-{% include author.html %}
 <div class="row">
-  <div class="span8">
-    {{ content }}
-    <hr>
-    <div class="pagination">
+  <div class="col-sm-8 blog-main">
+    <div class="blog-post">
+      <h1 class="blog-post-title">{{ page.title }}</h1>
+      <div class="blog-post-meta">{% include author.html %}</div>
+
+      {{ content }}
+    </div>
+
+    <div class="pager">
       <ul>
       {% if page.previous %}
-        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
+        <li><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Zurück</a></li>
       {% else %}
-        <li class="prev disabled"><a>&larr; Previous</a></li>
+        <li class="disabled"><a>&larr; Zurück</a></li>
       {% endif %}
-        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
+        <li><a href="/archive.html">Archiv</a></li>
       {% if page.next %}
-        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+        <li><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Vor &rarr;</a></li>
       {% else %}
-        <li class="next disabled"><a>Next &rarr;</a>
+        <li class="disabled"><a>Vor &rarr;</a>
       {% endif %}
       </ul>
     </div>

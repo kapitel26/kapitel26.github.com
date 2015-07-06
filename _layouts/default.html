@@ -55,15 +55,18 @@
       </div><!--/.container-fluid -->
     </nav>
 
-
-
     <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title"><br>{{ site.title }}</h1>
+        <p class="lead blog-description">{{ site.tagline }}</p>
+      </div>
 
       <div class="content">
         {{ content }}
       </div>
 
-      <footer>
+      <footer class="blog-footer">
         <p>&copy; {{ site.author.name }} 2014.
           <a href="/impressum/index.html" title="Impressum">Impressum</a>,
           <a href="/datenschutz/index.html" title="Datenschutz">Datenschutz</a>.
