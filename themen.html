@@ -2,8 +2,6 @@
 layout: page
 title: Themen
 header: Themen
-group: navigation
-weight: 2
 ---
 
 <ul class="tag_box inline">
@@ -12,10 +10,10 @@ weight: 2
 </ul>
 
 
-{% for category in site.categories %} 
+{% for category in site.categories %}
   <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
   <ul>
-    {% assign pages_list = category[1] %}  
+    {% assign pages_list = category[1] %}
     {% include JB/pages_list %}
   </ul>
 {% endfor %}

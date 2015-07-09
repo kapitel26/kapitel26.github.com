@@ -2,8 +2,6 @@
 layout: page
 title : Git
 header : Aktuelles zu Git
-group: navigation
-weight: 4
 ---
 
 Interessantes über Git
@@ -18,7 +16,7 @@ Interessantes über Git
 
 Best Practices
 --------------
- 
+
  * [Passwörter verwalten](/git/2012/12/03/passwoerter-verwalten)
    mit dem "Credential Helper"
  * Klarere Historie durch [No-Fast-Forward als Default](git/2012/10/12/no-fast-forward-als-default)

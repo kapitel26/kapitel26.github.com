@@ -3,7 +3,7 @@ layout: page
 title: "Git-Buch"
 description: ""
 group: navigation
-weight: 6
+weight: 2
 ---
 
 <div class="row">

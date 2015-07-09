@@ -3,7 +3,6 @@ layout: page
 title: "\"making of\""
 description: ""
 author: bst
-weight: 7
 ---
 
 Dieser Blog ist entstanden, weil wir Lust hatten, über Git und

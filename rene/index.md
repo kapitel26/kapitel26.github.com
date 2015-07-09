@@ -3,7 +3,7 @@ layout: page
 title: "René"
 description: ""
 group: navigation
-weight: 9
+weight: 4
 ---
 
 ![René Preißel](rene-preissel.jpg)
