@@ -5,7 +5,6 @@ author: rp
 category: Git
 tags: [Git, "credential helper"]
 ---
-{% include JB/setup %}
 
 Wenn man auf Remote-Repositories mit Benutzer und Passwort zugreift, kann man sich mit dem Credential Helper von Git das Leben einfacher machen.
 Der Credential Helper merkt sich die Benutzerdaten und unterdrückt die jeweilige Abfrage beim Remote-Zugriff.
@@ -35,8 +34,8 @@ MacOS - Systeme
 
 Auch für MacOS gibt es einen eigenen Credential Helper: **osxkeychain**. Dieser nutzt die Schlüsselbundverwaltung von MacOS. Auch dieser Credential Helper ist nicht standardmässig installiert und muss separat geladen werden: [git-credential-osxkeychain](http://github-media-downloads.s3.amazonaws.com/osx/git-credential-osxkeychain)
  * Die Datei muss nach GIT_HOME/bin kopiert werden. Typischerweise nach */usr/local/git/bin*.
- * Die Datei muss mit Ausführungsrechten versehen werden: 
-  		
+ * Die Datei muss mit Ausführungsrechten versehen werden:
+
   		chmod a+x git-credential-osxkeychain
 
  * Abschliessend muss der Helper wieder aktiviert werden:

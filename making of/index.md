@@ -3,9 +3,7 @@ layout: page
 title: "\"making of\""
 description: ""
 author: bst
-weight: 7
 ---
-{% include JB/setup %}
 
 Dieser Blog ist entstanden, weil wir Lust hatten, über Git und
 andere schöne technische Themen in der Informatik zu schreiben.

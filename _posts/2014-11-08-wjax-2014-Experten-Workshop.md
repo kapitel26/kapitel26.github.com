@@ -5,7 +5,6 @@ category: Git
 tags: [Git, JGit, Maven, Gradle, Submodule, Subtree]
 author: rp
 ---
-{% include JB/setup %}
 
 Auf der diesjährigen W-Jax habe ich gemeinsam mit Nils Hartmann einen Git-Experten-Workshop durchgeführt.
 

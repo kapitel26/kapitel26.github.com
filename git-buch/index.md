@@ -3,12 +3,11 @@ layout: page
 title: "Git-Buch"
 description: ""
 group: navigation
-weight: 6
+weight: 2
 ---
-{% include JB/setup %}
 
 <div class="row">
-  <div class="span3" align="right">
+  <div class="col-md-3" align="right">
   	René Preißel<br/>
   	Bjørn Stachmann<p/>
 
@@ -23,12 +22,12 @@ weight: 6
       Errata
     </a>&nbsp;
   </div>
-  <div class="span3" align="center">
+  <div class="col-md-3" align="center">
   	<a href="http://www.dpunkt.de/buecher/3545/git.html">
 		  <img src="buch-cover.jpg" alt="Git-Buch Cover"/>
 		</a>
   </div>
-  <div class="span3" align="left">
+  <div class="col-md-3" align="left">
     <h4>Kaufen</h4>
 		&nbsp;<br/>
 		<a href="https://www.dpunkt.de/buecher/4518.html">

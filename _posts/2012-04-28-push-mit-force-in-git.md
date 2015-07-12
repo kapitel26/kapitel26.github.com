@@ -6,7 +6,6 @@ category: Git
 tags: [force, push, Trouble Shooting]
 author: bst
 ---
-{% include JB/setup %}
 
  * [Die Kontrahenden (Teil 0)](/git/2012/08/07/git-vs-mercurial)
  * [Branches (Teil 1)](/git/2012/08/25/git-vs-mercurial-teil-1-branches)

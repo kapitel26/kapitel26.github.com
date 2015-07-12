@@ -7,7 +7,6 @@ tags: [git-subtree]
 author: rp
 # just to fix a highlightin problem]()
 ---
-{% include JB/setup %}
 
 Was sind nochmal Submodule ?
 --------------------------------

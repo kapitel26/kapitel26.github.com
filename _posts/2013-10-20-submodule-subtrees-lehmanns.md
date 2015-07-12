@@ -5,7 +5,6 @@ category: Git
 tags: [Git, Submodule, Subtree]
 author: rp
 ---
-{% include JB/setup %}
 
 Am letzten Mittwoch haben Björn und ich zwei kurze Vorträge 
 in der Buchhandlung [Lehmanns](http://www.lehmanns.de/page/verlfb)

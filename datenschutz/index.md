@@ -3,7 +3,6 @@ layout: page
 title: "Datenschutz"
 description: ""
 ---
-{% include JB/setup %}
 
 Analytics
 ---------
@@ -30,5 +29,3 @@ Hierzu nutzen wir die **exzellente Optimisation Suite** von
 > Der Datenerhebung und -speicherung kann jederzeit mit Wirkung für die Zukunft 
 > <a target="_blank" href="https://www.etracker.de/privacy?et=t9bebx">widersprochen</a> 
 > werden.
-
-

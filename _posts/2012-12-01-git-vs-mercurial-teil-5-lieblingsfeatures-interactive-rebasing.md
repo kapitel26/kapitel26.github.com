@@ -6,7 +6,6 @@ tags: [Git, Mercurial, Rebasing, "Interactive Rebasing"]
 # just to fix a highlightin problem]()
 author: bst
 ---
-{% include JB/setup %}
 
 {% include git-vs-hg.md %}
 
