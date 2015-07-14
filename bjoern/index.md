@@ -7,6 +7,8 @@ author: bst
 weight: 5
 ---
 
+{% include author.html %}
+
 **Moin**,
 
 ich bin **Bjørn Stachmann**, komme aus Flensburg, und mache
