@@ -1,0 +1,13 @@
+<tr>
+  <td class="hidden-xs">
+    {{ current_post.date | date: "%d. %B %Y" }}
+  </td>
+
+  <td>
+    <a href="{{ BASE_PATH }}{{ current_post.url }}">{{current_post.title}}</a>
+  </td>
+
+  <td class="hidden-xs">
+    {{ current_post.author }}
+  </td>
+</tr>
