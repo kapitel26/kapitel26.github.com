@@ -7,6 +7,9 @@ author: bst
 weight: 5
 ---
 
+Bjørn Stachmann
+---------------
+
 {% include author.html %}
 
 **Moin**,

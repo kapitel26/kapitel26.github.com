@@ -7,6 +7,9 @@ author: rp
 weight: 4
 ---
 
+René Preißel
+------------
+
 ![René Preißel](rene-preissel.jpg)
 
 **René Preißel** arbeitet als freiberuflicher Softwarearchitekt,
