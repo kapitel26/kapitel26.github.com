@@ -23,10 +23,11 @@ Mehr Informationen gibt es auf [eToSquare.de](http://www.eToSquare.de)
 Meine Beiträge
 --------------
 
-<ul class="posts">
+<table class="table table-striped">
   {% for post in site.posts %}
-  	{% if post.author == "rp" %}
-	    <li><span>{{ post.date | date_to_string }} </span><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a> ({{post.author}})</li>
-	{% endif %}
+    {% if post.author == "rp" %}
+      {% assign current_post = post %}
+      {% include post_in_a_table_row %}
+    {% endif %}
   {% endfor %}
-</ul>
+</table>
