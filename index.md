@@ -20,11 +20,12 @@ etwas Interessantes dabei ist:
 Aktuell: [Continuous Lifecycle '14](/git/2014/11/11/continuous-lifecycle-2014/)
 ------------------------------------------------
 
-Liste aller Beiträge
---------------------
+Blog
+----
 
-<ul class="posts">
+<table class="table table-striped">
   {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }} </span><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a> ({{post.author}})</li>
+    {% assign current_post = post %}
+    {% include post_in_a_table_row %}
   {% endfor %}
-</ul>
+</table>
