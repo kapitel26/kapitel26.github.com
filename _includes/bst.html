@@ -1,17 +1,24 @@
 <div class="row">
-  <div class="col-sm-2" align="right">
+  <div class="col-sm-8 blog-post-meta" align="left">
+    Author: Bjørn Stachmann
+    <br/>
+
+    {% if page.date %}
+       {{ page.date | date_to_long_string }}
+       <br/>
+    {% endif %}
+
+    <a href="http://www.twitter.com/old_stachi">Twitter</a>
+    <a href="http://www.xing.com/profile/Bjorn_Stachmann">Xing</a>
+    <a rel="author" href="https://plus.google.com/107293837004630946370">Google+</a>
+
+  </div>
+
+  <div class="col-sm-3" align="right">
     <a href="/bjoern/index.html">
       <img src="/bjoern/bst.png" alt="Bjørn"/>
     </a>
   </div>
-  <div class="col-sm-6 blog-post-meta" align="left">
-    Author: Bjørn Stachmann
-    {% if page.date %}
-       / {{ page.date | date_to_long_string }}<br/>
-    {% endif %}
-    <a href="http://www.twitter.com/old_stachi">Twitter</a>
-    <a href="http://www.xing.com/profile/Bjorn_Stachmann">Xing</a>
-    <a rel="author" href="https://plus.google.com/107293837004630946370">Google+</a>
-  </div>
+
 </div>
 <br/>

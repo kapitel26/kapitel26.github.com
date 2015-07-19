@@ -7,6 +7,11 @@ author: bst
 weight: 5
 ---
 
+Bjørn Stachmann
+---------------
+
+{% include author.html %}
+
 **Moin**,
 
 ich bin **Bjørn Stachmann**, komme aus Flensburg, und mache
@@ -56,10 +61,11 @@ Trotzdem, oder vielleicht gerade deshalb, mag ich nicht davon lassen.
 Meine Beiträge
 --------------
 
-<ul class="posts">
+<table class="table table-striped">
   {% for post in site.posts %}
-  	{% if post.author == "bst" %}
-	    <li><span>{{ post.date | date_to_string }} </span><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a> ({{post.author}})</li>
-	{% endif %}
+    {% if post.author == "bst" %}
+      {% assign current_post = post %}
+      {% include post_in_a_table_row %}
+    {% endif %}
   {% endfor %}
-</ul>
+</table>
