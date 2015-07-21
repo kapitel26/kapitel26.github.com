@@ -6,43 +6,39 @@ group: navigation
 weight: 2
 ---
 
-<div class="row">
-  <div class="col-md-3" align="right">
-  	René Preißel<br/>
-  	Bjørn Stachmann<p/>
+<div class="jumbotron">
 
-  	<h2>Git</h2>
+  <div class="media">
 
-		<h4>Dezentrale Versionsverwaltung im Team - Grundlagen und Workflows</h4>
-		&nbsp;<br/>
-		dpunkt.verlag
-    &nbsp;<br/>
-    &nbsp;<br/>
-    <a href="errata.html">
-      Errata
-    </a>&nbsp;
+    <div class="media-left">
+      <a href="https://www.dpunkt.de/buecher/4518.html">
+        <img src="buch-cover.jpg" alt="Git-Buch Cover"/>
+      </a>
+    </div>
+
+    <div class="media-body">
+      René Preißel<br/>
+      Bjørn Stachmann<p/>
+      <h1>Git</h1>
+      <h3>Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows</h3>
+      dpunkt.verlag<p/>
+    </div>
+
   </div>
-  <div class="col-md-3" align="center">
-  	<a href="http://www.dpunkt.de/buecher/3545/git.html">
-		  <img src="buch-cover.jpg" alt="Git-Buch Cover"/>
-		</a>
-  </div>
-  <div class="col-md-3" align="left">
-    <h4>Kaufen</h4>
-		&nbsp;<br/>
-		<a href="https://www.dpunkt.de/buecher/4518.html">
-  		beim <strong>dpunkt</strong>.verlag<br/>
-  	</a>
-		&nbsp;<br/>
-		<a href="https://www.dpunkt.de/buecher/4706/git.html">
-  		als E-Book beim <strong>dpunkt</strong>.verlag<br/>
-  	</a>
-		&nbsp;<br/>
-		<a href="http://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864901308/">
-  		bei <strong>Amazon</strong> kaufen<br/>
-  	</a>
 
- </div>
+  <br/>
+  <a class="btn btn-primary btn-lg" href="https://www.dpunkt.de/buecher/4518.html" role="button">
+    Buch kaufen
+  </a>
+  <a class="btn btn-primary btn-lg" href="https://www.dpunkt.de/buecher/4706/git.html" role="button">
+    E-Book kaufen
+  </a>
+  <a class="btn btn-primary btn-lg" href="http://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864901308/" role="button">
+    ... oder bei Amazon kaufen
+  </a>
+
+  </p>
+
 </div>
 
 Was ist das Besondere an eurem Buch?
@@ -62,7 +58,11 @@ man die Workflows dann im Laufe der Zeit.
 Fehler?! Euer Buch hat Fehler?
 -----------------------------
 
-Naja gut, schon. Damit es in der nächsten Auflage besser wird, sammeln wir die Fehler [hier](errata.html).
+Naja gut, schon. Damit es in der nächsten Auflage besser wird, sammeln wir die Fehler hier:
+
+<div class="btn-group" role="group" aria-label="...">
+  <a href="errata.html"><button type="button" class="btn btn-default">Feedback und Errata</button></a>
+</div>
 
 Warum habt Ihr ein Git-Buch geschrieben?
 ----------------------------------------
@@ -94,12 +94,3 @@ Bernd, Christian, Claudia, Olli, Markus, Stefan, Tim, und Uwe
 (in alphabetischer Reihenfolge ) haben exzellente Fachbücher geschrieben.
 Nur René und Bjørn nicht. Wir wollten auch mal sagen können:
 *"Wie ich in meinem Buch geschrieben habe, ..."*
-
-Links
------
-
- * [Unser **Git-Buch** beim **dpunkt**-Verlag][git-buch-dpunkt]
- * [Unser Git-Artikel aus dem JavaMagazin][git-artikel]
-
-[git-buch-dpunkt]: http://www.dpunkt.de/buecher/3545.html
-[git-artikel]: http://it-republik.de/jaxenter/artikel/Wird-Git-Subversion-beerben-3244.html
