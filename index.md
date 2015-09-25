@@ -17,6 +17,16 @@ tagline:
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="item active">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Git</h1>
+          <h3>Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows</h3>
+          <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+          <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="item">
       <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
       <div class="container">
         <div class="carousel-caption">
