@@ -19,10 +19,12 @@ tagline:
     <div class="item active">
       <div class="container">
         <div class="carousel-caption">
-          <h1>Git</h1>
-          <h3>Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows</h3>
-          <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+          <p>
+            <a href="https://www.dpunkt.de/buecher/4518.html">
+              <img src="git-buch/buch-cover.jpg" alt="Git-Buch Cover"/>
+            </a>
+          </p>
+          <a class="btn btn-lg btn-primary" href="#" role="button">Das Git-Buch</a></p>
         </div>
       </div>
     </div>
