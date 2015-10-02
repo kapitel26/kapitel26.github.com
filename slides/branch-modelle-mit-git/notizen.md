@@ -23,13 +23,26 @@ Außerdem:
 Was?
 ----
 
+Werkzeuge Bausteine. Was bietet Git.
+
+Basics: Branch, Merge (Inkl. Fast-Forward/no-ff-Merges, 3-Wege-Merge), Udate-Merges, Rebase, Interactive Rebase, Log/History, Cherry-pick
+
+Basics Tooling: Pull-Request,
+
+Aufbauend: Feature-Branch, Integrationsbranch, Release-Branch, Hotfix-Branches, Code-freezes, Quality Gate, 1st-Parent-History, Hoch- und Ketten-mergen, Merge-Check, Variant-Branches/Patch-Queues
+
 Wie?
 ----
+
+
 
 Wohin noch?
 -----------
 
+Evtl. Rerere.
 
+
+Checkliste oder Matrix zur Auswahl einer Branching Strategie.
 
 Themen
 ------
