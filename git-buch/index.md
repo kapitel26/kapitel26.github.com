@@ -11,7 +11,7 @@ weight: 2
   <div class="media">
 
     <div class="media-left">
-      <a href="https://www.dpunkt.de/buecher/4518.html">
+      <a href="http://dpunkt.de/buecher/5040/9783864903113-git.html">
         <img src="buch-cover.jpg" alt="Git-Buch Cover"/>
       </a>
     </div>
@@ -27,12 +27,14 @@ weight: 2
   </div>
 
   <br/>
-  <a class="btn btn-primary btn-lg" href="https://www.dpunkt.de/buecher/4518.html" role="button">
+  <a class="btn btn-primary btn-lg" href="http://dpunkt.de/buecher/5040/9783864903113-git.html" role="button">
     Buch kaufen
   </a>
+  <!-- TODO link für eBook -->
   <a class="btn btn-primary btn-lg" href="https://www.dpunkt.de/buecher/4706/git.html" role="button">
     E-Book kaufen
   </a>
+  <!-- TODO link für amazon -->
   <a class="btn btn-primary btn-lg" href="http://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864901308/" role="button">
     ... oder bei Amazon kaufen
   </a>
