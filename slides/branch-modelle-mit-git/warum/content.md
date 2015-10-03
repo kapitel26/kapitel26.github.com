@@ -1,14 +1,8 @@
+SECTION
+
 Warum?
 ======
 
-</script></section><section data-markdown><script type="text/template">
+SLIDE
 
-
-Beispiel 1
-
-
-Beispiel 2
-
-
-
-und noch was
+Case 1
