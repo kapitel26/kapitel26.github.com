@@ -41,6 +41,10 @@ Wohin noch?
 
 Evtl. Rerere.
 
+Komplexere Versionierung mit Subtrees, Submodules oder externem Dependency-Management.
+
+Umgang mit Varianten. Branches als Patch Queue.
+
 
 Checkliste oder Matrix zur Auswahl einer Branching Strategie.
 

@@ -1,7 +1,8 @@
 ___SECTION_______________________________
 
-Basis Werkzeuge
-===============
+
+Basis Werkzeug
+==============
 
 
 _________________________________________
@@ -19,6 +20,16 @@ Branch
 _________________________________________
 
 
+Log
+===
+
+ * `a..b`
+ * Kennt keine Branches
+
+
+_________________________________________
+
+
 Merge
 =====
 
@@ -30,22 +41,14 @@ Merge
 _________________________________________
 
 
-Fast-Forward-Merge
-------------------
+Fast-Forward
+============
 
  * Vereinfacht den Graphen
  * Macht den Merge unsichtbar
 
 
-
-
-
-Log
-===
-
- * `a..b`
- * Kennt keine Branches
-
+_________________________________________
 
 
 Rebase
@@ -55,14 +58,45 @@ Rebase
 _________________________________________
 
 
+**Achtung!** Rebase verändert die Historie.
 
-Weitere Basis-Techniken
-=======================
+ * OK, für lokale Änderungen, weil niemand sonst die Commits kennt.
+ * OK, für Features-Branches in geschlossenen Teams, wenn alle Entwickler danach einen harten Reset durchführen.
+ * Nicht OK, sonst.
+
+_________________________________________
 
 
- * Interactive Rebase, Filter-Branch
- * Cherry-pick
+To Merge or Not to Merge?
+-------------------------
 
+**Merges** zeigen die Integration in der Historie, <br/>
+**Rebases** und **Fast-Forwards** und Fast-Forwards verbergen sie.
+
+
+___SECTION_______________________________
+
+
+Spezial-<br/>Werkzeuge
+======================
 
 
 _________________________________________
+
+
+Cherry-pick
+============
+
+
+_________________________________________
+
+
+Reset
+=====
+
+
+_________________________________________
+
+
+Interactive Rebasing
+====================
