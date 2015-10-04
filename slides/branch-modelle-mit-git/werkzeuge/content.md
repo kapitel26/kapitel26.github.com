@@ -1,8 +1,68 @@
 SECTION
 
-Werkzeuge
-=========
+Basis Werkzeuge
+===============
+
 
 SLIDE
 
-Tool 1
+
+Branch
+======
+
+
+ * Kann an jedem Punkt der Historie abgezweigt werden.
+ * Im Kern: Verweis auf ein Commit.
+ * Lokales Konzept: Nicht jeder Branch muss überall existieren.
+
+
+SLIDE
+
+
+Merge
+=====
+
+ * Die wichtigste Operation
+ * Zusammenführung in neuem Commit.
+ * Common Ancestore, 3-Wege
+
+
+SLIDE
+
+
+Fast-Forward-Merge
+------------------
+
+ * Vereinfacht den Graphen
+ * Macht den Merge unsichtbar
+
+
+
+
+
+Log
+===
+
+ * `a..b`
+ * Kennt keine Branches
+
+
+
+Rebase
+======
+
+
+SLIDE
+
+
+
+Weitere Basis-Techniken
+=======================
+
+
+ * Interactive Rebase, Filter-Branch
+ * Cherry-pick
+
+
+
+SLIDE
