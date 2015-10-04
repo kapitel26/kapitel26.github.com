@@ -1,10 +1,10 @@
-SECTION
+___SECTION_______________________________
 
 Basis Werkzeuge
 ===============
 
 
-SLIDE
+_________________________________________
 
 
 Branch
@@ -16,7 +16,7 @@ Branch
  * Lokales Konzept: Nicht jeder Branch muss überall existieren.
 
 
-SLIDE
+_________________________________________
 
 
 Merge
@@ -27,7 +27,7 @@ Merge
  * Common Ancestore, 3-Wege
 
 
-SLIDE
+_________________________________________
 
 
 Fast-Forward-Merge
@@ -52,7 +52,7 @@ Rebase
 ======
 
 
-SLIDE
+_________________________________________
 
 
 
@@ -65,4 +65,4 @@ Weitere Basis-Techniken
 
 
 
-SLIDE
+_________________________________________

@@ -1,18 +1,18 @@
-SECTION
+___SECTION_______________________________
 
 
 Warum?
 ======
 
 
-SLIDE
+_________________________________________
 
 
 Features
 ========
 
 
-SLIDE
+_________________________________________
 
 <p class="fragment fade-out">Ring ... Rrring ... Rrrrring</p>
 
@@ -24,20 +24,20 @@ SLIDE
 <p class="fragment"> *(Cheffe)*: Eins noch: Die Sache mit der Aufzeichnung darf nicht ins Release. Datenschutz. Du weißt schon.</p>
 <p class="fragment"> *(Cheffe legt auf)*</p>
 
-SLIDE
+_________________________________________
 
 
 Bild: Mehrere Features auf einem Trunk vermischt.
 
 
-SLIDE
+_________________________________________
 
 
 Products
 ========
 
 
-SLIDE
+_________________________________________
 
 
 Bild: Produktkartions mit Versionsnummer (3.0, 4.0, 4.1, 5.0) und Varianten (Windows, Mac).
@@ -45,30 +45,30 @@ Bild: Produktkartions mit Versionsnummer (3.0, 4.0, 4.1, 5.0) und Varianten (Win
 ### In welchen Versionen ist BUG-4711 gefixed?
 
 
-SLIDE
+_________________________________________
 
 
 Reviews
 =======
 
 
-SLIDE
+_________________________________________
 
 
 SourceTree: Beispiel zeigen, wie unübersichtlich das schnell werden kann. TODO Beispielprojekt finden (Hadoop?).
 
-SLIDE
+_________________________________________
 
 
 Continuous Delivery
 ===================
 
-SLIDE
+_________________________________________
 
 Mehrmals täglich Releasen. Ist das nicht verdammt gefährlich?
 
 
-SLIDE
+_________________________________________
 
 
 Wünsche

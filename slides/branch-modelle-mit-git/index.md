@@ -8,7 +8,7 @@ author: bst
 
 <section
   data-markdown="content"
-  data-separator="^SECTION"
-  data-separator-vertical="^SLIDE"
-  data-separator-notes="^NOTES">
+  data-separator="^\_\_\_+SECTION\_*$"
+  data-separator-vertical="^\_\_\_+$"
+  data-separator-notes="^Notes:">
 </section>
