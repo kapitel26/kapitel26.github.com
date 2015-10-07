@@ -17,11 +17,12 @@ tagline:
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <div class="container">
-        <div class="carousel-caption">
-            <h1>Das Buch</h1>
-            <a class="btn btn-lg btn-primary" href="#" role="button">3. Auflage, jetzt NEU!</a></p>
-        </div>
-        <div class="carousel-inner">
+        <div class="carousel-inner text-center">
+          <div class="col-xs-12" style="height:20px;"></div>
+          <div class="col-md-12">
+            <a class="btn btn-lg btn-primary" href="git-buch/" role="button">Das Buch, 3. Auflage, jetzt NEU!</a>
+          </div>
+          <div class="col-xs-12" style="height:20px;"></div>
           <a href="git-buch/">
             <img src="git-buch/buch-cover.jpg" alt="Git-Buch Cover"/>
           </a>
@@ -30,11 +31,13 @@ tagline:
     </div>
     <div class="item">
       <div class="container">
-        <div class="carousel-caption">
-          <h1>Das Blog</h1>
-        </div>
-        <div class="carousel-inner">
-          <table class="table">
+        <div class="carousel-inner text-center">
+          <div class="col-xs-12" style="height:20px;"></div>
+          <div class="col-md-12">
+            <a class="btn btn-lg btn-primary" href="archive.html" role="button">Das Blog</a></p>
+          </div>
+          <div class="col-xs-12" style="height:20px;"></div>
+          <table class="table table-striped">
             {% for post in site.posts limit:10 %}
               {% assign current_post = post %}
               {% include post_in_a_table_row %}
