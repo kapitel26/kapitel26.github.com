@@ -70,16 +70,3 @@ Wir hoffen, dass für Euch (Ihr anonyme Masse da draußen im Internet),
 etwas Interessantes dabei ist:
 
 **[René](/rene)**  & **[Bjørn](/bjoern)**
-
-Aktuell: [Continuous Lifecycle '14](/git/2014/11/11/continuous-lifecycle-2014/)
-------------------------------------------------
-
-Blog
-----
-
-<table class="table table-striped">
-  {% for post in site.posts %}
-    {% assign current_post = post %}
-    {% include post_in_a_table_row %}
-  {% endfor %}
-</table>
