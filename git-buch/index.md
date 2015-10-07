@@ -54,7 +54,7 @@ ein *Pattern-Buch* als ein Referenzhandbuch.
 Diese Workflows sind, natürlich nicht,
 die einzige Art, wie man mit Git arbeiten sollte. Aber sind
 praxiserprobt und bieten einen guten Startpunkt, wenn man Git
-im Team einführen möchste. Individuell anpassen kann (und wird)
+im Team einführen möchte. Individuell anpassen kann (und wird)
 man die Workflows dann im Laufe der Zeit.  
 
 Fehler?! Euer Buch hat Fehler?
