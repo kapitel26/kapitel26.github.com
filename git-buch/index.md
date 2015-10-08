@@ -34,7 +34,7 @@ weight: 2
   <a class="btn btn-primary btn-lg" href="https://www.dpunkt.de/buecher/4706/git.html" role="button">
     E-Book kaufen
   </a>
-  <a class="btn btn-primary btn-lg" href="http://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864901308/" role="button">
+  <a class="btn btn-primary btn-lg" href="http://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864903114" role="button">
     ... oder bei Amazon kaufen
   </a>
 
