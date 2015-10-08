@@ -30,13 +30,16 @@ weight: 2
   <a class="btn btn-primary btn-lg" href="http://dpunkt.de/buecher/5040/9783864903113-git.html" role="button">
     Buch kaufen
   </a>
-  <!-- TODO link für eBook -->
+
   <a class="btn btn-primary btn-lg" href="https://www.dpunkt.de/buecher/4706/git.html" role="button">
     E-Book kaufen
   </a>
-  <!-- TODO link für amazon -->
   <a class="btn btn-primary btn-lg" href="http://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864901308/" role="button">
     ... oder bei Amazon kaufen
+  </a>
+
+  <a class="btn btn-primary btn-lg" href="http://bstachmann.github.io/gitbuch-feedback" role="button">
+    Feedback zum Buch
   </a>
 
   </p>
@@ -56,15 +59,6 @@ die einzige Art, wie man mit Git arbeiten sollte. Aber sind
 praxiserprobt und bieten einen guten Startpunkt, wenn man Git
 im Team einführen möchte. Individuell anpassen kann (und wird)
 man die Workflows dann im Laufe der Zeit.  
-
-Fehler?! Euer Buch hat Fehler?
------------------------------
-
-Naja gut, schon. Damit es in der nächsten Auflage besser wird, sammeln wir die Fehler hier:
-
-<div class="btn-group" role="group" aria-label="...">
-  <a href="errata.html"><button type="button" class="btn btn-default">Feedback und Errata</button></a>
-</div>
 
 Warum habt Ihr ein Git-Buch geschrieben?
 ----------------------------------------
@@ -96,3 +90,8 @@ Bernd, Christian, Claudia, Olli, Markus, Stefan, Tim, und Uwe
 (in alphabetischer Reihenfolge ) haben exzellente Fachbücher geschrieben.
 Nur René und Bjørn nicht. Wir wollten auch mal sagen können:
 *"Wie ich in meinem Buch geschrieben habe, ..."*
+
+Feedback
+--------
+
+<iframe src="http://bstachmann.github.io/gitbuch-feedback/" width="100%" height="800"></iframe>
