@@ -38,7 +38,7 @@ weight: 2
     ... oder bei Amazon kaufen
   </a>
 
-  <a class="btn btn-primary btn-lg" href="http://bstachmann.github.io/gitbuch-feedback" role="button">
+  <a class="btn btn-primary btn-lg" href="http://kapitel26.github.io/gitbuch-feedback" role="button">
     Feedback zum Buch
   </a>
 
@@ -94,4 +94,4 @@ Nur René und Bjørn nicht. Wir wollten auch mal sagen können:
 Feedback
 --------
 
-<iframe src="http://bstachmann.github.io/gitbuch-feedback/" width="100%" height="800"></iframe>
+<iframe src="http://kapitel26.github.io/gitbuch-feedback/" width="100%" height="800"></iframe>
