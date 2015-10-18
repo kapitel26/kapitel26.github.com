@@ -21,30 +21,50 @@ weight: 2
       Bjørn Stachmann<p/>
       <h1>Git</h1>
       <h3>Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows</h3>
+      <h4>3. Auflage</h4>
       dpunkt.verlag<p/>
     </div>
 
   </div>
 
   <br/>
+
+  <p>
+    <a class="btn btn-primary btn-lg" href="http://kapitel26.github.io/gitbuch-feedback" role="button">
+      Feedback geben oder Fehler melden
+    </a>
+  </p>
+
   <a class="btn btn-primary btn-lg" href="http://dpunkt.de/buecher/5040/9783864903113-git.html" role="button">
-    Buch kaufen
+    Bei dpunkt kaufen
   </a>
 
   <a class="btn btn-primary btn-lg" href="https://www.dpunkt.de/buecher/4706/git.html" role="button">
     E-Book kaufen
   </a>
-  <a class="btn btn-primary btn-lg" href="http://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864903114" role="button">
-    ... oder bei Amazon kaufen
-  </a>
 
-  <a class="btn btn-primary btn-lg" href="http://kapitel26.github.io/gitbuch-feedback" role="button">
-    Feedback zum Buch
+  <a class="btn btn-primary btn-lg" href="http://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864903114" role="button">
+    Bei Amazon kaufen
   </a>
 
   </p>
 
 </div>
+
+Was ist neu in der dritten Auflage?
+===================================
+
+Einsteiger finden die dezentrale Natur von Git oft verwirrend.
+In der aktuellen Auflage beschreiben wir diese Aspekte (Clone, Push und Pull) deshalb ausführlicher. Aus ursprünglich einem Kapitel sind dabei zwei geworden.
+
+Mehrere Leser haben kritisiert, dass wir in der vorige Auflage Git nur aus Kommandozeilenperspektive gezeigt haben.
+Die neue Auflage haben wir daher um eine Einführung in das Arbeiten mit dem beliebten grafischen User-Interface *Atlassian SourceTree* ergänzt.
+
+Das Thema DevOps ist aller Munde. Ein wichtiger Aspekt dabei ist die Automatisierung des Build- und Delivery-Prozesses.
+Dies adressieren wir durch einen neuen Workflow für *Continuous Delivery*
+und ein Kapitel zur Integration mit dem Build-Server Jenkins.
+
+Für Produktentwickler hilfreich ist ein neuer Workflow, der erläutert, wie man mehrere Release-Versionen eines Produkts parallel pflegen kann.
 
 Was ist das Besondere an eurem Buch?
 ------------------------------------
