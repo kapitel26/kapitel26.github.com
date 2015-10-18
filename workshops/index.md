@@ -2,8 +2,6 @@
 layout: page
 title: "Workshops"
 description: ""
-group: navigation
-weight: 3
 ---
 
 Der Umstieg auf eine neue Versionsverwaltung sollte ein gut geplanter Schritt sein.
