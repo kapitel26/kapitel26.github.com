@@ -3,6 +3,10 @@ ___SECTION_______________________________
 Fazit
 =====
 
-_________________________________________
+Aus den Patterns lassen sich sehr Flexibel Branch-Modelle entwickeln.
 
-Beispiel 1
+
+Fragen
+======
+
+ * Haben die Teilnehmer ein Branch-Modell, das sich so nicht abbilden läßt?

@@ -1,6 +1,13 @@
 Branch-Modelle mit Git (40 Minuten)
 ===========================
 
+ 1. Warum (BST)
+ 2. Werkzeuge (RP)
+ 3. Patterns (BST)
+ 4. Branch-Modelle (RP)
+ 5. Fazit (BST)
+
+
 Warum?
 ------
 

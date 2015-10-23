@@ -45,17 +45,6 @@ Bild: Produktkartions mit Versionsnummer (3.0, 4.0, 4.1, 5.0) und Varianten (Win
 ### In welchen Versionen ist BUG-4711 gefixed?
 
 
-_________________________________________
-
-
-Reviews
-=======
-
-
-_________________________________________
-
-
-SourceTree: Beispiel zeigen, wie unübersichtlich das schnell werden kann. TODO Beispielprojekt finden (Hadoop?).
 
 _________________________________________
 
@@ -74,8 +63,6 @@ _________________________________________
 Wünsche
 =======
 
-
  * Überblick und Kontrolle über Features und Bugfixes
  * Releases und Varianten
- * Übersichtliche Reviews
  * Quality Gates

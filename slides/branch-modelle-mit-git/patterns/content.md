@@ -18,44 +18,9 @@ Das elementarste Pattern
 
 Wichtig: Verknüpfung mit Issue-Tracker
 
-
-
-_________________________________________
-
-
-Branch aktualisieren
---------------------
-
-
- * Rebase: Besser für Reviews (auf Feature-Branches).
- * Merge: Wo kein Rebase möglich (z. B. auf Integrations-Branches).
-
-
-Notes:
-
-
-Alternativ: rerere
-
-
-
-_________________________________________
-
-
-(Teil-) Ergebnis Mergen
------------------------
-
-
-Notes:
-
-Langlebige Feature-Branches vermeiden.
-Oft Besser: Mergen und neuen Feature-Branch aufmachen.
-Jira (Problem: Issue nummer schon belegt): Neuen Task als Obertask. Alten Task in Subtask umwandeln. Dann neuen Subtask aufmachen.
-
-_________________________________________
-
+### Gemeinsames Arbeiten
 
 Branch begradigen
------------------
 
  * `pull --rebase`
  * Oder durch Voreinstellung
@@ -71,6 +36,9 @@ Integrations-Branch
 -------------------
 
 
+ * Bild mit eingehen Pfeilen. mit (1) und (2)
+
+
 Notes:
 
 Nur Merges, kein ff.
@@ -81,44 +49,19 @@ Mach klar, wann was integriert wurde.
 _________________________________________
 
 
-1st-Parent History
-------------------
-
-_________________________________________
-
-
-Rebase vor dem Merge, macht die Historie lesbarer.
-
-
-_________________________________________
-
-
 Pull-Request
 ------------
 
-
-
-_________________________________________
-
-
-Quality Gate
-------------
-
-
+ * Screenshot aus Buch
+ * Quality Gate
 
 _________________________________________
 
 
-Release-Branch
---------------
+Staging-Branches
+----------------
 
-
-Note:
-
-Zwei Gründe: Entweder man hat mehrer Releases parallel. Oder man braucht.
-
-Feature-Branches auf Release-Branches nennt man Hotfix-Branches.
-
+ * Bild mit Branches in 3 Ebenen
 
 _________________________________________
 
@@ -127,8 +70,4 @@ Merge-Ketten
 ------------
 
 
-_________________________________________
-
-
-Code-Freeze-Branch
-------------------
+ * Dasselbe Bild mit einer hervorgehobenen Merge-Kette.

@@ -1,8 +1,8 @@
 ___SECTION_______________________________
 
 
-Basis Werkzeug
-==============
+Basis Werkzeuge
+===============
 
 
 _________________________________________
@@ -13,18 +13,20 @@ Branch
 
 
  * Kann an jedem Punkt der Historie abgezweigt werden.
- * Im Kern: Verweis auf ein Commit.
- * Lokales Konzept: Nicht jeder Branch muss überall existieren.
+ * Im Kern: Verweis auf ein Commit. Aber nicht Teil des Commits.
 
 
 _________________________________________
 
 
-Log
-===
+Branchen ist leicht
 
- * `a..b`
- * Kennt keine Branches
+Wie bekommen wir das wieder zusammen?
+=====================================
+
+ * Merge
+ * Rebase
+ * Cherry-Pick
 
 
 _________________________________________
@@ -35,14 +37,13 @@ Merge
 
  * Die wichtigste Operation
  * Zusammenführung in neuem Commit.
- * Common Ancestore, 3-Wege
+ * Es entsteht ein Commit mit mehreren Parents.
 
 
 _________________________________________
 
 
-Fast-Forward
-============
+### Fast-Forward
 
  * Vereinfacht den Graphen
  * Macht den Merge unsichtbar
@@ -67,36 +68,28 @@ _________________________________________
 _________________________________________
 
 
-To Merge or Not to Merge?
--------------------------
-
-**Merges** zeigen die Integration in der Historie, <br/>
-**Rebases** und **Fast-Forwards** und Fast-Forwards verbergen sie.
-
-
-___SECTION_______________________________
-
-
-Spezial-<br/>Werkzeuge
-======================
-
-
-_________________________________________
-
-
 Cherry-pick
 ============
 
 
-_________________________________________
-
-
-Reset
-=====
+ * Bild malen.
 
 
 _________________________________________
 
 
-Interactive Rebasing
-====================
+History-Tree
+------------
+
+
+### 1st-Parent History
+
+History-Tree kennt keine Branches
+
+ * Bild: Nur 3 Lanes, aber eine Raute auf dem Feature-Branch
+
+Rebase vor dem Merge, macht die Historie lesbarer.
+
+
+**Merges** zeigen die Integration in der Historie, <br/>
+**Rebases** und Fast-Forwards verbergen sie.
