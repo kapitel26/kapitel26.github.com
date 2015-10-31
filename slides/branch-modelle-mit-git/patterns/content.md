@@ -12,11 +12,18 @@ Feature-Branch
 --------------
 
 
+![Feature Branches](patterns/abb-feature-branches.png)
+
 Notes:
 
 Das elementarste Pattern
 
 Wichtig: Verknüpfung mit Issue-Tracker
+
+
+
+_________________________________________
+
 
 ### Gemeinsames Arbeiten
 
@@ -27,6 +34,9 @@ Branch begradigen
 
  * Nach dem Merge entsteht ein Pull
  * Unnötige Merges weg-Rebasen
+
+
+
 
 
 _________________________________________
