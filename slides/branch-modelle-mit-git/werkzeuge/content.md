@@ -135,19 +135,57 @@ _________________________________________
 
 _________________________________________
 
+1st-Parent History
+==================
+
+_________________________________________
 
 History-Tree
 ------------
 
+![History-Tree](werkzeuge/abb-1st-parent-history-0.png)
 
-### 1st-Parent History
+_________________________________________
 
-History-Tree kennt keine Branches
+Das History-Tree kennt keine Branches, <BR/>
+nur Revisions und die Vorgänger-Beziehung.
 
- * Bild: Nur 3 Lanes, aber eine Raute auf dem Feature-Branch
+**Merges** zeigen Integrationen, <BR/>
+**Rebases**,  **Fast-Forwards** und **Cherry-Picks** verbergen sie.
 
-Rebase vor dem Merge, macht die Historie lesbarer.
+Mit der Wahl der Werkzeuge bestimmt man,<BR/>
+welche Integrationen das History-Tree zeigt.
+
+_________________________________________
+
+### 1st-Parents
+
+![1st-Parent](werkzeuge/abb-1st-parent-history-1.png)
+
+_________________________________________
+
+Die Reihenfolge der Parents ist relevant.
+
+**1st-Parent** ist das Commit, <BR/>
+auf dem das Merge ausgeführt wurde.
+
+Man kann als sehen, in welche Richtung integriert wurde.
+
+_________________________________________
+
+### 1st-Parent-History
+
+![1st-Parent-History](werkzeuge/abb-1st-parent-history-2.png)
+
+_________________________________________
 
 
-**Merges** zeigen die Integration in der Historie, <br/>
-**Rebases** und Fast-Forwards verbergen sie.
+Basis Werkzeuge
+===============
+
+ * Branch
+ * Merge
+   - Fast-Forward
+ * Cherry-Pick
+ * Rebase
+ * 1st-Parent-History
