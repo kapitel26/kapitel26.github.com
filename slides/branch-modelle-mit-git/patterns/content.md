@@ -93,5 +93,9 @@ _________________________________________
 Merge-Ketten
 ------------
 
+![Merge-Ketten](patterns/abb-merge-ketten.png)
 
- * Dasselbe Bild mit einer hervorgehobenen Merge-Kette.
+
+Notes:
+
+Backporting erwähnen.
