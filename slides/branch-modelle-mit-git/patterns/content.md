@@ -65,8 +65,19 @@ _________________________________________
 Pull-Request
 ------------
 
- * Screenshot aus Buch
- * Quality Gate
+![Pull-Request](patterns/abb-pull-request.png)
+
+
+_________________________________________
+
+
+### Quality-Gate beim Pull-Request
+
+
+![Feature Branches](patterns/abb-jenkins-pull-requests-stash-config.png)
+
+(Beispiel aus Bitbucket, fka Atlassian Stash)
+
 
 _________________________________________
 
