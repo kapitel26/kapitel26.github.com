@@ -46,15 +46,18 @@ Integrations-Branch
 -------------------
 
 
- * Bild mit eingehen Pfeilen. mit (1) und (2)
+![Integrations-Branch](patterns/abb-integrationsbranch.png)
 
 
-Notes:
+_________________________________________
 
-Nur Merges, kein ff.
+### Integrations-Branch
 
-Mach klar, wann was integriert wurde.
-
+ * Integriert Änderungen anderer Branches.
+ * Keine direkte Entwicklung auf diesem Branch.
+ * Enthält nur **Merges**.
+ * **1st-Parent-History** zeigt die Folge der  Integrationen<BR/>
+   z. B. "Feature 1", "Bugfix 1", "Feature 2"
 
 _________________________________________
 
