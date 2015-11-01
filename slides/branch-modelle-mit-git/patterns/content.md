@@ -85,7 +85,7 @@ _________________________________________
 Staging-Branches
 ----------------
 
- * Bild mit Branches in 3 Ebenen
+![Staging-Branches](patterns/abb-staging-branches.png)
 
 _________________________________________
 
