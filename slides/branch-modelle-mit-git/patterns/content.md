@@ -20,10 +20,18 @@ Das elementarste Pattern
 
 Wichtig: Verknüpfung mit Issue-Tracker
 
-
-
 _________________________________________
 
+### Feature-Branch
+
+ * Entkoppelte Entwicklung
+   - weniger Störungen
+   - Basis für Reviews
+ * Lebenszyklus je Feature
+   - ermöglich unabhängige Releases
+   - Typisch: Verknüpfung mit Issue-Tracker
+
+_________________________________________
 
 ### Gemeinsames Arbeiten
 
