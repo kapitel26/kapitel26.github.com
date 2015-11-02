@@ -28,8 +28,7 @@ Software. Angefangen hat das ungefähr so:
 Das ist jetzt 30 Jahre her (der Rechner war ein *Commodore VC 20*,
 ein Vorgänger des bekannteren *C64*) und Software mach ich immer noch.
 Mal als Programmierer, mal als Softwarearchitekt, mal als Berater,
-mal als Trainer und heute als Product Owner für ein Scrum-Team
-der [etracker GmbH](http://www.etracker.de). Vieles hat sich verändert:
+mal als Trainer und heute als Software Developer für [OTTO](https://www.otto.de/unternehmen/). Vieles hat sich verändert:
 Statt überschauberen 3584 Byte arbeiten wir heute mit Server-Clustern,
 die über Hunderte von Gigabytes an Hauptspeicher verfügen (8 Größenordnungen
 Unterschied!).
