@@ -4,7 +4,6 @@ ___SECTION_______________________________
 Patterns & Practices
 ====================
 
-
 _________________________________________
 
 
@@ -33,18 +32,16 @@ _________________________________________
 
 _________________________________________
 
-### Gemeinsames Arbeiten
 
-Branch begradigen
+### Auf einem Feature-Branch gemeinsam arbeiten
 
- * `pull --rebase`
- * Oder durch Voreinstellung
+Für einen Feature-Branch wünscht man sich eine lineare Historie.
 
- * Nach dem Merge entsteht ein Pull
- * Unnötige Merges weg-Rebasen
+Integration erfolgt daher durch `pull --rebase`.
 
+Notes:
 
-
+Rebase auch als Voreinstellung für Pull möglich.
 
 
 _________________________________________
@@ -98,11 +95,29 @@ Staging-Branches
 _________________________________________
 
 
+Staging-Branches
+----------------
+
+Jeder Staging-Branches entspricht einem Qualitätsniveau, z. B. `stable` ist getestet und kann jederzeit in Produktion gehen.
+
+_________________________________________
+
+
 Merge-Ketten
 ------------
 
 ![Merge-Ketten](patterns/abb-merge-ketten.png)
 
+_________________________________________
+
+Merge-Ketten
+------------
+
+Bugfixes (manchmal auch Features) werden durch eine Folge von Merges auf mehrere Branches übertragen, z. B. von `release-2` nach `release-2` und `release-4`.
+
+Merge-Ketten funktionieren in der Praxis nur dann gut, wenn sie von älteren Branches zu neueren Branches gehen.
+
+Geht man in die andere Richtung, spricht man von **Backporting**.
 
 Notes:
 
