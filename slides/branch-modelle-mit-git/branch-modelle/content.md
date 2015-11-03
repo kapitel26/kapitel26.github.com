@@ -84,11 +84,31 @@ Continuous Delivery Modell
 
  * Nur ein Quality Gate in Git.
 
+_________________________________________
+
+Reviews
+========
+
+Hat man statt einer wochenlangen Integrations- und Testphase, nur ein Quality-Gate und geht danach sofort in Produktion, dann werden gute Code-Reviews im Quality-Gate wichtiger.
 
 _________________________________________
 
+#### Das Problem
 
-Commit by Commit Reviews
-========================
+Selbst bei kleinen Features-Branches (wenige Personentage) entstehen oft so viele Änderungen, dass "das Diff" am Ende sehr unübersichtlich wird.
 
- * Interactive Rebasing und so.
+
+#### Lösungsansatz
+
+Nicht "das Diff" am Ende des Branches reviewen<br/>
+sondern jedes Commit einzeln.
+
+_________________________________________
+
+#### Das Problem dabei
+
+Zu viele Commits. Oft zu unstrukturiert.
+
+#### Lösung dazu
+
+Commits zum Ende des Features-Branches mit interactive Rebasing aufräumen, so dass eine lesbare Historie entsteht, bei der jedes Commit eine erkennbare Intention hat.
