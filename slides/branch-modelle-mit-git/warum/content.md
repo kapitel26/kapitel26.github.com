@@ -4,47 +4,65 @@ ___SECTION_______________________________
 Warum?
 ======
 
+________________________________________
+
+## Ring ... Rrring ... Rrrrring
+
+*(Team Lead)*: Hallo?
+
+*(Cheffe)*: Dieser Bug mit dem Encoding. Der muss raus.
+
+*(Team Lead)*: Wie wär's, wenn Du erstmal "Hallo" sagst?
+
+*(Cheffe)*: 15 Uhr, morgen, spätestens!
+
+*(Team Lead)*: Äh, das wird ein wenig knifflig ...
+
+*(Cheffe)*: Eins noch: Die Sache mit der Aufzeichnung darf nicht ins Release. Datenschutz. Du weißt
+schon.
+
+*(Cheffe legt auf)*
 
 _________________________________________
 
 
-Features
-========
+Feature-Entwicklung
+===================
+
+Entwickelt man viele Features parallel,<br/>
+wünscht man einen guten Überblick und genaue Kontrolle darüber,<br/>
+was wann ausgeliefert wird.
 
 
 _________________________________________
 
-<p class="fragment fade-out">Ring ... Rrring ... Rrrrring</p>
 
-<p class="fragment"> *(Team Lead)*: Hallo? </p>
-<p class="fragment"> *(Cheffe)*: Dieser Bug mit dem Encoding. Der muss raus.</p>
-<p class="fragment"> *(Team Lead)*: Wie wär's, wenn Du erstmal "Hallo" sagst?</p>
-<p class="fragment"> *(Cheffe)*: 15 Uhr, morgen, spätestens!</p>
-<p class="fragment"> *(Team Lead)*: Äh, das wird ein wenig knifflig ...</p>
-<p class="fragment"> *(Cheffe)*: Eins noch: Die Sache mit der Aufzeichnung darf nicht ins Release. Datenschutz. Du weißt schon.</p>
-<p class="fragment"> *(Cheffe legt auf)*</p>
-
-_________________________________________
+ * TolleTool for Mac 5.0
+ * TollesTool 5.0,
+ * TollesTool 4.1,
+ * TolleTool for Mac 4.0
+ * TollesTool 4.0,
+ * TollesTool 3.0
 
 
-Bild: Mehrere Features auf einem Trunk vermischt.
-
+In welchen Versionen ist BUG-4711 gefixed?
 
 _________________________________________
-
 
 Products
 ========
 
+Wird ein Produkt in mehreren Versionen betrieben,<br/>
+wünscht man einen guten Überblick und genaue Kontrolle<br/>
+über Bugfixes und Varianten.
 
 _________________________________________
 
+Alle sprechen von Continuous Delivery.
 
-Bild: Produktkartions mit Versionsnummer (3.0, 4.0, 4.1, 5.0) und Varianten (Windows, Mac).
+Mehrmals täglich releasen.
 
-### In welchen Versionen ist BUG-4711 gefixed?
-
-
+Aber ist das nicht **verdammt gefährlich?**
 
 _________________________________________
 
@@ -52,10 +70,9 @@ _________________________________________
 Continuous Delivery
 ===================
 
-_________________________________________
-
-Mehrmals täglich Releasen. Ist das nicht verdammt gefährlich?
-
+Wenn man mehrmals täglich Releases durchführt,<br/>
+wünscht man sich die Gewissheit,<br/>
+dass keine Änderung ungeprüft ausgeliefert wird.
 
 _________________________________________
 
@@ -63,6 +80,6 @@ _________________________________________
 Wünsche
 =======
 
- * Überblick und Kontrolle über Features und Bugfixes
- * Releases und Varianten
- * Quality Gates
+ * Überblick und Kontrolle über viele Features und Bugfixes
+ * Umgang mit mehreren Releases und deren Bugfixes und Varianten
+ * Sicherheit beim Release
