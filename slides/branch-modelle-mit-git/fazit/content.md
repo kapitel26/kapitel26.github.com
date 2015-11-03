@@ -3,10 +3,13 @@ ___SECTION_______________________________
 Fazit
 =====
 
-Aus den Patterns lassen sich sehr Flexibel Branch-Modelle entwickeln.
+Wenige Patterns genügen, um sehr flexibel Branch-Modelle entwickeln zu können.
 
+________________________________________
 
 Fragen
 ======
+
+Notes:
 
  * Haben die Teilnehmer ein Branch-Modell, das sich so nicht abbilden läßt?
