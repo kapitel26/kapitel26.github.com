@@ -11,7 +11,7 @@ weight: 2
   <div class="media">
 
     <div class="media-left">
-      <a href="https://www.dpunkt.de/buecher/4518.html">
+      <a href="http://dpunkt.de/buecher/5040/9783864903113-git.html">
         <img src="buch-cover.jpg" alt="Git-Buch Cover"/>
       </a>
     </div>
@@ -21,25 +21,50 @@ weight: 2
       Bjørn Stachmann<p/>
       <h1>Git</h1>
       <h3>Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows</h3>
+      <h4>3. Auflage</h4>
       dpunkt.verlag<p/>
     </div>
 
   </div>
 
   <br/>
-  <a class="btn btn-primary btn-lg" href="https://www.dpunkt.de/buecher/4518.html" role="button">
-    Buch kaufen
+
+  <p>
+    <a class="btn btn-primary btn-lg" href="http://kapitel26.github.io/gitbuch-feedback" role="button">
+      Feedback geben oder Fehler melden
+    </a>
+  </p>
+
+  <a class="btn btn-primary btn-lg" href="http://dpunkt.de/buecher/5040/9783864903113-git.html" role="button">
+    Bei dpunkt kaufen
   </a>
+
   <a class="btn btn-primary btn-lg" href="https://www.dpunkt.de/buecher/4706/git.html" role="button">
     E-Book kaufen
   </a>
-  <a class="btn btn-primary btn-lg" href="http://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864901308/" role="button">
-    ... oder bei Amazon kaufen
+
+  <a class="btn btn-primary btn-lg" href="http://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864903114" role="button">
+    Bei Amazon kaufen
   </a>
 
   </p>
 
 </div>
+
+Was ist neu in der dritten Auflage?
+===================================
+
+Einsteiger finden die dezentrale Natur von Git oft verwirrend.
+In der aktuellen Auflage beschreiben wir diese Aspekte (Clone, Push und Pull) deshalb ausführlicher. Aus ursprünglich einem Kapitel sind dabei zwei geworden.
+
+Mehrere Leser haben kritisiert, dass wir in der vorige Auflage Git nur aus Kommandozeilenperspektive gezeigt haben.
+Die neue Auflage haben wir daher um eine Einführung in das Arbeiten mit dem beliebten grafischen User-Interface *Atlassian SourceTree* ergänzt.
+
+Das Thema DevOps ist aller Munde. Ein wichtiger Aspekt dabei ist die Automatisierung des Build- und Delivery-Prozesses.
+Dies adressieren wir durch einen neuen Workflow für *Continuous Delivery*
+und ein Kapitel zur Integration mit dem Build-Server Jenkins.
+
+Für Produktentwickler hilfreich ist ein neuer Workflow, der erläutert, wie man mehrere Release-Versionen eines Produkts parallel pflegen kann.
 
 Was ist das Besondere an eurem Buch?
 ------------------------------------
@@ -52,17 +77,8 @@ ein *Pattern-Buch* als ein Referenzhandbuch.
 Diese Workflows sind, natürlich nicht,
 die einzige Art, wie man mit Git arbeiten sollte. Aber sind
 praxiserprobt und bieten einen guten Startpunkt, wenn man Git
-im Team einführen möchste. Individuell anpassen kann (und wird)
+im Team einführen möchte. Individuell anpassen kann (und wird)
 man die Workflows dann im Laufe der Zeit.  
-
-Fehler?! Euer Buch hat Fehler?
------------------------------
-
-Naja gut, schon. Damit es in der nächsten Auflage besser wird, sammeln wir die Fehler hier:
-
-<div class="btn-group" role="group" aria-label="...">
-  <a href="errata.html"><button type="button" class="btn btn-default">Feedback und Errata</button></a>
-</div>
 
 Warum habt Ihr ein Git-Buch geschrieben?
 ----------------------------------------
@@ -94,3 +110,8 @@ Bernd, Christian, Claudia, Olli, Markus, Stefan, Tim, und Uwe
 (in alphabetischer Reihenfolge ) haben exzellente Fachbücher geschrieben.
 Nur René und Bjørn nicht. Wir wollten auch mal sagen können:
 *"Wie ich in meinem Buch geschrieben habe, ..."*
+
+Feedback
+--------
+
+<iframe src="http://kapitel26.github.io/gitbuch-feedback/" width="100%" height="800"></iframe>
