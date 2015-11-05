@@ -34,10 +34,9 @@ aber nicht Teil des Commits.
 
 _________________________________________
 
-Branchen ist leicht.
+#### Branchen ist leicht.
 
-Aber wie bekommen wir das wieder zusammen?
-===========================================
+## Aber wie bekommen wir das wieder zusammen?
 
 _________________________________________
 
