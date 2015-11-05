@@ -58,11 +58,13 @@ wünscht man einen guten Überblick und genaue Kontrolle<br/>
 
 _________________________________________
 
-Alle sprechen von Continuous Delivery.
+Continuous Delivery.
 
 Mehrmals täglich releasen.
 
-Aber ist das nicht **verdammt gefährlich?**
+Ist das nicht 
+
+## verdammt gefährlich?
 
 _________________________________________
 
