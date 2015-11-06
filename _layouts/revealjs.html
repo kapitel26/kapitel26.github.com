@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
     <link rel="stylesheet" href="/slides/css/reveal.css">
-    <link rel="stylesheet" href="/slides/css/theme/night.css" id="theme">
+    <link rel="stylesheet" href="/slides/css/theme/{{ page.reveal_theme }}.css" id="theme">
 
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="/slides/lib/css/zenburn.css">
@@ -62,7 +62,8 @@
         history: true,
         center: true,
 
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        transitionSpeed: 'slow', // default/fast/slow
 
         // Optional reveal.js plugins
         dependencies: [

@@ -4,6 +4,7 @@ title: "Branch-Modelle mit Git"
 category: Git
 tags: [Branch-Modelle, ConLi2015]
 author: bst
+reveal_theme: coli2015
 ---
 
 <section
