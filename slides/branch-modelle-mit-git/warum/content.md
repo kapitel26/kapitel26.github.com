@@ -36,14 +36,7 @@ was wann ausgeliefert wird.
 
 _________________________________________
 
-
- * TolleTool for Mac 5.0
- * TollesTool 5.0,
- * TollesTool 4.1,
- * TolleTool for Mac 4.0
- * TollesTool 4.0,
- * TollesTool 3.0
-
+![Versionen und Varianten](warum/abb-versionen-und-varianten.jpg)
 
 In welchen Versionen ist BUG-4711 gefixed?
 
@@ -62,7 +55,7 @@ Continuous Delivery.
 
 Mehrmals täglich releasen.
 
-Ist das nicht 
+Ist das nicht
 
 ## verdammt gefährlich?
 
