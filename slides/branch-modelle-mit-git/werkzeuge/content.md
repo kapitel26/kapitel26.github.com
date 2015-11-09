@@ -134,13 +134,6 @@ Rebase
 
 _________________________________________
 
-
-Technisch passiert dabei Folgendes:
-
- * Commits werden an anderer Stelle neu erzeugt (kopiert).
- * Dann wird der Branchzeiger
-
-
    **Achtung!** Rebase verändert die Historie.
 
     * OK, für lokale Änderungen, weil niemand sonst die Commits kennt.

@@ -12,7 +12,7 @@ Fragen
 
 ---------------------------------
 
-René Preissel<br/> [rene.preissel@eToSquare.de](mailto:rene.preissel@eToSquare.de)
+René Preißel<br/> [@RenePreissel](https://twitter.com/RenePreissel) / [rene.preissel@eToSquare.de](mailto:rene.preissel@eToSquare.de)
 
 Bjørn Stachmann<br/> [@old_stachi](https://twitter.com/old_stachi) /  [bjoern.stachmann@gmail.com](mailto:bjoern.stachmann@gmail.com)
 
