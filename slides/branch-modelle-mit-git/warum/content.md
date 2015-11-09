@@ -16,23 +16,12 @@ ________________________________________
 
 *(Cheffe)*: 15 Uhr, morgen, spätestens!
 
-*(Team Lead)*: Äh, das wird ein wenig knifflig ...
+*(Team Lead)*: Äh, das wird ein wenig knifflig, wir haben schon angefangen, für das nächte Release zu entwickeln ...
 
 *(Cheffe)*: Eins noch: Die Sache mit der Aufzeichnung darf nicht ins Release. Datenschutz. Du weißt
 schon.
 
 *(Cheffe legt auf)*
-
-_________________________________________
-
-
-Feature-Entwicklung
-===================
-
-Entwickelt man viele Features parallel,<br/>
-wünscht man einen guten Überblick und genaue Kontrolle darüber,<br/>
-was wann ausgeliefert wird.
-
 
 _________________________________________
 
@@ -42,39 +31,16 @@ In welchen Versionen ist BUG-4711 gefixed?
 
 _________________________________________
 
-Products
-========
-
-Wird ein Produkt in mehreren Versionen betrieben,<br/>
-wünscht man einen guten Überblick und genaue Kontrolle<br/>
-über Bugfixes und Varianten.
+## Continuous Delivery:<br/>Mehrmals täglich releasen.<br/>Ist das nicht<br/>VERDAMMT GEFÄHRLICH?
 
 _________________________________________
-
-Continuous Delivery.
-
-Mehrmals täglich releasen.
-
-Ist das nicht
-
-## verdammt gefährlich?
-
-_________________________________________
-
-
-Continuous Delivery
-===================
-
-Wenn man mehrmals täglich Releases durchführt,<br/>
-wünscht man sich die Gewissheit,<br/>
-dass keine Änderung ungeprüft ausgeliefert wird.
-
-_________________________________________
-
 
 Wünsche
 =======
 
- * Überblick und Kontrolle über viele Features und Bugfixes
- * Umgang mit mehreren Releases und deren Bugfixes und Varianten
- * Sicherheit beim Release
+ * Kontrolle über **parallele Entwicklung**<br/>
+   von Features und Bugfixes
+ * Bei **mehreren Releases**<br/>
+   Klarheit über Varianten und Bugfixes.
+ * **Continuous Delivery**<br/>
+   Sicherheit auch bei häufigen Releases
