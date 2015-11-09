@@ -86,16 +86,17 @@ Continuous Delivery Modell
 
 _________________________________________
 
-Reviews
-========
+Code-Reviews
+============
 
-Hat man statt einer wochenlangen Integrations- und Testphase, nur ein Quality-Gate und geht danach sofort in Produktion, dann werden gute Code-Reviews im Quality-Gate wichtiger.
+Hat man nur ein Quality-Gate und geht sofort in Produktion, <BR>
+dann sind gute Code-Reviews wichtig.
 
 _________________________________________
 
 #### Das Problem
 
-Selbst bei kleinen Features-Branches (wenige Personentage) entstehen oft so viele Änderungen, dass "das Diff" am Ende sehr unübersichtlich wird.
+Bei Feature-Branches entstehen oft so viele Änderungen, dass das Review am Ende sehr komplex wird.
 
 
 #### Lösungsansatz
@@ -111,4 +112,4 @@ Zu viele Commits. Oft zu unstrukturiert.
 
 #### Lösung dazu
 
-Commits zum Ende des Features-Branches mit interactive Rebasing aufräumen, so dass eine lesbare Historie entsteht, bei der jedes Commit eine erkennbare Intention hat.
+*Interactive Rebasing* schafft eine lesbare Historie.

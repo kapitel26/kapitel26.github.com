@@ -72,6 +72,7 @@ Pull-Request
 
 ![Pull-Request](patterns/abb-pull-request.png)
 
+(Auch Merge-Request genannt.)
 
 _________________________________________
 
@@ -81,7 +82,7 @@ _________________________________________
 
 ![Feature Branches](patterns/abb-jenkins-pull-requests-stash-config.png)
 
-(Beispiel aus Bitbucket, fka Atlassian Stash)
+(Beispiel aus Bitbucket Server, fka Atlassian Stash)
 
 
 _________________________________________
@@ -113,9 +114,7 @@ _________________________________________
 Merge-Ketten
 ------------
 
-Bugfixes (manchmal auch Features) werden durch eine Folge von Merges auf mehrere Branches übertragen, z. B. von `release-2` nach `release-2` und `release-4`.
-
-Merge-Ketten funktionieren in der Praxis nur dann gut, wenn sie von älteren Branches zu neueren Branches gehen.
+Merge-Ketten gehen von älteren Branches zu neueren Branches.
 
 Geht man in die andere Richtung, spricht man von **Backporting**.
 

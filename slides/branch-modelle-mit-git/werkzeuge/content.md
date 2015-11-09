@@ -28,9 +28,12 @@ Branch mit neuem Commit
 _________________________________________
 
 
-Wichtig: In Git ist ein Branch<br/>
-ein Verweis auf ein Commit,<br/>
-aber nicht Teil des Commits.
+Wichtig!
+-------
+
+In Git ist ein Branch<br/>
+ein **Verweis** auf ein Commit,<br/>
+aber **nicht Teil** des Commits.
 
 _________________________________________
 
@@ -50,9 +53,7 @@ _________________________________________
 Merge
 =====
 
-  * Die wichtigste Operation
-  * Zusammenführung in neuem Commit
-  * Es entsteht ein Commit mit mehreren Parents
+![Branch Merge](werkzeuge/abb-branches-beispiel-merge.png)
 
 _________________________________________
 
@@ -60,7 +61,8 @@ _________________________________________
 Merge
 --------------
 
-  ![Branch Merge](werkzeuge/abb-branches-beispiel-merge.png)
+* Erzeugt neues Commit
+* Zwei Parents
 
 _________________________________________
 
@@ -105,7 +107,7 @@ _________________________________________
 Cherry-Pick
 ============
 
-  * Kopiert Commits zwischen Branches.
+  * Kopiert Commits
   * Kein struktureller Zusammenhang zwischen kopierten Commits.
 
 _________________________________________
@@ -128,22 +130,18 @@ _________________________________________
 Rebase
 ======
 
- * Verschiebt Commits des aktuellen Branches im Graphen
+ * Kopiert Commits
  * Sieht dann nachher so aus,<br/>
-   als wäre der Branch erst später abgezweigt worden.
+   als wären die Commits verschoben.
 
 _________________________________________
 
-   **Achtung!** Rebase verändert die Historie.
+   Achtung! -  Rebase verändert die Historie.
+   ------------------------------------------
 
-    * OK, für lokale Änderungen, weil niemand sonst die Commits kennt.
-    * OK, für Features-Branches in geschlossenen Teams, wenn alle Entwickler danach einen harten Reset durchführen.
+    * OK, für lokale Änderungen.
+    * OK, für Features-Branches in geschlossenen Teams.
     * Nicht OK, sonst.
-
-_________________________________________
-
-1st-Parent History
-==================
 
 _________________________________________
 
@@ -154,45 +152,40 @@ History-Tree
 
 _________________________________________
 
-Das History-Tree kennt keine Branches, <BR/>
-nur Revisions und die Vorgänger-Beziehung.
-
 **Merges** zeigen Integrationen, <BR/>
 **Rebases**,  **Fast-Forwards** und **Cherry-Picks** verbergen sie.
+<BR/>
 
 Mit der Wahl der Werkzeuge bestimmt man,<BR/>
 welche Integrationen das History-Tree zeigt.
 
 _________________________________________
 
-### 1st-Parents
+1st-Parents
+-----------
 
 ![1st-Parent](werkzeuge/abb-1st-parent-history-1.png)
 
 _________________________________________
 
-Die Reihenfolge der Parents ist relevant.
-
-**1st-Parent** ist das Commit, <BR/>
-auf dem das Merge ausgeführt wurde.
-
-Man kann als sehen, in welche Richtung integriert wurde.
-
-_________________________________________
-
-### 1st-Parent-History
+1st-Parent-History
+------------------
 
 ![1st-Parent-History](werkzeuge/abb-1st-parent-history-2.png)
 
 _________________________________________
 
+**1st-Parent** dient als Heuristik für Branch-Zugehörigkeit
+
+_________________________________________
+
+
 
 Konzepte und Werkzeuge
-======================
+-----------------------
 
  * Branch
  * Merge
-   - Fast-Forward
  * Cherry-Pick
  * Rebase
  * 1st-Parent-History
