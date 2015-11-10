@@ -14,7 +14,7 @@ author: bst
   [**Branch-Modelle mit Git**](/slides/branch-modelle-mit-git/)
 </iframe>
 
-[Präsentation: **Branch-Modelle mit Git**](/slides/branch-modelle-mit-git/)
+[**-> Slides als Vollbild**](/slides/branch-modelle-mit-git/)
 
 ## Was sonst so passiert ist
 
