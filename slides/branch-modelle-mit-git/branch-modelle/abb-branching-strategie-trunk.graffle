@@ -409,7 +409,7 @@
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
 \f0\b\fs16 \cf1 \expnd0\expndtw0\kerning0
-Bugfixes mit Cherry-Pick}</string>
+Hotfixes mit Cherry-Pick}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -2034,7 +2034,7 @@ master}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-11-10 06:08:12 +0000</string>
+	<string>2015-11-10 06:34:56 +0000</string>
 	<key>Modifier</key>
 	<string>Rene Preissel</string>
 	<key>NotesVisible</key>

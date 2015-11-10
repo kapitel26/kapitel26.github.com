@@ -54,6 +54,7 @@ Trunk-Based
 
 ![Gitflow trunk](branch-modelle/abb-branching-strategie-trunk.png)
 
+* Stabiler Master-Branch. Häufige Releases.
 _________________________________________
 
 Multiple Releases
