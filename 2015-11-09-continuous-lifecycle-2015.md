@@ -94,7 +94,7 @@ Impact:
 
 ### Konfiguration zur Laufzeit
 
-(Alexander Schwartz, @ahus1)
+(Alexander Schwartz, [@ahus1](https://twitter.com/ahus1de))
 
 Arbeiten ohne Wartungsfenster.
 
@@ -110,6 +110,16 @@ Arbeiten ohne Wartungsfenster.
    - Web API zur Steuerung
    - Prozentuales Rollout
    - Feauture-Toggles bedeuten Aufwand, lohnen sich aber oft.
+
+### Operation am offenen Herzen
+
+(Dirk Ehms)
+
+Ziel: Große Migration, ohne Downtimes.
+
+Neue Version Application Server Glassfish.
+
+Wichtig: Kontinuierlich die Abwärtskompatipibilität der Codeänderungen überprüfen. Es werden Maven-Profile genutzt, um unterschiedliche Builds zu ermöglichen.
 
 <!--
 -->
