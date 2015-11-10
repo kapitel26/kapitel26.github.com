@@ -35,14 +35,9 @@ _________________________________________
 
 ### Auf einem Feature-Branch gemeinsam arbeiten
 
-Für einen Feature-Branch wünscht man sich eine lineare Historie.
+![Rebase auf Feature-Branch](patterns/abb-rebase-auf-feature-branch.png)
 
-Integration erfolgt daher durch `pull --rebase`.
-
-Notes:
-
-Rebase auch als Voreinstellung für Pull möglich.
-
+Für Feature-Branches wünscht man sich eine *lineare Historie*. Integration mit `pull --rebase`.
 
 _________________________________________
 
