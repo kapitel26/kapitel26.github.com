@@ -113,13 +113,15 @@ Arbeiten ohne Wartungsfenster.
 
 ### Operation am offenen Herzen
 
-(Dirk Ehms)
+(Dirk Ehms [@d_ehms](https://twitter.com/d_ehms))
 
-Ziel: Große Migration, ohne Downtimes.
-
-Neue Version Application Server Glassfish.
-
-Wichtig: Kontinuierlich die Abwärtskompatipibilität der Codeänderungen überprüfen. Es werden Maven-Profile genutzt, um unterschiedliche Builds zu ermöglichen.
+Ziel war eine große Migration ohne Downtimes, wegen neuet Version des Application Servers Glassfish. Wichtig dabei: Kontinuierlich die Abwärtskompatipibilität der Codeänderungen überprüfen. Es werden dazu Maven-Profile genutzt, um unterschiedliche Builds zu ermöglichen. Schön dargestellt: Blue/Green-Rollouts.
 
 <!--
+
+### Building Microservices in the Cloud at Autoscout24
+
+(Christian Deger [@cdeger](https://twitter.com/cdeger), Wolf Schlegel [@wolfwolf](https://twitter.com/wolfwolf))
+
+
 -->
