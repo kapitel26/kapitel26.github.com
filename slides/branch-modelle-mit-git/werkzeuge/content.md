@@ -66,30 +66,6 @@ Merge
 
 _________________________________________
 
-Fast-Forward-Merge (vorher)
----------------------------
-
-![Vor FF](werkzeuge/abb-branches-beispiel-ff-vorher.png)
-
-_________________________________________
-
-Fast-Forward-Merge (nachher)
----------------------------
-
-![Nach FF](werkzeuge/abb-branches-beispiel-ff-nachher.png)
-
-
-_________________________________________
-
-
-Fast-Forward
-============
-
- * Vereinfacht den Graphen
- * Macht den Merge unsichtbar
-
-_________________________________________
-
 Cherry-Pick (Vorher)
 --------------------
 
@@ -153,7 +129,7 @@ History-Tree
 _________________________________________
 
 **Merges** zeigen Integrationen, <BR/>
-**Rebases**,  **Fast-Forwards** und **Cherry-Picks** verbergen sie.
+**Rebases** und **Cherry-Picks** verbergen sie.
 <BR/>
 
 Mit der Wahl der Werkzeuge bestimmt man,<BR/>
