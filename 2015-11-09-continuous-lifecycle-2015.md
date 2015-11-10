@@ -144,7 +144,7 @@ Hilfreich: Shadow-Traffic und Feature-Toggles.
 
 Nicht DevOps: Wenn Infrastruktur-Anforderungen doch immer von denselben Leuten im Team erledigt werden und liegen bleiben, wenn die im Urlaub sind. Abhilfe: Aufgaben bewußt rollierend vergeben.
 
-Kein Infrastruktur-Team. Übergreifende Themen werden durch Gilden abgebildet mit. Diees erledigen die Aufgaben aber nicht, sondern erstellen Tasks für die Teams. Die Teams dürfen 20% ihrer Zeit für solche Tasks nutzen.
+Kein Infrastruktur-Team. Übergreifende Themen werden durch Gilden abgebildet mit. Diese erledigen die Aufgaben aber nicht, sondern erstellen Tasks für die Teams. Die Teams dürfen 20% ihrer Zeit für solche Tasks nutzen.
 
 <!--
 
