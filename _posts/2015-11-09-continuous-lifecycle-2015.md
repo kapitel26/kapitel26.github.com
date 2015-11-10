@@ -117,11 +117,37 @@ Arbeiten ohne Wartungsfenster.
 
 Ziel war eine große Migration ohne Downtimes, wegen neuet Version des Application Servers Glassfish. Wichtig dabei: Kontinuierlich die Abwärtskompatipibilität der Codeänderungen überprüfen. Es werden dazu Maven-Profile genutzt, um unterschiedliche Builds zu ermöglichen. Schön dargestellt: Blue/Green-Rollouts.
 
-<!--
 
 ### Building Microservices in the Cloud at Autoscout24
 
 (Christian Deger [@cdeger](https://twitter.com/cdeger), Wolf Schlegel [@wolfwolf](https://twitter.com/wolfwolf))
 
+Wirklich große Miration von Monolith zu Microservices, .net/Window zu JVM/Linux
+, Dev+Ops zu DevOps.
+
+Scala Sprache der Wahl.
+
+Arbeiten in Scheiben (vertikale Schnitte inkl. UI).
+
+Services und Teams sind um Business-Capabilities herum organisiert. Nicht nach Layers.
+
+> You invent it. You build it. You run it.
+
+T-Shaped Skill für Entwickler ist gefordert. Ein Team muss alle Rollen abdecken.
+
+Mantra: Shared Nothing. Teams haben hohe Eigenständigkeit. Sharing schafft Abhängigkeiten. Achtung: Bevor man Sharing in Betracht zieht, versucht man erstmal Copy&Paste. Weil Microservices klein sind, ist das nicht so schlimm. Erst wenn etwas wirklich dafür reif ist, wird es als "internal Open-Source" geteilt.
+
+> Wir entscheiden schnell und lokal.
+> Wir haben kein Kommittee mehr, das lange nachdenkt.
+
+Hilfreich: Shadow-Traffic und Feature-Toggles.
+
+Nicht DevOps: Wenn Infrastruktur-Anforderungen doch immer von denselben Leuten im Team erledigt werden und liegen bleiben, wenn die im Urlaub sind. Abhilfe: Aufgaben bewußt rollierend vergeben.
+
+Kein Infrastruktur-Team. Übergreifende Themen werden durch Gilden abgebildet mit. Diees erledigen die Aufgaben aber nicht, sondern erstellen Tasks für die Teams. Die Teams dürfen 20% ihrer Zeit für solche Tasks nutzen.
+
+<!--
+
+Noch ein guter Vortrag: "Building Microservices in the Cloud at Autoscout24" #ConLi2015. Meine Notizen dazu: http://kapitel26.github.io/git/2015/11/09/continuous-lifecycle-2015/
 
 -->
