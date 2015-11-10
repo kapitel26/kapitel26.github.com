@@ -8,7 +8,7 @@ Branch-Modelle
 _________________________________________
 
 Gitflow
-=======
+-------
 
 ![Gitflow pur](branch-modelle/abb-branching-strategie-gitflow.png)
 
@@ -49,10 +49,15 @@ Gitflow: Merge-Kette
 
 _________________________________________
 
+Trunk-Based
+-----------------------------
 
+![Gitflow trunk](branch-modelle/abb-branching-strategie-trunk.png)
+
+_________________________________________
 
 Multiple Releases
-=================
+-----------------
 
 ![Multiple](branch-modelle/abb-release-produkte.png)
 
