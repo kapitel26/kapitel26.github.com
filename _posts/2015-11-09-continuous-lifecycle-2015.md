@@ -181,6 +181,52 @@ Scripts with Dependencies statt Jobs mit Before- und After-Hooks. Dependenies we
 
 Fazit: Komplexe Integrationstests sind wegen der False-Negatives immer schwierig. Mit gezielter Wiederholung kann man das in den Griff kriegen. Beeindruckend, was die Beiden in wenigen Monaten neben der eigentlich Projektarbeit auf die Beine gestellt haben.
 
+### Acceptance Testing for Continuous Delivery
+
+(Dave Farley [@davefarley77](https://twitter.com/davefarley77))
+
+> Acceptance Test is kind of an automated version of the definition of done.
+
+Jede Anforderungen aus der Definition of Done soll durch einen Akzeptanztest abgedeckt werden.
+
+Die Akzeptanztests gehören den Entwicklern.
+
+*Language of the Domain*. Nicht jeder muss einen Test programmieren können, aber Fachexperten sollten sie lesen können.
+
+Es ist nicht effizient, die Umgebung für jeden Test einzeln aufzusetzen. Wir wollen viele, sehr viele Akzeptanztests laufen lassen. Das System muss so sein, dass die Anwendung eimal aufgesetzt wird und dann viele Tests dort *parallel* ausführen kann.
+
+Wichtig ist dabei die Isolation der Tests. Wie findet man die richtigen Grenzen und das passende Gleichgewicht zwischen Integration und Entkoplung für einen gebebenen Test? Idee: Functional Isolation.
+
+Auf jeden Fall vermeiden: Abhängigkeiten zwischen Tests. Jeder Test muss einzeln laufen können.
+
+Nützlich zur Isolation:
+
+> Alias your Testing Entities
+
+Jeder Lauf erzeugt seine eigenen Entities, die nicht von anderen Tests oder anderen Läufen desselben Tests genutzt werden, "Buch-testxyz-1234" für Test "xyz" im Lauf "1234".
+
+Ebenfalls hilfreich zur Isolation: Test Doubles. Service die Daten nur für Tests bereit stellen (Ähnlich Mocks in Unit Tests).
+
+Domain Specific Language zur Beschreibung von Tests sind sehr empfehlenswert, um Tests als Mittel der Kommunikation nutzten zu können.
+
+Für viele Systeme ist es wichtig, das zeitlich Verhalten kontrollieren zu können. Eine Time-Travel-Funktion in der Test-DSL wird wichtig. Stichwort: Clock as a Service, ermöglicht Test Doubles dafür.
+
+Oft ist eine Sonderbehandlung für destruktive Tests erforderlich. Andere Tests erforden sehr spezielle Umgebungen. Hierzu nutzt man deklaratives Tagging der Tests.
+
+Production-like Test Environments: Auch hier gilt es wieder ein Gleichgewicht zu finden zwischen produktionsnaher Umgebung, einfachem Setup und schnellen Tests.
+
+Keine Produktionsdaten für Akzeptanztests. Zu schwerfällig.
+
+Sehr schöne Zussamenfassung von Do's und Dont's für Tests.
+
 <!--
-Und noch ein klasse Vortrag auf der #ConLi2015 von @DrTom21 und @EINS78. Kapitel26 dazu: http://kapitel26.github.io/git/2015/11/09/continuous-lifecycle-2015/
+
+"Acceptance Test is kind of an automated version of the definition of done" @davefarley77 auf der #ConLi2015. Notizen dazu: http://kapitel26.github.io/git/2015/11/09/continuous-lifecycle-2015/
+
+### Reinventing Your Workplace – Struktur, Technik und Kultur bei 1&1 mywebsite
+
+(Matthias Kainer @MatKainer, Marcel Devantier)
+
+Notiz: Den Vortrag intern nochmal vorstellen.
+
 -->
