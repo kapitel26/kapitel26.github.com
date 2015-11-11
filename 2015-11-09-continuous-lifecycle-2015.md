@@ -6,9 +6,11 @@ tags: [Branch, ConLi2015]
 author: bst
 ---
 
-### Branching-Modelle mit Git
+Auch dieses Jahr sind wir nach Mannheim gereist, um einen Vortrag über Git zu halten. Und auch dieses Mal haben wir das Konferenzprogramm auch als Teilnehmern mitgenommen. Und auch dieses Mal hat es sich gelohnt. Es waren wieder viele gute und inhaltlich interessante Vorträge dabei.
 
-(unser Vortrag)
+### Unser Vortrag: Branching-Modelle mit Git
+
+(René und Bjørn)
 
 <iframe src="/slides/branch-modelle-mit-git/" width="480" height="300" name="Slides embedded">
   [**Branch-Modelle mit Git**](/slides/branch-modelle-mit-git/)
