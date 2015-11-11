@@ -219,14 +219,13 @@ Keine Produktionsdaten für Akzeptanztests. Zu schwerfällig.
 
 Sehr schöne Zussamenfassung von Do's und Dont's für Tests.
 
+### Configuration Management mit Clojure
+
+(Michael Jerger)
+
+Thema: Viele CM-Tools versuchen deklarativ zu sein. Keines kommt aber ohne programmatische Möglichkeiten aus. Vielleicht sollte man das Problem direkt programmatisch angehen.
+
+> DevOps kommt niemals ohne Programmierung aus.
+
 <!--
-
-"Acceptance Test is kind of an automated version of the definition of done" @davefarley77 auf der #ConLi2015. Notizen dazu: http://kapitel26.github.io/git/2015/11/09/continuous-lifecycle-2015/
-
-### Reinventing Your Workplace – Struktur, Technik und Kultur bei 1&1 mywebsite
-
-(Matthias Kainer @MatKainer, Marcel Devantier)
-
-Notiz: Den Vortrag intern nochmal vorstellen.
-
 -->
