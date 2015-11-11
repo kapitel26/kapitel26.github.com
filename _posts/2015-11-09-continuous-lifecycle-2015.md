@@ -229,5 +229,30 @@ Thema: Viele CM-Tools versuchen deklarativ zu sein. Keines kommt aber ohne progr
 
 > DevOps kommt niemals ohne Programmierung aus.
 
+### Tägliche Softwarelieferungen bei SAP
+
+(Dirk Lehmann [@doergn](https://twitter.com/doergn))
+
+oder: Wie man Elefanten zum tanzen bringt
+
+Tägliche Softwareauslieferungen bei https://twogo.com
+
+Der klassische Prozess mit Q-Gates und 229 zu erfüllenden Produktstandards passt nicht mehr so richtig gut zur Cloud-Strategie.
+
+Alliierte und Freunde im Konzern sind wichtig, um die notwendigen Veränderungen herbeizuführen.
+
+> Ich kenne die Regeln. Ich werde sie nicht brechen. Ich werde sie aber biegen. Manchmal bis es knackt.
+
+Berichten in Deltas macht die Bürokratie handhabbarer.
+
+Vertrauen vs. Kontrolle: Große Unternehmen haben oft viel Vertrauen durch Kontrolle ersetzt. Das schränkt die Beweglichkeit ein.
+
+> Welches Interesse hätten wir (das Produktteam), dem Produkt zu schaden?
+
+Inzwischen arbeiten bei SAP viele Projekte im DevOps-Modus.
+
 <!--
+
+"Ich kenne die Regeln. Ich werde sie nicht brechen. Ich werde sie aber biegen. Manchmal bis es knackt." @doergn auf der #ConLi2015 @ConLifecycle http://kapitel26.github.io/git/2015/11/09/continuous-lifecycle-2015/
+
 -->
