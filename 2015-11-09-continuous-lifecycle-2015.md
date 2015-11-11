@@ -161,8 +161,24 @@ Im zweiten Teil beschäftigt sich der Vortrag mit randomisierten Tests (Monkey T
 
 Im dritten Teil werden die Konzepte kombiniert, so dass man Änderungen im Verhalten auf eine breiten Menge von Tests beobachten kann. Klingt für mich spannend, ich bin aber nicht sicher, ob man mit der der entstehenden Menge an Output in der Praxis wirklich gut umgehen kann.
 
-<!--
-> Wenn man keine Spezifikation hat, gibt es keine Fehler, nur Überraschungen. (@roesslerj #ConLi2015). Meine Notizen dazu:
+### Fast and Resilient Integration Testing
 
-  http://kapitel26.github.io/git/2015/11/09/continuous-lifecycle-2015/
+(Dr. Thomas Schank [@DrTom21](https://twitter.com/DrTom21), Max Albrecht [@EINS78](https://twitter.com/EINS78))
+
+Es geht um das Problem mit zu viele False Negatives. Das sind fehlgeschlagene Tests, die nur auf ein Problem in der Testumgebung zurückzuführen sind, und keine Code-Korrektur erfordern.
+
+Bei Integrationstest gibt es, leider, eine gewisse Wahrscheinlichkeit, dass Tests willkürlich scheitern. Die Wahrscheinlichkeit des Scheiterns der Suite steigt exponentiell mit der Anzahl von Tests. Was hilft: Gezieltes wiederholen gescheiterter Tests.
+
+Klassische CI-Systeme (z. B. Jenkins) können das nicht gut, weil sie zu wenig wissen, über das was sie testen. Krass: Die beiden haben dann eine eingenes CI entwickelt (Cider-CI).
+
+> The Source is the Truth.
+
+Konfiguration im Sourcecode als YAML-File.
+
+Tree-id als fingerprint des Sourcecodes. Ermöglich Reproduzierbarkeit und ist Basis für Bisection.
+
+Cider-CI: Scripts with Dependencies statt Jobs mit Before- und After-Hooks.
+
+<!--
+Und noch ein klasse Vortrag auf der #ConLi2015 von @DrTom21 und @EINS78. Kapitel26 dazu: http://kapitel26.github.io/git/2015/11/09/continuous-lifecycle-2015/
 -->
