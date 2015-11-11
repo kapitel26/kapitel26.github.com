@@ -249,6 +249,8 @@ Vertrauen vs. Kontrolle: Große Unternehmen haben oft viel Vertrauen durch Kontr
 
 > Welches Interesse hätten wir (das Produktteam), dem Produkt zu schaden?
 
+Inzwischen arbeiten bei SAP viele Projekte im DevOps-Modus.
+
 <!--
 
 "Ich kenne die Regeln. Ich werde sie nicht brechen. Ich werde sie aber biegen. Manchmal bis es knackt." @doergn auf der #ConLi2015 @ConLifecycle http://kapitel26.github.io/git/2015/11/09/continuous-lifecycle-2015/
