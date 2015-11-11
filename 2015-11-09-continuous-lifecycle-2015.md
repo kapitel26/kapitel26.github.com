@@ -49,7 +49,7 @@ Wieviel unserer Zeit verbringen wir eigentlich mit % Innovation?
 
 (Peter Rossbach)
 
-Guter [Überblick](http://continuouslifecycle.de/2015/material/Rossbach/Rossbach_DockerOrchestration.pdf) über das Tooling, das Docker heute bereitstellt.
+Guter Überblick über das Tooling, das Docker heute bereitstellt.
 
 
 ### Die Transformation Richtung DevOps von Microsofts Developer Division
