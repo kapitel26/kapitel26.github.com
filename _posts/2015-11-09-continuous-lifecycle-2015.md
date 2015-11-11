@@ -146,8 +146,23 @@ Nicht DevOps: Wenn Infrastruktur-Anforderungen doch immer von denselben Leuten i
 
 Kein Infrastruktur-Team. Übergreifende Themen werden durch Gilden abgebildet mit. Diese erledigen die Aufgaben aber nicht, sondern erstellen Tasks für die Teams. Die Teams dürfen 20% ihrer Zeit für solche Tasks nutzen.
 
+
+### Das neue Testparadigma: Behavioral Diff
+
+(Dr. Jeremias Rössler [@roesslerj](https://twitter.com/roesslerj))
+
+Abgrenzung Feature vs. Bug ist gar nicht immer so klar.
+
+> Wenn man keine Spezifikation hat, gibt es keine Fehler, nur Überraschungen.
+
+Beim Sourcecode macht man Reviews auf Diffs, also auf jene Zeilen, die sich ändern. Warum nicht auch für User-Interfaces. Konzept Behavioral Diff: Verhalten bei einem Testlauf protokollieren und dann mit den Ergebnissen für die neue Version vergleichen. Danach bestätigt man, dass die Änderungen so gewollt sind. Wichtig dabei natürlich: Die Läufe müssen deterministisch sein. Ein interessantes Konzept. Persönlich glaube ich aber, dass das nur dann funktioniert, wenn die Diffs so dargestellt werden, dass sie schnell beurteilt werden können. Das ist, gerade für User-Interfaces, keine leichte Aufgabe.
+
+Im zweiten Teil beschäftigt sich der Vortrag mit randomisierten Tests (Monkey Tests). Problem: Um in endlicher Zeit zu guten Ergebnissen zu kommen braucht es "intelligente" Affen, die nicht völlig willürlich klicken. Grundidee: Ein manuell aufgezeichneter Test wird zufällig variiert (Genetischer Algorithmus, z. B. optimiert auf Branch-Coverage). Auf diese Weise bekommt man aus wenigen manuell erstellen Läufen eine breite Abdeckung.
+
+Im dritten Teil werden die Konzepte kombiniert, so dass man Änderungen im Verhalten auf eine breiten Menge von Tests beobachten kann. Klingt für mich spannend, ich bin aber nicht sicher, ob man mit der der entstehenden Menge an Output in der Praxis wirklich gut umgehen kann.
+
 <!--
+> Wenn man keine Spezifikation hat, gibt es keine Fehler, nur Überraschungen. (@roesslerj #ConLi2015). Meine Notizen dazu:
 
-Noch ein guter Vortrag: "Building Microservices in the Cloud at Autoscout24" #ConLi2015. Meine Notizen dazu: http://kapitel26.github.io/git/2015/11/09/continuous-lifecycle-2015/
-
+  http://kapitel26.github.io/git/2015/11/09/continuous-lifecycle-2015/
 -->
