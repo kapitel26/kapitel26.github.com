@@ -177,7 +177,9 @@ Konfiguration im Sourcecode als YAML-File.
 
 Tree-id als fingerprint des Sourcecodes. Ermöglich Reproduzierbarkeit und ist Basis für Bisection.
 
-Cider-CI: Scripts with Dependencies statt Jobs mit Before- und After-Hooks.
+Cider-CI: Scripts with Dependencies statt Jobs mit Before- und After-Hooks. Dependenies werden im Web-UI auch grafisch dargestellt.
+
+Fazit: Komplexe Integrationstests sind wegen der False-Negatives immer schwierig. Mit gezielter Wiederholung kann man das in den Griff kriegen. Beeindruckend, was die Beiden in wenigen Monaten neben der eigentlich Projektarbeit auf die Beine gestellt haben. 
 
 <!--
 Und noch ein klasse Vortrag auf der #ConLi2015 von @DrTom21 und @EINS78. Kapitel26 dazu: http://kapitel26.github.io/git/2015/11/09/continuous-lifecycle-2015/
