@@ -6,9 +6,9 @@ tags: [Branch, ConLi2015]
 author: bst
 ---
 
-Auch dieses Jahr sind wir nach Mannheim gereist, um einen Vortrag über Git zu halten. Und auch dieses Mal haben wir das Konferenzprogramm auch als Teilnehmern mitgenommen. Und auch dieses Mal hat es sich gelohnt. Es waren wieder viele gute und inhaltlich interessante Vorträge dabei.
+Auch dieses Jahr sind wir nach Mannheim gereist, um einen Vortrag über Git zu halten. Und auch dieses Mal haben wir das Konferenzprogramm auch als Teilnehmern mitgenommen. Und wieder hat es sich gelohnt. Es waren wieder viele gute und inhaltlich interessante Vorträge dabei.
 
-### Unser Vortrag: Branching-Modelle mit Git
+### Branching-Modelle mit Git (Unser Vortrag!)
 
 (René und Bjørn)
 
@@ -18,13 +18,11 @@ Auch dieses Jahr sind wir nach Mannheim gereist, um einen Vortrag über Git zu h
 
 [**-> Slides als Vollbild**](/slides/branch-modelle-mit-git/)
 
-## Was sonst so passiert ist
-
 ### The Rationale for Continuous Delivery
 
 (Dave Farley)
 
-Mich muss man ja nun nicht mehr davon überzeugen, dass Continuous Delivery notwendig ist, um innovative Software zu entwickeln. Ich habe das (bei etracker) ja über mehrere Jahre erlebt, und bin, zurückhaltend formuliert, *sehr überzeugt*. Genau darum ging es in Daves Keynote: Leute überzeugen, dass Continuous Delivery der richtige Weg ist. Wer Material sucht, um in der eigenen Organisation zu evangelisieren, der sollte sich das Video der Präsentation einfach selber Mal ansehen. Es ist motivierend.
+Mich muss man ja nun nicht mehr davon überzeugen, dass Continuous Delivery notwendig ist, um innovative Software zu entwickeln. Ich habe das (bei etracker) ja über mehrere Jahre erlebt, und bin, zurückhaltend formuliert, *sehr überzeugt*. Und genau darum ging es in Daves Keynote: Leute überzeugen, dass Continuous Delivery der richtige Weg ist. Wer Material sucht, um in der eigenen Organisation zu evangelisieren, der sollte sich Dave Farley mal anhören. Er ist motivierend.
 
 Im Mittelpunkt sieht Dave die *Cycle Time*: Das ist die Zeit, welche die kleinstmögliche Änderung benötigt, bis sie vom Anwender produktiv genutzt wird. Die *Cycle Time* ist so wichtig, weil sie die Geschwindigkeit des Lernens bestimmt. Die These von Dave: Ohne Continuous Delivery und Agile/Lean wird man eine brauchbare *Cycle Time* nicht erreichen können.
 
@@ -36,15 +34,10 @@ Sehr prägnant das Statement zum manuellen Testen:
 >
 > Use Human Being for exploratory testing.
 
-<!--
 
-Bild über Example Continuous Delivery Process ist nützlich.
+> Have you used Amazon recently? Which version did you use? Amazon releases every 11.6 Seconds.
 
-Have you used Amazon recently? Which version did you use? Amazon releases every 11.6 Seconds.
-
-Wieviel unserer Zeit verbringen wir eigentlich mit % Innovation?
-
--->
+Womit verbringen wir unsere Zeit? Wieviel % davon verbringen wir mit Innovation?
 
 
 ### Das Docker-Ökosystem
@@ -60,7 +53,7 @@ Guter Überblick über das Tooling, das Docker heute bereitstellt.
 
 Als wir Git entdeckten, hätten wir nicht erwartet, dass ein paar Jahre später Konferenzvorträge von Microsoft gehalten werden, in denen Git ungefähr ein dutzend Mal auf den Slides auftaucht. Das war heute so :-)
 
-Microsofts Entwicklung kommt aus dem klassischen Enginnering, das für seltene Releases optimiert ist (DVD's brennen). Inspirationsquelle für neue Wege war das Google Engineering System. Heute entwickeln 35-Feature-Teams Visual-Studio in einem viel agileren Prozess.
+Microsofts Entwicklung entstammt dem klassischen Software-Enginnering, das für seltene Releases optimiert ist (DVD's brennen). Inspirationsquelle für neue Wege war das Google Engineering System. Heute entwickeln 35-Feature-Teams Visual-Studio in einem viel agileren Prozess.
 
 #### Autonomie vs. Alignment
 
@@ -72,13 +65,17 @@ Die Teams arbeiten in hoher Autonomie. Einige Dinge werden aber als Randbedingun
 
 Die Trennung zwischen QA and Dev wurde aufgehoben. Testen ist in der Verantwortung der Teams. Es keine dedizierten Testing Engineers mehr sondern nur noch die Rolle Software Engineer.
 
-Nicht bewährt hat sich das Konzept von regelmäßigen Stabilisierungssprints. Der Speaker sprach sogar von einm "Epic Fail". Es lädt leider ein, Defekte bis zum Stabilisierungssprint zu parken.
+### Erfahrungen
+
+Nicht bewährt hat sich das Konzept von regelmäßigen Stabilisierungssprints. Der Speaker sprach sogar von einem "Epic Fail". Es lädt ein, Defekte bis zum Stabilisierungssprint zu parken.
 
 Ein anderes Anti-Pattern ist es Burndown-Charts durch Manager überwachen zu lassen. Einziges Ergebnis: Geschönte Burndowns.
 
-Teams sind grundsätzlich *Cross Discipline* und werden lange intakt gehalten. Es gibt geschlossene Team-Rooms mit Rückzugsräumen um die Team-Rooms.
+### Arbeitsweise
 
-Planning in erfolgt 3 Zeithorizonten (Sprint 3-Week, Season 5 Monate, Vision 18 Monate). Das Season-Planning rolliert. Wird alle 6 Monate neu gemacht.
+Teams sind grundsätzlich *Cross Discipline* und werden lange intakt gehalten. Es gibt geschlossene Team-Rooms mit Rückzugsräumen um die Team-Rooms herum.
+
+Planning in erfolgt 3 Zeithorizonten (Sprint 3-Week, Season 5 Monate, Vision 18 Monate). Das Season-Planning rolliert und wird alle 6 Monate aktualisiert.
 
 Das Deployment erfolgt nach dem Sprint, parallel zum Beginn des nächsten Sprints.
 
@@ -88,9 +85,7 @@ Es wird mit Git versioniert. Es gibt viel Traffic auf dem Repo. Pull-Requests si
 
 Feature-Toggles werden großflächig eingesetzt.
 
-Nutzen (überall) aufgehängte Monitore um die Pipeline sichtbar zu machen.
-
-Impact:
+Überall aufgehängte Monitore zeigen den Status der Pipeline sichtbar.
 
 > Dein Code wird nach 3 Wochen von Hunderttausenden von Nutzern verwendet.
 
@@ -100,16 +95,16 @@ Impact:
 
 Arbeiten ohne Wartungsfenster.
 
- * Archaius - Umgang mit Konfigurationdateien
+ * **Archaius**: Umgang mit Konfigurationdateien
    - Kaskadierende Konfigurationdateien
    - Typsicherer Zugriff
    - Callbacks bei Wertänderungen (der entscheidende Punkt)
 
- * etcd - Konfigurationsdatenbank
+ * **etcd**: Konfigurationsdatenbank
    - Einfach, zuverlässig, sicher und schnell.
 
- * Togglz - Tooling für Feauture-Toggles
-   - Web API zur Steuerung
+ * **Togglz**: Tooling für Feauture-Toggles
+   - Web API zur Steuerung der Toggles
    - Prozentuales Rollout
    - Feauture-Toggles bedeuten Aufwand, lohnen sich aber oft.
 
@@ -117,19 +112,18 @@ Arbeiten ohne Wartungsfenster.
 
 (Dirk Ehms [@d_ehms](https://twitter.com/d_ehms))
 
-Ziel war eine große Migration ohne Downtimes, wegen neuet Version des Application Servers Glassfish. Wichtig dabei: Kontinuierlich die Abwärtskompatipibilität der Codeänderungen überprüfen. Es werden dazu Maven-Profile genutzt, um unterschiedliche Builds zu ermöglichen. Schön dargestellt: Blue/Green-Rollouts.
-
+Ziel war eine große Migration ohne Downtimes, zu einer neuen Version des Application Servers Glassfish. Wichtig dabei: Kontinuierlich die Abwärtskompatipibilität der Codeänderungen überprüfen. Es werden dazu Maven-Profile genutzt, um unterschiedliche Builds zu ermöglichen. Schön dargestellt: Blue/Green-Rollouts.
 
 ### Building Microservices in the Cloud at Autoscout24
 
 (Christian Deger [@cdeger](https://twitter.com/cdeger), Wolf Schlegel [@wolfwolf](https://twitter.com/wolfwolf))
 
-Wirklich große Miration von Monolith zu Microservices, .net/Window zu JVM/Linux
-, Dev+Ops zu DevOps.
+Wirklich große Miration von Monolith zu Microservices, von .net/Window zu JVM/Linux
+, und von Devs und ps zu DevOps.
 
-Scala Sprache der Wahl.
+Scala ist die Sprache der Wahl.
 
-Arbeiten in Scheiben (vertikale Schnitte inkl. UI).
+Vorgehen in Scheiben (vertikale Schnitte inkl. UI).
 
 Services und Teams sind um Business-Capabilities herum organisiert. Nicht nach Layers.
 
@@ -144,24 +138,28 @@ Mantra: Shared Nothing. Teams haben hohe Eigenständigkeit. Sharing schafft Abh�
 
 Hilfreich: Shadow-Traffic und Feature-Toggles.
 
-Nicht DevOps: Wenn Infrastruktur-Anforderungen doch immer von denselben Leuten im Team erledigt werden und liegen bleiben, wenn die im Urlaub sind. Abhilfe: Aufgaben bewußt rollierend vergeben.
+Nicht DevOps: Wenn Infrastruktur-Anforderungen doch immer wieder von denselben Leuten im Team erledigt werden und liegen bleiben, wenn diese im Urlaub sind. Abhilfe: Aufgaben bewußt rollierend vergeben.
 
-Kein Infrastruktur-Team. Übergreifende Themen werden durch Gilden abgebildet mit. Diese erledigen die Aufgaben aber nicht, sondern erstellen Tasks für die Teams. Die Teams dürfen 20% ihrer Zeit für solche Tasks nutzen.
+Kein Infrastruktur-Team. Übergreifende Themen werden durch Gilden abgebildet mit. Diese erledigen die Aufgaben aber nicht selbst, sondern erstellen Tasks für die Teams. Die Teams dürfen 20% ihrer Zeit für solche Tasks nutzen.
 
 
 ### Das neue Testparadigma: Behavioral Diff
 
 (Dr. Jeremias Rössler [@roesslerj](https://twitter.com/roesslerj))
 
-Abgrenzung Feature vs. Bug ist gar nicht immer so klar.
+Abgrenzung Feature vs. Bug ist gar nicht immer so klar, wie es auf den ersten Blick scheint.
 
 > Wenn man keine Spezifikation hat, gibt es keine Fehler, nur Überraschungen.
 
-Beim Sourcecode macht man Reviews auf Diffs, also auf jene Zeilen, die sich ändern. Warum nicht auch für User-Interfaces. Konzept Behavioral Diff: Verhalten bei einem Testlauf protokollieren und dann mit den Ergebnissen für die neue Version vergleichen. Danach bestätigt man, dass die Änderungen so gewollt sind. Wichtig dabei natürlich: Die Läufe müssen deterministisch sein. Ein interessantes Konzept. Persönlich glaube ich aber, dass das nur dann funktioniert, wenn die Diffs so dargestellt werden, dass sie schnell beurteilt werden können. Das ist, gerade für User-Interfaces, keine leichte Aufgabe.
+Beim Sourcecode macht man Reviews auf Diffs, also auf jene Zeilen, die sich ändern. Warum nicht auch für User-Interfaces?
 
-Im zweiten Teil beschäftigt sich der Vortrag mit randomisierten Tests (Monkey Tests). Problem: Um in endlicher Zeit zu guten Ergebnissen zu kommen braucht es "intelligente" Affen, die nicht völlig willürlich klicken. Grundidee: Ein manuell aufgezeichneter Test wird zufällig variiert (Genetischer Algorithmus, z. B. optimiert auf Branch-Coverage). Auf diese Weise bekommt man aus wenigen manuell erstellen Läufen eine breite Abdeckung.
+Konzept Behavioral Diff: Verhalten bei einem Testlauf protokollieren und dann mit den Ergebnissen für die neue Version vergleichen. Danach bestätigt man, dass die Änderungen so gewollt sind (oder eben nicht). Wichtig dabei natürlich: Die Läufe müssen deterministisch sein.
 
-Im dritten Teil werden die Konzepte kombiniert, so dass man Änderungen im Verhalten auf eine breiten Menge von Tests beobachten kann. Klingt für mich spannend, ich bin aber nicht sicher, ob man mit der der entstehenden Menge an Output in der Praxis wirklich gut umgehen kann.
+Ein interessantes Konzept. Persönlich glaube ich aber, dass das nur dann funktioniert, wenn die Diffs so dargestellt werden, dass sie schnell beurteilt werden können. Das ist, gerade für User-Interfaces, keine leichte Aufgabe.
+
+Im zweiten Teil beschäftigt sich der Vortrag mit randomisierten Tests (Monkey Tests). Problem: Um in endlicher Zeit zu guten Ergebnissen zu kommen braucht es "intelligentere" Affen, die nicht völlig willürlich klicken. Grundidee: Ein manuell aufgezeichneter Test wird zufällig variiert (Genetischer Algorithmus, der z. B. auf Branch-Coverage optimiert). Auf diese Weise bekommt man aus wenigen manuell erstellen Läufen eine breite Abdeckung.
+
+Im dritten Teil werden die Konzepte kombiniert, so dass man Änderungen im Verhalten auf eine breiten Menge von Tests beobachten kann. Klingt für mich spannend, ich bin aber nicht sicher, ob man mit der entstehenden Menge an Output in der Praxis wirklich gut umgehen kann.
 
 ### Fast and Resilient Integration Testing
 
@@ -169,9 +167,11 @@ Im dritten Teil werden die Konzepte kombiniert, so dass man Änderungen im Verha
 
 Es geht um das Problem mit zu viele False Negatives. Das sind fehlgeschlagene Tests, die nur auf ein Problem in der Testumgebung zurückzuführen sind, und keine Code-Korrektur erfordern.
 
-Bei Integrationstest gibt es, leider, eine gewisse Wahrscheinlichkeit, dass Tests willkürlich scheitern. Die Wahrscheinlichkeit des Scheiterns der Suite steigt exponentiell mit der Anzahl von Tests. Was hilft: Gezieltes wiederholen gescheiterter Tests.
+Bei Integrationstest gibt es, leider, eine gewisse Wahrscheinlichkeit, dass Tests willkürlich scheitern. Die Wahrscheinlichkeit des Scheiterns der Suite steigt exponentiell mit der Anzahl von Tests. Was hilft: Gezieltes wiederholen gescheiterter Tests, um zu prüfen ob der Fehler reproduziert werden kann.
 
-Klassische CI-Systeme (z. B. Jenkins) können das nicht gut, weil sie zu wenig wissen, über das was sie testen. Krass: Die beiden haben dann eine eingenes CI entwickelt ([Cider-CI](https://github.com/cider-ci/cider-ci)).
+Klassische CI-Systeme (z. B. Jenkins) können das nicht gut, weil sie zu wenig wissen, über das was sie testen.
+
+Krass: Die beiden haben eine eingenes CI entwickelt, um besser mit den Tests umgehen zu können. ([Cider-CI](https://github.com/cider-ci/cider-ci)).
 
 > The Source is the Truth.
 
@@ -179,7 +179,7 @@ Konfiguration im Sourcecode als YAML-File.
 
 Tree-id als fingerprint des Sourcecodes. Ermöglich Reproduzierbarkeit und ist Basis für Bisection.
 
-Scripts with Dependencies statt Jobs mit Before- und After-Hooks. Dependenies werden im Web-UI auch grafisch dargestellt.
+Scripts mit Dependencies statt Jobs mit Before- und After-Hooks. Dependenies werden im Web-UI auch grafisch dargestellt.
 
 Fazit: Komplexe Integrationstests sind wegen der False-Negatives immer schwierig. Mit gezielter Wiederholung kann man das in den Griff kriegen. Beeindruckend, was die Beiden in wenigen Monaten neben der eigentlich Projektarbeit auf die Beine gestellt haben.
 
@@ -195,9 +195,11 @@ Die Akzeptanztests gehören den Entwicklern.
 
 *Language of the Domain*. Nicht jeder muss einen Test programmieren können, aber Fachexperten sollten sie lesen können.
 
-Es ist nicht effizient, die Umgebung für jeden Test einzeln aufzusetzen. Wir wollen viele, sehr viele Akzeptanztests laufen lassen. Das System muss so sein, dass die Anwendung eimal aufgesetzt wird und dann viele Tests dort *parallel* ausführen kann.
+Es ist nicht effizient, die Umgebung für jeden Test einzeln aufzusetzen und zu starten. Wir wollen viele, sogar sehr viele, Akzeptanztests laufen lassen. Das System muss so sein, dass die Anwendung eimal aufgesetzt wird und dann viele Tests dort *parallel* ausführen kann.
 
-Wichtig ist dabei die Isolation der Tests. Wie findet man die richtigen Grenzen und das passende Gleichgewicht zwischen Integration und Entkoplung für einen gebebenen Test? Idee: Functional Isolation.
+Wichtig ist dazu die Isolation der Tests. Wie findet man die richtigen Grenzen und das passende Gleichgewicht zwischen Integration und Entkopplung für die Tests?
+
+Ansatz: Funktionale Isolation.
 
 Auf jeden Fall vermeiden: Abhängigkeiten zwischen Tests. Jeder Test muss einzeln laufen können.
 
@@ -205,13 +207,13 @@ Nützlich zur Isolation:
 
 > Alias your Testing Entities
 
-Jeder Lauf erzeugt seine eigenen Entities, die nicht von anderen Tests oder anderen Läufen desselben Tests genutzt werden, "Buch-testxyz-1234" für Test "xyz" im Lauf "1234".
+Jeder Lauf erzeugt seine eigenen Entities, die nicht von anderen Tests oder anderen Läufen desselben Tests genutzt werden, z. B. "Buch-testxyz-1234" für Test "xyz" im Lauf "1234".
 
-Ebenfalls hilfreich zur Isolation: Test Doubles. Service die Daten nur für Tests bereit stellen (Ähnlich Mocks in Unit Tests).
+Ebenfalls hilfreich zur Isolation: Test Doubles. Das sind Fake-Services, die unsere Tests mit passenden Eingangsdaten versorgen. (Ähnlich Mocks in Unit Tests).
 
 Domain Specific Language zur Beschreibung von Tests sind sehr empfehlenswert, um Tests als Mittel der Kommunikation nutzten zu können.
 
-Für viele Systeme ist es wichtig, das zeitlich Verhalten kontrollieren zu können. Eine Time-Travel-Funktion in der Test-DSL wird wichtig. Stichwort: Clock as a Service, ermöglicht Test Doubles dafür.
+Für viele Systeme ist es wichtig, das zeitliche Verhalten kontrollieren zu können. Eine Time-Travel-Funktion in der Test-DSL ist dann notwendig. Stichwort: Clock as a Services.
 
 Oft ist eine Sonderbehandlung für destruktive Tests erforderlich. Andere Tests erforden sehr spezielle Umgebungen. Hierzu nutzt man deklaratives Tagging der Tests.
 
@@ -225,15 +227,15 @@ Sehr schöne Zussamenfassung von Do's und Dont's für Tests.
 
 (Michael Jerger)
 
-Thema: Viele CM-Tools versuchen deklarativ zu sein. Keines kommt aber ohne programmatische Möglichkeiten aus. Vielleicht sollte man das Problem direkt programmatisch angehen.
+Thema: Viele CM-Tools versuchen deklarativ zu sein. Keines kommt aber ohne programmatische Möglichkeiten aus. Vielleicht sollte man das Problem direkt programmatisch angehen. Mit Pallet und Clojure kann man das.
 
 > DevOps kommt niemals ohne Programmierung aus.
 
 ### Tägliche Softwarelieferungen bei SAP
 
-(Dirk Lehmann [@doergn](https://twitter.com/doergn))
+#### oder: Wie man Elefanten zum tanzen bringt
 
-oder: Wie man Elefanten zum tanzen bringt
+(Dirk Lehmann [@doergn](https://twitter.com/doergn))
 
 Tägliche Softwareauslieferungen bei https://twogo.com
 
