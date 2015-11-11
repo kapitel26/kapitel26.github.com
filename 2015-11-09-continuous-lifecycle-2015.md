@@ -169,7 +169,7 @@ Es geht um das Problem mit zu viele False Negatives. Das sind fehlgeschlagene Te
 
 Bei Integrationstest gibt es, leider, eine gewisse Wahrscheinlichkeit, dass Tests willkürlich scheitern. Die Wahrscheinlichkeit des Scheiterns der Suite steigt exponentiell mit der Anzahl von Tests. Was hilft: Gezieltes wiederholen gescheiterter Tests.
 
-Klassische CI-Systeme (z. B. Jenkins) können das nicht gut, weil sie zu wenig wissen, über das was sie testen. Krass: Die beiden haben dann eine eingenes CI entwickelt (Cider-CI).
+Klassische CI-Systeme (z. B. Jenkins) können das nicht gut, weil sie zu wenig wissen, über das was sie testen. Krass: Die beiden haben dann eine eingenes CI entwickelt ([Cider-CI](https://github.com/cider-ci/cider-ci)).
 
 > The Source is the Truth.
 
@@ -177,9 +177,9 @@ Konfiguration im Sourcecode als YAML-File.
 
 Tree-id als fingerprint des Sourcecodes. Ermöglich Reproduzierbarkeit und ist Basis für Bisection.
 
-Cider-CI: Scripts with Dependencies statt Jobs mit Before- und After-Hooks. Dependenies werden im Web-UI auch grafisch dargestellt.
+Scripts with Dependencies statt Jobs mit Before- und After-Hooks. Dependenies werden im Web-UI auch grafisch dargestellt.
 
-Fazit: Komplexe Integrationstests sind wegen der False-Negatives immer schwierig. Mit gezielter Wiederholung kann man das in den Griff kriegen. Beeindruckend, was die Beiden in wenigen Monaten neben der eigentlich Projektarbeit auf die Beine gestellt haben. 
+Fazit: Komplexe Integrationstests sind wegen der False-Negatives immer schwierig. Mit gezielter Wiederholung kann man das in den Griff kriegen. Beeindruckend, was die Beiden in wenigen Monaten neben der eigentlich Projektarbeit auf die Beine gestellt haben.
 
 <!--
 Und noch ein klasse Vortrag auf der #ConLi2015 von @DrTom21 und @EINS78. Kapitel26 dazu: http://kapitel26.github.io/git/2015/11/09/continuous-lifecycle-2015/
