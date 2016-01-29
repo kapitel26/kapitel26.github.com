@@ -1,10 +1,10 @@
 ---
 layout: revealjs
-title: "Branch-Modelle mit Git"
-category: Git
-tags: [Branch-Modelle, ConLi2015]
+title: "Bloomiges - Coding Kata zu Bloom-Filtern"
+category: Coding
+tags: [Coding-Kata, Bloom-Filter, "Big Data"]
 author: bst
-reveal_theme: coli2015
+reveal_theme: white
 ---
 
 <section
