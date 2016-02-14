@@ -19,7 +19,7 @@ _________________________________________
  * Um einen zu bauen genügt 1/2 Stunde.
  * Versucht es doch mal!
 
-git@github.com:bstachmann/kata-bloomiges.git
+https://github.com/bstachmann/kata-bloomiges
 
 
 ___SECTION_______________________________
@@ -50,8 +50,8 @@ _________________________________________
 
 ## Idee
 
-Ein Filter lässt User-IDs durch, <br/>
-die in der großen Datei enthalten sind,<br/>
+Ein Filter  <br/>
+lässt User-IDs durch, die in der großen Datei enthalten sind,<br/>
 und weist User-ID ab, die nicht enthalten sind.
 
 
@@ -98,8 +98,8 @@ _________________________________________
 
 Je kleiner die Filter-Datei, desto besser!
 
-Anstelle der User-IDs speichern wir Nutzer
-einen Fingerprint (z. B. einen 4-Byte Hashcode).
+Anstelle der User-IDs speichern wir nur
+einen Fingerprint der Nutzer-ID (z. B. einen 4-Byte Hashcode).
 
 
 _________________________________________
