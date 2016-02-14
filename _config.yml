@@ -2,10 +2,18 @@
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink: /:categories/:year/:month/:day/:title
 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "samples"]
-highlighter: pygments
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "samples", "notizen"]
 
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+gems:
+  - jekyll-coffeescript
+  - jekyll-paginate
+
 
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Continuous Lifecycle Konferenz 2015 - Dienstag"
+title: "Notizen zur Continuous Lifecycle Konferenz 2015"
 category: Git
 tags: [Branch, ConLi2015]
 author: bst

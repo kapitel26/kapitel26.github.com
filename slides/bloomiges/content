@@ -1,0 +1,285 @@
+
+Bloomiges
+=========
+
+eine Coding-Kata zu Bloom-Filtern
+
+von Bjørn Stachmann
+
+http://kapitel26.github.io/
+
+
+_________________________________________
+
+
+## Bloom-Filter
+
+ * Sind eine coole Datenstruktur.
+ * Aber trotzdem einfach.
+ * Um einen zu bauen genügt 1/2 Stunde.
+ * Versucht es doch mal!
+
+git@github.com:bstachmann/kata-bloomiges.git
+
+
+___SECTION_______________________________
+
+
+![Grosse Datei](grosse-datei.png)
+
+
+_________________________________________
+
+## Use Case
+
+ * Suche Daten zu einer User-ID.
+ * Die Datei ist groß, I/O ist teuer.
+ * **Ziel**<br/>
+   I/O vermeiden, wenn User gesucht werden,<br/>
+   für die keine Daten vorliegen.
+
+
+___SECTION_______________________________
+
+
+![Disco](disco.png)
+
+
+_________________________________________
+
+
+## Idee
+
+Ein Filter lässt User-IDs durch, <br/>
+die in der großen Datei enthalten sind,<br/>
+und weist User-ID ab, die nicht enthalten sind.
+
+
+___SECTION_______________________________
+
+
+![Filterdatei](filterdatei.png)
+
+
+_________________________________________
+
+
+### (1) Einfachste Lösung
+
+User-IDs in einer Java-Collection sammeln.
+
+
+_________________________________________
+
+
+```java
+	private Collection<String> userIds = new HashSet<>();
+
+	public void add(String id) {
+		userIds.add(id);
+	}
+
+	public boolean contains(String id) {
+		return userIds.contains(id);
+	}
+```
+
+___SECTION_______________________________
+
+
+![Fingerprints](fingerprints.png)
+
+
+_________________________________________
+
+
+### (2) Fingerprints speichern
+
+
+Je kleiner die Filter-Datei, desto besser!
+
+Anstelle der User-IDs speichern wir Nutzer
+einen Fingerprint (z. B. einen 4-Byte Hashcode).
+
+
+_________________________________________
+
+
+```java
+	private Collection<Integer> userIds = new HashSet<>();
+
+	public void add(String id) {
+		userIds.add(fingerprint(id));
+	}
+
+	public boolean contains(String id) {
+		return userIds.contains(fingerprint(id));
+	}
+
+	private Integer fingerprint(String id) {
+		return id.hashCode();
+	}
+```
+
+
+_________________________________________
+
+
+### (3) Achtung: False Positives!
+
+
+```java
+private Collection<Short> userIds = new HashSet<>();
+```
+
+Wenn verschiedene User den selben Fingerprint haben,<br/>
+lässt der Filter manchmal User durch, <br/>
+die nicht in der großen Datei enthalten sind.
+
+Wenn das selten passiert, ist das nicht schlimm.
+
+
+___SECTION_______________________________
+
+
+![Bit-Filter](bitfilter.png)
+
+
+_________________________________________
+
+
+### (4) Fingerprint als Index in einem Bitfeld
+
+
+Ein Bit in einem Bitfeld zeigt an, <br/>
+ob ein User enthalten ist.
+
+Der Fingerprint des Users bestimmt, <br/>
+welches Bit für ihn "zuständig" ist.
+
+
+_________________________________________
+
+
+```java
+	private BitSet userBits = new BitSet(size);
+
+	public void add(String id) {
+		userBits.set(fingerprint(id));
+	}
+
+	public boolean contains(String id) {
+		return userBits.get(fingerprint(id));
+	}
+
+	private Integer fingerprint(String id) {
+		return abs(id.hashCode()) % size;
+	}
+```
+
+
+___SECTION_______________________________
+
+
+![Bloom-Filter](bloomfilter.png)
+
+
+_________________________________________
+
+
+### (5) Mehrere Bits pro User
+
+Setzen wir mehrere Bits pro User, <br/>
+verringert sich die Wahrscheinlichkeit <br/>
+für False Positives.
+
+
+_________________________________________
+
+
+### Refactoring: Fingerprint in eine Liste verpacken.
+
+```java
+	public void add(String id) {
+		userBits.set(fingerprints(id).get(0));
+	}
+
+	public boolean contains(String id) {
+		return userBits.get(fingerprints(id).get(0));
+	}
+
+	private List<Integer> fingerprints(String id) {
+		return asList(fingerprint(id));
+	}
+```
+
+
+_________________________________________
+
+
+### Implementierung: 2 Bits pro User-ID
+
+```java
+	public void add(String id) {
+		userBits.set(fingerprints(id).get(0));
+		userBits.set(fingerprints(id).get(1));
+	}
+
+	public boolean contains(String id) {
+		return userBits.get(fingerprints(id).get(0)) //
+				&& userBits.get(fingerprints(id).get(1));
+	}
+
+	private List<Integer> fingerprints(String id) {
+		return asList(fingerprint(id), fingerprint(id + id));
+	}
+```
+
+
+___SECTION_______________________________
+
+
+## Fazit
+
+Bloom-Filter sind sehr kompakt.<br/>
+Die Kompaktheit "erkauft" man sich durch<br/>
+gelegentliche False Positives,  z. B.
+
+ * < 1 Byte pro Eintrag bei
+ * < 10% False Positives
+
+**Achtung:** Die in der Kata verwendete fingerprint-Funktion ist nicht performant. Wenn Ihr Bloom-Filter in der Praxis nutzen wollt nehmt besser die von [Hadoop](https://hadoop.apache.org/docs/r2.4.1/api/org/apache/hadoop/util/bloom/BloomFilter.html) oder [Guava](http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/hash/BloomFilter.html)!
+
+
+___SECTION_______________________________
+
+
+# Anwendungs- <br/> Beispiele
+
+
+_________________________________________
+
+
+![HBase region files](regionfiles.png)
+
+
+_________________________________________
+
+ * HBase ist Datenbank auf der Hadoop-Plattform
+ * Datensätze werden in sogenannte Region-Files abgelegt
+ * Pro Region kann es mehrere solche Files Geben
+ * Wenn man einen einzelnen Datensatz sucht, nutzt HBase Bloom-Filter, um weniger Files durchsuchen zu müssen
+
+_________________________________________
+
+
+![Browser blacklist](blacklist.png)
+
+
+_________________________________________
+
+ * Der Browser Chrome nutzt eine Blacklist für schädliche Websites
+ * Die Liste ist groß und wird auf dem Server gehalten
+ * Der Client hat lokale einen Bloom-Filter für die Blacklist
+ * Bei einem Treffer im Bloom-Filter, muss der Server gefragt werden, ob es wirklich eine schädlich Website ist oder nur ein *False Positive*.
+ * Für Websites, die nicht im Bloom-Filter enthalten sind, ist eine Serveranfrage unnötig.
