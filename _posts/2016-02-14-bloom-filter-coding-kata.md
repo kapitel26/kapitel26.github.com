@@ -20,3 +20,9 @@ Wenn ihr die Kata selber mal üben wollt, könnt ihr Euch an den folgenden Slide
 <iframe src="/slides/bloomiges/" width="480" height="300" name="Slides embedded">
   [**Bloomiges**](/slides/bloomiges/)
 </iframe>
+
+Mehr über Bloom-Filter
+----------------------
+
+ * [Interaktives Tutorial zu Bloom-Filtern](http://billmill.org/bloomfilter-tutorial/)
+ * [Bloom-Filter in Javascript nutzen](http://www.heise.de/developer/artikel/Groessere-Datenmengen-mit-JavaScript-performant-durchsuchen-2574182.html?artikelseite=3)
