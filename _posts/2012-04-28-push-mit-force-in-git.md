@@ -18,23 +18,23 @@ Hatten wir das tatsächlich übersehen?
 Ein kurzer Blick ins Inhaltsverzeichnis beruhigte mein Gewissen.
 Auf Seite 79 (ganz unten) wird ordnungsgemäß vor `-f` gewarnt.
 Für all jene, die Seite 79 vielleicht nicht mit der vollen Aufmerksamkeit
-gelesen haben, gibt's hier ein paar Tipps, was man tun kann, falls 
+gelesen haben, gibt's hier ein paar Tipps, was man tun kann, falls
 man sich mal "*verpushed*".
 
 Nach dem `push --f`: Was genau ist passiert?
 --------------------------------------------
 
-Wie viele andere Befehle auch hat der `push`-Befehl in Git eine Option `-f` 
-bzw. `--force`. Es ist nur selten eine gute Idee, diese zu nutzen. 
+Wie viele andere Befehle auch hat der `push`-Befehl in Git eine Option `-f`
+bzw. `--force`. Es ist nur selten eine gute Idee, diese zu nutzen.
 
  * **Vorher**
- 
+
    <pre>
    --O---A---F1---F2  origin/master
           \
            M1---M2  master   
    </pre>
-   
+
  * **Push!**
 
    <pre>$ push -f               # Hoppla, das war nicht gewollt!</pre>
@@ -62,32 +62,32 @@ obwohl sie von jemand anderem implementiert wurden.
 Trotz allem: *Don't Panic!*
 ---------------------------
 
-Git wird **mit Handtuch** ausgeliefert. 
+Git wird **mit Handtuch** ausgeliefert.
 Es ist unwahrscheinlich, dass wirklich etwas verloren gegangen ist.
 Zwar sind einige Commits im Hauptrepository nicht mehr sichtbar,
 wenn man `git log` ausführt, aber
 
- * sie sind sehr wahrscheinlich immer noch im da 
-   und bleiben es erstmal auch. Der Garbage-Collector 
-   gewährt normalerweise eine Frist von mindestens 
-   [zwei Wochen,](/git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector/) 
+ * sie sind sehr wahrscheinlich immer noch im da
+   und bleiben es erstmal auch. Der Garbage-Collector
+   gewährt normalerweise eine Frist von mindestens
+   [zwei Wochen,](/git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector)
    bevor er abräumt.
-   
+
  * Git ist dezentral. Wahrscheinlich haben auch andere Entwickler
    Kopien der Commits auf ihren Rechnern.
-   
+
  * wenn das Repository
-   [richtig konfiguriert ist](/git/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten/),
+   [richtig konfiguriert ist](/git/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten),
    führt Git Buch über alle Änderungen an Branches und Tags (genannt *Reflog*),
    so dass man Verlorenes leicht wieder finden kann.
-   
+
 Herausfinden welcher Zweig abgeschnitten wurde
 ----------------------------------------------
 
 Die Meldung nach dem `push --force` zeigt mir, was ich übergebügelt habe.
 
 	$ git push -f                      # Hoppla, das war nicht gewollt!
-	
+
 	Counting objects: 4, done.
 	Delta compression using up to 2 threads.
 	Compressing objects: 100% (2/2), done.
@@ -104,14 +104,14 @@ Commits holen
 -------------
 
 Das Problem ist nur, dass genau dieses Commit `2450384` in meinem lokalen
-Repository nicht vorhanden ist. Mit einem `fetch` (oder `pull`) 
+Repository nicht vorhanden ist. Mit einem `fetch` (oder `pull`)
 kann ich es nicht holen, weil kein Branch mehr darauf zeigt.
 Deshalb klone ich das ganze Repository:
 
 	$ git clone ich@woauchimmer.de:repo
 	$ cd repo
 
-Falls **mehrere Branches** betroffen sind (siehe unten), 
+Falls **mehrere Branches** betroffen sind (siehe unten),
 muss man die folgenden Schritte jeden Branch einmal durchführen.
 
 Lösung 1: Änderungen zusammenführen
@@ -164,11 +164,11 @@ Achtung: Es können viel Branches betroffen sein
 
 Das Default-Verhalten, wenn man ein `push` ohne weitere Parameter
 ausführt, ist wie folgt. Git führt ein "Matching" durch,
-es führt das `push` für jeden lokalen Branch aus, 
+es führt das `push` für jeden lokalen Branch aus,
 dem ein gleich benannter Branch im entfernten Repository gegenüber steht.
 Es können also viele Branches betroffen sein.
 
-Wer das doof findet kann zweierlei tun: 
+Wer das doof findet kann zweierlei tun:
 
  1. `git config push.default upstream`
  2. Sich an der [Diskussion][push discussion]
