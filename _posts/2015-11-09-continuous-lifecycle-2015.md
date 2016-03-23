@@ -13,10 +13,10 @@ Auch dieses Jahr sind wir nach Mannheim gereist, um einen Vortrag über Git zu h
 (René und Bjørn)
 
 <iframe src="/slides/branch-modelle-mit-git/" width="480" height="300" name="Slides embedded">
-  [**Branch-Modelle mit Git**](/slides/branch-modelle-mit-git/)
+  [**Branch-Modelle mit Git**](/slides/branch-modelle-mit-git)
 </iframe>
 
-[**-> Slides als Vollbild**](/slides/branch-modelle-mit-git/)
+[**-> Slides als Vollbild**](/slides/branch-modelle-mit-git)
 
 ### The Rationale for Continuous Delivery
 

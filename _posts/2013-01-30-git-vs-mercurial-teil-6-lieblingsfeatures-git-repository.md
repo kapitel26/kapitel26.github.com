@@ -18,7 +18,7 @@ Deshalb beschäftige ich heute mal mit den Entwurfsentscheidungen, die Git zu de
 Klassische Versionsverwaltungen
 -------------------------------
 
-Klassische Versionsverwaltungen wie CVS und Subversion (auch Mercurial) speichern ihre Daten Datei für Datei. Weil sich Dateien ändern können, darf eine Datei mehrere Versionen haben. 
+Klassische Versionsverwaltungen wie CVS und Subversion (auch Mercurial) speichern ihre Daten Datei für Datei. Weil sich Dateien ändern können, darf eine Datei mehrere Versionen haben.
 Um Speicher zu sparen, werden immer nur die Differenzen zur jeweils vorigen Version derselben Datei gespeichert. Projekte sind dort einfach Ansammlungen von versionierten Dateien.
 
 Git ist anders.
@@ -34,7 +34,7 @@ Das Herz von Git ist ein Key-Value-Store, gennant *Object Database*.
 Der *Value* darf beliebiger Content sein:
 Ein Text, ein Bild, egal was.
 Für Git ist es immer nur eine Folge von Bytes,
-genannt *Object*. Der *Key* ist immmer der 
+genannt *Object*. Der *Key* ist immmer der
 *SHA1-Hash-Wert des Contents*.
 
 *... und alle die mitdenken so: "WTF, Git is broken!"*
@@ -43,7 +43,7 @@ Jaja, das stimmt schon. Wenn zwei verschiedene Objekte den selben Hash-Wert habe
 
  * Hashes lassen sich dezentral berechnen
 
- * Beim Synchronisieren ist leicht festzustellen, 
+ * Beim Synchronisieren ist leicht festzustellen,
    ob ein Objekt vom entfernten Repository geholt werden muss,
    oder ob lokal schon ein Identisches vorhanden ist.
 
@@ -60,19 +60,19 @@ drei Operationen:
 
  1. Ein *Object* einfügen
  2. Ein *Object* holen, dessen Hash-Wert man kennt
- 3. [Garbage Collection](/git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector/))
+ 3. [Garbage Collection](/git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector)
 
 *... und alle Anderen so: "Yeah, that's stupid! And everybody: STUPID!"*
 
 Git hat kennt zwei Ebenen von Kommandos: *Porcelaine* und *Plumbing*. *Porcelaine* sind jene Kommandos wie "Commit", "Merge" oder "Rebase", die man Alltag nutzt. Darunter liegt aber eine Schicht primitiver Kommandos, die es ermöglichen, die grundlegenden Strukturen (*Object Database*, *Index* und *Workspace*) so zu nutzen, wie es die *Porcelaine* Kommandos selber auch tun.
 
-Interessant ist, dass auf der untersten Ebene nicht mehr von *Dateien*, *Verzeichnissen* oder von *Commits* die Rede ist. Diese Dinge werden natürlich in der *Object Database* gespeichert, aber es können dort eben auch beliebige andere Dinge abgelegt werden. 
+Interessant ist, dass auf der untersten Ebene nicht mehr von *Dateien*, *Verzeichnissen* oder von *Commits* die Rede ist. Diese Dinge werden natürlich in der *Object Database* gespeichert, aber es können dort eben auch beliebige andere Dinge abgelegt werden.
 
 Das macht Git so flexibel und ermöglicht es Tools wie zum Beispiel Gollum (ein Wiki) oder Bup (eine Backup-Lösung) zu bauen, die ganz andere Dinge tun als klassische Versionsverwaltungen.
 
 *... und die Bastler und Tüftler so: "Yeah plumbing!"*
 
-Das schöne an so der einfachen Fassade der *Object Databse* ist, dass man unterschiedliche Implementierungen dahinter setzen kann. Und das tut Git auch. 
+Das schöne an so der einfachen Fassade der *Object Databse* ist, dass man unterschiedliche Implementierungen dahinter setzen kann. Und das tut Git auch.
 
 Frische Objekte, die bei einem Commit entstehen, werden direkt als Dateien geschrieben. Der Hashwert des Inhalts bestimmt den Verzeichnis- und Dateinamen.
 
@@ -82,27 +82,27 @@ In modernen Dateisystemen ist der direkte Zugriff auf Dateien über deren Namen 
 
 *... und die Performance-Leute so: "Yeah, blazing fast! Until the disc is full ..."*
 
-Der Nachteil: Auch wenn sich nur ein einziges Bytes einer Datei ändert, hat der Content einen anderen Hashwert und muss als neues Objekte in der *Object Database* gespeichert werden. Das Repository bläht sich auf. 
+Der Nachteil: Auch wenn sich nur ein einziges Bytes einer Datei ändert, hat der Content einen anderen Hashwert und muss als neues Objekte in der *Object Database* gespeichert werden. Das Repository bläht sich auf.
 
 Git löst dies, durch eine zweite Form der Speicherung in der *Object Database*. Gelegentlich packt Git sogenannte *Pack Files* aus vielen Objekten. Bei ähnlichen Objekten wird dann nur einmal das ganze Objekt abgelegt, die anderen werden durch Differenzen dargestellt.
 Der Vorteil: Da nachträglich komprimiert, kann es dafür das gesamte Repository nach Ähnlichkeien durchforsten und ist dabei nicht auf die Historie einer einzelnen Datei beschränkt. Beispiel: Auch eine per Copy & Pase angelegte und dann veränderte Datei kann per Differenz abgebildet werden. Gerade bei großen Projekten erreicht Git so eine sehr gute Kompression. Auch bei langer Historie bleibt das Repository nicht selten kleiner als der entpackte Workspace.
 
 *... und die Sparbrötchen so: "Yeah, das spart Speicher!"*
 
-Ein Hinweis am Rande: Dies ist auch einer der Gründe, weshalb Git nicht für die Verwaltung von sehr großen Dateien geeignet ist. Versioniert man beispielsweise ein gigabyte-großes Mailbox-File, dann wird bei jedem Commit erstmal die ganze Datei weggeschrieben, auch wenn nur wenige Mails hinzugekommen sind. 
+Ein Hinweis am Rande: Dies ist auch einer der Gründe, weshalb Git nicht für die Verwaltung von sehr großen Dateien geeignet ist. Versioniert man beispielsweise ein gigabyte-großes Mailbox-File, dann wird bei jedem Commit erstmal die ganze Datei weggeschrieben, auch wenn nur wenige Mails hinzugekommen sind.
 
 *... und die Ungeduldigen so: "Und wie speichert Git denn eigentlich Commits?"*
 
 Ach so ja, hätt' ich fast vergessen vor lauter Begeisterung:
 
- * Für jedes Datei wird der Hash des Inhalts berechnet. 
+ * Für jedes Datei wird der Hash des Inhalts berechnet.
    Falls noch nicht vorhanden, wird der Inhalt in der *Object Database* gespeichert
 
- * Für jedes Verzeichnis wird Textschnipsel in der *Object Database* 
-   abgelegt, der die Dateinamen und die Hashes der jeweiligen 
+ * Für jedes Verzeichnis wird Textschnipsel in der *Object Database*
+   abgelegt, der die Dateinamen und die Hashes der jeweiligen
    Inhalte dazu enthält.
 
- * Commits und Tags werden ebenfalls durch einfache Textschnipsel 
+ * Commits und Tags werden ebenfalls durch einfache Textschnipsel
    beschrieben.
 
 Ein Verzeichnis sieht dann zum Beispiel so aus:

@@ -8,15 +8,15 @@ author: bst
 
 Ab und zu sollte man sein Repository entrümpeln
 (siehe auch [Alte Branches archivieren](/git/2014/03/31/alte-branches-archivieren.rb/index.html)).
-Lokal kann man Branches einfach, ändern oder umbenennen. 
-Die Änderungen dann mit einzelnen `push`-Aufrufen in ein entferntes Repository 
+Lokal kann man Branches einfach, ändern oder umbenennen.
+Die Änderungen dann mit einzelnen `push`-Aufrufen in ein entferntes Repository
 zu übertragen ist aber umständlich.
 
-Einfacher ist es mit der Option `clone --mirror`: 
-Sie spiegelt den Zustand aller lokalen Branches in das Zielrepository. 
-Dabei ist es egal, ob die Branches neu angelegt, geändert oder gelöscht wurden. 
-Nach dem Aufruf hat das Zielrepository den gleichen Stand für alle Branches 
-wie das lokale Repository. 
+Einfacher ist es mit der Option `clone --mirror`:
+Sie spiegelt den Zustand aller lokalen Branches in das Zielrepository.
+Dabei ist es egal, ob die Branches neu angelegt, geändert oder gelöscht wurden.
+Nach dem Aufruf hat das Zielrepository den gleichen Stand für alle Branches
+wie das lokale Repository.
 Man geht wie folgt vor:
 
  1. Mit `clone --mirror` eine Arbeitskopie erstellen und
@@ -25,8 +25,8 @@ Man geht wie folgt vor:
 
 **Achtung:** Ein `push` von einem `mirror`-Repository ändert man Branches im Zielrepository,
 dies hat dieselben Auswirkungen wie ein `push --force`.
-Wegen Risiken und Nebenwirkungen lesen die [Packungsbeilage](/git/2012/04/28/push-mit-force-in-git/)
-oder fragen sie einen [Experten](/rene/).
+Wegen Risiken und Nebenwirkungen lesen die [Packungsbeilage](/git/2012/04/28/push-mit-force-in-git)
+oder fragen sie einen [Experten](/rene).
 
 ### Beispiel
 
