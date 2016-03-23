@@ -6,9 +6,9 @@ tags: [Continuous Delivery, Git, Mercurial, Konferenz]
 author: bst
 ---
 
-[zu den Slides für unsere Vorträge](/git/2013/11/14/continuous-lifecycle-konferenz-vortraege/)
+[zu den Slides für unsere Vorträge](/git/2013/11/14/continuous-lifecycle-konferenz-vortraege)
 
-Continuous-Delivery machen wir bei [etracker](http://www.etracker.de), wo ich arbeite, schon eine ganze Weile. Deshalb war ich mir nicht sicher, ob ich eine [Konferenz](http://www.continuouslifecycle.de/) besuchen soll, wo 72% aller Vorträge (gefühlter Wert) erklären, wie man Continuous-Delivery einführt. Die Entscheidung fiel, als [René](/rene/) und ich die Gelegenheit bekamen zwei Git-Vorträge dort zu halten. Gut so. Sonst hätte ich eine interessante Veranstaltung verpasst.
+Continuous-Delivery machen wir bei [etracker](http://www.etracker.de), wo ich arbeite, schon eine ganze Weile. Deshalb war ich mir nicht sicher, ob ich eine [Konferenz](http://www.continuouslifecycle.de) besuchen soll, wo 72% aller Vorträge (gefühlter Wert) erklären, wie man Continuous-Delivery einführt. Die Entscheidung fiel, als [René](/rene) und ich die Gelegenheit bekamen zwei Git-Vorträge dort zu halten. Gut so. Sonst hätte ich eine interessante Veranstaltung verpasst.
 
 In der Keynote (*Mirko Novakovic* "Lean Startups Eat the World!") ging es um *disruptiven Wandel*. Viele Beispiele wurden gezeigt, wie ganze Märkte umgekrempelt werden (Amazon Buchhandel, AWS, mytaxi, airbnb, ...). Fast immer kamen die Innovationen von Branchenfremden. Ausschlaggebend ist oft die User-Experience nicht so sehr der Preis (wir kaufen bei Amazon wegen des perfekten Services, nicht wegen des Preises). Viele Branchen werden sich auf Disruptionen einstellen müssen. Continuous Delivery ist ein Hilfsmittel, um mehr Beweglichkeit für Innovation zu schaffen. Preisfrage: Wann wird es in Deutschland echte Online-Versicherungen geben?
 
@@ -22,7 +22,3 @@ Und dann kamen unsere beiden Vorträge. Wir hatten ein sehr interessiertes Publi
 "Infrastructure as Code" ist ein heißes Eisen. *Mathias Münch* hat einen sehr guten Vortrag darüber gehalten. Kaum ein Programmierer würde heute noch den generierten Binärcode eines Programms nachträglich patchen. Server hingegen werden oft im laufenden Betrieb umkonfiguriert. Etwas beschönigend nennt man das dann "administrieren". Das hat was von Kunsthandwerk, führt aber leider auch dazu, dass jeder Server im Laufe der Zeit zum kostbaren Einzelstück wird. Münch schlägt als Gegenkonzept vor, auf *Immutable Server* zu setzen. Die Idee ist einfach. Anstatt einen bestehenden Server umzukonfigurieren wird ein neuer Server mit der neuen Konfiguration aufgesetzt. Der neue Server durchläuft automatische Tests, bevor er in Betrieb genommen wird. Der Vortrag zeigt, wie man mit Hilfe von Automatisierung und Virtualisierung dahin kommen kann, dass neue (virtuelle) Maschinen mit Jenkins in einigen Minuten gebaut, getestet und in Betrieb genommen werden können.
 
 Das waren Highlights einer guten Konferenz. Zufrieden sitze ich jetzt in der Bahn und fahre den weiten Weg nach Hause.
-
-
-
-

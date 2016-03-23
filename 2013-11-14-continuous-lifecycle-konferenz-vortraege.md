@@ -8,7 +8,7 @@ author: bst
 
 Unsere Vorträge:
 
- * [Warum wir Git lieben](/slides/warum-wir-git-lieben/)
+ * [Warum wir Git lieben](/slides/warum-wir-git-lieben)
  * [Abhängigkeiten und Git](/slides/Abhaengigkeiten.pdf)
 
 [zum Logbucheintrag über die Konferenz](/git/2013/11/12/continuous-lifecycle-konferenz/)
