@@ -47,7 +47,9 @@ Kosten zu groß sind, ist eine analytische Suche der Fehlerursache effizienter.
 
 ## Überblick
 
-In  TODO Abbildung~\ref{fig:bisection-ueberblick} ist eine Historie dargestellt, in
+![Bisection Überblick](/assets/2016-10-02-git-bisect/abb-bisection-ueberblick.gif)
+
+Hier ist eine Historie dargestellt, in
 der ein Commit als fehlerfrei, in Bezug auf einen bestimmten Fehler, erkannt wurde und ein anderes Commit als fehlerhaft.
 Die Historie muss nicht linear sein. Es muss jedoch ein Weg über die Parent-Beziehungen vom fehlerhaften zum
 fehlerfreien Commit vorliegen.
@@ -438,9 +440,9 @@ Dadurch ist es möglich, die neuen Testskripte auch in alten Commits
 auszuführen.
 
 Eine alternative Lösung besteht darin, die Testskripte in einen neuen Branch
-einzubauen (siehe den `bisect-test`-Branch in TODO Abbildung~\ref{fig:bisection-test-branch}).
+einzubauen:
 
-TODO \abbildung{bisection}{test-branch}{\branch{bisect-test}-Branch benutzen}
+![Bisection Test-Branch](/assets/2016-10-02-git-bisect/abb-bisection-test-branch.gif)
 
 Im Bisection-Shell-Skript wird nun vor jedem Testlauf ein Merge des
 `bisect-test`-Branch in das aktuell von Bisection ausgewählte Commit
