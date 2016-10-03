@@ -3,7 +3,7 @@ layout: post
 title: "Git Notes Notizen an Commits"
 category: Git
 tags: [Bundles]
-author: bst
+author: bst-rp
 ---
 
 Commits sind in Git unveränderbar. Man kann zwar Commits kopieren und dabei ändern, doch dann entsteht ein neues Commit. Möchte man Commits nachträglich mitKommentaren versehen, stehen \stichwort{Notes} zur Verfügung. Notes werden	meistens von Entwicklungswerkzeugen genutzt, um Commits zu markieren.		
@@ -11,7 +11,7 @@ Commits sind in Git unveränderbar. Man kann zwar Commits kopieren und dabei än
 Der `notes add`-Befehl erzeugt einen neuen Kommentar an einem Commit:		
 
 ```bash
-$ git notes addm "Mein Kommentar" HEAD		
+$ git notes add "Mein Kommentar" HEAD		
 ```
 
 Mit dem `notes show`-Befehl kann der Kommentar wieder angezeigt werden:		
