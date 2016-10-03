@@ -3,7 +3,7 @@ layout: post
 title: "Mit Bisection Fehler suchen"
 category: Git
 tags: [Bisect]
-author: bst
+author: bst-rp
 ---
 
 Während der Entwicklung passiert es häufig, dass plötzlich ein Fehler
