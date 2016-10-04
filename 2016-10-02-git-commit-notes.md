@@ -28,5 +28,5 @@ $ git push origin refs/notes/*:refs/notes/*
 ```
 
 ```bash
-git fetch origin refs/notes/*:refs/notes/*		
+$ git fetch origin refs/notes/*:refs/notes/*		
 ```
