@@ -2,7 +2,7 @@
 layout: post
 title: "Patches & Bundles - Git-Commits per Mail oder USB-Stick übertragen."
 category: Git
-tags: [Bundles]
+tags: [Bundles, Patches]
 author: bst-rp
 ---
 
