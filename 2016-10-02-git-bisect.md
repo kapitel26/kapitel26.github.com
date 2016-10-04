@@ -2,7 +2,7 @@
 layout: post
 title: "Mit Bisection Fehler suchen"
 category: Git
-tags: [Bisect]
+tags: [Bisection]
 author: bst-rp
 ---
 
@@ -242,7 +242,7 @@ Previous HEAD position was ebe741d... add fertig
 Switched to branch 'master'
 ```
 
-### Automatisierte Fehlersuche mit Bisection}
+### Automatisierte Fehlersuche mit Bisection
 
 Im vorigen Ablauf wurde der Test, ob ein Commit einen Fehler beinhaltet, manuell
 durchgeführt. Wenn der zu überprüfende Bereich der Historie sehr lang ist
@@ -280,7 +280,7 @@ Die eigentliche automatische Überprüfung des Fehlers wird durch einen
 geprüft, ob die Fakultät von 3 auch wirklich 6 ergibt. Wenn das Ergebnis falsch
 ist, dann wird der Test fehlschlagen.
 
-```bash
+```java
 public class FakultaetsBisectTest {
     @Test
     public void testFakultaet3() {
@@ -307,7 +307,7 @@ bereits in der Lage ist, einen sauberen Build  durchzuführen (`ant clean compil
 Für die Ausführung des Bisection-Tests wird eine neue Build-Datei `bisect-build.xml` angelegt, die nur ein Target zum Starten des Tests beinhaltet.
 Auch diese Datei darf nicht mit Git versioniert werden.
 
-```bash
+```xml
 <target name="test">
     <junit>
         <classpath refid="build.classpath" />
