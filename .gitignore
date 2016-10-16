@@ -19,3 +19,4 @@ commit-comment
 workspaces/
 
 Gemfile.lock
+.jekyll-metadata
