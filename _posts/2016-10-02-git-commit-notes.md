@@ -2,7 +2,7 @@
 layout: post
 title: "Git Notes Notizen an Commits"
 category: Git
-tags: [Bundles]
+tags: [Bundles, "Änderungen zur 4. Auflage"]
 author: bst-rp
 ---
 

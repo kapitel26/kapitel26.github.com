@@ -2,7 +2,7 @@
 layout: post
 title: "Mit Bisection Fehler suchen"
 category: Git
-tags: [Bisection]
+tags: [Bisection,"Änderungen zur 4. Auflage"]
 author: bst-rp
 ---
 
