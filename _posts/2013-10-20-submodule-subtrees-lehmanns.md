@@ -6,10 +6,10 @@ tags: [Git, Submodule, Subtree]
 author: rp
 ---
 
-Am letzten Mittwoch haben Björn und ich zwei kurze Vorträge 
+Am letzten Mittwoch haben Björn und ich zwei kurze Vorträge
 in der Buchhandlung [Lehmanns](http://www.lehmanns.de/page/verlfb)
 in Hamburg gehalten.
 
 Björn war richtig schnell und hat seinen Log bereits veröffentlich.
 
-Nun gibt es [hier]({{ site.url }}/assets/Lehmannsvortrag.pdf) auch meine Präsentation.
+Nun gibt es [hier]({{ site.url }}/assets/2010-10-20-submodules-subtrees-lehmanns/Lehmannsvortrag.pdf) auch meine Präsentation.
