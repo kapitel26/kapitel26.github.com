@@ -22,9 +22,9 @@ Sowohl Git als auch Mercurial bieten zahlreiche Kommandos,
 um die Historie zu analysieren. Aber nur Mercurial hat eine
 eigene *Query Language* dafür:
 
-{% include samples/hg-revsets-sample-1.rb.md %}
+{% include_relative 2012-11-10-revsets/hg-revsets-sample-1.rb.md %}
 
-{% include samples/hg-revsets-sample-2.rb.md %}
+{% include_relative 2012-11-10-revsets/hg-revsets-sample-2.rb.md %}
 
 Noch ein Beispiel: Wissen, welche Sachen ich noch nicht abgeschlossen habe.
 
