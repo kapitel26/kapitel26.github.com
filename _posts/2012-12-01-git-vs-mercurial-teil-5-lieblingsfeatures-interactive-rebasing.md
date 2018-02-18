@@ -7,14 +7,14 @@ tags: [Git, Mercurial, Rebasing, "Interactive Rebasing"]
 author: bst
 ---
 
-{% include git-vs-hg.md %}
+{% include_relative git-vs-hg.md %}
 
 Ich kenne Entwickler die committen kaum öfter als zwei
 oder drei Mal am Tag. Die überlegen sich, was sie tun
-wollen, wie sie es tun wollen, implementieren genau das, 
-testen es, reparieren es und liefern es dann ab. 
-Falls Sie zu diesen Entwicklern gehören, 
-überspringen Sie diesen Post und warten auf den nächsten. 
+wollen, wie sie es tun wollen, implementieren genau das,
+testen es, reparieren es und liefern es dann ab.
+Falls Sie zu diesen Entwicklern gehören,
+überspringen Sie diesen Post und warten auf den nächsten.
 Der Heutige wird ihnen nicht gefallen.
 
 Ich arbeite nach beim Entwickeln immer nach einer  
@@ -22,7 +22,7 @@ Ich arbeite nach beim Entwickeln immer nach einer
 
  * Ich überlege, was ich tun möchte.
  * Dann lege ich los.
- * Einen Augenblick später erkenne ich, dass der 
+ * Einen Augenblick später erkenne ich, dass der
    Code hässlich wird.
  * Ich nehme ein paar Änderungen zurück.
  * Ich versuche es noch mal.
@@ -47,9 +47,9 @@ Ich arbeite nach beim Entwickeln immer nach einer
  * Jetzt sieht es ganz OK aus
  * Endliche liefern!
 
-Chaotisch? Zugegeben: Ist es. Trotzdem habe ich ein paar 
+Chaotisch? Zugegeben: Ist es. Trotzdem habe ich ein paar
 Grundsätze dabei.
- 
+
  * Die Annahme, dass ich die Lösung schon kenne,
    ist falsch (fast immer). Experimentieren lohnt sich.
 
@@ -64,21 +64,21 @@ Grundsätze dabei.
     Kurz vor Schluss zu testen ist noch viel doofer:
     Rote Tests sofort reparieren.
 
- *  Kleine Schritte. Sobald ich merke, dass ich nicht 
-    vorankomme, und die Tests nach ein paar Minuten immer 
-    noch nicht grün sind, 
-    breche ich ab und versuche es nochmal von vorne. 
-    Das gefällt mir besser, als das Herumstochern im 
+ *  Kleine Schritte. Sobald ich merke, dass ich nicht
+    vorankomme, und die Tests nach ein paar Minuten immer
+    noch nicht grün sind,
+    breche ich ab und versuche es nochmal von vorne.
+    Das gefällt mir besser, als das Herumstochern im
     Debugging-Nebel. Wenn der zweite Versuche auch nichts
     wird, versuche mit Refactoring die Ausgangssituation
-    zu verbessern. 
+    zu verbessern.
 
 Ich merke gerade, ich schweife ein wenig ab.
 
 ... und was hat das jetzt alles mit Git zu tun?
 -----------------------------------------------
 
-Um so zu arbeiten, committe häufig. Ein paar Zeilen ändern, 
+Um so zu arbeiten, committe häufig. Ein paar Zeilen ändern,
 die Tests sind grün: Schon wieder ein Commit. So kann ich
 
  * schnell auf einen _grünen_ Stand zurück,
@@ -92,20 +92,20 @@ die Tests sind grün: Schon wieder ein Commit. So kann ich
    und einen anderen Lösungsansatz versuchen.
  * per Cherry-Pick einzelne Commits
    aus verworfenen Zweigen
-   wieder herstellen. 
+   wieder herstellen.
 
 Die Sache hat aber einen Haken. Nach ein paar Stunden
-Programmierung steht eine unübersichtliche Folge von 
+Programmierung steht eine unübersichtliche Folge von
 135 unsortierten Commits im Repository.
 Hier betritt mein Lieblingsfeature von Git die Bühne:
 `git rebase --interactive`. Man kann damit
- 
+
  * Kommentare ändern und ergänzen,
  * mehrere Commits zusammenfassen,
  * Reihenfolgen ändern
  * und Commits weglassen.
 
-Das geht recht einfach. Die letzten 4 Commits 
+Das geht recht einfach. Die letzten 4 Commits
 überarbeitet man mit:
 
     git rebase --interactive HEAD~4
@@ -117,25 +117,25 @@ Es öffnet sich ein Editor mit einer Liste von Commits.
     pick 2d1936d Library "blabla" hinzufügen
     pick 6b6114a HTML-Darstellung verbessern
 
-Am Anfang jeder Zeile kann ich ein Kommando angeben, das sagt, was 
-mit der Zeile gemacht weren soll (Der Default ist `pick` und bedeutet, dass das Commit unverändert übernommen werden soll). 
+Am Anfang jeder Zeile kann ich ein Kommando angeben, das sagt, was
+mit der Zeile gemacht weren soll (Der Default ist `pick` und bedeutet, dass das Commit unverändert übernommen werden soll).
 Ich kann die Commits aber auch umsortieren oder  
-ganz weglassen. 
+ganz weglassen.
 
     pick   1f23222 HTML-Darstellung verbessern
     squash 6b6114a HTML-Darstellung verbessern
     edit   1d87986 Bugfix: Falsche Klammerung in Ausdruck
 
-Ein Commit habe ich weggelassen. Zwei Commits zum Thema 
-"HTML-Darstellung" fasse ich zu Einem zusammen (Befehl `squash`). 
+Ein Commit habe ich weggelassen. Zwei Commits zum Thema
+"HTML-Darstellung" fasse ich zu Einem zusammen (Befehl `squash`).
 Das Commit mit dem Bugfix habe ich nach hinten geschoben.
-Mit dem `edit`-Befehl zeige ich an, dass das Commit 
+Mit dem `edit`-Befehl zeige ich an, dass das Commit
 noch einmal manuell überarbeiten möchte.
 
 Sobald ich die Änderungen speichere führt Git alle Commits
-entsprechend den Befehlen in der angegebenen Reihenfolge 
+entsprechend den Befehlen in der angegebenen Reihenfolge
 noch mal neu aus. Dabei entstehen frische Commits mit
-anderen Commit-Hashes aber gleichem Inhalt. Aus den 4 
+anderen Commit-Hashes aber gleichem Inhalt. Aus den 4
 alten Commits werden 3 Neue.
 
 Auf diese Weise kann seine Commits verdichten, sinnvoll
@@ -158,7 +158,7 @@ geteilt hat (per `git push`).
 Unterbrochene Rebasings könne mit `git rebase --abort`
 abgebrochen werden.
 
-Nützlich ist die Option `--autosquash`, die 
+Nützlich ist die Option `--autosquash`, die
 Commits mit gleichem Kommentar automatisch
 zusammenfasst.
 
@@ -174,16 +174,16 @@ um noch schneller rebasen zu können.
 Mercurial bietet ein Plugin `histedit`, das Ähnliches
 verspricht. Ich habe es aber bisher noch nicht gründlich
 getestet.
-     
+
 Fazit
 -----
 
-Klassische Versionverwaltung dient vor allem der 
+Klassische Versionverwaltung dient vor allem der
 Archivierung von Softwareversionen.
 
-An Features wie dem Rebasing merkt man, dass Git 
+An Features wie dem Rebasing merkt man, dass Git
 mehr will (und kann) als das. Es unterstützt den
-Entwickler dabei seine Änderungen so zu sortieren, 
-zu kommentieren, zusammenzufassen und zusammenzustellen 
-dass sie für andere andere Entwickler 
+Entwickler dabei seine Änderungen so zu sortieren,
+zu kommentieren, zusammenzufassen und zusammenzustellen
+dass sie für andere andere Entwickler
 leichter verständlich werden.

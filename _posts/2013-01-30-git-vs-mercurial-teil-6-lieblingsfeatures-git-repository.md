@@ -7,7 +7,7 @@ tags: [Git, Mercurial, Repository, Garbage Collection]
 author: bst
 ---
 
-{% include git-vs-hg.md %}
+{% include_relative git-vs-hg.md %}
 
 Dieser Post hat etwas länger gebraucht und das lag nicht nur an der Weihnachtszeit. Lange konnte ich mich nicht entscheiden, über welches Feature ich schreiben möchte. Bei jedem einzelnen Feature dachte ich: "Ja, ist ganz nett. Aber nicht der Grund, warum Git so faszinierend ist.".
 

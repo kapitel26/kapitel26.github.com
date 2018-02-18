@@ -8,7 +8,7 @@ tags: [Git, Mercurial]
 author: bst
 ---
 
-{% include git-vs-hg.md %}
+{% include_relative git-vs-hg.md %}
 
 Und heute wird mal geschimpft. So sehr ich Git mag,
 so sehr ärgere ich mich immer wieder über die Macken

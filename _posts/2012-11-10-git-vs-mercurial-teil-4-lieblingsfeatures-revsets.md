@@ -7,7 +7,7 @@ tags: [Git, Mercurial, Revsets]
 author: bst
 ---
 
-{% include git-vs-hg.md %}
+{% include_relative git-vs-hg.md %}
 
 In den letzten Folgen ging um das, was beide Tools können. Heute
 werfe ich mal einen Blick auf ein Feature, das nur in Mercurial

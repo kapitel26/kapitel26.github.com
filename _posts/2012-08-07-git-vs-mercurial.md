@@ -8,7 +8,7 @@ tags: [Git, Mercurial]
 author: bst
 ---
 
-{% include git-vs-hg.md %}
+{% include_relative git-vs-hg.md %}
 
 Jede Epoche stellt die Menschheit vor große Alternativen:
 

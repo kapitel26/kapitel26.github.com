@@ -8,7 +8,7 @@ tags: [Git, Mercurial]
 author: bst
 ---
 
-{% include git-vs-hg.md %}
+{% include_relative git-vs-hg.md %}
 
 Weil es so wichtig fange ich mal mit den Branching-Modellen an.
 Ohne Branches könnte eine dezentrale Versionsverwaltung
