@@ -1,14 +1,15 @@
 ---
 layout: page
-title: "Git"
+title: "Git-Buch"
 description: "Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows"
+background: '/assets/git-buch/git-buch-auflage-3-streifen.png'
 ---
 
 <div class="container">
 
   <div class="row">
     <div class="col-4">
-      <a href="https://www.dpunkt.de/buecher/12831/9783864904523-git.html">
+      <a href="https://www.dpunkt.de/buecher/12831/9783864904523-git.html" target="_blank">
         <img src="/assets/git-buch/git-buch-auflage4.png" width="100%" alt="Git-Buch Cover"/>
       </a>
     </div>
@@ -26,17 +27,17 @@ description: "Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows
 
   <div class="row">
     <div class="col-4">
-      <a class="btn btn-primary" href="https://www.dpunkt.de/buecher/12831/9783864904523-git.html" role="button">
+      <a class="btn btn-primary" href="https://www.dpunkt.de/buecher/12831/9783864904523-git.html" target="_blank" role="button">
         dpunkt
       </a>
     </div>
     <div class="col-4">
-      <a class="btn btn-primary" href="https://www.thalia.de/shop/home/artikeldetails/git/ren_preissel/ISBN3-86490-452-8/ID53448276.html" role="button">
+      <a class="btn btn-primary" href="https://www.thalia.de/shop/home/artikeldetails/git/ren_preissel/ISBN3-86490-452-8/ID53448276.html" target="_blank" role="button">
         Thalia
       </a>
     </div>
     <div class="col-4">
-      <a class="btn btn-primary" href="https://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864904528/ref=pd_lpo_sbs_14_t_0?_encoding=UTF8&psc=1&refRID=HNN8Q5CC8XTW2PJXMX07" role="button">
+      <a class="btn btn-primary" href="https://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864904528/ref=pd_lpo_sbs_14_t_0?_encoding=UTF8&psc=1&refRID=HNN8Q5CC8XTW2PJXMX07" target="_blank" role="button">
         Amazon
       </a>
     </div>
@@ -46,7 +47,7 @@ description: "Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows
 
   <div class="row">
     <div class="col-12">
-      <a class="btn btn-primary" href="https://github.com/kapitel26/gitbuch-feedback/blob/master/feedback-git-buch-auflage-4.md" role="button">
+      <a class="btn btn-primary" href="https://github.com/kapitel26/gitbuch-feedback/blob/master/feedback-git-buch-auflage-4.md" target="_blank" role="button">
         Feedback und Errata (via GitHub)
       </a>
     </div>

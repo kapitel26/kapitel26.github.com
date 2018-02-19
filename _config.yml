@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Das sechsundzwanzigste Kapitel
+title: Kapitel 26
 email: git@eToSquare.de
 description: >- # this means to ignore newlines until "baseurl:"
   Ein Blog über Git und die Welt
