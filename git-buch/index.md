@@ -1,31 +1,17 @@
 ---
 layout: page
 title: "Git-Buch"
-description: ""
-group: navigation
-weight: 2
+background: '/assets/git-buch/git-buch-auflage4-streifen.png'
 ---
 
-<div class="jumbotron">
+<a href="https://www.dpunkt.de/buecher/12831/9783864904523-git.html">
+  <img src="/assets/git-buch/git-buch-auflage4.png" alt="Git-Buch Cover"/>
+</a>
 
-  <div class="media">
-
-    <div class="media-left">
-      <a href="http://dpunkt.de/buecher/5040/9783864903113-git.html">
-        <img src="buch-cover.jpg" alt="Git-Buch Cover"/>
-      </a>
-    </div>
-
-    <div class="media-body">
-      René Preißel<br/>
-      Bjørn Stachmann<p/>
-      <h1>Git</h1>
-      <h3>Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows</h3>
-      <h4>3. Auflage</h4>
-      dpunkt.verlag<p/>
-    </div>
-
-  </div>
+<h1>Git</h1>
+<h3>Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows</h3>
+dpunkt.verlag, 4. Auflage
+<h4>René Preißel, Bjørn Stachmann<h4/>
 
   <br/>
 
