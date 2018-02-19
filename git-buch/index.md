@@ -2,7 +2,6 @@
 layout: page
 title: "Git"
 description: "Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows"
-background: '/assets/kapitel26.ico'
 ---
 
 <div class="container">
