@@ -5,5 +5,3 @@
 layout: home
 background: '/assets/git-buch/git-buch-auflage-3-streifen.png'
 ---
-
-# Kurze Einleitung
