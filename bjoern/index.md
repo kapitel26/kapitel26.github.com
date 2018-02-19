@@ -1,10 +1,7 @@
 ---
 layout: page
 title: "Bjørn"
-description: "Über Bjørn Stachmann"
-group: navigation
 author: bst
-weight: 5
 ---
 
 Bjørn Stachmann
