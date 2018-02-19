@@ -1,59 +1,61 @@
 ---
 layout: page
-title: "Git-Buch"
-background: '/assets/git-buch/git-buch-auflage4-streifen.png'
+title: "Git"
+description: "Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows"
+background: '/assets/kapitel26.ico'
 ---
 
-<a href="https://www.dpunkt.de/buecher/12831/9783864904523-git.html">
-  <img src="/assets/git-buch/git-buch-auflage4.png" alt="Git-Buch Cover"/>
-</a>
+<div class="container">
 
-<h1>Git</h1>
-<h3>Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows</h3>
-dpunkt.verlag, 4. Auflage
-<h4>René Preißel, Bjørn Stachmann<h4/>
+  <div class="row">
+    <div class="col-4">
+      <a href="https://www.dpunkt.de/buecher/12831/9783864904523-git.html">
+        <img src="/assets/git-buch/git-buch-auflage4.png" width="100%" alt="Git-Buch Cover"/>
+      </a>
+    </div>
+    <div class="col-8">
+      <h3>Git</h3>
+      <h5>Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows</h5>
+      René Preißel, Bjørn Stachmann<br/>
+      4. Auflage<br>
+      dpunkt.verlag
+    </div>
+
+  </div>
 
   <br/>
 
-  <p>
-    <a class="btn btn-primary btn-lg" href="http://kapitel26.github.io/gitbuch-feedback" role="button">
-      Feedback geben oder Fehler melden
-    </a>
-  </p>
+  <div class="row">
+    <div class="col-4">
+      <a class="btn btn-primary" href="https://www.dpunkt.de/buecher/12831/9783864904523-git.html" role="button">
+        dpunkt
+      </a>
+    </div>
+    <div class="col-4">
+      <a class="btn btn-primary" href="https://www.thalia.de/shop/home/artikeldetails/git/ren_preissel/ISBN3-86490-452-8/ID53448276.html" role="button">
+        Thalia
+      </a>
+    </div>
+    <div class="col-4">
+      <a class="btn btn-primary" href="https://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864904528/ref=pd_lpo_sbs_14_t_0?_encoding=UTF8&psc=1&refRID=HNN8Q5CC8XTW2PJXMX07" role="button">
+        Amazon
+      </a>
+    </div>
+  </div>
 
-  <a class="btn btn-primary btn-lg" href="http://dpunkt.de/buecher/5040/9783864903113-git.html" role="button">
-    Bei dpunkt kaufen
-  </a>
+  <br/>
 
-  <a class="btn btn-primary btn-lg" href="https://www.dpunkt.de/buecher/4706/git.html" role="button">
-    E-Book kaufen
-  </a>
+  <div class="row">
+    <div class="col-12">
+      <a class="btn btn-primary" href="https://github.com/kapitel26/gitbuch-feedback/blob/master/feedback-git-buch-auflage-4.md" role="button">
+        Feedback und Errata (via GitHub)
+      </a>
+    </div>
+  </div>
 
-  <a class="btn btn-primary btn-lg" href="http://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3864903114" role="button">
-    Bei Amazon kaufen
-  </a>
-
-  </p>
+  <br/>
 
 </div>
-
-Was ist neu in der dritten Auflage?
-===================================
-
-Einsteiger finden die dezentrale Natur von Git oft verwirrend.
-In der aktuellen Auflage beschreiben wir diese Aspekte (Clone, Push und Pull) deshalb ausführlicher. Aus ursprünglich einem Kapitel sind dabei zwei geworden.
-
-Mehrere Leser haben kritisiert, dass wir in der vorige Auflage Git nur aus Kommandozeilenperspektive gezeigt haben.
-Die neue Auflage haben wir daher um eine Einführung in das Arbeiten mit dem beliebten grafischen User-Interface *Atlassian SourceTree* ergänzt.
-
-Das Thema DevOps ist aller Munde. Ein wichtiger Aspekt dabei ist die Automatisierung des Build- und Delivery-Prozesses.
-Dies adressieren wir durch einen neuen Workflow für *Continuous Delivery*
-und ein Kapitel zur Integration mit dem Build-Server Jenkins.
-
-Für Produktentwickler hilfreich ist ein neuer Workflow, der erläutert, wie man mehrere Release-Versionen eines Produkts parallel pflegen kann.
-
-Was ist das Besondere an eurem Buch?
-------------------------------------
 
 Unser Buch zeigt, wie man Git mit einem Team von Entwicklern nutzt.
 Dazu beschreibt es konkrete Folgen von Arbeitschritten,
@@ -61,43 +63,7 @@ genannt **Workflows**, z. B. "Mit Feature-Branches entwickeln"
 oder "Ein Release durchführen". Unser Buch ist also eher
 ein *Pattern-Buch* als ein Referenzhandbuch.
 Diese Workflows sind, natürlich nicht,
-die einzige Art, wie man mit Git arbeiten sollte. Aber sind
+die einzige Art, wie man mit Git arbeiten sollte. Aber sie sind
 praxiserprobt und bieten einen guten Startpunkt, wenn man Git
 im Team einführen möchte. Individuell anpassen kann (und wird)
 man die Workflows dann im Laufe der Zeit.  
-
-Warum habt Ihr ein Git-Buch geschrieben?
-----------------------------------------
-
-*(Offizielle Antwort)*
-
-Versionsverwaltung ist nicht unser Kernthema.
-Eher so: Entwicklung und Softwarearchitektur.
-Mund-zu-Mund-Propaganda führte uns zu Git.
-Der Linux-Kernel und ein paar andere coole Open-Source-Projekte
-würden neuerdings mit *Git* entwickeln, sagte man.
-Zunächst waren wir skeptisch:
-"Es gibt doch Subversion. Das kann alles, was man braucht, oder?"
-Wir haben es trotzdem mal ausprobiert und da steckte doch mehr
-in dem "oder?" drin als wir dachten. Begeistert schrieben wir einen
-[Artikel][git-artikel] für das [Java Magazin](http://www.javamagazin.de/).
-
-Einen großen Nachteil hat Git allerdings: Enorme Flexibilität.
-Man kann Git auf sehr unterschiedliche weisen nutzen und
-es für jedes Projekt und jeden Entwickler individuell anpassen.
-Natürlich ist genau das auch der Riesenvorteil von Git.
-Am Anfang aber erschwert es aber, den Wald vor lauter Bäumen zu erkennen.
-Wir wollten zeigen, dass man mit wenigen vorgegebenen Standard-Workflows,
-einen schnellen Einstieg finden und schon viel erreichen kann.
-
-*(Noch eine Antwort. Vielleicht etwas ehrlicher)*
-
-Bernd, Christian, Claudia, Olli, Markus, Stefan, Tim, und Uwe
-(in alphabetischer Reihenfolge ) haben exzellente Fachbücher geschrieben.
-Nur René und Bjørn nicht. Wir wollten auch mal sagen können:
-*"Wie ich in meinem Buch geschrieben habe, ..."*
-
-Feedback
---------
-
-<iframe src="http://kapitel26.github.io/gitbuch-feedback/" width="100%" height="800"></iframe>
