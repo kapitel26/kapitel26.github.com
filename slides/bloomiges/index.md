@@ -4,7 +4,7 @@ title: "Bloomiges - Coding Kata zu Bloom-Filtern"
 category: Coding
 tags: [Coding-Kata, Bloom-Filter, "Big Data"]
 author: bst
-#reveal_theme: white
+revealjs_theme: white
 ---
 
 <section

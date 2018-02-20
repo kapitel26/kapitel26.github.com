@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html>
 	<head>
@@ -7,7 +9,11 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="/assets/reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="/assets/reveal.js/css/theme/black.css">
+		{% if page.revealjs_theme %}
+				<link rel="stylesheet" href="/assets/reveal.js/css/theme/{{ page.revealjs_theme }}.css">
+		{% else %}
+				<link rel="stylesheet" href="/assets/reveal.js/css/theme/black.css">
+		{% endif %}
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="/assets/reveal.js/lib/css/zenburn.css">
