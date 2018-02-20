@@ -15,10 +15,10 @@ Wenn ihr die Kata selber mal üben wollt, könnt ihr Euch an den folgenden Slide
  * [Bloomiges-Kata auf Github](https://github.com/bstachmann/kata-bloomiges)
  * [Fertig implementiert](https://github.com/bstachmann/kata-bloomiges/commits/2016-02-14-bloomiges)
 
-*Auf erste Folie klicken, dann mit LEERTASTE blättern.* [**Vollbild-Modus**](/slides/bloomiges)
+*Auf erste Folie klicken, dann mit LEERTASTE blättern.* [**Vollbild-Modus**](/slides/2016-02-14-bloomiges)
 
-<iframe src="/slides/bloomiges/" width="480" height="300" name="Slides embedded">
-  [**Bloomiges**](/slides/bloomiges)
+<iframe src="/slides/2016-02-14-bloomiges/" width="480" height="300" name="Slides embedded">
+  [**Bloomiges**](/slides/2016-02-14-bloomiges)
 </iframe>
 
 Mehr über Bloom-Filter

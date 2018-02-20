@@ -1,8 +1,7 @@
 ---
-layout: revealjs
+layout: post
 title: "RevealJS ausprobieren"
 author: bst
 ---
 
-<section>Hallo</section>
-<section>Welt!</section>
+ * [Demo with RevealJS](/slides/bloomiges/)
