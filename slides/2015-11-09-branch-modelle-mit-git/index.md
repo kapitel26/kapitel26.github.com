@@ -5,7 +5,7 @@ category: Git
 tags: [Branch-Modelle, ConLi2015]
 author: bst-rp
 #reveal_theme: coli2015
-reveal_theme: black
+revealjs_theme: black
 ---
 
 <section

@@ -4,8 +4,7 @@ title: "Git in freier Wildbahn"
 category: Git
 tags: [ConLi2015]
 author: bst-rp
-#reveal_theme: coli2015
-reveal_theme: beige
+revealjs_theme: beige
 ---
 
 <section
