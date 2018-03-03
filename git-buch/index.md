@@ -1,8 +1,7 @@
 ---
 layout: page
 title: "Git-Buch"
-description: "Dezentrale Versionsverwaltung im Team<br/>Grundlagen und Workflows"
-background: '/assets/git-buch/git-buch-auflage-3-streifen.png'
+background: '/assets/git-buch/deko-streifen.jpg'
 ---
 
 <div class="container">

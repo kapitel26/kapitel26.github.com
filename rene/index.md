@@ -2,6 +2,7 @@
 layout: page
 title: "René"
 author: rp
+background: '/assets/decoration/sea3.jpg'
 ---
 
 René Preißel

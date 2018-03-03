@@ -2,6 +2,7 @@
 layout: page
 title: "Bjørn"
 author: bst
+background: '/assets/decoration/sea3.jpg'
 ---
 
 Bjørn Stachmann

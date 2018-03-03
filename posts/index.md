@@ -1,8 +1,8 @@
 ---
 layout: page
+title: "Posts"
+background: '/assets/decoration/sea2.jpg'
 ---
-
-# Hier kommt er überblick hin
 
 <table class="table table-striped">
   {% for post in site.posts %}
