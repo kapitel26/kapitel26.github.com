@@ -1,13 +1,36 @@
 <tr>
-  <td class="hidden-xs">
-    {{ current_post.date | date: "%Y-%m-%d" }}
-  </td>
-
   <td>
-    <a href="{{ BASE_PATH }}{{ current_post.url }}">{{current_post.title}}</a>
+    <h5><a href="{{ current_post.url }}">{{current_post.title}}</a>
+    vom {{ current_post.date | date: "%-d.%m.%Y" }}</h5>
   </td>
 
   <td class="hidden-xs">
-    {{ current_post.author }}
+    {% if current_post.author == "bst" %}
+    <a href="/bjoern">
+      <img src="/bjoern/bst.png" alt="Bjørn"/>
+      <br/>
+      Bjørn
+    </a>
+    {% endif %}
+    {% if current_post.author == "rp" %}
+    <a href="/rene">
+      <img src="/rene/rene.png" alt="René"/>
+      <br/>
+      René
+    </a>
+    {% endif %}
+    {% if current_post.author == "bst-rp" %}
+    <a href="/bjoern">
+      <img src="/bjoern/bst.png" alt="Bjørn"/>
+      <br/>
+      Bjørn
+    </a>
+    <br/>
+    <a href="/rene">
+      <img src="/rene/rene.png" alt="René"/>
+      <br/>
+      René
+    </a>
+    {% endif %}
   </td>
 </tr>
