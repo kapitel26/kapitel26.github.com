@@ -1,6 +1,6 @@
 <tr>
   <td class="hidden-xs">
-    {{ current_post.date | date: "%d. %B %Y" }}
+    {{ current_post.date | date: "%Y-%m-%d" }}
   </td>
 
   <td>

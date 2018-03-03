@@ -8,7 +8,7 @@ background: '/assets/decoration/sea3.jpg'
 René Preißel
 ------------
 
-![René Preißel](rene-preissel.jpg)
+![René Preißel](rene.jpg)
 
 **René Preißel** arbeitet als freiberuflicher Softwarearchitekt,
 Entwickler und Trainer.
