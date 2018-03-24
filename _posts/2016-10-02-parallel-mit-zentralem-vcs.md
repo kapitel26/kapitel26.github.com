@@ -418,3 +418,14 @@ Ein weiteres Problem kann entstehen, wenn aus Versehen bei der Entwicklung die
 Metainformationen der zentralen Versionsverwaltung gelöscht werden, zum
 Beispiel wenn bei einem Refactoring ein ganzes Verzeichnis gelöscht wird und
 damit auch das zugehörige CVS-Unterverzeichnis.
+
+<form method="POST" action="https://api.staticman.net/v2/entry/bstachmann/kapitel26-comments/master/comments">
+  <input name="options[redirect]" type="hidden" value="{{ page.url | absolute_url }}">
+  <!-- e.g. "2016-01-02-this-is-a-post" -->
+  <input name="options[slug]" type="hidden" value="{{ page.id | remove_first: "/" }}">
+  <label><input name="fields[name]" type="text">Name</label>
+  <label><input name="fields[email]" type="email">E-mail</label>
+  <label><textarea name="fields[message]"></textarea>Message</label>
+
+  <button type="submit">Go!</button>
+</form>
