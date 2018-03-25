@@ -4,12 +4,15 @@
 
 <h3>Feedback, Diskussion und Kommentare</h3>
 
+
 <table class="table table-striped8">
   <tbody>
     <tr class="d-flex">
       <form method="POST" action="https://api.staticman.net/v2/entry/bstachmann/kapitel26-comments/master/comments">
-        <input name="options[redirect]" type="hidden" value="{{ page.url | absolute_url }}">
-        <input name="options[slug]" type="hidden" value="{{ page.url | remove_first: "/" }}">
+        <input name="options[redirect]" type="hidden" value="{{ page.url | absolute_url }}"/>
+        <input name="fields[url]" type="hidden" value="{{ page.url }}"/>
+        <input name="fields[client_date]" type="hidden" value=" {{ "now" | date_to_rfc822 }}"/>
+      <!--  <input name="options[slug]" type="hidden" value="{{ page.url | remove_first: "/" }}"> -->
         <div class="form-group">
             <td class="col-sm-2">
               <input id="nameField" name="fields[name]" type="text" class="form-control">
