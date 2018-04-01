@@ -1,42 +1,5 @@
 <!-- Footer -->
 
-<hr>
-
-<h3>Feedback, Diskussion und Kommentare</h3>
-
-
-<table class="table table-striped8">
-  <tbody>
-    <tr class="d-flex">
-      <form method="POST" action="https://api.staticman.net/v2/entry/bstachmann/kapitel26-comments/master/comments">
-        <input name="options[redirect]" type="hidden" value="{{ page.url | absolute_url }}"/>
-        <input name="fields[url]" type="hidden" value="{{ page.url }}"/>
-        <input name="fields[client_date]" type="hidden" value=" {{ "now" | date_to_rfc822 }}"/>
-      <!--  <input name="options[slug]" type="hidden" value="{{ page.url | remove_first: "/" }}"> -->
-        <div class="form-group">
-            <td class="col-sm-2">
-              <input id="nameField" name="fields[name]" type="text" class="form-control">
-              <label for="nameField">Username</label>
-            </td>
-            <td class="col-10">
-              <textarea id="messageField" name="fields[message]" class="form-control" rows="4"></textarea>
-              <button type="submit" class="btn btn-primary">Absenden</button>
-            </td>
-        </div>
-      </form>
-
-    </tr>
-<!--
-    <tr class="d-flex">
-      <td class="col-sm-2">Irgendwer</td>
-      <td class="col-10">Hallo hallo!</td>
-    </tr>
--->
-  </tbody>
-</table>
-
-<hr>
-
 <footer>
   <div class="container">
     <div class="row">
@@ -78,3 +41,7 @@
     </div>
   </div>
 </footer>
+
+<hr>
+
+{% include feedback.html %}
