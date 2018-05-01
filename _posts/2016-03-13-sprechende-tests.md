@@ -137,3 +137,7 @@ Ein wenig theoretischen Hintergrund gibt es auch. Das Trennen der fachlichen Bes
 Macht Tests lesbar!
 Zieht solange technischen Code in Hilfsmethoden oder Oberklassen heraus, bis eine kompakte fachliche Beschreibung entsteht.
 Ihr werdet dann schneller und flexibler, wenn die Anforderungen sich ändern. Und, verlasst Euch drauf, das werden sie.
+
+### Kommentare
+
+> Ein Teste!
