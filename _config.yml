@@ -30,6 +30,7 @@ plugins:
   - jekyll-feed
   - jekyll-remote-theme
 
+# Theme specifix configuration
 scbdej_use_google_fonts: false
 
 # Exclude from processing.
