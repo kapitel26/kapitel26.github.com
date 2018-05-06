@@ -30,6 +30,8 @@ plugins:
   - jekyll-feed
   - jekyll-remote-theme
 
+scbdej_use_google_fonts: false
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
