@@ -1,30 +1,49 @@
-<h4>Feedback, Diskussion und Kommentare</h3>
+<hr>
 
 
-<table class="table">
-  <tbody>
-    <tr class="d-flex">
-      <form method="POST" action="https://api.staticman.net/v2/entry/bstachmann/kapitel26-comments/master/comments">
-        <input name="options[redirect]" type="hidden" value="{{ page.url | absolute_url }}"/>
-        <input name="fields[url]" type="hidden" value="{{ page.url }}"/>
-        <input name="fields[client_date]" type="hidden" value=" {{ "now" | date_to_rfc822 }}"/>
-        <div class="form-group">
-            <td class="col-9">
-              <textarea id="messageField" name="fields[message]" class="form-control" placeholder="Dein Kommentar" rows="6"></textarea>
-            </td>
-            <td class="col-sm-3">
-              <input id="nameField" name="fields[name]" type="text" class="form-control" placeholder="Dein Name"/>
-              <small>Kommentare werden als Pull-Request behandelt und erscheinen hier erst <a href="https://github.com/bstachmann/kapitel26-comments/pulls">nach der Freigabe</a>.</small>
-              <button type="submit" class="btn btn-primary btn-sm">Absenden</button>
-              <br/>
-            </td>
-        </div>
-      </form>
 
-  </tbody>
-</table>
+<h4>Verbesserung, Feedback, Diskussion und Kommentare</h4>
 
-<div class="embed-responsive embed-responsive-4by3">
+<p class="text-muted">
+  <p>
+    Eine Kommentarfunktion hat Kapitel26 nicht.
+    Wie Sie trotzdem etwas beitragen können, lesen Sie
+    <a  data-toggle="collapse"
+        href="#aboutPullRequests"
+        role="button"
+        aria-expanded="false"
+        aria-controls="aboutPullRequests">
+      hier ...
+    </a>
+    <div class="collapse" id="aboutPullRequests">
+      Das Blog ist <em><a href="/license.html">open source</a></em>.
+      Sie können die Quelltexte kopieren und weiter bearbeiten.
+      Wenn Sie möchten,
+      können Sie einen <em>Pull-Request</em> erstellen,
+      damit wir Ihre Änderungen übernehmen.
+      Wenn sie bereits <em>Github-User</em> sind geht das mit wenigen Klicks:
 
-  <iframe src="https://bstachmann.github.io/kapitel26-comments/comments.html?q={{ page.url }}" class="embed-responsive-item"/>
-</div>
+      <ol>
+        <li>
+          Quelltext dieser Seite
+          <a class="alert-link" href="https://github.com/kapitel26/kapitel26.github.com/tree/master/{{ page.path }}"
+              target="_blank">
+            auf Github öffnen.
+          </a>
+        </li>
+        <li>Edit-Button klicken. (Oder ein e tippen) <br/>
+            <img src="/assets/decoration/github-edit-button.png" alt="Edit Button on Github." width="180px"/></li>
+        <li>Beim Commit: Pull-Request erstellen<br/>
+            <img src="/assets/decoration/github-commit-with-pull-request.png" alt="Edit Button on Github." width="380px"/></li>
+        </li>
+      </ol>
+    </div>
+    <p/>
+    <a class="btn btn-primary"
+    href="https://github.com/kapitel26/kapitel26.github.com/tree/master/{{ page.path }}"
+    target="_blank"
+    role="button">
+      Zum Quelltext dieser Seite auf GitHub.
+    </a>
+  </p>
+</p>
