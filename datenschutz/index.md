@@ -52,3 +52,14 @@ Dies ist notwendig, damit der Browser die angeforderte Seite laden und an Ihren 
 Beim http-Request werden neben Ihrer IP-Adresse und der angeforderten Seite auch der Referrer (die Seite auf der Sie den Link geklickt haben), Informationen über Ihren Browser- und Ihr Betriebssystems an den Web-Server übermittelt
 
 Der Hoster speichert diese Informationen in Server-Logs, um den Betrieb zu überwachen, damit Störungen un Missbrauchsfälle schnell erkannt und behoben werden können.
+
+### Geschäftsbezogene Verarbeitung
+
+Dieses Blog ist Open-Source und nicht kommerziell.
+Wenn Sie aber,
+was nachvollziehbar ist,
+so begeistert unseren Beträgen sind,
+dass sie geschäfltich mit uns (den Autoren) in Verbindung treten wollen,
+dann tun Sie das am besten über die Firma [eToSquare](https://etosquare.de/),
+dessen Datenschutzerklärung sie [hier](https://etosquare.de/datenschutzerklaerung/) finden.
+
