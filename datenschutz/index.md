@@ -24,14 +24,18 @@ und wozu sie genutzt werden.
 
 ### Hosting
 
-Das Hoster betreibt einen Web-Server zur Auslieferung der Seiten dieses Blogs.
+Der Hoster betreibt einen Web-Server zur Auslieferung der Seiten dieses Blogs.
 
 #### Hosting durch GitHub Pages
 
 Dieses Blog ist [Open Source](/license.html) wird bei "GithHub Pages"
  gehosted.
 
-GitHub erfüllt als US-Unternehmen die Anforderungen des [Privacy Shield](https://www.privacyshield.gov/participant?id=a2zt000000001K2AAI) für Nutzer aus der EU, und hat deklariert seinen Umgang mit Daten in dieser [Privacy Policy](https://help.github.com/articles/github-privacy-statement/).
+ Github deklariert seinen Umgang mit Daten in dieser [Privacy Policy](https://help.github.com/articles/github-privacy-statement/).
+
+ >  ... we only collect the minimum amount of personal information that is necessary to fulfill the purpose of your interaction with us ...
+
+GitHub erfüllt als US-Unternehmen die Anforderungen des [Privacy Shield](https://www.privacyshield.gov/participant?id=a2zt000000001K2AAI) für Nutzer aus der EU.
 
 #### Hosting als statische Website
 
