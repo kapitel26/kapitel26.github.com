@@ -17,9 +17,10 @@ verarbeitet werden,
 und wozu sie genutzt werden.
 
 
-### Zweck
+### Warum verarbeiten wir Daten von Ihnen?
 
- * Publikation von Blog-Beiträgen auf dieser Website (`kapitel26.github.io`).
+ * Publikation von Blog-Beiträgen auf dieser Website [kapitel26.github.io](https://kapitel26.github.io) zu Ihrem Nutzen und unserem Ruhm.
+ * Kontaktaufnahme per Email, Telefon oder über sozialen Medien ermöglichen, um Feedback zum Blog zu erhalten, um Probleme beseitigen oder falls sie uns als Berater oder Trainer engagieren wollen.
 
 ### Hosting
 
