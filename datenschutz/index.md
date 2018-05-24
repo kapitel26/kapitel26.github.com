@@ -63,3 +63,9 @@ dass sie geschäftlich mit uns (den Autoren) in Verbindung treten wollen,
 dann tun Sie das am besten über die Firma [eToSquare](https://etosquare.de/),
 dessen Datenschutzerklärung sie [hier](https://etosquare.de/datenschutzerklaerung/) finden.
 
+### Social Media
+
+Wir (die Autoren dieses Blogs) haben persönliche Social-Media-Accounts (z. B. auf Twitter, Xing und Google+),
+die auch hier im Blog verlinked sind.
+Wenn Sie uns dort kontaktieren gelten die Datenschutzbedingungen der jeweiligen Plattform.
+
