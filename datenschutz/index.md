@@ -69,3 +69,10 @@ Wir (die Autoren dieses Blogs) haben persönliche Social-Media-Accounts (z. B. a
 die auch hier im Blog verlinked sind.
 Wenn Sie uns dort kontaktieren gelten die Datenschutzbedingungen der jeweiligen Plattform.
 
+### Open-Source-Beiträge zu diesem Blog
+
+Diese Blog ist ein Open-Source-Project.
+Sie können dazu beitragen,
+wenn Sie möchten,
+z. B. durch einen Pull-Request auf Github oder indem Sie uns einen Patch per Email zusenden.
+Beachten sie dabei: Dieses Projekt ist mit unter einer [Creative-Commons-Lizenz BY-NC-SA](/license.html) veröffentlicht, diese gilt dann auch für Ihre Beträge, wenn wir die die Pull-Requests annehmen. 
