@@ -23,8 +23,14 @@
         <li class="nav-item">
           <a class="nav-link" href="{{"/posts" | relative_url }}">Posts</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{"/info" | relative_url }}">Info</a>
+        <li class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/impressum">Impressum</a>
+            <a class="dropdown-item" href="/datenschutz">Datenschutz</a>
+            <a class="dropdown-item" href="/license.html">Lizenz</a>
+            <a class="dropdown-item" href="/making-of">"Making of"</a>
+          </div>
         </li>
       </ul>
     </div>
