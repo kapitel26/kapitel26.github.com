@@ -59,7 +59,7 @@ Dieses Blog ist Open-Source und nicht kommerziell.
 Wenn Sie aber,
 was nachvollziehbar ist,
 so begeistert unseren Beträgen sind,
-dass sie geschäfltich mit uns (den Autoren) in Verbindung treten wollen,
+dass sie geschäftlich mit uns (den Autoren) in Verbindung treten wollen,
 dann tun Sie das am besten über die Firma [eToSquare](https://etosquare.de/),
 dessen Datenschutzerklärung sie [hier](https://etosquare.de/datenschutzerklaerung/) finden.
 
