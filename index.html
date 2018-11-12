@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Size Does Matter - Große Repos in Git</title>
+
+	<meta name="description" content="Einstieg in das Arbeiten mit Git">
+	<meta name="author" content="René Preißel und Bjørn Stachmann">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="revealjs/css/reveal.css">
+	<!--<link rel="stylesheet" href="revealjs/css/theme/night.css" id="theme">-->
+	<!--<link rel="stylesheet" href="revealjs/css/theme/moon.css" id="theme">-->
+	<!--<link rel="stylesheet" href="revealjs/css/theme/white.css" id="theme">-->
+	<!--<link rel="stylesheet" href="revealjs/css/theme/sky.css" id="theme">-->
+	<link rel="stylesheet" href="revealjs/css/theme/simple.css" id="theme">
+	<!--<link rel="stylesheet" href="revealjs/css/theme/league.css" id="theme">-->
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="revealjs/lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'revealjs/css/print/pdf.css' : 'revealjs/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+	<!--[if lt IE 9]>
+	<script src="revealjs/lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+<div class="reveal">
+
+	<div class="slides">
+
+		<section data-markdown="00/intro.md" data-separator-vertical="^====*\n"></section>
+		<section data-markdown="01/monorepos.md" data-separator-vertical="^====*\n"></section>
+		<section data-markdown="02/gross.md" data-separator-vertical="^====*\n"></section>
+		<section data-markdown="03/anzahl-dateien.md" data-separator-vertical="^====*\n"></section>
+		<section data-markdown="04/datenvolumen.md" data-separator-vertical="^====*\n"></section>
+		<section data-markdown="05/anzahl-teams.md" data-separator-vertical="^====*\n"></section>
+		<section data-markdown="06/submodules-subtrees.md" data-separator-vertical="^====*\n"></section>
+		<section data-markdown="07/ueberblick-loesungen.md" data-separator-vertical="^====*\n"></section>
+		<section data-markdown="08/wenn-das-nicht-reicht.md" data-separator-vertical="^====*\n"></section>
+		<section data-markdown="99/meta.md" data-separator-vertical="^====*\n"></section>
+		<section data-markdown="09/fragen.md" data-separator-vertical="^====*\n"></section>
+
+	</div>
+
+</div>
+
+<script src="revealjs/lib/js/head.min.js"></script>
+<script src="revealjs/js/reveal.js"></script>
+
+<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'revealjs/plugin/search/search.js', async: true },
+					{ src: 'revealjs/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'revealjs/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+</body>
+</html>

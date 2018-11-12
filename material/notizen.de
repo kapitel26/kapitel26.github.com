@@ -1,0 +1,148 @@
+ * Monorepo
+   - die Großen machen das
+     - Die Modernen
+     - Die Dinosaurier
+   - ganz schön crazy
+   - Aber es gibt Argumente ...
+ * Was bedeutet groß
+   - Dimensionen
+     - Datenvolumen
+     - Files
+     - Anzahl Änderungen
+     - Anzahl Teams
+     - Anzahl Branches/Verzweigungen
+
+  * Probleme/Lösungen
+
+    - Datenvolumen
+        * Problem
+          - langsames Klonen und Fetchen
+          - Netzwerk
+          - (nicht) Kosten speicherplatz
+          - Binärdatien, insb. bei änderungen
+        * Lösung
+            * Clone mit & Co.
+              * Worktree
+              * --reference
+            * Große Dateien - LFS
+            * Außerhalb von Git
+            * Shallow Clone
+            * Hooks
+              - Große Datein block
+            * Grosse DAteien entfernen
+              - Bgf filter-branch
+
+    - Files
+
+      - Problem
+        * Performance des Filesystems Dateien / IDE
+        * Lösungen
+            * Großer Workspace - sparse checkout
+              - Build-Modularisierung Gradle, Bauen, wenn nicht alles da ist.
+            * Langer Status-Befehl - Watchman
+
+    - Anzahl Änderungen
+       * Git-Graph zu Groß
+       * Problem?
+         - gc oder oder andere operationen langsam
+       * Shallow Clone
+
+    - Anzahl Teams/Entwickler
+
+        * Probleme mit Push-Reject
+        * Lösungen
+          - lokale Branches (oder developer forks)
+          - pull Requests
+          - Server-Seitiges mergen, Jenkins./, Server-Hook
+
+        * Problem: Ich möchte die Verzeichnisse der andern nicht sehen
+        * Lösungen
+              *Großer Workspace - sparse checkout sieh
+
+        * Problem übersichts/Log-Problem (Git-Historien sind generell unübersichtlich)
+          - log -- folder
+          - Squash-Commits
+
+     - Anzahl Branches/Verzweigungen
+
+        * Problem viele Branchs
+          - Präfixe je produkt oder Team
+          - refspec
+          - (nicht) namespaces
+
+        * Aufräumen von Branches
+          - stale Branches finden, log mit autor email
+
+     - Submodules und Subrepos sind kein Ersatz für Monorepos
+
+
+
+  * übersciht Lösungen
+
+  * Abschluss
+
+    * Und wenn das nicht reicht
+    * Dann
+       * Eigens VCS Google
+       * Adapterietes FAcebook
+       * Aufgebohrtes Microsoft
+
+
+
+
+## Inhalte
+
+- Monorepo bieten Vorteile ...
+- große Unternehmen nutzen das ...
+- Monolithen lassen sich auch schwer aufteilen auf einzelne Repos
+- Was bedeutet es mit Git ein großes Monorepo zu managen
+- Auflisten der Probleme und Lösungen (die in Git unterstützt werden)
+    * Langes Clone - Shallow Clone
+        * Microsoft Filesystem (https://blogs.msdn.microsoft.com/bharry/2017/05/24/the-largest-git-repo-on-the-planet/)
+    * Komplexe Historie - ???
+    * Lange Historie - Filterbranch, Bfg, Subtree
+- Beispiele: Linux, ...
+
+## Notizen/Ideen
+
+ * shallow clones
+ * sparse checkouts
+ * fsmonitor-watchman
+ * Git-LFS
+ * Diskussion Monorepos
+ * ggf. bfg / filter-branch
+ * viele Branches, Tags -> Namespaces
+ * unübersichtliche Historien
+ * Restruktieren von Teams
+ * viele Beitragende  -> Umgang mit Fehlern
+ 
+ ## Berechnungen
+ 
+Git Buch nur tex: 20000 Zeilen unkomprimiert ~750kb  komprimiert ~270kb
+Masse 2 cm Höhe
+Volumen 0,165 * 0,02 * 0,24 = 0,0008 m3
+Gewicht 0,65kg
+
+1TB (1024 * 1024 kb) / 270kb ~3900 Exemplare
+Stapel: 78m Höhe
+Gewicht: ~2,5t
+Volumen: 3,1 m3
+ 
+
+
+
+ Luther Bibel: Altes und Neues Testament: ~31000 Zeilen ~760000 Wörter ~4500000 Zeichen 
+ Raw Ascii: ~4MB
+ Git Object: ~1,7 MB
+ Dicke 4cm
+
+ 1000MB / 1.7MB = 588
+ 588 * 0.04 = 21,76m
+ 
+ Lochkarte: 80 Bytes 0,17mm ~ 2,5g
+ 
+ 1000MB ~ 13.000.000 Lochkarten ~ 2200m hoher Stapel ~ 32,5t Gewicht
+ 
+ 5,25Zoll Diskette beidseitig: 332KB
+ 1000MB ~ 3000 Disketten
+ 
