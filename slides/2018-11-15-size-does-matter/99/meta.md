@@ -1,8 +1,10 @@
-Sie finden diese Präsentation zum Nachlesen in
+Sie finden [diese Präsentation](https://kapitel26.github.io/slides/2018-11-15-size-does-matter/) zum Nachlesen in
  unserem Blog: [Kapitel 26](http://kapitel26.github.io).
  
     http://kapitel26.github.io
-
+    
+    https://kapitel26.github.io/slides/2018-11-15-size-does-matter/
+    
 <div style="line-height: 20px">
 <font size="6">
 <a href="/?print-pdf">Drucken</a> / <a href="/?print-pdf&showNotes=true">Mit Notizen drucken</a>
