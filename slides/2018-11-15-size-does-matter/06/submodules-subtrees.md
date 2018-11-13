@@ -14,7 +14,7 @@
    - kleine Repos zum Arbeiten
  
  * *In der Praxis* kombinieren sich eher die Nachteile
-   - hohe Komplexität, fehleranfälligkeit
+   - hohe Komplexität, Fehleranfälligkeit
    - aufwändige Synchronisation
 
 notes:
