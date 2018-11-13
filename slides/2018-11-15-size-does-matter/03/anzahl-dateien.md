@@ -72,7 +72,7 @@ TODO Anmerkungen zu Usage von Sparse-Checkout
 
  * *Sparse Checkout* hilft oft auch hier
 
- * Monerepo `!=` Monolith
+ * Monorepo `!=` Monolith
    
    Modulverzeichnise können/sollten  
    separate IDE-Projekte sein.
