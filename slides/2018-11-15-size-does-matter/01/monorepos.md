@@ -67,6 +67,17 @@ aber manche machen das, z. B.
 ================================================================
 
 
+Ein **Monorepo** unterstützt
+
+ * API Migrationen
+ * Large Scale Refactorings
+ * Umfassende Analysen: Data Lineage, Vulnerability Detection, Defect Detection, Usage Statistics
+ * Aufräumen
+
+
+================================================================
+
+
 ### One Repo to Rule them All!
 
  * **1** Repo für Alles™
@@ -80,17 +91,6 @@ notes:
 Stichwort: Trunk Based Development
 
 Nicht alle Großen machen das: Amazon, Netflix
-
-
-================================================================
-
-
-Ein **Monorepo** unterstützt
-
- * API Migrationen
- * Large Scale Refactorings
- * Umfassende Analysen: Data Lineage, Vulnerability Detection, Defect Detection, Usage Statistics
- * Aufräumen
 
 
 ================================================================
