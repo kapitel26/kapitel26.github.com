@@ -89,7 +89,7 @@ Ein **Monorepo** unterstützt
 
  * API Migrationen
  * Large Scale Refactorings
- * Umfassende Analysen: Data Lineage, Vulnerarbility Detection, Defect Detection, Usage Statisticds
+ * Umfassende Analysen: Data Lineage, Vulnerability Detection, Defect Detection, Usage Statistics
  * Aufräumen
 
 

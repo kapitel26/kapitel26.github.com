@@ -95,7 +95,7 @@ Pull-Request sollten mit Reviews und Buil-Pipeline-Integration genutzt werden.
 #### Viele Leute - Push Reject
 ### Abhilfe: Build-Server-Merge 
 
- 1. Build-Server führt **Merge probeweise lokal** duch
+ 1. Build-Server führt **Merge probeweise lokal** durch
  1. Build & Test
  1. *nur* bei Erfolg: Pushen des Merges ins Haupt-Repo
     
@@ -198,7 +198,7 @@ wenn die Dateien ursprünglich mal woanders lagen.
 Nur Integrationen auf dem `master` zeigen:
 
 ```bash
-git log--first-parent master
+git log --first-parent master
 ```
 
 Nur Zusammenhänge zwischen Commits zeigen, die Tags oder Branches haben:
