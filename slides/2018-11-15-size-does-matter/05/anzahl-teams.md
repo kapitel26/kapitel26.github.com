@@ -1,3 +1,4 @@
+<!-- .slide: data-background-image="05/viele-leute.png" -->
 
 
 # Viele Leute!
