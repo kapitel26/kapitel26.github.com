@@ -1,7 +1,10 @@
+<!-- .slide: data-background-image="00/tyranno.png" -->
+
 
 ### Große Repos in Git
 
-# Size Does Matter
+
+<h1 style="color: #B22; font-weight: bold;"> Size Does Matter</h1>
 
 von René Preißel und Bjørn Stachmann
 
