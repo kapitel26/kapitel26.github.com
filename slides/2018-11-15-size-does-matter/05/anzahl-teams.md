@@ -106,7 +106,7 @@ Pull-Request sollten mit Reviews und Buil-Pipeline-Integration genutzt werden.
 ### Viele Leute - Push Reject
 #### Abhilfe: Pull - Build-Server-Merge
 
-<img src="05/workflow-continuous-delivery-2.png" width="60%" style="border: 0px; box-shadow: none; background-color: #224;">
+<img src="05/build-server-merge.png" width="60%" style="border: 0px; box-shadow: none;">
 
 notes:
 
