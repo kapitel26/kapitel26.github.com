@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "Size Does Matter"
-category: Git
+qcategory: Git
 tags: [Branch, ConLi2018]
-author: bst
+author: bst-rp
 ---
 
 ## Size Does Matter
