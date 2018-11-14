@@ -25,7 +25,7 @@ Das Buch wiegt (ohne Werbezettel) exakt 615 g
 
 |            | Buch-Repo      | Linux Kernel  | Windows Repo  |
 |------------|----------------|---------------|---------------|
-| Bücher     | 1              | 8.000         | 1, Mio.       | 
+| Bücher     | 1              | 8.000         | 1,1 Mio.      | 
 | Gewicht    | 0,615 kg       | 5.000 kg      | 700.000 kg    | 
 | Höhe       | 0,02 m         | 150 m         | 20.000 m      |
 | Speicher   | 0,27 MB        | 2,4 GB        | 300 GB        | 
@@ -83,6 +83,21 @@ Deepen 100: 885MB (125.000 Commits)
 
 TODO Umgang mit Merge-Parents
 
+================================================================
+
+#### Viele Bytes - langsamer Transfer
+
+### Breaking News: Partial Clone
+ 
+ <br/>
+ ```bash
+ git -c protocol.version=2 clone --filter=blob:100k <linux-url>
+ ```
+
+ <br/>
+
+* Weniger Blobs holen
+* __Klappt noch nicht mit GitHub / GitLab__
 
 ================================================================
 
