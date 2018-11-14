@@ -1,7 +1,10 @@
+<!-- .slide: data-background-image="06/modules.png" -->
+
 ### Aber es gibt doch auch...
+
 ### ... **`git submodule`** ... und
 ### **`git subtree`** ... gibt es doch auch.
-### Hilft das?
+### **Hilft das?**
 
 
 ================================================================
