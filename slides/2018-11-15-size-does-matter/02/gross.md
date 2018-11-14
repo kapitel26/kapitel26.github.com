@@ -1,3 +1,5 @@
+<!-- .slide: data-background-image="02/gross.png" -->
+
 
 Wenn Sie Monorepo aufbauen,  
 werden sie ein großes Repo bekommen,
@@ -32,4 +34,4 @@ Das log --follow kann auch mal ein halbes Minütchen brauchen, bis es am Anfang 
 
 
 ================================================================
-<img src="02/ueberblick-probleme.png" width="90%" style="border: 0px; box-shadow: none;">
+~~<img src="02/ueberblick-probleme.png" width="90%" style="border: 0px; box-shadow: none;">~~
