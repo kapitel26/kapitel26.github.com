@@ -21,6 +21,8 @@ Das Buch wiegt (ohne Werbezettel) exakt 615 g
 
 
 ================================================================
+<!-- .slide: data-background-image="04/michel.png" -->
+
 
 
 |            | Buch-Repo      | Linux Kernel  | Windows Repo  |
