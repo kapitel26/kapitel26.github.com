@@ -3,6 +3,7 @@ layout: post
 qcategory: Git
 tags: [Branch, ConLi2018]
 author: bst-rp
+background: /slides/2018-11-15-size-does-matter/00/tyranno.png
 ---
 
 ## Size Does Matter
