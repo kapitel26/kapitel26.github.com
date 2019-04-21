@@ -46,8 +46,8 @@ background: '/assets/git-buch/deko-streifen.jpg'
 
   <div class="row">
     <div class="col-12">
-      <a class="btn btn-primary" href="https://github.com/kapitel26/gitbuch-feedback/blob/master/feedback-git-buch-auflage-4.md" target="_blank" role="button">
-        Feedback und Errata (via GitHub)
+      <a class="btn btn-primary" href="{{"/feedback" | relative_url }}" target="_blank" role="button">
+        Feedback und Errata
       </a>
     </div>
   </div>
