@@ -1,31 +1,33 @@
-<!-- .slide: data-background-image="01/monorepo.png" -->
 
-## Wie man mit Git richig arbeitet
+## Wie man mit Git richtig arbeitet
 
 * Team vorstellen, wir bauen ein XY
 * Release alle 14 Tage
   - Machen GitFow
-* (evtl.) Machen Scrum, 6, 1 sm, 1 po
-* Haben Product Owner
+* (evtl.) Machen Scrum, 6, 1 sm, 1 po, Haben Product Owner
 * Task-Board JIRA
 * 1..* Entwickler ziehen einen Tasks aus der Spalte Ready
 * Erstellen Feature-branch für den Task
   `git checkout master`
   `git checkout -b dsakfjksdj`
 * Entwickeln
-* Vor dem fertigstellen
-* dev reinmergen, test
-* Pull-Request + feauter-build
+* Vor dem fertigstellen develop reinmergen, test
+* Pull-Request + featuree-build
 * Review
 * Nacharbeiten aus dem Review
-* dev reinmergen, + feauter-build, erneut reviewen
-* Auf dev integrieren
-* aum dev build
-* (evtl. Bugfixing, reverts)
+* develop reinmergen, + feauter-build, erneut reviewen
+* Auf develop integrieren
+* auf develop build
 
 ## Warum so kompliziert?
 
+https://publish.twitter.com/?query=https%3A%2F%2Ftwitter.com%2Ftastapod%2Fstatus%2F1042036175228358657&widget=Tweet
+
 Warum so viele Branches? So viele Tools?
+
+C Wir machen trunk based development, das ist viel einvacher
+
+TODO link auf TB webseite
 
 ## Autarkes Arbeiten 
 
@@ -48,10 +50,10 @@ C Dann kriegst du ja eine Woche lang gar nichts mit, was die anderen gemacht.
 
 C! Und dann hast du den Ärger später beim Mergen.
 
-C Außerdem werden am Schluss viele/grosse änderungen zummengeword, 
+C Außerdem werden am Schluss viele/grosse änderungen zummengeführt, 
   die noch nie gemeinsam durch CI gelaufen sind.
   
-P Aber wenn alle auf dem  master würden, 
+P Aber wenn ständig alle auf dem  master integrieren würden, 
   dann wird man ja ständig durch Änderungen abgelenkt
   die nicht zu tun haben, mit dem was man selber macht
 
@@ -65,21 +67,21 @@ C! Außerden sind die Integration meist harmlos, weil klein und durch CI gelaufe
  * Aber Unterschied in der Bewerung des Nutzen von autarker Arbeit
    * entweder häufig integrieren (alle 1/2 Stund, oder alle 3 Tage)
 
-## Stabiler dev-Branch
+## Stabiler develop-Branch
 
-Ziel: dev jederzeit grün.
+Ziel: develop jederzeit grün.
 
-P Aber wenn alle alle halbe Stunde integrieren, wie halte ich dann den maser/dev grün?
+P Aber wenn alle alle halbe Stunde integrieren, wie halte ich dann den maser/develop grün?
 
 C Git erzwingt, dass holeden der änderungen (pull/fetc) vor dem Push
   Mit gutem Grund: 
   Als verantwortungsvoller Entwickler würde vor dem push compilieren und testen
   
-P Aber das hätte ich schon gerne (Lenin)
+P Aber das hätte ich schon gerne automatisiert (Lenin)
 
 C Selbst wenn ein Fehler durchrutscht, würde der Build-Server das melden.
 
-C Aber in einem dauer die Itestsuite 2 Stunden -> Feature
+C Aber in einem die Test dauer die Itestsuite 2 Stunden -> Feature
   (Dann hätte man einen halben Tag später eine)
 
 P Aber in einem modernen Projekt hhätte man innerhalb von Minuten Feedback.
@@ -88,6 +90,15 @@ C Wenn es trotzdem rot, dass es sicht frü alle und klar, wer/was das verursacht
   (Erforderlich höchste PRIO, dass schnell repariert wird)
   
 P Das ist aber auch wieder ein Kontextwechsel.
+
+
+### Fazit 
+
+ * In kleine erfahrenen Teams, wird der development nur gelegentlich rot.
+ * Vertrauen statt Kontrolle funktioniert
+ * Lange Testsuiten sind Killer für Trunkbased-Development, 
+   weil man dann wieder jene Kontextwechsel erhält,
+   die man eigentlich loswerden wollte.
 
 ##  4 augen prinzip Sicherheit und Truck-Faktor
 
@@ -109,11 +120,21 @@ C Variante nachgelagerte Reviews
   
 C Invest in Monitoring, und Recovery uU effizienter als vollständige Fehlervermeidung (Chaos Monkey)
 
+C Das Abschliesenn von Feature-Branches erfordere eine REihe von Kontext und Toolwelche
+  Master reinmergen, PR anlegen, Testergebnis abwarten, PR Reviewen, Nacharbeite, ...
+
 Note commit-by-commit reviews
 
+### Fazit
+
+ * Pair Programming: Fachlicher Know How Transfer + Review-Charakter
+ * Nachvollziehbarkeit von Reviews -> Pull-Requests
+ * Style etc. soweit móglich automatisieren
+ * Trade-Off Prävention vs. Fehlerbehebung
+ 
 ## schöne historie
 
-P Aber bei uns sieht (anhand first-parent/merges) sehr schörn, wer wann was integriert hat
+P Aber bei uns sieht (anhand first-parent/merges) sehr schön, wer wann was integriert hat
 
 TODO Bild
 
@@ -145,10 +166,17 @@ P Wir könne aus der Historie die Release Notes ableiten
 
 C Könnte man aber auch aus JIRA holen
 
+
+### Fazit
+
+ * Braucht man eine schöne Historie
+ * First-Parent
+   - Commit nach Features gruppiert
+   - Release Historie ablesbare
  
 ##  feature management, feature picking
 
-P Vor dem Release, kann Der PO entscheiden, welche Features Reif sind
+P Vor dem Release, kann Der PO entscheiden, welche Features reif sind
 
 C Das ist brenzlig, weil die Integration dann fast vollständig ans Ende des Sprints verschoben werden
 
@@ -158,7 +186,7 @@ C Abhängigkeit zwischen Feature-Branches
 
 P Wir verbieten zwischen Feature-Branches hin- und herzumergen
 
-C Dann dauert es ja ewig, ein neue Feature zu beginne, 
+C Dann dauert es ja ewig, ein neue Feature zu beginnen, 
   das einem andern Feauture basiert.
   
 P Ggf. Zwischenmerges auf den Master/dev. Oder aufteilen. 
@@ -172,6 +200,20 @@ C Natürlich würde PO erst prúfen, wenn das Feature fachlich abgeschlossen (JI
 P Aber denn sind fachlich unvollständig Zwiechenversionen auf dem angeblich stabilen master?
 
 C Das Könnte man aber Feature-Togglen
+
+ * Lang laufende Branches
+   - geparkte Feauter Branches
+   - Migrationsbranche
+
+### Fazit
+
+ * FB gibt direktere Kontroller über die Integration von Features
+ * Mehrfachintegration kurz vor schluss ist auch bei FB nicht empfehlenswert
+ * In FB soll man Cross-Mergen meiden
+ * Das Teilen von zwischenergebnissen in FB zieht organisatorischen overhead nach sich
+   und erroder mehr git skill.
+ * In TB akzeptiert man, dass unvollständige Features (aber immer grün)
+ * in TB geben Feature-Toggles dem PO die Kontroller über Features
 
 ## Kleine Teams vs grosse/multiteams auf einem Repo
 
@@ -196,8 +238,22 @@ P Und wenn es doch ein Repo ist
 P Dann spricht vieles für Featurebased
   Wie in Open Source (man kann ja nicht jeden auf den master lassen).
   
+### Fazit
+
+Bei vielen Entwicklern in mehrren Teams,
+ist der Overhead für FB oft gerechtfertigt.  
   
-## Evtl Zwischenfazit zu Entwicklungsaspekten
+  
+## Umgang mit Bugs  
+  
+  * Trunk-Based bis Release = Continuous deliviery
+    - Forward fixing
+  * Git-Flow Hotfix - Feature- Brances fúr Releases
+    Hier Reviewbloxk besonder wichtig.
+    - Erfodert hohe Git und Prozesskenntnisse
+  
+  
+## Fazit zu Entwicklungsaspekten
 
 Trunkbased
 
@@ -216,10 +272,8 @@ FEauter Based
    Beispiele: SEcurity Dinge
  * Folgen von Fehlern schwer zu begrenzen (medizin, raumfahrt)
    
-
-
   
-
+ 
 
 
 ================================================================
