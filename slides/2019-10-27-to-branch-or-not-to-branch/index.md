@@ -9,6 +9,5 @@ revealjs_theme: simple
 
 <section data-markdown="00/intro.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="01/first.md" data-separator-vertical="^====*\n"></section>
-<section data-markdown="02/second.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="99/meta.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="09/fragen.md" data-separator-vertical="^====*\n"></section>
