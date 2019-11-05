@@ -11,6 +11,18 @@ von René Preißel und Bjørn Stachmann
 ================================================================
 
 
+> To Branch, or Not to Branch ...\
+> ... that is the question:\
+> Whether 'tis nobler in the mind to suffer\
+> The slings and arrows of ridiculous merges,\
+> Or to sail the master against a sea of troubles.
+
+
+================================================================
+
+ Sir René of the Golden Master 
+ Sir Bjørn Baron of the Branches
+
 <div style="border: 0px">
 > **René**  
 > selbständig ... Softwarearchitekt  
