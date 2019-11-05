@@ -107,7 +107,7 @@ Nicht mit uns!
     Dann darf man auch mal ein Stündchen länger bleiben.
  2. Code-Review
     Striktes Code-Review durch einen erfahrenen Kollegen.
- 3. Vorab-integration
+ 3. Vorab-integrationStart working
     Wärend der Entwickler gearbeitet hat, haben evtl. schon andere Kollegen Features 
     integriert.
 
@@ -133,13 +133,71 @@ Doch dafür gab es eine einfache Lösung.
 ================================================================
 
 
+# Releases
+
+## Feature-Freeze
+
+Keine Features-Merges nach development mehr, 
+noch noch einzelne Bugfixes-Branches. (Branch je Jira-Issue)
+
+Ab Montag Morgen, beginnt die Release Phase.
+
+ * Entwickler testen technisch
+ * Produktvogt testet Fachlich
+   Prüft die liste aller Merges (First-Parent-History)
+   Schreibt die Release Notes
+   und bereitet die Präsentation am Mittwoch morgen vor.
+   
+   
+(Entwickler dürfen, wenn es nichts mehr zu testen gibt, neue Features beginnen, aber nicht mergen.)   
+   
+Am späten Dienstag Nachmittag wird der `develop` auf `master`gemerged, ein Versionstag vergeben
+und es erfolgt **die Feature-Freigabe**
 
 ================================================================
 
 
-Der Weg
+# Die Demo
+
+Mittwoch findet dann die Präsentation statt.
+
 
 ================================================================
+
+# Bugs?
+
+Seit wir den Mind-set-improver haben, sind die natürlich selten geworden.
+
+Ähemm ... trotzdem müssen wir zugeben das kommt vor.
+
+Aber wir haben ein striktes und klares Vorgehen.
+
+
+================================================================
+
+
+Chuck Norris does not go Bug hunting.
+Chuck Norris goes But killing.
+"Hunting" would imply the possibility of failure.
+
+
+================================================================
+
+
+
+
+## Handling Bugs
+
+Jira-Issue
+
+Branch vom `master` abzweigen.
+
+Testen, in den `master` mergen.
+
+Master nach `develop` hochmergen.
+
+Mail an Entwickler, die ggf. `develop` in ihre Feature-Branches hochmergen.
+
 
 
 
