@@ -250,31 +250,33 @@ Aber wir haben ein striktes und klares Vorgehen.
 ================================================================
 
 
-> Chuck Norris does not go Bug hunting.
-> Chuck Norris goes But killing.
-> "Hunting" would imply the possibility of failure.
+> Chuck Norris does not go bug hunting.\
+> "Hunting" would imply the possibility of failure.\
+> Chuck Norris goes bug killing.
 
 
 ================================================================
 
 
-## Handling Bugs
+# BILD
 
-Jira-Issue
+Bugfixes in GitFlow.
 
-Branch vom `master` abzweigen.
 
-Testen, in den `master` mergen.
+Notes:
 
-Master nach `develop` hochmergen.
 
-Mail an Entwickler, die ggf. `develop` in ihre Feature-Branches hochmergen.
+
+ 1. Fix-Branch vom `master` abzweigen.
+ 2. Testen, in den `master` mergen.
+ 3. Master nach `develop` hochmergen.
+ 4. Mail an Entwickler, die ggf. `develop` in ihre Feature-Branches hochmergen.
 
 
 ================================================================
 
 
-## Und dann von vorne
+## Und dann kommt der nächste Sprint
 
 
 ================================================================
