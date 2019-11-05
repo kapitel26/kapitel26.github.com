@@ -44,7 +44,7 @@ Der angekündigt Titel ist falsch.
 ================================================================
 
 
-# Bild
+# BILD
 
 Mit Git entwickeln 
 - wie man es richtig macht.
@@ -290,17 +290,33 @@ Bild: Heiliger Gral mit Git-Flow Motiv
 ================================================================
 
 
-## Warum so kompliziert?
+# BILD
 
+Sir René tritt auf
+
+Notes:
+
+WARUM SO KOMPLIZIERT?
+
+Warum so viele Branches?
+
+
+================================================================
+
+
+> Friends don’t let friends use feature branches or GitFlow.\
+> Friends keep all their code on master and use feature toggles. 
+
+
+[Link](https://publish.twitter.com/?query=https%3A%2F%2Ftwitter.com%2Ftastapod%2Fstatus%2F1042036175228358657&widget=Tweet)
 
 
 ================================================================
 
 
 
-https://publish.twitter.com/?query=https%3A%2F%2Ftwitter.com%2Ftastapod%2Fstatus%2F1042036175228358657&widget=Tweet
 
-Warum so viele Branches? So viele Tools?
+
 
 C Wir machen trunk based development, das ist viel einvacher
 
