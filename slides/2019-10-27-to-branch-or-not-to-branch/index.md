@@ -115,7 +115,9 @@ Erzeugt einen Branch (von `development`, so heißt der Entwicklungsbranch.
 ===============================================================
 
 
-# BILD?
+# BILD
+
+Feature Branching bild
 
 
 Notes:
@@ -178,32 +180,56 @@ Motiv: Pranger
 ================================================================
 
 
-# Releases
+# BILD
 
-## Feature-Freeze
+Feature Branching bild mit Update-Merge
 
-Keine Features-Merges nach development mehr, 
+
+Notes:
+
+... und seither vergisst kaum noch ein Entwickler\
+vor Abschluss eines Feature-Branches den aktuellen Stand\
+von `develop` herein zu mergen und die Integrationstests zu starten.
+
+
+================================================================
+
+# BILD
+
+Motiv: Git-Flow Feature-Branche + `develop` -> `stable` Übergang
+
+Mit eingezeichneter First-Parent-History
+
+und Versionstag nach Release
+
+Notes:
+
+
+Feature-Freeze ab Montag, wenn wir mittwoch releasen
+
+Keine Features-Merges nach development mehr,\
 noch noch einzelne Bugfixes-Branches. (Branch je Jira-Issue)
 
-Ab Montag Morgen, beginnt die Release Phase.
+Entwickler testen dann auf Fehler.\
+Der Produktvogt testet auf fachliche Defizite.
 
- * Entwickler testen technisch
- * Produktvogt testet Fachlich
-   Prüft die liste aller Merges (First-Parent-History)
-   Schreibt die Release Notes
-   und bereitet die Präsentation am Mittwoch morgen vor.
+Prüft die liste aller Merges (First-Parent-History),\
+schreibt die Release Notes\
+und bereitet die Präsentation am Mittwoch morgen vor.
    
-   
-(Entwickler dürfen, wenn es nichts mehr zu testen gibt, neue Features beginnen, aber nicht mergen.)   
-   
-Am späten Dienstag Nachmittag wird der `develop` auf `master`gemerged, ein Versionstag vergeben
+     
+Am Dienstag Nachmittag wird der `develop` auf `master`gemerged, 
+ein Versionstag vergeben
 und es erfolgt **die Feature-Freigabe**
 
 
 ================================================================
 
+# BILD
 
-# Die Demo
+Team und Produktvogt vor Kaufmann
+
+Notes:
 
 Mittwoch findet dann die Präsentation statt.
 
@@ -212,12 +238,14 @@ Mittwoch findet dann die Präsentation statt.
 
 # Bugs?
 
+Notes:
+
 Seit wir den Mindset-Improver haben, sind die natürlich selten geworden.
 
-Ähemm ... trotzdem müssen wir zugeben das kommt vor.
+Ähemm ... trotzdem müssen wir zugeben, 
+das kommt gelegentlich vor.
 
 Aber wir haben ein striktes und klares Vorgehen.
-
 
 ================================================================
 
