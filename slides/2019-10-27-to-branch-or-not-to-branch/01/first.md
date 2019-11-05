@@ -1,4 +1,155 @@
 
+# Slide: To Branch or Not to Branch
+
+Ein Drama von René Preißel und Bjørn Stachmann
+
+
+================================================================
+
+
+Sir Bjørn Baron of the Branches
+
+1 Produkt Vogt, Irdische Stellvertreter unseres Kunden, der Bank of ..., 
+  sorgt dafür, das wir genau da bauen, was des Kunden Wunch ist.
+  Und nicht irgendwelchen andern Unfug. 
+1 Agiler Zuchtmeister, der dafür sorgt dass alle das gleiche agile und flexible Mindset haben
+  und niemand aus der Reihe tanzt.
+6 Soldaten
+
+
+Note:
+
+Ankündigung:
+Ich kündige eine Korrektur an. 
+Der angekündigt Titel ist falsch.
+
+
+================================================================
+
+
+Bild: To Branch or Not to Branch
+
+
+================================================================
+
+
+Bild: Mit Git entwickeln - wie man es richtig macht.
+
+
+================================================================
+
+
+Bild: Meine Leute
+
+
+
+Note:
+
+Wir bauen Software.
+Unser Kunde, die Bank of ..., liebt Zuverlässigkeit.
+Jeden zweiten Mittwoch um Punkt 8:15 liefern
+wir funktionierende Software aus.
+
+
+================================================================
+
+
+Alles geht vom Kunden aus.
+
+
+================================================================
+
+## Das Backlog.
+
+
+Montag: Kunde Nachmittag. Pre-Relase. 
+Nach Abnahme der Featuren des vorigen Sprints.
+Kunde teilt uns seine neuen Wünsche mit.
+Nun waltet der Produktvogt und 
+und sortiert diese in das hlg. Backlog ein.
+Diese werden dann vom Team agil abgenickt.
+Dann committed das Team die Wünsche des Kunden für den nächsten Sprint.
+
+
+================================================================
+
+
+# User Storys
+
+Das Vorgehen ist einfach.
+
+Ein Entwickler wird frei und nimmt sich die oberste User Story aus dem Backlog.
+
+Erzeugt einen Branch (von `development`, so heißt der Entwicklungsbranch.
+
+
+===============================================================
+
+
+# Ungestörtes Arbeiten
+
+Arbeitet dann ungestört auf diesem Branch, bis die seine Arbeit abgeschlosssen.
+
+Möchte seine Änderungen nach Development bringen.
+
+
+===============================================================
+
+# Die 1-2-3-Regel
+
+Aber Hoppla: Nicht so schnell! 
+Da könnte ja jeder kommen und irgenden Schmutz in die Codebase bringen.
+Nicht mit uns!
+
+ 1. Produktvogt
+    Produktvogt um eine Audienz (Review) bitten. Ggf. Nacharbeiten.
+    Kommt schon mal vor, dass jemand die Spezifikation nicht genau gelesen hat.
+    Dann darf man auch mal ein Stündchen länger bleiben.
+ 2. Code-Review
+    Striktes Code-Review durch einen erfahrenen Kollegen.
+ 3. Vorab-integration
+    Wärend der Entwickler gearbeitet hat, haben evtl. schon andere Kollegen Features 
+    integriert.
+
+In der Zwischenzeit haben Kollegen bereits Änderungen in das Review.
+
+
+================================================================
+
+Qualität geht vor. Deshalb geht sogleich nach dem Merge auf  `development`
+der automatische Build.
+
+Anfangs kam es immer mal wieder vor, dass Änderungen den Build gebrochen haben.
+
+Doch dafür gab es eine einfache Lösung.
+
+
+================================================================
+
+
+## Der Mind-Set-Improver
+
+
+================================================================
+
+
+
+================================================================
+
+
+Der Weg
+
+================================================================
+
+
+
+
+================================================================
+
+
+
+
+
 ## Wie man mit Git richtig arbeitet
 
 * Team vorstellen, wir bauen ein XY
@@ -329,3 +480,8 @@ FEauter Based
 * Mit Git hat man eigentlich immer einen lokalen "Feature-Branch"
 * Forking-Workflows (ZeroMQ)
 * OpenSource-Entwicklung vs Inhouse-Entwicklung
+
+
+================================================================
+
+
