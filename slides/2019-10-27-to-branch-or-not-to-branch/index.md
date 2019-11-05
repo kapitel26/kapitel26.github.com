@@ -349,7 +349,12 @@ Kunde ist die East India Company.
 ================================================================
 
 
+# BILD
 
+Zum Thema autarkes Arbeiten.
+
+
+Notes:
 
 ## Autarkes Arbeiten 
 
@@ -383,11 +388,21 @@ C! Aber man kann selber wählen, wann man ein Pull durchführt.
 
 C! Außerden sind die Integration meist harmlos, weil klein und durch CI gelaufen.
 
-### Fazit
+
+================================================================
+
+
+### Fazit: Autarkes Arbeiten
 
  * Technisch ist der Unterschied gering.
  * Aber Unterschied in der Bewerung des Nutzen von autarker Arbeit
    * entweder häufig integrieren (alle 1/2 Stund, oder alle 3 Tage)
+
+
+================================================================
+
+
+Notes:
 
 ## Stabiler develop-Branch
 
@@ -414,7 +429,11 @@ C Wenn es trotzdem rot, dass es sicht frü alle und klar, wer/was das verursacht
 P Das ist aber auch wieder ein Kontextwechsel.
 
 
-### Fazit 
+
+================================================================
+
+
+### Fazit: Stabilität
 
  * In kleine erfahrenen Teams, wird der development nur gelegentlich rot.
  * Vertrauen statt Kontrolle funktioniert
