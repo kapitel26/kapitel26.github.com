@@ -1,109 +1,80 @@
----
-layout: revealjs
-title: "To Branch or not Branch - Feature-Branching vs. Trunk-Based-Development"
-category: Git
-tags: [Git, Branching, Trunk-Based-Development]
-author: bst, rp
-revealjs_theme: simple
----
 
-<section data-markdown data-separator="^====*\n">
-    <textarea data-template>
-
-# BILD
-
-Titel-Slide: To Branch or Not to Branch
+# Slide: To Branch or Not to Branch
 
 Ein Drama von René Preißel und Bjørn Stachmann
 
 
 ================================================================
 
-# BILD
-
-Abbildung: Sir Bjørn
 
 Sir Bjørn Baron of the Branches
+
+1 Produkt Vogt, Irdische Stellvertreter unseres Kunden, der Bank of ..., 
+  sorgt dafür, das wir genau da bauen, was des Kunden Wunch ist.
+  Und nicht irgendwelchen andern Unfug. 
+1 Agiler Zuchtmeister, der dafür sorgt dass alle das gleiche agile und flexible Mindset haben
+  und niemand aus der Reihe tanzt.
+6 Soldaten
 
 
 Note:
 
-Ich kündige eine Korrektur an.
-
+Ankündigung:
+Ich kündige eine Korrektur an. 
 Der angekündigt Titel ist falsch.
 
 
 ================================================================
 
 
-# BILD
-
-"To Branch or Not to Branch", durchgestrichen.
+Bild: To Branch or Not to Branch
 
 
 ================================================================
 
 
-# Bild
-
-Mit Git entwickeln 
-- wie man es richtig macht.
+Bild: Mit Git entwickeln - wie man es richtig macht.
 
 
 ================================================================
 
 
-# BILD
-
-Sir Bjørn, 6 Soldaten und ein agiler Zuchtmeister
-
-Im Hintergrund die Bank of England
+Bild: Meine Leute
 
 
-Notes:
 
-Meine Leute!
+Note:
 
-6 wackere aber manchmal etwas übermütige Streiter
-
-1 agiler Zuchmeister, der dafür sorgt, 
-dass keiner aus der Reihe tanzt und wir strikt agil bleiben
-
-Und meine Wenigkeit, der Produkt Vogt, 
-also irdischer Stellvertreter der Bank of England, unseres Kunden, 
-für die wir die Ehre habe entwickeln zu dürfen.
-
+Wir bauen Software.
+Unser Kunde, die Bank of ..., liebt Zuverlässigkeit.
 Jeden zweiten Mittwoch um Punkt 8:15 liefern
 wir funktionierende Software aus.
 
 
 ================================================================
 
-# BILD
-
-User Stories im Backlog, Bildidee fehlt noch.
-
-
-Notes:
 
 Alles geht vom Kunden aus.
 
- 1. Am Montag morgen teilt der Kunde uns 
-    seine Wünsche für den kommenden Sprint mit.
- 1. Nun waltet der Produktvogt sortiert diese in das hlg. Backlog ein
-    und wählt die Obersten davon für den nächsten Sprint aus.
- 1. Diese werden vom Team ganz agil abgenickt,
- 1. Dann commmited sich das Team auf die Erfüllung der Wünsche
+
+================================================================
+
+## Das Backlog.
+
+
+Montag: Kunde Nachmittag. Pre-Relase. 
+Nach Abnahme der Featuren des vorigen Sprints.
+Kunde teilt uns seine neuen Wünsche mit.
+Nun waltet der Produktvogt und 
+und sortiert diese in das hlg. Backlog ein.
+Diese werden dann vom Team agil abgenickt.
+Dann committed das Team die Wünsche des Kunden für den nächsten Sprint.
 
 
 ================================================================
 
 
-# BILD 
-
-Story von Spalte zu Spalte schieben.
-
-Notes:
+# User Storys
 
 Das Vorgehen ist einfach.
 
@@ -115,34 +86,20 @@ Erzeugt einen Branch (von `development`, so heißt der Entwicklungsbranch.
 ===============================================================
 
 
-# BILD?
-
-
-Notes:
+# Ungestörtes Arbeiten
 
 Arbeitet dann ungestört auf diesem Branch, bis die seine Arbeit abgeschlosssen.
 
 Möchte seine Änderungen nach Development bringen.
 
-Aber Hoppla: Nicht so schnell! 
-Da könnte ja jeder kommen und irgenden Schmutz in die Codebase bringen.
-Nicht mit uns!
-
-Deshalb haben wir die 1-2-3-Regel!
-
 
 ===============================================================
 
+# Die 1-2-3-Regel
 
-# Unsere goldene 1-2-3-Regel
-
-Vor dem Merge
-
- 1. Audienz beim Produktvogt
- 2. Review durch erfahrenen Kollegen
- 3. Vorab Integrationstest
-
-Notes:
+Aber Hoppla: Nicht so schnell! 
+Da könnte ja jeder kommen und irgenden Schmutz in die Codebase bringen.
+Nicht mit uns!
 
  1. Produktvogt
     Produktvogt um eine Audienz (Review) bitten. Ggf. Nacharbeiten.
@@ -154,25 +111,23 @@ Notes:
     Wärend der Entwickler gearbeitet hat, haben evtl. schon andere Kollegen Features 
     integriert.
 
+In der Zwischenzeit haben Kollegen bereits Änderungen in das Review.
+
+
+================================================================
+
 Qualität geht vor. Deshalb geht sogleich nach dem Merge auf  `development`
 der automatische Build.
 
 Anfangs kam es immer mal wieder vor, dass Änderungen den Build gebrochen haben.
 
-Probleme in der agilen Entwicklung ergeben sich oft,
-wenn einzelne Mitarbeiter nicht das richtige agile Mindset haben.
-
-Doch dafür gibt es eine einfache Lösung.
+Doch dafür gab es eine einfache Lösung.
 
 
 ================================================================
 
 
-# BILD
-
-## Der Mind Set Improver
-
-Motiv: Pranger
+## Der Mind-Set-Improver
 
 
 ================================================================
@@ -199,7 +154,6 @@ Ab Montag Morgen, beginnt die Release Phase.
 Am späten Dienstag Nachmittag wird der `develop` auf `master`gemerged, ein Versionstag vergeben
 und es erfolgt **die Feature-Freigabe**
 
-
 ================================================================
 
 
@@ -212,7 +166,7 @@ Mittwoch findet dann die Präsentation statt.
 
 # Bugs?
 
-Seit wir den Mindset-Improver haben, sind die natürlich selten geworden.
+Seit wir den Mind-set-improver haben, sind die natürlich selten geworden.
 
 Ähemm ... trotzdem müssen wir zugeben das kommt vor.
 
@@ -222,9 +176,9 @@ Aber wir haben ein striktes und klares Vorgehen.
 ================================================================
 
 
-> Chuck Norris does not go Bug hunting.
-> Chuck Norris goes But killing.
-> "Hunting" would imply the possibility of failure.
+Chuck Norris does not go Bug hunting.
+Chuck Norris goes But killing.
+"Hunting" would imply the possibility of failure.
 
 
 ================================================================
@@ -519,9 +473,7 @@ FEauter Based
    Beispiele: SEcurity Dinge
  * Folgen von Fehlern schwer zu begrenzen (medizin, raumfahrt)
    
-    </textarea>  
- </section>
-
+  
 
 
 
