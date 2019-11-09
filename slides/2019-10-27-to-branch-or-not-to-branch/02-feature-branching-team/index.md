@@ -27,7 +27,7 @@ Notes:
 
 Meine Leute!
 
-6 wackere aber manchmal etwas übermütige Streiter
+8 wackere aber manchmal etwas übermütige Streiter
 
 1 agiler Zuchmeister, der dafür sorgt, 
 dass keiner aus der Reihe tanzt und wir strikt agil bleiben
@@ -66,11 +66,14 @@ Alles geht vom Kunden aus.
 
 Story von Spalte zu Spalte schieben.
 
+Spalten : Open, In Progress, PV approved, Reviewed, Integrated, Done
+
 Notes:
 
 Das Vorgehen ist einfach.
 
-Ein Entwickler wird frei und nimmt sich die oberste User Story aus dem Backlog.
+Ein Entwickler wird frei und nimmt sich die eine User Story,
+die zu seinen Skilla passt, aus dem Backlog.
 
 Erzeugt einen Branch (von `development`, so heißt der Entwicklungsbranch.
 
@@ -85,7 +88,8 @@ Feature Branching bild
 
 Notes:
 
-Arbeitet dann ungestört auf diesem Branch, bis die seine Arbeit abgeschlosssen.
+Arbeitet dann **ein paar Tage**
+ungestört auf diesem Branch, bis die seine Arbeit abgeschlosssen.
 
 Möchte seine Änderungen nach Development bringen.
 
@@ -144,6 +148,9 @@ Motiv: Pranger
 
 
 # BILD
+
+## Und wenn ich sehen möchte,\
+Was die anderen gemacht haben?
 
 Feature Branching bild mit Update-Merge
 
