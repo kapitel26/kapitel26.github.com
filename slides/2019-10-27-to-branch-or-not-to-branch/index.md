@@ -12,11 +12,12 @@ revealjs_theme: simple
 <section data-markdown="03-trunk-based-team/index.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="04-ungestoert-arbeiten-koennen/index.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="05-stabile-basis-fuer-die-entwicklung/index.md" data-separator-vertical="^====*\n"></section>
-<section data-markdown="06-truck-factor/index.md" data-separator-vertical="^====*\n"></section>
+<section data-markdown="06-refactoring/index.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="07-schoene-historie/index.md" data-separator-vertical="^====*\n"></section>
-<section data-markdown="08-feature-picking/index.md" data-separator-vertical="^====*\n"></section>
+<section data-markdown="08-truck-factor/index.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="09-bug-fixing/index.md" data-separator-vertical="^====*\n"></section>
-<section data-markdown="10-team-groesse/index.md" data-separator-vertical="^====*\n"></section>
-<section data-markdown="11-zusammenfassung/index.md" data-separator-vertical="^====*\n"></section>
-<section data-markdown="12-abspann/index.md" data-separator-vertical="^====*\n"></section>
+<section data-markdown="10-feature-picking/index.md" data-separator-vertical="^====*\n"></section>
+<section data-markdown="11-team-groesse/index.md" data-separator-vertical="^====*\n"></section>
+<section data-markdown="12-zusammenfassung/index.md" data-separator-vertical="^====*\n"></section>
+<section data-markdown="13-abspann/index.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="99/meta.md" data-separator-vertical="^====*\n"></section>
