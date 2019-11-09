@@ -131,7 +131,9 @@ R: Sobald der Build bricht und Jenkins eine Mail verschickt
 
 R: (oder ein Fehler aus PRD bekannt wird,)
 
-R: beginnen die Entwickler SOFORT mit dem Debugging:
+R: geht eine Rote Karte ans Board
+
+R: beginnen 2 Entwickler beginnen SOFORT mit dem Debugging:
 
 R: `git stash` und `git pull` und los geht`s.
 
@@ -139,7 +141,6 @@ R: NULL DELAY!, Das geht sofort.
 
 R: `git push` sobald, der Bug gefixed ist.
 
- 
 
 ================================================================
 
@@ -159,4 +160,29 @@ Austausch mit anderen.
 
 
 # `git pull`
+
+
+================================================================
+
+
+## So arbeiten wir mit Git
+
+#### (Der komplette Workflow)
+
+ 1. **2 Entwickler** ziehen einen Task auf **in Progress**
+ 2. Implementieren (ggf. mit Feature-Toggles)
+    a. `git pull`
+    b. `git commit`
+    c. `git push`, sobald lokale Tests *grün*
+    d. Falls noch nicht fertig, weiter bei **a.** oder **b.**
+ 3. Task auf **Done**, weiter bei **1.**
+ 
+**Bug oder Build-Problem**: 
+**2 Entwickler** erstellen eine rote Karte,
+pausieren ihre Aktuelle (`git stash`),
+und bearbeiten diese wie oben.
+Danach setzen sie ihre vorige Arbeit for (`git stash pop`)
+      
+
+
 
