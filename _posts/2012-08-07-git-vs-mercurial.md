@@ -8,8 +8,6 @@ tags: [Git, Mercurial]
 author: bst
 ---
 
-{% include_relative git-vs-hg.md %}
-
 Jede Epoche stellt die Menschheit vor große Alternativen:
 
  * Paradies: Apfel **essen** oder **nicht essen**?
@@ -76,3 +74,5 @@ sinvolles darüber schreiben.
 Proprietäre Systeme gibt es natürlich auch. Aber alle Sourcen
 langfristig an einen einzigen Hersteller zu binden, wer
 möchte das schon?
+
+{% include_relative git-vs-hg.md %}
