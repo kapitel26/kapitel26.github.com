@@ -69,7 +69,7 @@ Meine Leute!
 1 agiler Zuchmeister, der dafür sorgt, 
 dass keiner aus der Reihe tanzt und wir strikt agil bleiben
 
-Und meine Wenigkeit, der Produkt Vogt, 
+Und meine Wenigkeit, der Produktvogt, 
 also irdischer Stellvertreter der Bank of England, unseres Kunden, 
 für die wir die Ehre habe entwickeln zu dürfen.
 
@@ -267,7 +267,7 @@ Notes:
 
 Kleine Fehler:
 
- 1. Fix-Branch vom `master` abzweigen.
+ 1. Fix-Branch vom `master` abzweigen. TODO oder Release-branch
  2. Testen, in den `master` mergen.
  3. Master nach `develop` hochmergen.
  4. Mail an Entwickler, die ggf. `develop` in ihre Feature-Branches hochmergen.
@@ -325,18 +325,25 @@ B: Öh ja, wie denn sonst?
 
 # BILD
 
-Baumstank lange Kiefer
+Baumstamm, lange Kiefer
 
-Der `master` ist die beste Version, die wir je hatten.
+Der `master` ist die beste Version, 
+die es jemals gab.
+
+Jedes neue Commit macht in,
+ein kleines bisschen besser.
+
+Alles unser Wissen und Können steckt darin.
 
 TODO Link zu trunk-based-development.
 
 Notes:
 
-R: WIR MACHEN TRUNK BASED DEVELOPMENT!\
-R: Das ist viel einfacher.\
-R: Wir integrieren immer so schnell wie möglich auf dem master.\
-R: Bugfixes immer direkt auf dem `master` (Forward-Fixing)
+R: WIR BRAUCHEN NUR EINEN BRANCH!
+R: Wir mache Trunk-Based-Development!\
+R: Das ist einfacher und klarere.\
+R: Alles was bauen, integrieren wir\
+   so schnell wie möglich auf dem master.
 
 
 ================================================================
@@ -555,6 +562,8 @@ C Das Könnte man aber Feature-Togglen
    und erroder mehr git skill.
  * In TB akzeptiert man, dass unvollständige Features (aber immer grün)
  * in TB geben Feature-Toggles dem PO die Kontroller über Features
+
+## Bugfixing
 
 ## Kleine Teams vs grosse/multiteams auf einem Repo
 
