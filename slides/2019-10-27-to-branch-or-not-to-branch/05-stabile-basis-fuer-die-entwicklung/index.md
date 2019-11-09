@@ -12,10 +12,6 @@ Kartenhaus?
 Notes:
 
 
-
-================================================================
-
-
 B: Nichts ist schlimmer als brüchiger Integrationsbranch (bei uns `develop`).\
 Bevor man sich mit der eigenen Story beschäftigen kann,\
 muss man sich mit den Fehlern Anderer herumschlagen.\
@@ -57,15 +53,13 @@ aber nur wenige, die sie wirklich brauchen.
 ### Fazit: Stabilität
 
  * Ein brüchiger `master` (oder `develop`) nervt.
- * Trade-Off: Invest in Prävention vs. Schnelle Reparatur 
-   - Beim FB sorgt man mit Reviews und Pre-Merge-Integrationstests\
-     für Stabilität.
-   - Beim TBD hingegen werde die  Probleme oft\
-     schneller erkannt und gefixed.
+ * Beim FB sorgt man mit Reviews und Pre-Merge-Integrationstests\
+   für Stabilität.
+ * Beim TBD hingegen werden Probleme schneller erkannt und gefixed.
  * In kleinen erfahrenen Teams\
    wird der Integrationsbranch nur ab und zu mal *rot*.
  * Vertrauen statt Kontrolle funktioniert.
- * Lange Testsuiten sind ein Killer für TBD,\
-   weil man dann genau jene Kontextwechsel erhält,\
-   die man eigentlich loswerden wollte.
+ * Lange Testsuiten sind ein Killer für TBD.
 
+Für beide Verfahren ist ein stabiler Integrationsbranch (`master`, `develop`) essenziel.
+FB setzt mehr auf Prävention, TBD eher auf schnelle Problembehebung.
