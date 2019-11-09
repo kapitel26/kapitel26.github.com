@@ -6,44 +6,37 @@
 ================================================================
 
 
-## schöne historie
+# BILD
 
-P Aber bei uns sieht (anhand first-parent/merges) sehr schön, wer wann was integriert hat
+First-Parent-History
 
-TODO Bild
+Dokument mit Release-Notes?
 
-C Feature Branches (ohne Rebasing ) werden trotzdem hässlich. 
-  Und mit Rebasing erforden noch mehr git-know-how und Abstimmung.
+Notes:
 
-TODO Bild
 
-C! Wer schaut sich die globale Historie denn wirklich an. 
+B: Also bei uns sieht man, wenn man die Merges betrachtet,
+sehr schön, wann welche Stories integriert worden.
+Man kann sogar die Release 
 
- * Release Notes
- * eher auf File annotate blame, verstehen was passiert ist
- * Grob granulaer vs. fein: Welches comit gehÓr zu jedem FEator
-   - git diff X^1...X^2
-   - Jira issue in commit-message
- * Reverten (und Cherrypicken) eines Feature (schwierig, wenn auf mehre commits verteilt)
-   - wie oft tritt das auf? Bis wann geht das überhaupt?
-   - Alternative: Einzelreverts oder manuell ausbauen
-   - Revert
-     - Undo ist kompliziert
-     - Ist ohne fachliches des Features müglich
-   
 
-C! Außerdem habe wir JIRA
+R: Der Commit-Graph wird aber trotzdem häßlich, 
+weil sich die Features mehrfach überlappen.
 
-P Wir könne aus der Historie die Release Notes ableiten
+B: Wir Rebasen die Feature Branches vor dem Merge,
+dann sieht alles hübsch und ordentlich aus. 
 
-  - REverten kann sehr unübersichtlich werden
+R: Das Rebasing erfordert aber Git-Know-How und Koordination.
 
-C Könnte man aber auch aus JIRA holen
+R: Und überhaupt: Wer schaut sich die globale Historie denn wirklich an?
+
+R: Und für die Release Notes haben wir JIRA.
+
 
 
 ### Fazit
 
- * Braucht man eine schöne Historie
- * First-Parent
+ * Wozu braucht man die Historie Überhaupt?
+ * Bei Feature-Branching 
    - Commit nach Features gruppiert
-   - Release Historie ablesbare
+   - Release Historie ablesbare (First-Parent-History)
