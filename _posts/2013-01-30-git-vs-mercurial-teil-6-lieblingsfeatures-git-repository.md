@@ -7,8 +7,6 @@ tags: [Git, Mercurial, Repository, Garbage Collection]
 author: bst
 ---
 
-{% include_relative git-vs-hg.md %}
-
 Dieser Post hat etwas länger gebraucht und das lag nicht nur an der Weihnachtszeit. Lange konnte ich mich nicht entscheiden, über welches Feature ich schreiben möchte. Bei jedem einzelnen Feature dachte ich: "Ja, ist ganz nett. Aber nicht der Grund, warum Git so faszinierend ist.".
 
 Ich beschäftige mich viel mit Softwarearchitektur. Kent Beck hat mal eine Definition dazu gegeben: ["Software architecture is what software architects do ..."][Beck on Software Architecture]. Klingt albern. Ist es aber nicht. Der beste Weg Softwarearchitektur zu lernen ist zu beobachten, was erfolgreiche Softwarearchitekten tun. Im Fall von Git ist das kein Geringerer als Linus Torvalds, dem es gelungen ist, die Welt der Versionsverwaltung komplett umzukrempeln. Und das mit einer bemerkenswert einfachen Architektur.
@@ -126,3 +124,5 @@ Das Repository von Git ist einfach. Git insgesamt ist es *nicht*. Auf der Porcel
 <!-- Links -->
 
 [Beck on Software Architecture]: http://my.safaribooksonline.com/book/-/9781466603363/chapter-13-the-philosophy-of-software-architecture/151
+
+{% include_relative git-vs-hg.md %}

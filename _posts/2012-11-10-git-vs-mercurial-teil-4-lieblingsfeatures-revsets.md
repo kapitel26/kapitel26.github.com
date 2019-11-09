@@ -7,8 +7,6 @@ tags: [Git, Mercurial, Revsets]
 author: bst
 ---
 
-{% include_relative git-vs-hg.md %}
-
 In den letzten Folgen ging um das, was beide Tools können. Heute
 werfe ich mal einen Blick auf ein Feature, das nur in Mercurial
 vorhanden ist.
@@ -57,3 +55,5 @@ Fazit
 Die Mercurial-Revsets *Query Language* ist ein ungemein
 nützliches Tool, um die Historie zu analysieren.
 Ich wünschte, dass Git so etwas auch hätte.
+
+{% include_relative git-vs-hg.md %}

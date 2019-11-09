@@ -7,8 +7,6 @@ tags: [Git, Mercurial, Commit-Hash, Rebasing, Staging, Stashing]
 author: bst
 ---
 
-{% include_relative git-vs-hg.md %}
-
 Auf den ersten Blick scheint alles einfach.
 Eine Versionsverwaltung muß jeden Stand der Software sicher archivieren,
 so dass er auch nach vielen Jahren exakt wieder hergestellt werden kann.
@@ -145,3 +143,5 @@ Fazit
 Die (lokale) Geschichte zu verändern, ist sehr nützlich, um *Historie* lesbar zu machen. Gelegentlich muss man es auch tun, um im Repository aufzuräumen.
 
 Git bietet ein starkes Tooling hierfür an. Über Plugins kann Ähnliches auch in Mercurial bekommen.
+
+{% include_relative git-vs-hg.md %}

@@ -7,8 +7,6 @@ tags: [Git, Mercurial, Rebasing, "Interactive Rebasing"]
 author: bst
 ---
 
-{% include_relative git-vs-hg.md %}
-
 Ich kenne Entwickler die committen kaum öfter als zwei
 oder drei Mal am Tag. Die überlegen sich, was sie tun
 wollen, wie sie es tun wollen, implementieren genau das,
@@ -187,3 +185,5 @@ Entwickler dabei seine Änderungen so zu sortieren,
 zu kommentieren, zusammenzufassen und zusammenzustellen
 dass sie für andere andere Entwickler
 leichter verständlich werden.
+
+{% include_relative git-vs-hg.md %}

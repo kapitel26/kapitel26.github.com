@@ -8,8 +8,6 @@ tags: [Git, Mercurial]
 author: bst
 ---
 
-{% include_relative git-vs-hg.md %}
-
 Weil es so wichtig fange ich mal mit den Branching-Modellen an.
 Ohne Branches könnte eine dezentrale Versionsverwaltung
 schließlich gar nicht funktionieren.
@@ -376,3 +374,5 @@ experimentellen Branches**.
 
 [reflog-post]: /git/2012/05/09/reflog-fuer-bare-repositorys-in-git-einrichten/
 [gc-post]: /git/2012/05/28/wer-hat-angst-vor-dem-garbage-collector/
+
+{% include_relative git-vs-hg.md %}

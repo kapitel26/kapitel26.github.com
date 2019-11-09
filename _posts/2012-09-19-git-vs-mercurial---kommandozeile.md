@@ -8,8 +8,6 @@ tags: [Git, Mercurial]
 author: bst
 ---
 
-{% include_relative git-vs-hg.md %}
-
 Und heute wird mal geschimpft. So sehr ich Git mag,
 so sehr ärgere ich mich immer wieder über die Macken
 der Git-Kommandozeile.
@@ -150,3 +148,5 @@ tl;dr
 =====
 
 Die Git-Kommandozeile ist nicht Einsteiger-freundlich. Mercurial macht's besser.
+
+{% include_relative git-vs-hg.md %}
