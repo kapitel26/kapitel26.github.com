@@ -16,14 +16,12 @@ Notes:
 ================================================================
 
 
-## Stabiler develop-Branch
-
-B: Nichts ist schlimmer als brüchiger `master`.\
+B: Nichts ist schlimmer als brüchiger Integrationsbranch (bei uns `develop`).\
 Bevor man sich mit der eigenen Story beschäftigen kann,\
 muss man sich mit den Fehlern Anderer herumschlagen.\
 Wir schaffen das durch sorgfältige Reviews\
 und Integrationstest vor dem Merge.\
-Wie haltet ihr den `master` *grün*,\
+Wie haltet ihr euren `master` *grün*,\
 Wenn alle gleichzeitig daran herumschraubt?
 
 R: Git erzwingt, nicht ohne Grund,\
@@ -58,12 +56,16 @@ aber nur wenige, die sie wirklich brauchen.
 
 ### Fazit: Stabilität
 
- * Ein brüchiger `master` nervt.
- * In kleine erfahrenen Teams,\
-   wird der development nur gelegentlich rot.
- * Vertrauen statt Kontrolle funktioniert
+ * Ein brüchiger `master` (oder `develop`) nervt.
+ * Trade-Off: Invest in Prävention vs. Schnelle Reparatur 
+   - Beim FB sorgt man mit Reviews und Pre-Merge-Integrationstests\
+     für Stabilität.
+   - Beim TBD hingegen werde die  Probleme oft\
+     schneller erkannt und gefixed.
+ * In kleinen erfahrenen Teams\
+   wird der Integrationsbranch nur ab und zu mal *rot*.
+ * Vertrauen statt Kontrolle funktioniert.
  * Lange Testsuiten sind ein Killer für TBD,\
    weil man dann genau jene Kontextwechsel erhält,\
    die man eigentlich loswerden wollte.
-   
 
