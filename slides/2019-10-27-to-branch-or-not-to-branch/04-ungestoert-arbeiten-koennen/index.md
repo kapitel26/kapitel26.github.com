@@ -8,50 +8,68 @@
 
 # BILD
 
-Zum Thema autarkes Arbeiten.
+Zum Thema autarkes Arbeiten, Evtl. Entwickler mit Kopfhörer.
 
 
 Notes:
 
-## Autarkes Arbeiten 
-
 Bezieht auf mental load in den Köpfen der Entwickler.
 
-P Wir haben den coolen Vorteil, dass die Entwickler an einem Feature mehrer Tage konzentriert und ungestört arbeiten können.
+B: Entwickler brauchen Ruhe zum Arbeiten.
+Bei uns könnnen die Entwickler mehrer Tage konzentriert 
+und ungestört an einer Aufgabe arbeiten können.
 
-C Git ist dezentral, man kann auf dem Klon lokal ungestört arbeiten so lange man will 
-  und pushen wenn man fertig.
+R: Git ist dezentral, 
+man kann auf einem Klon lokal ebenso ungestört arbeiten.
+In einem lokalen Klon entsteht eine unabhängige Folge von Commits,
+genau wie bei einem Feature-Branch,
+solange bis man ein `pull` durchführt. 
 
-P Aber dann hat man ja kein backup.
+B: Aber dann hat man ja kein Backup.
 
-C! Wann ist zum letzten Mal deine festplatte kaputt gegangen? 
+R: Mal ehrlich, wann ist Dir zum letzten Mal die Festplatte kaputt gegangen? 
+Und wieviel Arbeit geht verloren, wenn Du alle par Stunden integrierst.
 
-C Und überhaupt, wie lange dauern der eure Tasks denn normalerweise?
+R: Und überhaupt, wie lange dauern der eure Tasks denn normalerweise?
 
-P Ein paar Tage, höchstens eine Woche
+B: Ein paar Tage, höchstens eine Woche
 
-C Dann kriegst du ja eine Woche lang gar nichts mit, was die anderen gemacht.
+R: Dann kriegst du ja eine Woche lang gar nichts mit, 
+was die anderen gemacht haben
+und dann hast du den Ärger später beim Mergen.
 
-C! Und dann hast du den Ärger später beim Mergen.
-
-C Außerdem werden am Schluss viele/grosse änderungen zummengeführt, 
-  die noch nie gemeinsam durch CI gelaufen sind.
+R: Außerdem werden am Schluss große Änderungen zusammengeführt, 
+die noch nie gemeinsam durch CI gelaufen sind.
   
-P Aber wenn ständig alle auf dem  master integrieren würden, 
-  dann wird man ja ständig durch Änderungen abgelenkt
-  die nicht zu tun haben, mit dem was man selber macht
+B: Aber wenn ständig alle auf dem  `master` integrieren würden, 
+dann wird man ja ständig durch Änderungen abgelenkt
+die nichts zu tun haben, mit dem was man selber macht.
 
-C! Aber man kann selber wählen, wann man ein Pull durchführt.
+R: In Wahrheit merkt man von den meisten Merges fast gar nichts.
+Weil die Änderungen klein sind 
+und die Kollegen an anderen Stellen gearbeitet haben.
 
-C! Außerden sind die Integration meist harmlos, weil klein und durch CI gelaufen.
+R: Außedem kann jeder Entwickler kann selber wählen, 
+wann man ein Pull durchführt.
+Auch bei sehr konzentriertem Arbeiten, 
+sollte man spätestens nach ein paar Stunden einen Zeitpunkt finden,
+um ein `pull` durchführen zu können, ohne aus dem Flow zu kommen.
 
 
 ================================================================
 
 
-### Fazit: Autarkes Arbeiten
+### Fazit: Unabhängig arbeiten können.
 
- * Technisch ist der Unterschied gering.
- * Aber Unterschied in der Bewerung des Nutzen von autarker Arbeit
-   * entweder häufig integrieren (alle 1/2 Stund, oder alle 3 Tage)
+ * Git-technisch ist der Unterschied  
+   zwischen Feature-Branch und `master`-Klon gering.
+ * Bei TBD sind  
+   die Zeiten zwischen Merges 
+   meist kürzer(Stunden) als beim FB (Tage)
+ * Kleine Merges: Kleine Probleme
+ * Große Merges: Große Probleme
+ * Flow: Entwickler sollten selber bestimmen können,
+   wann sie integrieren.
+
+Sowohl in TBD als auch beim FB können Entwickler ihren Flow finden.
 
