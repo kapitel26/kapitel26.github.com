@@ -1,4 +1,11 @@
 
+<!-- .slide: data-background-image="04-ungestoert-arbeiten-koennen/ohren-zuhalten.png"  data-background-opacity="1"  data-background-size="contain" -->
+
+
+================================================================
+
+<!-- .slide: data-background-image="04-ungestoert-arbeiten-koennen/ohren-zuhalten.png"  data-background-opacity="0.3"  data-background-size="contain" -->
+ 
 
 # Ungestört arbeiten können
 
