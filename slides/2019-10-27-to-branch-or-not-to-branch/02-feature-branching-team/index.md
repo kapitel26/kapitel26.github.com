@@ -1,17 +1,5 @@
 
-
-# Feature Branching Team
-
-
-================================================================
-
-
-
-# BILD
-
-Mit Git entwickeln 
-- wie man es richtig macht.
-
+<!-- .slide: data-background-image="02-feature-branching-team/wie-man-es-richtig-macht.png" data-background-color="0000FF" data-background-size="contain" -->
 
 ================================================================
 

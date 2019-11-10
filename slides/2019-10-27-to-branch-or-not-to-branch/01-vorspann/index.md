@@ -4,11 +4,8 @@
 
 ================================================================
 
-# BILD
 
-Abbildung: Sir Bjørn
-
-Sir Bjørn Baron of the Branches
+<!-- .slide: data-background-image="01-vorspann/two-lords.png" data-background-color="0000FF" data-background-size="contain" -->
 
 
 Note:
@@ -21,7 +18,5 @@ Der angekündigt Titel ist falsch.
 ================================================================
 
 
-# BILD
-
-"To Branch or Not to Branch", durchgestrichen.
+<!-- .slide: data-background-image="01-vorspann/change-of-title.png" data-background-color="0000FF" data-background-size="contain" -->
 

@@ -185,4 +185,26 @@ Danach setzen sie ihre vorige Arbeit for (`git stash pop`)
       
 
 
+================================================================
+
+
+<!-- .slide: data-background-image="03-trunk-based-team/two-visions-1.png" data-background-size="contain" -->
+
+
+
+
+================================================================
+
+
+<!-- .slide: data-background-image="03-trunk-based-team/two-visions-2.png" data-background-size="contain" -->
+
+
+
+
+================================================================
+
+
+<!-- .slide: data-background-image="03-trunk-based-team/two-visions-3.png" data-background-size="contain" -->
+
+
 
