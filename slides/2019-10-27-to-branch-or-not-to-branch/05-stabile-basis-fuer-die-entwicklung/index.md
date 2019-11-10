@@ -1,9 +1,17 @@
 
+<!-- .slide: data-background-image="05-stabile-basis-fuer-die-entwicklung/kartenhaus.png"  data-background-opacity="1"  data-background-size="contain" -->
+
+
+================================================================
+
+
+<!-- .slide: data-background-image="05-stabile-basis-fuer-die-entwicklung/kartenhaus.png"  data-background-opacity="0.2"  data-background-size="contain" -->
 
 # Stabile Basis für die Entwicklung
 
 
 ================================================================
+
 
 # BILD
 
