@@ -5,7 +5,11 @@ category: Git
 tags: [Git, Branching, Trunk-Based-Development]
 author: bst, rp
 revealjs_theme: simple
+custom_css: 2019-10-27-to-branch-or-not-to-branch
 ---
+
+<link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
 
 <section data-markdown="01-vorspann/index.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="02-feature-branching-team/index.md" data-separator-vertical="^====*\n"></section>

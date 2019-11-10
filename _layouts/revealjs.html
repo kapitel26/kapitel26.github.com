@@ -18,6 +18,10 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="/assets/reveal.js/lib/css/zenburn.css">
 
+		{% if page.custom_css %}
+		<link rel="stylesheet" href="/assets/{{ page.custom_css }}.css">
+		{% endif %}
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
