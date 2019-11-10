@@ -5,31 +5,44 @@
 
 ================================================================
 
-## Kleine Teams vs grosse/multiteams auf einem Repo
 
-P Und wie wúRDEST du das machen, wenn ihr nicht ein Team wäret, sondern 6 Teams.
+# BILD
 
-P Arbeiten die den alle und wie viele Builds bekomme ich denn,
-  wenn jeder aller halbe stunde integriert.
+Ganz viele kleine Ritter.
+
+
+Notes:
+
+B: Und wie würdest du das machen,\
+wenn ihr nicht ein Team wärt,\
+sondern beispielsweise 25 Teams.\
+Wenn die alle einem Repo arbeiten,\
+wie Builds bekomme ich denn,\
+wenn jeder Entwickler ca. jede halbe Stunde integriert.
   
-C Müssen die denn alle auf demselben Repo arbeiten,
-  Die könnten doch auch separates Repos haben, 
-  unabhängig versionen
-  und zur Laufzeit (Microservices) kommunizieren (Shared Nothing)
+R: Müssen die denn alle auf demselben Repo arbeiten?\
+Die könnten doch auch separates Repos haben, \
+unabhängig versionieren\ 
+und zur Laufzeit über Microservices kommunizieren (Shared Nothing)
 
-P Aber
+B: Aber 
   - REfactoring über REpogrenzen hinweg werden dann schwierig
   - Was ist dann überhaupt die gesamtversion
     - Meine Version kann funktionieren abhängigt vom Kontext
     - -> Client-Driven-Test, Contracts
     
-P Und wenn es doch ein Repo ist
+B: Und wenn es dann doch ein Repo ist?
 
-P Dann spricht vieles für Featurebased
-  Wie in Open Source (man kann ja nicht jeden auf den master lassen).
+R: Dann spricht vieles für FB.\
+Wie in Open Source Projekten (man kann ja nicht jeden auf den master lassen).
   
+
+================================================================
+
+
 ### Fazit
 
-Bei vielen Entwicklern in mehrren Teams,
+
+Bei vielen Entwicklern in mehreren Teams,
 ist der Overhead für FB oft gerechtfertigt.  
   
