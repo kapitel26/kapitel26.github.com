@@ -1,16 +1,6 @@
 
 
-# Vorspann
-
-================================================================
-
-
-# BILD
-
-Titel-Slide: To Branch or Not to Branch
-
-Ein Drama von René Preißel und Bjørn Stachmann
-
+<!-- .slide: data-background-image="01-vorspann/to-branch-or-not-to-branch.png" data-background-color="0000FF" data-background-size="contain" -->
 
 ================================================================
 
