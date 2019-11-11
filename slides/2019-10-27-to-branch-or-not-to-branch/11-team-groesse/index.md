@@ -1,14 +1,14 @@
 
-
-# Team Größe
+<!-- .slide: data-background-image="11-team-groesse/grosse-truppen.png"  data-background-opacity="1"  data-background-size="contain" -->
 
 
 ================================================================
 
 
-# BILD
+<!-- .slide: data-background-image="11-team-groesse/grosse-truppen.png"  data-background-opacity="0.4"  data-background-size="contain" -->
 
-Ganz viele kleine Ritter.
+
+# Team Größe
 
 
 Notes:

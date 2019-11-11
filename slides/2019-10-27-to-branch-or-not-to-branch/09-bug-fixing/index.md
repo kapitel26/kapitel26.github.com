@@ -1,18 +1,18 @@
 
-
-# Bug Fixing
+<!-- .slide: data-background-image="09-bug-fixing/bug-hunter.png"  data-background-opacity="1"  data-background-size="contain" -->
 
 
 ================================================================
 
 
-# BILD
+<!-- .slide: data-background-image="09-bug-fixing/bug-hunter.png"  data-background-opacity="0.4"  data-background-size="contain" -->
 
-Bug, Ritter mit Schmetterlingsnetz
+# Bug Fixing
 
-Außerdem Bild mit Ketten-Merges.
 
 Notes: 
+
+TODO Außerdem Bild mit Ketten-Merges.
   
 B: Beim Bug-Fixing hat FB aber klar die Nase vor mit strukturiertem Vorgehen.\
 Wir fixen genau jene Version, die in Production ist,\

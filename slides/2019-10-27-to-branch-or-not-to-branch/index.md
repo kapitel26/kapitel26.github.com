@@ -23,5 +23,5 @@ custom_css: 2019-10-27-to-branch-or-not-to-branch
 <section data-markdown="10-feature-picking/index.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="11-team-groesse/index.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="12-zusammenfassung/index.md" data-separator-vertical="^====*\n"></section>
-<section data-markdown="13-abspann/index.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="99/meta.md" data-separator-vertical="^====*\n"></section>
+<section data-markdown="13-abspann/index.md" data-separator-vertical="^====*\n"></section>

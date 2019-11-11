@@ -4,18 +4,10 @@
 
 ================================================================
 
-<!-- .slide: data-background-image="04-ungestoert-arbeiten-koennen/ohren-zuhalten.png"  data-background-opacity="0.2"  data-background-size="contain" -->
+<!-- .slide: data-background-image="04-ungestoert-arbeiten-koennen/ohren-zuhalten.png"  data-background-opacity="0.4"  data-background-size="contain" -->
  
 
 # Ungestört arbeiten können
-
-
-================================================================
-
-
-# BILD
-
-Zum Thema autarkes Arbeiten, Evtl. Entwickler mit Kopfhörer.
 
 
 Notes:

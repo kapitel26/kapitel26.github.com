@@ -1,12 +1,13 @@
-# Refactoring
+
+<!-- .slide: data-background-image="06-refactoring/umformieren.png" data-background-opacity="1"  data-background-size="contain" -->
 
 
 ================================================================
 
+<!-- .slide: data-background-image="06-refactoring/umformieren.png" data-background-opacity="0.4"  data-background-size="contain" -->
 
-# BILD
 
-Lego-Steine umgebaut?
+# Refactoring
 
 Notes:
 

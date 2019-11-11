@@ -1,18 +1,18 @@
 
-
-# Schöne Historie
+<!-- .slide: data-background-image="07-schoene-historie/schriftrolle.png"  data-background-opacity="1"  data-background-size="contain" -->
 
 
 ================================================================
 
 
-# BILD
+<!-- .slide: data-background-image="07-schoene-historie/schriftrolle.png"  data-background-opacity="0.4"  data-background-size="contain" -->
 
-First-Parent-History
+# Schöne Historie
 
-Dokument mit Release-Notes?
 
 Notes:
+
+TODO Bild mit first-parent-history
 
 
 B: Also bei uns sieht man, wenn man die Merges betrachtet,

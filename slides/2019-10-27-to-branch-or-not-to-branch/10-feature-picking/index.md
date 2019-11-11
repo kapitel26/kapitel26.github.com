@@ -1,21 +1,17 @@
 
+<!-- .slide: data-background-image="10-feature-picking/feature-picking.png"  data-background-opacity="1"  data-background-size="contain" -->
+
+
+================================================================
+
+
+<!-- .slide: data-background-image="10-feature-picking/feature-picking.png"  data-background-opacity="0.4"  data-background-size="contain" -->
+
 
 # Feature Picking
 
+Notes:
 
-================================================================
-
-
-# BILD
-
-Drei Kirschen
-
-
-================================================================
-
-
-
-##  feature management, feature picking
 
 B:  Vor dem Release, kann Der PO bei FB entscheiden, welche Features reif sind
 

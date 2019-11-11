@@ -1,13 +1,14 @@
 
-
-# Truck Faktor
+<!-- .slide: data-background-image="08-truck-factor/trebuchet.png"  data-background-opacity="1"  data-background-size="contain" -->
 
 
 ================================================================
 
-# BILD
 
-is klar, oder?
+<!-- .slide: data-background-image="08-truck-factor/trebuchet.png"  data-background-opacity="0.4"  data-background-size="contain" -->
+
+
+# Truck Faktor
 
 
 Notes:

@@ -4,11 +4,7 @@
 ================================================================
 
 
-# BILD
-
-Sir Bjørn, 6 Soldaten und ein agiler Zuchtmeister
-
-Im Hintergrund die Bank of England
+<!-- .slide: data-background-image="02-feature-branching-team/team-feature-branching.png" data-background-color="0000FF" data-background-size="contain" -->
 
 
 Notes:
