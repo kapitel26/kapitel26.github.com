@@ -38,5 +38,6 @@ R: Für die Release Notes haben wir JIRA.
 
  * Die Historie für einzelne Dateien oder Zeile ist notwendig für Merges und Fehlersuche.
  * Schön muss sie dazu aber nicht sein
- * Bei Feature-Branching kann man die Histrie nutzen für um die Integration der Features darzustellen
+ * Bei Feature-Branching kann man die Historie nutzen, um die Integration der Features darzustellen.
+
    

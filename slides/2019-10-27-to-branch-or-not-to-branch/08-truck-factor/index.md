@@ -39,4 +39,6 @@ R: Wie nutzen die Commit-Message um zu dokumentieren, das wir zu zweit waren.
    - Review-Charakter
    - Aber kein dokumentiertes Reviewergebnis
  * Code Style etc. soweit wie möglich automatisieren
+
+Pair Programming verringert den Truck-Faktor.
  

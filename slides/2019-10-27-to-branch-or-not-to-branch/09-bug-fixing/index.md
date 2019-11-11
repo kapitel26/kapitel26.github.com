@@ -50,3 +50,4 @@ R: Außerdem sind unfertige oder nicht abgenommene Feature "weggetoggled".
     * Released immer alles
     * Neue Features können durch Toggles deaktivert sein
 
+FB ermöglicht zielgenaues Bugfixing. Pragmatisch, ist "Forward-Fixing" oft effizienter.

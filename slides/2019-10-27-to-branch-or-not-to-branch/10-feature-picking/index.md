@@ -50,3 +50,5 @@ B: Beim Abschluss des Features löschen wir den Branch. Die Liste der nicht abge
  * In TBD akzeptiert man, dass der Code von unvollständigen Features\
    ausgeliefert wird (weggetoggled natürlich).
    * Ggf. geben Feature-Toggles dem PO die Kontrolle über Features.
+
+Ein echtes wahlfreies Feature-Picking funktioniert auch in FB nicht wirklich gut.

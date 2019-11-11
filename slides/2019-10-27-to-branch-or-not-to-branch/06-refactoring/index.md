@@ -39,6 +39,8 @@ fordern wir die Kollegen das schnell die Änderungen in Ihren Feature-Branch zu 
    - Koordination
    - Kurzlebige Refactoring-Branches
    - Update-Merge-Aufrufe nach Integration des Refactorings
+
+TBD erleichtertert Refactorings
    
 
 
