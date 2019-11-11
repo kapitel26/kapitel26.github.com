@@ -16,33 +16,29 @@ Notes:
 B: Und wie würdest du das machen,\
 wenn ihr nicht ein Team wärt,\
 sondern beispielsweise 25 Teams.\
-Wenn die alle einem Repo arbeiten,\
-wie Builds bekomme ich denn,\
-wenn jeder Entwickler ca. jede halbe Stunde integriert.
+Wenn die alle an einem Repo arbeiten,\
+wieviele Änderungen und damit auch Builds bekomme ich dann,\
+wenn jeder Entwickler jede halbe Stunde integriert?
   
 R: Müssen die denn alle auf demselben Repo arbeiten?\
-Die könnten doch auch separates Repos haben, \
-unabhängig versionieren\ 
-und zur Laufzeit über Microservices kommunizieren (Shared Nothing)
+Die könnten doch auch separate Repos haben und \
+ihre Module bzw. Services unabhängig versionieren.
 
 B: Aber 
-  - REfactoring über REpogrenzen hinweg werden dann schwierig
-  - Was ist dann überhaupt die gesamtversion
-    - Meine Version kann funktionieren abhängigt vom Kontext
-    - -> Client-Driven-Test, Contracts
-    
-B: Und wenn es dann doch ein Repo ist?
+  - Refactoring über Repogrenzen hinweg werden dann schwierig
+  - Wenn man ein monolithischen System hat, kann man nicht unabhängig versionieren.
+  - Aber in Open Source Projekten kannman  ja nicht jeden auf den master lassen.
 
-R: Dann spricht vieles für FB.\
-Wie in Open Source Projekten (man kann ja nicht jeden auf den master lassen).
+
+R: Dann spricht vieles für FB.
+
   
-
 ================================================================
 
 
 ### Fazit
 
-
-Bei vielen Entwicklern in mehreren Teams,
+Bei vielen Entwicklern in mehreren Teams auf dem selben Repo, 
+Monolithen und Open-Source-Projekten
 ist der Overhead für FB oft gerechtfertigt.  
   
