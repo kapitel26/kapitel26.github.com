@@ -13,40 +13,38 @@
 Notes:
 
 
-B:  Vor dem Release, kann Der PO bei FB entscheiden, welche Features reif sind
+B:  Vor dem Release, kann Der PO bei FB entscheiden, welche Features reif sind.
 
 R: Das ist brenzlig, weil die Integration dann\
-fast vollständig ans Ende des Sprints verschoben werden
+fast vollständig ans Ende des Sprints verschoben wird.
 
-B: Immerhin kann der PO entscheiden, welches Feature aufgenommen wird.
+B: Immerhin kann der PO entscheiden, welches Feature aufgenommen wird. Und bei Euch gehen Features unkontrolliert live?
 
-R: Und was, wenn die Feature-Branches von einander Abhängig sind.
+R: Die Entwickler bei uns handeln eigenverantwortlich, und stimmen sich mit dem PO ab.
+   Wenn etwas schief geht, können die kleinen Änderungen schnell wieder ausgebaut werden.
+   Bei komplexeren und unsicheren Features verwenden wir Toggles.
+
+R: Und was macht ihr, wenn die Feature-Branches voneinander abhängig sind?
 
 B: Wir verbieten zwischen Feature-Branches hin- und herzumergen
 
-R: Dann dauert es ja ewig, ein neue Feature zu beginnen, 
-  das einem andern Feauture basiert.
+R: Dann dauert es ja ewig, ein neues Feature zu beginnen, 
+  das auf einem anderen Feature-Branch basiert.
   
-B: Manchmal Integrieren wir Zwischenergebnisse.
+B: Manchmal teilen wir Features auf und integrieren Zwischenergebnisse.
 
-B: Aber der PO kann immer entscheiden, was fachlich integert.
-  - trunk-based müsste er ja jedes einzelne Commit fachlich prüfen.
-   
-R: Bei uns ist das Feature im Code schon längst draußen.\
-Der muss lediglich entscheiden,\
-wann das Feature-Toggle gelöst wird.
+R: Wer räumt bei Euch eigentlich die Branches auf und habt ihr nicht viele Branch-Zombies herumliegen?
 
-Notizen 
- * Lang laufende Branches
-   - geparkte Feauter Branches
-   - Migrationsbranche
+B: Beim Abschluss des Features löschen wir den Branch. Die Liste der nicht abgeschlossenen Branches gehen wir alle 2 Monate durch.
 
 ### Fazit
 
- * FB gibt direktere Kontrolle über die Integration von Features.
- * Mehrfachintegration kurz vor schluss ist auch bei FB nicht empfehlenswert.
- * In FB sollte man Cross-Merges vermeiden.
- * Das Teilen von zwischenergebnissen in FB ist umständlich.
- * In TB akzeptiert man, dass der Code unvollständiger Features\
+ * Feature-Branches geben direktere Kontrolle über die Integration
+   * Integration kurz vor Schluss ist nicht empfehlenswert.
+   * Zwischen Feature-Branches sollte nicht gemerged werden.
+   * Das Teilen von Zwischenergebnissen ist umständlich.
+ * In TBD akzeptiert man, dass der Code von unvollständigen Features\
    ausgeliefert wird (weggetoggled natürlich).
- * in TB geben Feature-Toggles dem PO die Kontroller über Features
+   * Ggf. geben Feature-Toggles dem PO die Kontrolle über Features.
+
+Ein echtes wahlfreies Feature-Picking funktioniert auch in FB nicht wirklich gut.
