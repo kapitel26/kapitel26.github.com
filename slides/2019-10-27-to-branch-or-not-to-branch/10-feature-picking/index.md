@@ -12,7 +12,6 @@
 
 Notes:
 
-
 B:  Vor dem Release, kann Der PO bei FB entscheiden, welche Features reif sind.
 
 R: Das ist brenzlig, weil die Integration dann\
@@ -36,6 +35,12 @@ B: Manchmal teilen wir Features auf und integrieren Zwischenergebnisse.
 R: Wer räumt bei Euch eigentlich die Branches auf und habt ihr nicht viele Branch-Zombies herumliegen?
 
 B: Beim Abschluss des Features löschen wir den Branch. Die Liste der nicht abgeschlossenen Branches gehen wir alle 2 Monate durch.
+
+
+
+================================================================
+
+
 
 ### Fazit
 
