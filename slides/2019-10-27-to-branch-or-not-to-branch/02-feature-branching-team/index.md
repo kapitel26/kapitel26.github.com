@@ -26,10 +26,8 @@ wir funktionierende Software aus.
 
 ================================================================
 
-# BILD
 
-User Stories im Backlog, Bildidee fehlt noch.
-
+<!-- .slide: data-background-image="02-feature-branching-team/scrum-board.png"  data-background-size="contain" -->
 
 Notes:
 
@@ -43,16 +41,6 @@ Alles geht vom Kunden aus.
  1. Dann commmited sich das Team auf die Erfüllung der Wünsche
 
 
-================================================================
-
-
-# BILD 
-
-Story von Spalte zu Spalte schieben.
-
-Spalten : Open, In Progress, PV approved, Reviewed, Integrated, Done
-
-Notes:
 
 Das Vorgehen ist einfach.
 
@@ -65,9 +53,7 @@ Erzeugt einen Branch (von `develop`, so heißt der Entwicklungsbranch.
 ===============================================================
 
 
-# BILD
-
-Feature Branching bild
+<!-- .slide: data-background-image="02-feature-branching-team/feature-branch.png" data-background-size="contain" -->
 
 
 Notes:
@@ -87,7 +73,8 @@ Deshalb haben wir die 1-2-3-Regel!
 ===============================================================
 
 
-# Unsere goldene 1-2-3-Regel
+## Unsere goldene 
+## 1-2-3-Regel
 
 Vor dem Merge
 
@@ -131,12 +118,22 @@ Motiv: Pranger
 ================================================================
 
 
-# BILD
+<!-- .slide: data-background-image="02-feature-branching-team/integration-merge.png" data-background-size="contain" -->
 
-## Und wenn ich sehen möchte,\
-Was die anderen gemacht haben?
 
-Feature Branching bild mit Update-Merge
+================================================================
+
+
+## Und wenn ich sehen möchte,
+
+## Was die anderen gemacht haben?
+
+
+
+================================================================
+
+
+<!-- .slide: data-background-image="02-feature-branching-team/update-merge.png" data-background-size="contain" -->
 
 
 Notes:
@@ -148,13 +145,8 @@ von `develop` herein zu mergen und die Integrationstests zu starten.
 
 ================================================================
 
-# BILD
+<!-- .slide: data-background-image="02-feature-branching-team/release.png" data-background-size="contain" -->
 
-Motiv: Git-Flow Feature-Branche + `develop` -> `stable` Übergang
-
-Mit eingezeichneter First-Parent-History
-
-und Versionstag nach Release
 
 Notes:
 
@@ -175,17 +167,6 @@ und bereitet die Präsentation am Mittwoch morgen vor.
 Am Dienstag Nachmittag wird der `develop` auf `master`gemerged, 
 ein Versionstag vergeben
 und es erfolgt **die Feature-Freigabe**
-
-
-================================================================
-
-# BILD
-
-Team und Produktvogt vor Kaufmann
-
-Notes:
-
-Mittwoch findet dann die Präsentation statt.
 
 
 ================================================================
@@ -212,9 +193,7 @@ Aber wir haben ein striktes und klares Vorgehen.
 ================================================================
 
 
-# BILD
-
-Bugfixes in GitFlow.
+<!-- .slide: data-background-image="02-feature-branching-team/bugfix.png" data-background-size="contain" -->
 
 
 Notes:
@@ -235,13 +214,17 @@ Wir können auch ganze Features wieder Rückgang machen (Stichwort: Reverting Me
 ================================================================
 
 
-## Und dann kommt der nächste Sprint
+## Und nun komme 
+
+## der nächste Sprint
 
 
 ================================================================
 
 
 ## So arbeitet man mit Git!
+
+Notes:
 
 Bild: Heiliger Gral mit Git-Flow Motiv
 
