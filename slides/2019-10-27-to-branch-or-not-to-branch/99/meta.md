@@ -1,15 +1,13 @@
-TODO Links anpassen
-
 Sie finden [diese Präsentation](https://kapitel26.github.io/slides/2018-11-15-size-does-matter/) zum Nachlesen in
  unserem Blog: [Kapitel 26](http://kapitel26.github.io).
  
     http://kapitel26.github.io
     
-    https://kapitel26.github.io/slides/2018-11-15-size-does-matter/
+    https://kapitel26.github.io/slides/2019-10-27-to-branch-or-not-to-branch/
     
 <div style="line-height: 20px">
 <font size="6">
-<a href="/?print-pdf">Drucken</a> / <a href="/?print-pdf&showNotes=true">Mit Notizen drucken</a>
+<a href="?print-pdf">Drucken</a> / <a href="?print-pdf&showNotes=true">Mit Notizen drucken</a>
 </font>
 </div>
 
@@ -21,8 +19,6 @@ Sie finden [diese Präsentation](https://kapitel26.github.io/slides/2018-11-15-s
 </div>
 
 notes:
-
-TODO Live-Version auf Kapite26
 
 Sie finden die Quelltexte zu dieser Präsentation bei [Kapitel 26 auf Gitlab](https://gitlab.com/kapitel26/grosse-repos).
 
