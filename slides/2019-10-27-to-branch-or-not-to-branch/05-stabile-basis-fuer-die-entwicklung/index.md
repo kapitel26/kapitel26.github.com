@@ -62,5 +62,4 @@ aber nur wenige, die sie wirklich brauchen.
  * Vertrauen statt Kontrolle funktioniert.
  * Lange Testsuiten sind ein Killer für TBD.
 
-Für beide Verfahren ist ein stabiler Integrationsbranch (`master`, `develop`) essenziel.
 FB setzt mehr auf Prävention, TBD eher auf schnelle Problembehebung.

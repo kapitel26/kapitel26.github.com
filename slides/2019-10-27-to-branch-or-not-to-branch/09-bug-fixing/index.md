@@ -41,7 +41,7 @@ R: Außerdem sind unfertige oder nicht abgenommene Feature "weggetoggled".
 ================================================================
 
 
-# Fazit
+### Fazit
 
   * Git-Flow ermöglicht sehr zielgenaue Bugfixes 
     * Erfordert aber viel Know-How, Arbeit und Disziplin.

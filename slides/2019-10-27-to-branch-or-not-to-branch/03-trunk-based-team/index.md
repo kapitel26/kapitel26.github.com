@@ -1,9 +1,7 @@
 
 
-> Friends don’t let friends use feature branches or GitFlow. 
-> Friends keep all their code on master and use feature toggles.
->
-> (Daniel Terhorst-North @tastapod)
+<!-- .slide: data-background-image="03-trunk-based-team/friends-gitflow.png" data-background-size="60%" -->
+
 
 Notes:
 
@@ -17,12 +15,8 @@ R: Das geht auch einfacher!
 ================================================================
 
 
+<!-- .slide: data-background-image="03-trunk-based-team/trunk-based-team.png"  data-background-size="contain" -->
 
-# BILD
-
-Sir René, 4 Soldaten 
-
-Im Hintergrund Ein Schiff der East India Company
 
 Notes:
 
@@ -35,9 +29,7 @@ betreiben Software für die East India Company.
 ================================================================
 
 
-# BILD
-
-Baumstamm, lange Kiefer
+<!-- .slide: data-background-image="03-trunk-based-team/trunk-based.png" data-background-opacity="0.4" data-background-size="contain" -->
 
 Der `master` ist die beste Version, 
 die es jemals gab.
@@ -47,7 +39,7 @@ ein kleines bisschen besser.
 
 Alles unser Wissen und Können steckt darin.
 
-TODO Link zu trunk-based-development.
+https://trunkbaseddevelopment.com/
 
 Notes:
 
@@ -62,11 +54,8 @@ R: Alles was wir bauen, integrieren wir\
 ================================================================
 
 
-# BILD
+<!-- .slide: data-background-image="03-trunk-based-team/task-board.png" data-background-size="contain" -->
 
-Tasks auf Board mit 3 Spalten
-
-Open (WIP: 6), in Progress (WIP: 3), Done
 
 Notes:
 
@@ -83,12 +72,7 @@ R: Bei uns bedeutet ein Task meist nur ein paar Stunden Arbeit.
 ================================================================
 
 
-# BILD
-
-Integration auf dem Master
-
-Nur Push und Pull.
-
+<!-- .slide: data-background-image="03-trunk-based-team/master.png" data-background-size="contain" -->
 
 Notes:
 
@@ -140,7 +124,8 @@ R: `git push` sobald, der Bug gefixed ist.
 ================================================================
 
 
-## Und wenn ich sehen möchte,\
+Und wenn ich sehen möchte,
+
 Was die anderen gemacht haben?
 
 # Ratet mal ...
@@ -203,3 +188,9 @@ Austausch mit anderen.
 Notes:
 
 Umfrage: Wer gehört zu welchem Lager?
+
+ * Eher trunk-based?
+ * Eher feature-branching?
+ 
+OK, dann müssen wir jetzt doch mal klären,
+was richtig ist.
