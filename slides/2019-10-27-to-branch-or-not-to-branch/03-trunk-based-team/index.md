@@ -56,7 +56,7 @@ R: Wir machen Trunk-Based-Development!\
 R: Das ist viel einfacher und klarer.\
 R: Alles was wir bauen, integrieren wir\
    so schnell wie möglich in den master,
-   so dass alle
+   so dass alle sofort die Änderungen sehen.
 
 
 ================================================================
