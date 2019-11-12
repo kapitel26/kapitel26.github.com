@@ -1,25 +1,13 @@
 
 
-# Trunk Based Team
-
-
-================================================================
-
-
-# BILD
-
-Kleiner Prinz 
-
-> Perfektion ist nicht dann erreicht, \
-> wenn es nichts mehr hinzuzufügen gibt, \
-> sondern wenn man nichts mehr weglassen kann.
-> (Antoine de Saint-Exupéry in "Der kleine Prinz")
-
-und Sir René tritt auf
+> Friends don’t let friends use feature branches or GitFlow. 
+> Friends keep all their code on master and use feature toggles.
+>
+> (Daniel Terhorst-North @tastapod)
 
 Notes:
 
-(Zitat nicht vorlesen, einfach wirken lassen)
+([Zitat nicht vorlesen, einfach wirken lassen](https://twitter.com/tastapod/status/1042036175228358657?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1042036175228358657&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps%253A%252F%252Ftwitter.com%252Ftastapod%252Fstatus%252F1042036175228358657%26widget%3DTweet))
 
 R: WARUM SO KOMPLIZIERT?
 
@@ -54,7 +42,7 @@ Baumstamm, lange Kiefer
 Der `master` ist die beste Version, 
 die es jemals gab.
 
-Jedes neue Commit macht in,
+Jedes neue Commit macht ihn,
 ein kleines bisschen besser.
 
 Alles unser Wissen und Können steckt darin.
@@ -68,7 +56,7 @@ R: Wir machen Trunk-Based-Development!\
 R: Das ist viel einfacher und klarer.\
 R: Alles was wir bauen, integrieren wir\
    so schnell wie möglich in den master,
-   so dass alle
+   so dass alle sofort die Änderungen sehen.
 
 
 ================================================================
@@ -88,7 +76,7 @@ R: Wir arbeiten im PAIR (bei 6 Leuten deshalb WIP: 3)
 
 R: Es wird immer die oberste Karte aus Open gezogen.
 
-R: Bei uns bedeutet ein Task meist nur ein paar Stunden arbeit.
+R: Bei uns bedeutet ein Task meist nur ein paar Stunden Arbeit.
    Tagelange Tasks mögen wir nicht.
 
 
@@ -106,7 +94,7 @@ Notes:
 
  * Die Entwickler "Pullen", erstellen Commits, und "Pushen",
    sobald die lokalen Tests grün sind.
- * Unfertige Features-können über ein Feauture-Toggle
+ * Unfertige Features können über ein Feauture-Toggle
    nach belieben ein und ausgeschaltet werden.
  
  
@@ -114,14 +102,21 @@ Notes:
 ================================================================
 
 
-# BILD
-
-Jenkins, rote Ampel
-
 > Was man kaputt macht,\
 > muss man reparieren.\
 > Und zwar SOFORT!
 
+
+=================================================================
+
+## Bug-Fixing
+
+ * `git stash`, 
+ * Bug fixen auf `master` 
+ * `git commit`
+ * `git pull`, Testen, `git push`  
+ * `git stash pop`, weiter machen
+  
 
 Notes:
 
@@ -133,7 +128,7 @@ R: (oder ein Fehler aus PRD bekannt wird,)
 
 R: geht eine Rote Karte ans Board
 
-R: beginnen 2 Entwickler beginnen SOFORT mit dem Debugging:
+R: beginnen 2 Entwickler SOFORT mit dem Debugging:
 
 R: `git stash` und `git pull` und los geht`s.
 
@@ -167,21 +162,18 @@ Austausch mit anderen.
 
 ## So arbeiten wir mit Git
 
-#### (Der komplette Workflow)
+ 1. **Entwickler** ziehen einen Task auf **in Progress**
+ 2. Implementieren (ggf. mit Feature-Toggles)    
+    <ul>
+      <li>a. <code>git commit</code></li>
+      <li>b. <code>git pull</code></li>
+      <li>c. <code>git push</code>, sobald lokale Tests grün</li>
+      <li>d. Falls noch nicht fertig, weiter bei a.</li>
+    </ul>
 
- 1. **2 Entwickler** ziehen einen Task auf **in Progress**
- 2. Implementieren (ggf. mit Feature-Toggles)
-    a. `git pull`
-    b. `git commit`
-    c. `git push`, sobald lokale Tests *grün*
-    d. Falls noch nicht fertig, weiter bei **a.** oder **b.**
  3. Task auf **Done**, weiter bei **1.**
  
-**Bug oder Build-Problem**: 
-**2 Entwickler** erstellen eine rote Karte,
-pausieren ihre Aktuelle (`git stash`),
-und bearbeiten diese wie oben.
-Danach setzen sie ihre vorige Arbeit for (`git stash pop`)
+
       
 
 
@@ -208,3 +200,6 @@ Danach setzen sie ihre vorige Arbeit for (`git stash pop`)
 
 
 
+Notes:
+
+Umfrage: Wer gehört zu welchem Lager?

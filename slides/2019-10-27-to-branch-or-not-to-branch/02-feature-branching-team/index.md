@@ -4,11 +4,7 @@
 ================================================================
 
 
-# BILD
-
-Sir Bjørn, 6 Soldaten und ein agiler Zuchtmeister
-
-Im Hintergrund die Bank of England
+<!-- .slide: data-background-image="02-feature-branching-team/team-feature-branching.png" data-background-color="0000FF" data-background-size="contain" -->
 
 
 Notes:
@@ -63,7 +59,7 @@ Das Vorgehen ist einfach.
 Ein Entwickler wird frei und nimmt sich die eine User Story,
 die zu seinen Skilla passt, aus dem Backlog.
 
-Erzeugt einen Branch (von `development`, so heißt der Entwicklungsbranch.
+Erzeugt einen Branch (von `develop`, so heißt der Entwicklungsbranch.
 
 
 ===============================================================
@@ -79,7 +75,7 @@ Notes:
 Arbeitet dann **ein paar Tage**
 ungestört auf diesem Branch, bis die seine Arbeit abgeschlosssen.
 
-Möchte seine Änderungen nach Development bringen.
+Möchte seine Änderungen nach Develop bringen.
 
 Aber Hoppla: Nicht so schnell! 
 Da könnte ja jeder kommen und irgenden Schmutz in die Codebase bringen.
@@ -111,7 +107,7 @@ Notes:
     Wärend der Entwickler gearbeitet hat, haben evtl. schon andere Kollegen Features 
     integriert.
 
-Qualität geht vor. Deshalb geht sogleich nach dem Merge auf  `development`
+Qualität geht vor. Deshalb geht sogleich nach dem Merge auf  `develop`
 der automatische Build.
 
 Anfangs kam es immer mal wieder vor, dass Änderungen den Build gebrochen haben.
@@ -165,7 +161,7 @@ Notes:
 
 Feature-Freeze ab Montag, wenn wir mittwoch releasen
 
-Keine Features-Merges nach development mehr,\
+Keine Features-Merges nach develop mehr,\
 noch noch einzelne Bugfixes-Branches. (Branch je Jira-Issue)
 
 Entwickler testen dann auf Fehler.\
