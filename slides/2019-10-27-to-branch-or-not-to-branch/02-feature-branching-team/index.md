@@ -108,11 +108,7 @@ Doch dafür gibt es eine einfache Lösung.
 ================================================================
 
 
-# BILD
-
-## Der Mind Set Improver
-
-Motiv: Pranger
+<!-- .slide: data-background-image="02-feature-branching-team/mindset-improver.png" data-background-size="contain" -->
 
 
 ================================================================
@@ -224,7 +220,13 @@ Wir können auch ganze Features wieder Rückgang machen (Stichwort: Reverting Me
 
 ## So arbeitet man mit Git!
 
+
+================================================================
+
+
+<!-- .slide: data-background-image="02-feature-branching-team/gral.png" data-background-size="contain" -->
+
+
 Notes:
 
-Bild: Heiliger Gral mit Git-Flow Motiv
 
