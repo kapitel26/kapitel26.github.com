@@ -9,14 +9,6 @@
 
 # Stabile Basis für die Entwicklung
 
-
-================================================================
-
-
-# BILD
-
-Kartenhaus?
-
 Notes:
 
 

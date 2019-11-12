@@ -33,6 +33,11 @@ B: Aber dann habt ihr keine dokumentierten Reviewergebnisse.
 R: Wie nutzen die Commit-Message um zu dokumentieren, das wir zu zweit waren.   
 
 
+
+================================================================
+
+
+
 ### Fazit
 
  * Pair Programming: 

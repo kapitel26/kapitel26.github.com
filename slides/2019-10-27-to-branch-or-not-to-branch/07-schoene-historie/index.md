@@ -34,6 +34,10 @@ R: Für die Release Notes haben wir JIRA.
   Und überhaupt: Wer schaut sich die globale Historie denn wirklich an?
 
 
+
+================================================================
+
+
 ### Fazit
 
  * Die Historie für einzelne Dateien oder Zeile ist notwendig für Merges und Fehlersuche.
