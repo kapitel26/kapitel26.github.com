@@ -43,9 +43,9 @@ Es gibt viele Projekte, die lange Tests haben, aber nur wenige, die sie wirklich
 ### Fazit: Stabilität
 
  * Ein brüchiger `master` (oder `develop`) nervt.
- * Beim FB sorgt man mit Reviews und Pre-Merge-Integrationstests\
+ * Beim Feature-Branching sorgt man mit Reviews und Pre-Merge-Integrationstests\
    für Stabilität.
- * Beim TBD hingegen werden Probleme schneller erkannt und gefixed.
+ * Beim Trunk-based-Developmen hingegen werden Probleme schneller erkannt und gefixed.
  * In kleinen erfahrenen Teams\
    wird der Integrationsbranch nur ab und zu mal *rot*.
  * Vertrauen statt Kontrolle funktioniert.

@@ -12,7 +12,7 @@
 
 Notes:
 
-B:  Vor dem Release, kann Der PO bei FB entscheiden, welche Features reif sind.
+B:  Vor dem Release, kann Der PO beim Feature-Branching entscheiden, welche Features reif sind.
 
 R: Das ist brenzlig, weil die Integration dann\
 fast vollständig ans Ende des Sprints verschoben wird.
@@ -52,4 +52,4 @@ B: Beim Abschluss des Features löschen wir den Branch. Die Liste der nicht abge
    ausgeliefert wird (weggetoggled natürlich).
    * Ggf. geben Feature-Toggles dem PO die Kontrolle über Features.
 
-Ein echtes wahlfreies Feature-Picking funktioniert auch in FB nicht wirklich gut.
+Ein echtes wahlfreies Feature-Picking funktioniert auch beim Feature-Branching nicht wirklich gut.

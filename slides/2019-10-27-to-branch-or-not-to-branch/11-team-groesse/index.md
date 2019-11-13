@@ -30,7 +30,7 @@ B: Aber
   - Aber in Open Source Projekten kannman  ja nicht jeden auf den master lassen.
 
 
-R: Dann spricht vieles für FB.
+R: Dann spricht vieles für Feature-Branching.
 
   
 ================================================================
@@ -40,5 +40,5 @@ R: Dann spricht vieles für FB.
 
 Bei vielen Entwicklern in mehreren Teams auf dem selben Repo, 
 Monolithen und Open-Source-Projekten
-ist der Overhead für FB oft gerechtfertigt.  
+ist der Overhead für Feature-Branching oft gerechtfertigt.  
   

@@ -36,7 +36,7 @@ fordern wir die Kollegen das schnell die Änderungen in Ihren Feature-Branch zu 
 
  * Refactorings betreffen oft viele Dateien
  * Je länger die Branches, desto schwerer die Integration nach Refactorings
- * Bei FB hilfeich:
+ * Bei Feature-Branching hilfreich:
    - Koordination
    - Kurzlebige Refactoring-Branches
    - Update-Merge-Aufrufe nach Integration des Refactorings

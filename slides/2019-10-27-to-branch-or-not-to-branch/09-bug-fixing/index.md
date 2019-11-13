@@ -14,7 +14,7 @@ Notes:
 
 TODO Außerdem Bild mit Ketten-Merges.
   
-B: Beim Bug-Fixing hat FB aber klar die Nase vorn mit strukturiertem Vorgehen.\
+B: Beim Bug-Fixing hat Feature-Branching aber klar die Nase vorn mit strukturiertem Vorgehen.\
 Wir fixen genau jene Version, die in Production ist,\
 und auch nur genau das was hierzu nötig ist.
 
@@ -26,7 +26,7 @@ und wenn ihr Pech habt auch noch develop in die Feature-Branches.\
 Wer soll da noch den Überblick behalten?
 
 R: Und wenn jemand einen Bugfix an der falschen Stellen beginnt \
-(z. B. auf dem FB), dann wird es richtig kompliziert,\
+(z. B. auf dem Feature-Branch), dann wird es richtig kompliziert,\
 und nur noch berühmte Git-Buch-Autoren können euch\
 für beindruckende Honorare retten ;-)
 
@@ -50,4 +50,4 @@ R: Außerdem sind unfertige oder nicht abgenommene Feature "weggetoggled".
     * Released immer alles
     * Neue Features können durch Toggles deaktivert sein
 
-FB ermöglicht zielgenaues Bugfixing. Pragmatisch, ist "Forward-Fixing" oft effizienter.
+Feature-Branching ermöglicht zielgenaues Bugfixing. Pragmatisch, ist "Forward-Fixing" oft effizienter.

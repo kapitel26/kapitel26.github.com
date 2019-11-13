@@ -63,11 +63,11 @@ um pullen zu können, ohne aus dem Flow zu kommen.
    zwischen Feature-Branch und `master`-Klon gering.
  * Bei TBD sind  
    die Zeiten zwischen Merges 
-   meist kürzer(Stunden) als beim FB (Tage)
+   meist kürzer(Stunden) als beim Feature-Branching (Tage)
  * Kleine Merges: Kleine Probleme
  * Große Merges: Große Probleme
  * Flow: Entwickler sollten selber bestimmen können,
    wann sie integrieren.
 
-Sowohl in TBD als auch beim FB können Entwickler ihren Flow finden.
+Sowohl trunk-based als auch beim Feauture-Branching können Entwickler ihren Flow finden.
 
