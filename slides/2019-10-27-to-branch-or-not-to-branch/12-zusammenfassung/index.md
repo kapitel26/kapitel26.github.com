@@ -59,6 +59,10 @@ Es gibt aber Faktoren, welche die Waagschale in Richtung des Feature-Branching v
  * Art des Produkts
     * mehrere Produktreleases: Umgang mit Bugfixes und Backports
     * Open Source: Wenn Beiträge von unbekannten Autoren gereviewed und übernommen werden sollen.
+
+
+===============================================================
+
  
 Je mehr von diesen Faktoren zutreffen,
 desto eher solltet Ihr in Erwägung ziehen, 
