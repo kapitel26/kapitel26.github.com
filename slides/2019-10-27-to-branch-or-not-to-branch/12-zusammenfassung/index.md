@@ -28,3 +28,37 @@
 <!-- .slide: data-background-image="12-zusammenfassung/two-visions-3.png"  data-background-opacity="0.4"  data-background-size="contain" -->
 
 ## Well ... it depends.
+
+
+
+
+===============================================================
+
+
+Wenn es keinen besonderen Grund gibt, etwas Anderes zu tun, macht
+
+    **Trunk Based Development**,
+    
+weil es einfach und schnell ist.
+
+
+===============================================================
+
+
+Es gibt aber Faktoren, welche die Waagschale in Richtung des Feature-Branching verschieben.
+
+ * Langsamer Feedbackzyklus
+    * langsamer Build und/oder Integegrationstest
+ * Geringes Vertrauen in Qualität
+    * z. B. bei schlechter Test-Coverage
+ * Spezielle Review- und Dokumentationsanforderungen
+    * durch gesetzliche Anforderungen oder Unternehmensprozesse
+    * verteilte Standorte in verschiedenen Zeitzonen
+    * Nachweispflicht für Änderungen
+ * Art des Produkts
+    * mehrere Produktreleases: Umgang mit Bugfixes und Backports
+    * Open Source: Wenn Beiträge von unbekannten Autoren gereviewed und übernommen werden sollen.
+ 
+Je mehr von diesen Faktoren zutreffen,
+desto eher solltet Ihr in Erwägung ziehen, 
+Feature-Branching zu machen.
