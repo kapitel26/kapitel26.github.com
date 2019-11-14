@@ -10,6 +10,13 @@ background: /slides/2019-10-27-to-branch-or-not-to-branch/13-abspann/abspann.png
 
 ### Vortrag zur [Continuous Lifecycle 2019](https://www.continuouslifecycle.de)
 
+Dies Frage war, ist und bleibt und heiß. 
+Im Anschluss ergaben sich einige interessante Diskussionen mit Zuhörern.
+Insbesondere wurden wir dann auch mehrfach gefragt,
+wann wir denn Trunk-Based-Development und wann wir Feature-Branching empfehlen würden.
+Deshalb haben wie die Präsentation um zwei Slides ergänzt.
+Die Zusammenfassung unserer Empfehlung findet ihr unten.
+
 #### [-> Slides als Vollbild](/slides/2019-10-27-to-branch-or-not-to-branch/)
 #### [-> Slides zum Ausdrucken](/slides/2019-10-27-to-branch-or-not-to-branch?print-pdf)
 
@@ -17,16 +24,8 @@ background: /slides/2019-10-27-to-branch-or-not-to-branch/13-abspann/abspann.png
   [**To Branch or Not to Branch**](/slides/2019-10-27-to-branch-or-not-to-branch)
 </iframe>
 
-Dies Frage war, ist und bleibt und heiß. 
-Im Anschluss ergaben sich einige interessante Diskussionen mit Zuhörern.
-Insbesondere wurden wir dann auch mehrfach gefragt,
-wann wir denn Trunk-Based-Development und wann wir Feature-Branching empfehlen würden.
 
-Deshalb haben wie die Präsentation um zwei Slides ergänzt. 
-Hier die Zusammenfassung unserer Empfehlung:
-
-
-Wenn es keinen besonderen Grund gibt, etwas Anderes zu tun, macht
+Wenn es keinen besonderen Grund gibt, etwas Anderes zu tun, dann macht
 
     **Trunk Based Development**,
     

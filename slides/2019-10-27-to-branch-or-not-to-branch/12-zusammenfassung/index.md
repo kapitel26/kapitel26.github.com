@@ -36,9 +36,9 @@
 ===============================================================
 
 
-Wenn es keinen besonderen Grund gibt, etwas Anderes zu tun, macht
+Wenn es keinen besonderen Grund gibt, etwas Anderes zu tun, dann macht
 
-    **Trunk Based Development**,
+**Trunk Based Development**,
     
 weil es einfach und schnell ist.
 
