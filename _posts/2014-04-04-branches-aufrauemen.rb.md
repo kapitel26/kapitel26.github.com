@@ -26,7 +26,7 @@ Man geht wie folgt vor:
 **Achtung:** Ein `push` von einem `mirror`-Repository ändert man Branches im Zielrepository,
 dies hat dieselben Auswirkungen wie ein `push --force`.
 Wegen Risiken und Nebenwirkungen lesen die [Packungsbeilage](/git/2012/04/28/push-mit-force-in-git)
-oder fragen sie einen [Experten](/rene).
+oder fragen sie einen [Experten](/projekte/kapitel26/rene).
 
 ### Beispiel
 

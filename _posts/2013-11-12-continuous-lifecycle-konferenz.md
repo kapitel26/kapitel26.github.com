@@ -8,7 +8,7 @@ author: bst
 
 [zu den Slides für unsere Vorträge](/git/2013/11/14/continuous-lifecycle-konferenz-vortraege)
 
-Continuous-Delivery machen wir bei [etracker](http://www.etracker.de), wo ich arbeite, schon eine ganze Weile. Deshalb war ich mir nicht sicher, ob ich eine [Konferenz](http://www.continuouslifecycle.de) besuchen soll, wo 72% aller Vorträge (gefühlter Wert) erklären, wie man Continuous-Delivery einführt. Die Entscheidung fiel, als [René](/rene) und ich die Gelegenheit bekamen zwei Git-Vorträge dort zu halten. Gut so. Sonst hätte ich eine interessante Veranstaltung verpasst.
+Continuous-Delivery machen wir bei [etracker](http://www.etracker.de), wo ich arbeite, schon eine ganze Weile. Deshalb war ich mir nicht sicher, ob ich eine [Konferenz](http://www.continuouslifecycle.de) besuchen soll, wo 72% aller Vorträge (gefühlter Wert) erklären, wie man Continuous-Delivery einführt. Die Entscheidung fiel, als [René](/projekte/kapitel26/rene) und ich die Gelegenheit bekamen zwei Git-Vorträge dort zu halten. Gut so. Sonst hätte ich eine interessante Veranstaltung verpasst.
 
 In der Keynote (*Mirko Novakovic* "Lean Startups Eat the World!") ging es um *disruptiven Wandel*. Viele Beispiele wurden gezeigt, wie ganze Märkte umgekrempelt werden (Amazon Buchhandel, AWS, mytaxi, airbnb, ...). Fast immer kamen die Innovationen von Branchenfremden. Ausschlaggebend ist oft die User-Experience nicht so sehr der Preis (wir kaufen bei Amazon wegen des perfekten Services, nicht wegen des Preises). Viele Branchen werden sich auf Disruptionen einstellen müssen. Continuous Delivery ist ein Hilfsmittel, um mehr Beweglichkeit für Innovation zu schaffen. Preisfrage: Wann wird es in Deutschland echte Online-Versicherungen geben?
 
