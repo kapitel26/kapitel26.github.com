@@ -47,15 +47,14 @@ Klonen mit Sparse Checkout
 ```bash
 git clone --no-checkout <repo-url>
 cd <repo-dir>
-git config core.sparseCheckout true
-echo "/module-a/" > .git/info/sparse-checkout
-git checkout master
+git sparse-checkout init --cone
+git sparse-checkout add module-a
+git checkout
 ```
 
-Verzeichnis einblenden
+Sparse Checkout abschalten
 ```bash
-echo "/module-a/" >> .git/info/sparse-checkout
-git read-tree -mu HEAD
+git sparse-checkout disable
 ```
 
 
@@ -75,7 +74,7 @@ TODO Anmerkungen zu Usage von Sparse-Checkout
  * *Sparse Checkout* hilft oft auch hier
 
  * Monorepo `!=` Monolith
-   
+
    Modulverzeichnise können/sollten  
    separate IDE-Projekte sein.
 
@@ -88,15 +87,14 @@ TODO Anmerkungen zu Usage von Sparse-Checkout
 
  * [Watchman](https://facebook.github.io/watchman/) von Facebook
    lauscht auf File-System-Events und hält einen Cache.
- * Über [Hook](https://github.com/git/git/blob/master/templates/hooks--fsmonitor-watchman.sample) in Git integrieren 
+ * Über [Hook](https://github.com/git/git/blob/master/templates/hooks--fsmonitor-watchman.sample) in Git integrieren
  * Erster `status`-Aufruf startet Daemon,  
    Nachfolgende nutzen den Watchman-Cache.
- 
+
 
 ```bash
 git config core.fsmonitor .git/hooks/query-watchman
-``` 
+```
 
 ================================================================
 <img src="03/ueberblick-viele-dateien.png" width="90%" style="border: 0px; box-shadow: none;">
-

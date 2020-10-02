@@ -10,7 +10,7 @@
 
 
 Dieses hervoragende Buch hat ca. 20.000 Zeilen und 270.000 Byte Quelltext (ohne Bilder).
-  
+
 <img src="04/git-buch.png" width="20%" style="border: 0px;"/>
 
 Wieviel Gramm wiegt es?
@@ -28,15 +28,15 @@ Das Buch wiegt (ohne Werbezettel) exakt 615 g
 
 |            | Buch-Repo      | Linux Kernel  | Windows Repo  |
 |------------|----------------|---------------|---------------|
-| Bücher     | 1              | 8.000         | 1,1 Mio.      | 
-| Gewicht    | 0,615 kg       | 5.000 kg      | 700.000 kg    | 
-| Höhe       | 0,02 m         | 150 m         | 20.000 m      |
-| Speicher   | 0,27 MB        | 2,4 GB        | 300 GB        | 
+| Bücher     | 1              | 10.000        | 1,1 Mio.      |
+| Gewicht    | 0,615 kg       | 6.000 kg      | 700.000 kg    |
+| Höhe       | 0,02 m         | 200 m         | 20.000 m      |
+| Speicher   | 0,27 MB        | 2,8 GB        | 300 GB        |
 
 
 notes:
 
-Linux-Kernel als Bücherstapel: 
+Linux-Kernel als Bücherstapel:
 
 Anmerkung: Kernel und Windows Repos enthalten auch Binaries, die wir nicht rausgerechnet haben.
 
@@ -54,11 +54,11 @@ Anmerkung: Kernel und Windows Repos enthalten auch Binaries, die wir nicht rausg
  * **Big Binaries**  
    `fetch`, `checkout` langsam
 
-notes: 
+notes:
 
-- Typsiches Problem: 
-  Build-Server muss lange auf clone warten 
-  
+- Typsiches Problem:
+  Build-Server muss lange auf clone warten
+
 - Oft sind es die großen Binärdateien die Ursache
   Dann sind `fetch` und `checkout` auch langsam.
 
@@ -67,7 +67,7 @@ notes:
 #### Viele Bytes - langsamer Transfer
 
 ### Abhilfe: Shallow Clone
- 
+
  ```bash
  git clone --depth 1 <linux-url>
  git fetch --deepen 100
@@ -76,9 +76,9 @@ notes:
 
 <br/>
 
-| Linux-Kernel | `depth=1`   | `depth=100`  | Voll     | 
+| Linux-Kernel | `depth=1`   | `depth=100`  | Voll     |
 |--------------|-----------|------------|----------|
-|              | 200 MB    | 900 MB     | 2.400 MB |  
+|              | 200 MB    | 900 MB     | 2.800 MB |  
 
 notes:
 
@@ -90,17 +90,24 @@ TODO Umgang mit Merge-Parents
 
 #### Viele Bytes - langsamer Transfer
 
-### Breaking News: Partial Clone
- 
- <br/>
- ```bash
- git -c protocol.version=2 clone --filter=blob:100k <linux-url>
- ```
+### Partial Clone
 
  <br/>
+ ```
+ clone --filter=blob:none --depth=1 <linux-url>
+ ```
+ <br/>
+ 3,4 MB
 
 * Weniger Blobs holen
-* __Klappt noch nicht mit GitHub / GitLab__
+* Transparentes nachladen beim Checkout
+* __Klappt noch nicht mit allen Servern__
+
+notes:
+
+GitHub und GitLab klappt
+BitBucket nicht
+Ohne --depth=1 1GB nicht verständlich
 
 ================================================================
 
@@ -117,7 +124,7 @@ TODO Umgang mit Merge-Parents
  * Mehrere Workspace auf geteiltem Repo.
  * Nur ein *Object Store* für alle Worktrees
  * Fetch ist nur einmal notwendig.
- 
+
 
 ================================================================
 
@@ -129,7 +136,7 @@ TODO Umgang mit Merge-Parents
   ```bash
  git clone --reference <local-repo-url> <repo-url>
  ```
- 
+
  * Objekt aus dem Referenz-Repo  
    müssen nicht übertragen werden
  * Für Build-Server,  
@@ -162,7 +169,7 @@ Hilft zwar, ist aber nicht ohne Tücken.
 
 ```bash
 git rev-list --objects ${oldref}..${newref} |
-  git cat-file | 
+  git cat-file |
       --batch-check='%(objectname) %(objecttype) %(objectsize) %(rest)' |
   awk -v maxbytes="$maxbytes" '$3 > maxbytes { print $4 }'
  ```
@@ -178,7 +185,7 @@ git rev-list --objects ${oldref}..${newref} |
 ### Abhilfe: Mit BFG Dateien entfernen
 
  <img src="04/BFG.png" width="50%">
- 
+
 
 ```bash
 java -jar bfg.jar --strip-blobs-bigger-than 100M repo.git
@@ -186,7 +193,7 @@ java -jar bfg.jar --strip-blobs-bigger-than 100M repo.git
 
 
 notes:
- 
+
 Hinweis:
 
 (Fast) Alle Commits werden neu erstellt und bekommen neue Hashes.
