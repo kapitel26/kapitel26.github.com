@@ -45,10 +45,10 @@ welche Verzeichnise in den Workspace geholt werden.
 Klonen mit Sparse Checkout
 
 ```bash
-git clone --no-checkout <repo-url>
-cd <repo-dir>
+git clone --sparse repo myclone
+cd myclone
 git sparse-checkout init --cone
-git sparse-checkout add module-a
+git sparse-checkout add component-a
 git checkout
 ```
 
