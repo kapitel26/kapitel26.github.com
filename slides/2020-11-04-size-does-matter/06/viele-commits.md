@@ -1,4 +1,4 @@
-<!-- .slide: data-background-image="06/modules.png" -->
+<!-- .slide: data-background-image="06/viele-commits.png" -->
 
 # Viele Commits
 
