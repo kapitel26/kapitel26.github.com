@@ -4,7 +4,7 @@ title: "Size Does Matter - Große Repos in Git"
 category: Git
 tags: [Git, LFS, Monorepo]
 author: bst, rp
-revealjs_theme: simple
+revealjs_theme: black
 ---
 
 <section data-markdown="00/intro.md" data-separator-vertical="^====*\n"></section>
