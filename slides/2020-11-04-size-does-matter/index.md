@@ -13,8 +13,9 @@ revealjs_theme: black
 <section data-markdown="03/anzahl-dateien.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="04/datenvolumen.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="05/anzahl-teams.md" data-separator-vertical="^====*\n"></section>
-<section data-markdown="06/submodules-subtrees.md" data-separator-vertical="^====*\n"></section>
-<section data-markdown="07/ueberblick-loesungen.md" data-separator-vertical="^====*\n"></section>
-<section data-markdown="08/wenn-das-nicht-reicht.md" data-separator-vertical="^====*\n"></section>
+<section data-markdown="06/viele-commits.md" data-separator-vertical="^====*\n"></section>
+<section data-markdown="08/submodules-subtrees.md" data-separator-vertical="^====*\n"></section>
+<section data-markdown="09/ueberblick-loesungen.md" data-separator-vertical="^====*\n"></section>
+<section data-markdown="10/wenn-das-nicht-reicht.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="99/meta.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="09/fragen.md" data-separator-vertical="^====*\n"></section>
