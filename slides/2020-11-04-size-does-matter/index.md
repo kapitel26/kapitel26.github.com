@@ -4,8 +4,17 @@ title: "Size Does Matter - Große Repos in Git"
 category: Git
 tags: [Git, LFS, Monorepo]
 author: bst, rp
-revealjs_theme: black
+revealjs_theme: night
 ---
+
+<style>
+.reveal h1 { color: #811c81; }
+.reveal h2 { color: #811c81; }
+.reveal h3 { color: #811c81; }
+.reveal h4 { color: #811c81; }
+.reveal h5 { color: #811c81; }
+.reveal h6 { color: #811c81; }
+</style>
 
 <section data-markdown="00/intro.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="01/monorepos.md" data-separator-vertical="^====*\n"></section>
