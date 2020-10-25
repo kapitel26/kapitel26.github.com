@@ -4,7 +4,7 @@
 ### Große Repos in Git
 
 
-<h1 style="font-weight: bold;"> Size Does Matter</h1>
+<h1 style=""> Size Does Matter</h1>
 
 von René Preißel und Bjørn Stachmann
 
