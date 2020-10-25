@@ -26,5 +26,5 @@ revealjs_theme: night
 <section data-markdown="07/submodules-subtrees.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="08/ueberblick-loesungen.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="09/wenn-das-nicht-reicht.md" data-separator-vertical="^====*\n"></section>
+<section data-markdown="10/fragen.md" data-separator-vertical="^====*\n"></section>
 <section data-markdown="99/meta.md" data-separator-vertical="^====*\n"></section>
-<section data-markdown="09/fragen.md" data-separator-vertical="^====*\n"></section>
