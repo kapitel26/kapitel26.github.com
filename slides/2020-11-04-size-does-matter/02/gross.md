@@ -17,7 +17,7 @@ werden sie ein großes Repo bekommen,
  * Viele Dateien
  * Viele Bytes
  * Viele Leute
- * (Viele Änderungen)
+ * Viele Änderungen
 
 Jede Dimension birgt eigene *"Herausforderungen"*.
 
