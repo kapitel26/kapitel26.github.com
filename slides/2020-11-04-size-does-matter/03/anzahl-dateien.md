@@ -97,4 +97,10 @@ git config core.fsmonitor .git/hooks/query-watchman
 ```
 
 ================================================================
+
 <img src="03/ueberblick-viele-dateien.png" width="90%" style="border: 0px; box-shadow: none;">
+
+
+================================================================
+
+### &#8669; Bjørn

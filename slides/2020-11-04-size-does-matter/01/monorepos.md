@@ -32,6 +32,14 @@ Lines of Code: Wer hat mehr als 100.000, 1 Mio., 10 Mio., 100 Mio.
 ================================================================
 
 
+# Think Big!
+
+<!-- .slide: data-background-image="01/tyranno-watching.png" -->
+
+
+================================================================
+
+
 Kleines Gedankenexperiment:
 
 ## Tun Sie all das in
@@ -115,7 +123,13 @@ Diese Frage lassen wir offen.
 
 ================================================================
 
+
 #### Diese Frage beantworten wir heute nicht. 
+
+
+================================================================
+
+
 ### Dieser Talk  
 ### gibt Tipps,
 ### für GROßE REPOS in GIT
