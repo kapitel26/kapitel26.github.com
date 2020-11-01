@@ -16,8 +16,6 @@ Lines of Code
 
 notes:
 
-TODO: Bild Auto-Quartett
-
 Schätzen Sie!
 
 über ihr **gesamtes Unternehnmen**
@@ -65,14 +63,14 @@ Kleines Gedankenexperiment:
 ================================================================
 
 
-aber manche machen das, z. B.
+aber manche machen das, z .B.
 
  * Google
  * Facebook
  * Microsoft
  * Twitter
 
-### sind die denn komplett verrückt?
+### Sind die denn komplett verrückt?
 
 
 ================================================================
@@ -80,40 +78,51 @@ aber manche machen das, z. B.
 
 Ein **Monorepo** unterstützt
 
- * API Migrationen
- * Large Scale Refactorings
- * Umfassende Analysen: Data Lineage, Vulnerability Detection, Defect Detection, Usage Statistics
- * Aufräumen
-
-
-================================================================
-
-
-### One Repo to Rule them All!
-
- * **1** Repo für Alles™
- * **1** `master` zur Integration
- * Skalierbare Build-Pipeline mit Continuous Delivery 
-
-> Google ist versioniert!
+ * Large Scale **Refactorings**
+ * **API** Migrationen
+ * **Analysen** \
+   Vulnerability, Defects, Usage, Data Lineage
+ * **Aufräumen**
 
 notes:
 
-Stichwort: Trunk Based Development
+ * Umstellen auf Major Releases von C++, PHP
+ * Wann kann ich ein API abschalten?
+ * Nicht alle Großen machen das: Amazon, Netflix
 
-Nicht alle Großen machen das: Amazon, Netflix
+================================================================
+
+## Voraussetzungen
+
+ 1. **1** Repo für Alles™
+ 2. Trunk Based Development
+ 3. Commitment auf Stabilität von `main`   
+ 4. Skalierbare Build-Pipeline 
+
+> Google ist versioniert!
+
+
+notes:
+
+Erfordert:
+
+ 1. Technologie, Invest und Team.
+ 2. Nur der `main`-Stand ist relevant 
+ 3. Erfordert Reife in Governance.
+ 3. Tooling (z.B. Bazel).
 
 
 ================================================================
 
 
+<div style = "font-family: 'Times New Roman';">
 
-> QUOD LICET JOVI
+> QUOD LICET JOVI \
 > NON LICET BOVI
 
+</div>
 
-Die Riesen dürfen und können das. 
-
+Die Riesen dürfen und können das. \
 Sollen wir, die Zwerge, nachziehen?
 
 notes:
@@ -124,7 +133,27 @@ Diese Frage lassen wir offen.
 ================================================================
 
 
-#### Diese Frage beantworten wir heute nicht. 
+### One Repo to Rule them All **?**
+
+#### Diese Frage beantworten wir heute nicht 😢
+
+Ein paar Tipps gibt's trotzdem ...
+
+
+================================================================
+
+
+| **👎**   | **👍**                      |
+|:-------------:|:-------------:|
+| Hoher Invest in<br/>Infrastruktur + Team   | Large Scale Refactoring |
+| Governance Maturity<br/>notwendig   | übergreifende Analysen |
+| Zentrale<br/>Abhängigkeit           | Housekeeping (APIs/Code) |
+
+notes:
+
+Knifflige Entscheidung, weil \
+kurzfristiger Invest hoch, \
+Nutzen aber in langristigen Aspekten liegt.
 
 
 ================================================================
