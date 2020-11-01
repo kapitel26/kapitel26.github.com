@@ -29,10 +29,14 @@ notes:
 
 ### Abhilfe: Sparse Checkout
 
-Die Steuerdatei (`sparse-checkout`) bestimmt,  
-welche Verzeichnise in den Workspace geholt werden.
+Filtern, welche Dateien\
+in den Workspace geholt werden.
 
-[siehe `read-tree`, Sparse Checkout](https://git-scm.com/docs/git-read-tree#_sparse_checkout)
+ * `git clone` mit  `--sparse` \
+   [aktiviert Sparse Checkout](https://git-scm.com/docs/git-clone#Documentation/git-clone.txt---sparse)
+ * `git sparse-checkout add/list/set/...` \
+   [bearbeitet](https://git-scm.com/docs/git-sparse-checkout) die [Konfiguration](https://git-scm.com/docs/git-sparse-checkout#_sparse_checkout) in \
+   `$GIT_DIR/info/sparse-checkout`.
 
 
 ================================================================
@@ -42,18 +46,15 @@ welche Verzeichnise in den Workspace geholt werden.
 
 ### Abhilfe: Sparse Checkout
 
-Klonen mit Sparse Checkout
-
 ```bash
+# Sparse Checkout einrichten
 git clone --sparse repo myclone
 cd myclone
 git sparse-checkout init --cone
 git sparse-checkout add component-a
 git checkout
-```
 
-Sparse Checkout abschalten
-```bash
+# Sparse Checkout abschalten
 git sparse-checkout disable
 ```
 
