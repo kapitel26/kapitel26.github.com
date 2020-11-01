@@ -92,14 +92,11 @@ TODO Umgang mit Merge-Parents
 
 ### Partial Clone
 
- <br/>
- ```
- clone --filter=blob:none --depth=1 <linux-url>
- ```
- <br/>
- 3,4 MB
+```
+git clone --filter=blob:none --depth=1 <linux-url>
+```
 
-* Weniger Blobs holen
+* z.B. keine Blobs, nur bestimmte Dateitypen, nur bestimmte Verzeichnisse laden. 
 * Transparentes nachladen beim Checkout
 * __Klappt noch nicht mit allen Servern__
 
