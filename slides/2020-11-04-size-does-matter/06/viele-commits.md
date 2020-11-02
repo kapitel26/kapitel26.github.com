@@ -84,6 +84,11 @@ time git log --graph --oneline -10
 
 ================================================================
 
+<img src="06/ueberblick-viele-commits.png" width="90%" style="border: 0px; box-shadow: none;">
+
+
+================================================================
+
 ### &#8669; Bjørn
 
 
