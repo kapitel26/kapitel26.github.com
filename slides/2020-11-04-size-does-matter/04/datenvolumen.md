@@ -97,7 +97,7 @@ git clone --filter=blob:none --depth=1 <linux-url>
 ```
 
 * z.B. keine Blobs, nur bestimmte Dateitypen, nur bestimmte Verzeichnisse laden. 
-* Transparentes nachladen beim Checkout
+* Transparentes Nachladen beim Checkout
 * __Klappt noch nicht mit allen Servern__
 
 notes:
