@@ -1,6 +1,25 @@
 <!-- .slide: data-background-image="06/viele-commits.png" -->
 
 ## Viele Commits<br/><br/><br/><br/>
+================================================================
+
+## Linux Kernel
+
+
+Der Linux Kernel hat knapp eine Millionen Commits.
+
+Das Logging der letzten 10 Commits dauert 9 Sekunden.
+
+```
+time git log --graph --oneline -10
+```
+
+notes:
+
+Das Problem ist der Graph, ohne --graph geht es schnell
+
+https://devblogs.microsoft.com/devops/a-deep-dive-into-git-performance-using-trace2/
+https://git-scm.com/docs/commit-graph
 
 ================================================================
 
@@ -25,25 +44,7 @@ There are two main costs here:
     1. Decompressing and parsing commits.
 
     2. Walking the entire graph to satisfy topological order constraints.
-================================================================
 
-## Linux Kernel
-
-
-Der Linux Kernel hat knapp eine Millionen Commits.
-
-Das Logging der letzten 10 Commits dauert 9 Sekunden.
-
-```
-time git log --graph --oneline -10
-```
-
-notes:
-
-Das Problem ist der Graph, ohne --graph geht es schnell
-
-https://devblogs.microsoft.com/devops/a-deep-dive-into-git-performance-using-trace2/
-https://git-scm.com/docs/commit-graph
 ================================================================
 
 ## Commit-Graph
