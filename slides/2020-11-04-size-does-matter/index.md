@@ -8,12 +8,12 @@ revealjs_theme: night
 ---
 
 <style>
-.reveal h1 { color: #811c81; }
-.reveal h2 { color: #811c81; }
-.reveal h3 { color: #811c81; }
-.reveal h4 { color: #811c81; }
-.reveal h5 { color: #811c81; }
-.reveal h6 { color: #811c81; }
+.reveal h1 { color: #BBFFBB; }
+.reveal h2 { color: #BBFFBB; }
+.reveal h3 { color: #BBFFBB; }
+.reveal h4 { color: #BBFFBB; }
+.reveal h5 { color: #BBFFBB; }
+.reveal h6 { color: #BBFFBB; }
 </style>
 
 <section data-markdown="00/intro.md" data-separator-vertical="^====*\n"></section>
