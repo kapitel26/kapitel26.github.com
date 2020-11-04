@@ -32,6 +32,8 @@ notes:
 Filtern, welche Dateien\
 in den Workspace geholt werden.
 
+notes:
+
  * `git clone` mit  `--sparse` \
    [aktiviert Sparse Checkout](https://git-scm.com/docs/git-clone#Documentation/git-clone.txt---sparse)
  * `git sparse-checkout add/list/set/...` \

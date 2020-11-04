@@ -105,7 +105,7 @@ Pull-Request sollten mit Reviews und Buil-Pipeline-Integration genutzt werden.
 ================================================================
 
 ### Viele Leute - Push Reject
-#### Abhilfe: Pull - Build-Server-Merge
+#### Abhilfe: Build-Server-Merge
 
 <img src="05/build-server-merge.png" width="60%" style="border: 0px; box-shadow: none;">
 
@@ -135,7 +135,7 @@ Branch/Fork integrationsreif:
 ================================================================
 
 #### Viele Leute - Ich will das Zeug nicht sehen
-### Abhilfe: Pull - Sparse Checkout
+### Abhilfe: Sparse Checkout
 
 > JavaScript kommt mir  
 > nicht auf'n Rechner.  
