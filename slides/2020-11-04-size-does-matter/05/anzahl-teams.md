@@ -223,7 +223,7 @@ wenn die Dateien ursprünglich mal woanders lagen.
 
 ### Abhilfe: Squashen
 
-Benutzen von Squash-Merge (o. Ä.) beim Pull-Request.
+Benutzen von Squash-Merge beim Pull-Request.
 
 
 ```bash
@@ -288,6 +288,8 @@ fetch = +refs/heads/master:refs/remotes/origin/master
 fetch = +refs/heads/team-a/*:refs/remotes/origin/team-a/*
 ```  
   
+notes:  
+
 Achtung: `gitnamespaces` sind nicht geeignet
 
 

@@ -6,9 +6,10 @@
 ## Linux Kernel
 
 
-Der Linux Kernel hat knapp eine Millionen Commits.
+Knapp eine Millionen Commits.
 
-Das Logging der letzten 10 Commits dauert 9 Sekunden.
+Das Logging der letzten **10 Commits** dauert\
+**9 Sekunden**.
 
 ```
 time git log --graph --oneline -10
@@ -20,6 +21,10 @@ Das Problem ist der Graph, ohne --graph geht es schnell
 
 https://devblogs.microsoft.com/devops/a-deep-dive-into-git-performance-using-trace2/
 https://git-scm.com/docs/commit-graph
+
+================================================================
+
+<img src="06/log-graph.png" width="90%" style="border: 0px; box-shadow: none;">
 
 ================================================================
 
