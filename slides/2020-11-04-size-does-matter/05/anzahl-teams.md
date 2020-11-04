@@ -314,4 +314,5 @@ git log --no-merges -n 1 --format="%ci" <branch>
 
 
 ================================================================
+
 <img src="05/ueberblick-viele-leute.png" width="90%" style="border: 0px; box-shadow: none;">

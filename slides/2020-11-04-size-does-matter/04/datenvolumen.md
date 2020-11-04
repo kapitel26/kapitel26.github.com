@@ -13,7 +13,7 @@ Dieses hervoragende Buch hat ca. 20.000 Zeilen und 270.000 Byte Quelltext (ohne 
 
 <img src="04/git-buch.png" width="20%" style="border: 0px;"/>
 
-Wieviel Gramm wiegt es?
+Wie viel Gramm wiegt es?
 
 
 notes:
@@ -97,7 +97,7 @@ git clone --filter=blob:none --depth=1 <linux-url>
 ```
 
 * z.B. keine Blobs, nur bestimmte Dateitypen, nur bestimmte Verzeichnisse laden. 
-* Transparentes nachladen beim Checkout
+* Transparentes Nachladen beim Checkout
 * __Klappt noch nicht mit allen Servern__
 
 notes:
