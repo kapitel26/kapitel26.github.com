@@ -188,6 +188,7 @@ git rev-list --objects ${oldref}..${newref} |
 java -jar bfg.jar --strip-blobs-bigger-than 100M repo.git
  ```
 
+Mögliche Alternative: Das Pythonscript [filter-repo](https://github.com/newren/git-filter-repo)
 
 notes:
 
