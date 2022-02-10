@@ -8,28 +8,18 @@
 
 		<title>reveal.js</title>
 
-		<link rel="stylesheet" href="/assets/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="/assets/reveal.js/dist/reveal.css">
 		{% if page.revealjs_theme %}
-				<link rel="stylesheet" href="/assets/reveal.js/css/theme/{{ page.revealjs_theme }}.css">
+				<link rel="stylesheet" href="/assets/reveal.js/dist/theme/{{ page.revealjs_theme }}.css">
 		{% else %}
-				<link rel="stylesheet" href="/assets/reveal.js/css/theme/black.css">
+				<link rel="stylesheet" href="/assets/reveal.js/dist/theme/black.css">
 		{% endif %}
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="/assets/reveal.js/lib/css/zenburn.css">
-
+		<link rel="stylesheet" href="/assets/reveal.js/plugin/highlight/monokai.css">
 		{% if page.custom_css %}
 		<link rel="stylesheet" href="/assets/{{ page.custom_css }}.css">
 		{% endif %}
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '/assets/reveal.js/css/print/pdf.css' : '/assets/reveal.js/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
 	</head>
 	<body>
 		<div class="reveal">
@@ -38,21 +28,27 @@
 			</div>
 		</div>
 
-		<script src="/assets/reveal.js/lib/js/head.min.js"></script>
-		<script src="/assets/reveal.js/js/reveal.js"></script>
-
+		<script src="/assets/reveal.js/dist/reveal.js"></script>
+		<script src="/assets/reveal.js/plugin/zoom/zoom.js"></script>
+		<script src="/assets/reveal.js/plugin/notes/notes.js"></script>
+		<script src="/assets/reveal.js/plugin/search/search.js"></script>
+		<script src="/assets/reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="/assets/reveal.js/plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
 			Reveal.initialize({
-				dependencies: [
-					{ src: '/assets/reveal.js/plugin/markdown/marked.js' },
-					{ src: '/assets/reveal.js/plugin/markdown/markdown.js' },
-					{ src: '/assets/reveal.js/plugin/notes/notes.js', async: true },
-					{ src: '/assets/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
 			});
+
 		</script>
+
 	</body>
 </html>
